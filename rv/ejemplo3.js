@@ -1,0 +1,12 @@
+var miCanvas1 = document.getElementById("miCanvas1");
+var contexto = miCanvas1.getContext("2d");
+contexto.fillStyle = "red";
+contexto.fillRect(30, 30, 50, 50);
+var miCanvas2 = document.getElementById("micanvas2");
+var contexto = miCanvas2.getContext("2d");
+contexto.fillStyle = "green";
+contexto.fillRect(90, 90, 50, 50);
+var miCanvas3 = document.getElementById("miCanvas3");
+var contexto = miCanvas3.getContext("2d");
+contexto.fillStyle = "blue";
+contexto.fillRect(150, 150, 50, 50);
