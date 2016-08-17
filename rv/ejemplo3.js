@@ -7,6 +7,6 @@ var contexto3 = miCanvas3.getContext("2d");
 contexto1.fillStyle = "blue";
 contexto1.fillRect(0, 0, 50, 50);
 contexto2.fillStyle = "green";
-contexto2.fillRect(900, 0, 50, 50);
+contexto2.fillRect(900, 900, 50, 50);
 contexto3.fillStyle = "red";
-contexto3.fillRect(1800, 0, 50, 50);
+contexto3.fillRect(1800, 1800, 50, 50);
