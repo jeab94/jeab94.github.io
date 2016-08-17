@@ -1,4 +1,4 @@
 var miCanvas = document.getElementById("miCanvas");
 var contexto = miCanvas.getContext("2d");
 contexto.fillStyle = "red";
-contexto.fillRect(30, 30, 100, 100);
+contexto.fillRect(30, 30, 800, 800);
