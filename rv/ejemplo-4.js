@@ -9,4 +9,5 @@ var material = new THREE.MeshNormalMaterial(); //el de default sería MeshBasicM
 var cubo = new THREE.Mesh(forma,material); //Cosntructor Mesh()
 cubo.rotateX(-Math.PI/4); //Rota 45° en X
 cubo.rotateY(-Math.PI/4); //Rota 45° en Y
+escena.add(cubo);
 renderizador.render(escena,camara);
