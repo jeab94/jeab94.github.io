@@ -35,6 +35,6 @@ var geometry = new THREE.TubeGeometry(
     8,     //radiusSegments
     false  //closed
 );
-
+escena.add(geometry);
 
 renderizador.render(escena,camara);
