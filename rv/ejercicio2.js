@@ -5,12 +5,12 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95, window.innerHeight*.95); //window da las dimensiones internas de la ventana del navegador (autoescalado al 95%)
 document.body.appendChild(renderizador.domElement); //Inserta un nodo al Body 
 
-var forma1 = new THREE.TetrahedronGeometry(1,0);
-var material1 = new THREE.MeshNormalMaterial(); //el de default sería MeshBasicMaterial
-var tetraedro = new THREE.Mesh(forma1,material1); //Cosntructor Mesh()
+//var forma1 = new THREE.TetrahedronGeometry(1,0);
+//var material1 = new THREE.MeshNormalMaterial(); //el de default sería MeshBasicMaterial
+//var tetraedro = new THREE.Mesh(forma1,material1); //Cosntructor Mesh()
 //tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
-tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
-escena.add(tetraedro);
+//tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
+//escena.add(tetraedro);
 
 var CustomSinCurve = THREE.Curve.create(
     function ( scale ) { //custom curve constructor
