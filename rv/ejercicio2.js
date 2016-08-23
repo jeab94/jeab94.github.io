@@ -12,29 +12,9 @@ tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
 tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
 escena.add(tetraedro);
 
-//var CustomSinCurve = THREE.Curve.create(
-  //  function ( scale ) { //custom curve constructor
-    //    this.scale = (scale === undefined) ? 1 : scale;
-    //},
-
-    //function ( t ) { //getPoint: t is between 0-1
-      //  var tx = t * 3 - 1.5,
-        //    ty = Math.sin( 2 * Math.PI * t ),
-          //  tz = 0;
-
-        //return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
-   // }
-//);
-
-//var path = new CustomSinCurve( 10 );
-
-//var geometry = new THREE.TubeGeometry(
-  //  path,  //path
-    //20,    //segments
-    //2,     //radius
-    //8,     //radiusSegments
-    //false  //closed
-//);
-//escena.add(geometry);
+var geometry = new THREE.CylinderBufferGeometry( 5, 5, 20, 32 );
+var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+var cylinder = new THREE.Mesh( geometry, material );
+escena.add( cylinder );
 
 renderizador.render(escena,camara);
