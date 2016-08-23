@@ -12,9 +12,9 @@ tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
 tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
 escena.add(tetraedro);
 
-var geometry = new THREE.CylinderBufferGeometry( 5, 5, 20, 32 );
-var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
-var cylinder = new THREE.Mesh( geometry, material );
+var geometry = new THREE.CylinderBufferGeometry( 1, 1, 500, 32 );
+var material2 = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+var cylinder = new THREE.Mesh( geometry, material2 );
 escena.add( cylinder );
 
 renderizador.render(escena,camara);
