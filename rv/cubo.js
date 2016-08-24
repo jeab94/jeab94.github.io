@@ -8,9 +8,17 @@ forma.vertices.push( new THREE.Vector3( 0, 1, 0 ) ); //Vertice no.4
 
 forma.faces.push( new THREE.Face3( 3, 1, 2 ) ); //Cara formada por tres vertices
 forma.faces.push( new THREE.Face3( 3, 0, 1 ) );
-//forma.faces.push( new THREE.Face3( 0, 4, 1 ) );
-//forma.faces.push( new THREE.Face3( 1, 4, 5 ) );
 
+forma.faces.push( new THREE.Face3( 0, 4, 1 ) );
+forma.faces.push( new THREE.Face3( 1, 4, 5 ) );
+forma.faces.push( new THREE.Face3( 3, 2, 7 ) );
+forma.faces.push( new THREE.Face3( 2, 6, 7 ) );
+forma.faces.push( new THREE.Face3( 4, 1, 5 ) );
+forma.faces.push( new THREE.Face3( 2, 5, 6 ) );
+forma.faces.push( new THREE.Face3( 7, 5, 6 ) );
+forma.faces.push( new THREE.Face3( 7, 4, 5 ) );
+forma.faces.push( new THREE.Face3( 3, 4, 7 ) );
+forma.faces.push( new THREE.Face3( 3, 0, 4 ) );
 
 forma.computeBoundingSphere(); //Esfera de menor tamaño que acota al objeto
 forma.computeFaceNormals(); //Se computan las normales de las caras
