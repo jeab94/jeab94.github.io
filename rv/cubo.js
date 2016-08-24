@@ -6,7 +6,7 @@ forma.vertices.push( new THREE.Vector3(-1, 0,-1 ) ); //Vertice no.2
 forma.vertices.push( new THREE.Vector3(-1, 0,1 ) ); //Vertice no.3
 forma.vertices.push( new THREE.Vector3( 0, 1, 0 ) ); //Vertice no.4
 
-forma.faces.push( new THREE.Face3( 3, 2, 1 ) ); //Cara formada por tres vertices
+forma.faces.push( new THREE.Face3( 3, 1, 2 ) ); //Cara formada por tres vertices
 
 
 
