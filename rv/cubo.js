@@ -19,8 +19,8 @@ forma.faces.push( new THREE.Face3( 2, 5, 6 ) );
 forma.faces.push( new THREE.Face3( 2, 1, 5) );
 forma.faces.push( new THREE.Face3( 3, 2, 7 ) );
 forma.faces.push( new THREE.Face3( 2, 6, 7 ) );
-//forma.faces.push( new THREE.Face3( 3, 4, 7 ) );
-//forma.faces.push( new THREE.Face3( 3, 0, 4 ) );
+forma.faces.push( new THREE.Face3( 3, 4, 7 ) );
+forma.faces.push( new THREE.Face3( 3, 0, 4 ) );
 
 forma.computeBoundingSphere(); //Esfera de menor tamaño que acota al objeto
 forma.computeFaceNormals(); //Se computan las normales de las caras
