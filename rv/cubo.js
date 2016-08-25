@@ -4,10 +4,10 @@ forma.vertices.push( new THREE.Vector3( 1, 0, 1 ) ); //Enfocamos un valor de  un
 forma.vertices.push( new THREE.Vector3( 1, 0,-1 ) ); //Vertice no.1
 forma.vertices.push( new THREE.Vector3(-1, 0,-1 ) ); //Vertice no.2
 forma.vertices.push( new THREE.Vector3(-1, 0, 1 ) ); //Vertice no.3
-forma.vertices.push( new THREE.Vector3( 1, 3, 1 ) ); //Vertice no.4
-forma.vertices.push( new THREE.Vector3( 1, 3,-1 ) ); //Vertice no.5
-forma.vertices.push( new THREE.Vector3(-1, 3,-1 ) ); //Vertice no.6
-forma.vertices.push( new THREE.Vector3(-1, 3, 1 ) ); //Vertice no.7
+forma.vertices.push( new THREE.Vector3( 1, 2, 1 ) ); //Vertice no.4
+forma.vertices.push( new THREE.Vector3( 1, 2,-1 ) ); //Vertice no.5
+forma.vertices.push( new THREE.Vector3(-1, 2,-1 ) ); //Vertice no.6
+forma.vertices.push( new THREE.Vector3(-1, 2, 1 ) ); //Vertice no.7
 
 
 forma.faces.push( new THREE.Face3( 3, 1, 2 ) ); //Cara formada por tres vertices
