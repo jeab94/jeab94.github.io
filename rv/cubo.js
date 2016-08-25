@@ -4,19 +4,17 @@ forma.vertices.push( new THREE.Vector3( 1, 0, 1 ) ); //Enfocamos un valor de  un
 forma.vertices.push( new THREE.Vector3( 1, 0,-1 ) ); //Vertice no.1
 forma.vertices.push( new THREE.Vector3(-1, 0,-1 ) ); //Vertice no.2
 forma.vertices.push( new THREE.Vector3(-1, 0, 1 ) ); //Vertice no.3
-forma.vertices.push( new THREE.Vector3( 0, 1, 0 ) ); //Vertice no.4
-forma.vertices.push( new THREE.Vector3( 1, 3, 1 ) ); //Vertice no.5
-forma.vertices.push( new THREE.Vector3( 1, 3,-1 ) ); //Vertice no.6
-forma.vertices.push( new THREE.Vector3(-1, 3,-1 ) ); //Vertice no.7
-forma.vertices.push( new THREE.Vector3(-1, 3, 1 ) ); //Vertice no.8
-forma.vertices.push( new THREE.Vector3( 0, 3, 0 ) ); //Vertice no.9
+forma.vertices.push( new THREE.Vector3( 1, 3, 1 ) ); //Vertice no.4
+forma.vertices.push( new THREE.Vector3( 1, 3,-1 ) ); //Vertice no.5
+forma.vertices.push( new THREE.Vector3(-1, 3,-1 ) ); //Vertice no.6
+forma.vertices.push( new THREE.Vector3(-1, 3, 1 ) ); //Vertice no.7
 
 
 forma.faces.push( new THREE.Face3( 3, 1, 2 ) ); //Cara formada por tres vertices
 forma.faces.push( new THREE.Face3( 3, 0, 1 ) );
 
 forma.faces.push( new THREE.Face3( 0, 1, 4 ) );
-forma.faces.push( new THREE.Face3( 1, 5, 4 ) );
+//forma.faces.push( new THREE.Face3( 1, 5, 4 ) );
 //forma.faces.push( new THREE.Face3( 4, 1, 5 ) );
 //forma.faces.push( new THREE.Face3( 2, 5, 6 ) );
 //forma.faces.push( new THREE.Face3( 7, 5, 6 ) );
