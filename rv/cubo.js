@@ -14,9 +14,9 @@ forma.faces.push( new THREE.Face3( 3, 1, 2 ) ); //Cara formada por tres vertices
 forma.faces.push( new THREE.Face3( 3, 0, 1 ) );
 
 forma.faces.push( new THREE.Face3( 4, 1, 0 ) );
-forma.faces.push( new THREE.Face3( 4, 1, 5 ) );
-forma.faces.push( new THREE.Face3( 2, 5, 6 ) );
-forma.faces.push( new THREE.Face3( 2, 1, 5) );
+//forma.faces.push( new THREE.Face3( 4, 1, 5 ) );
+//forma.faces.push( new THREE.Face3( 2, 5, 6 ) );
+//forma.faces.push( new THREE.Face3( 2, 1, 5) );
 //forma.faces.push( new THREE.Face3( 7, 5, 6 ) );
 //forma.faces.push( new THREE.Face3( 7, 4, 5 ) );
 //forma.faces.push( new THREE.Face3( 3, 4, 7 ) );
