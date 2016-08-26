@@ -5,7 +5,7 @@ var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95, window.innerHeight*.95); //window da las dimensiones internas de la ventana del navegador (autoescalado al 95%)
 document.body.appendChild(renderizador.domElement); //Inserta un nodo al Body 
 
-var forma1 = new THREE.TetrahedronGeometry(1,0);
+var forma1 = new THREE.TetrahedronGeometry(1.25,0);
 var material1 = new THREE.MeshBasicMaterial({ color: 0x999900 }); //el de default sería MeshBasicMaterial
 var tetraedro = new THREE.Mesh( forma1, material1 ); //Cosntructor Mesh()
 tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
