@@ -19,6 +19,6 @@ var cilindro = new THREE.Mesh( forma2, material2 );
 cilindro.rotateX(-Math.PI/4); //Rota 45° en X
 cilindro.rotateY(-Math.PI/4); //Rota 45° en Y
 
-escena.add( tetraedro, cilindro );
+escena.add( cilindro, tetraedro );
 
 renderizador.render(escena,camara);
