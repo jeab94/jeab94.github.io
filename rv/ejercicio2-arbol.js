@@ -15,7 +15,7 @@ tetraedro.translateY(1);
 var forma2 = new THREE.CylinderGeometry( 0.25, 0.5, 2, 10 );
 var material2 = new THREE.MeshBasicMaterial({ color: 0x993300 });
 var cilindro = new THREE.Mesh( forma2, material2 );
-cilindro.translateY(-0.5);
+//cilindro.translateY();
 cilindro.rotateX(-Math.PI/4); //Rota 45° en X
 cilindro.rotateY(-Math.PI/4); //Rota 45° en Y
 
