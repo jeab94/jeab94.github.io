@@ -12,7 +12,7 @@ tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
 tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
 escena.add(tetraedro);
 
-var forma2 = new THREE.CylinderGeometry( 2, 4, 6, 32 );
+var forma2 = new THREE.CylinderGeometry( 1, 2, 4, 6 );
 var material2 = new THREE.MeshBasicMaterial({ color: 0x993300 });
 var cilindro = new THREE.Mesh( forma2, material2 );
 escena.add( cilindro );
