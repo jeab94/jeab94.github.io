@@ -6,12 +6,12 @@ renderizador.setSize(window.innerHeight*.95, window.innerHeight*.95); //window d
 document.body.appendChild(renderizador.domElement); //Inserta un nodo al Body 
 
 var forma1 = new THREE.TetrahedronGeometry(1,0);
-var material1 = new THREE.MeshNormalMaterial(); //el de default sería MeshBasicMaterial
+var material1 = new THREE.MeshBasicMaterial({ color: 0x999900 }); //el de default sería MeshBasicMaterial
 var tetraedro = new THREE.Mesh( forma1, material1 ); //Cosntructor Mesh()
 tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
 tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
 
-var forma2 = new THREE.CylinderGeometry( 0.5, 1, 2, 10 );
+var forma2 = new THREE.CylinderGeometry( 0.25, 0.5, 2, 10 );
 var material2 = new THREE.MeshBasicMaterial({ color: 0x993300 });
 var cilindro = new THREE.Mesh( forma2, material2 );
 cilindro.translateY(-1);
