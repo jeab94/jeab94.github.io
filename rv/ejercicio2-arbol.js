@@ -11,10 +11,10 @@ var tetraedro = new THREE.Mesh( forma1, material1 ); //Cosntructor Mesh()
 tetraedro.rotateX(-Math.PI/4); //Rota 45° en X
 tetraedro.rotateY(-Math.PI/4); //Rota 45° en Y
 
-var forma2 = new THREE.CylinderGeometry( 0.5, 1, 2, 6 );
+var forma2 = new THREE.CylinderGeometry( 0.5, 1, 2, 10 );
 var material2 = new THREE.MeshBasicMaterial({ color: 0x993300 });
 var cilindro = new THREE.Mesh( forma2, material2 );
-cilindro.translateY(-2);
+cilindro.translateY(-1);
 escena.add( tetraedro, cilindro );
 
 renderizador.render(escena,camara);
