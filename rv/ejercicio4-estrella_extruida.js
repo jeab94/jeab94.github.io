@@ -15,7 +15,7 @@ for( var i = 0; i < L; i++ ){
 							}
 
 //con la figura se produce la extrusión
-var forma = new THREE.ExtrudeGeometry( figura, {amount: 10} ); //amount-->Propiedad cantidad (Qué tanto va a crecer)
+var forma = new THREE.ExtrudeGeometry( figura, {amount: 50} ); //amount-->Propiedad cantidad (Qué tanto va a crecer)
 
 //Generamos las propiedades de la malla como material y orientación
 var material = new THREE.MeshNormalMaterial();
