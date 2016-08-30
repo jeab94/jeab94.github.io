@@ -7,7 +7,7 @@ torre1.lineTo( 40, 40 );
 torre1.lineTo( 40, 10 );
 torre1.moveTo( 10, 10 );
 
-var base = new THREE.ExtrudeGeometry(figura, { amount:10 } );
+var base = new THREE.ExtrudeGeometry(torre1, { amount:10 } );
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(forma, material);
 malla1.rotateY( Math.PI/4 );
