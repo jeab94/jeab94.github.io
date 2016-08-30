@@ -1,15 +1,15 @@
 //Base de la torre
-var torre1 = new THREE.Shape();
+var base = new THREE.Shape();
 
-torre1.moveTo( 10, 10 );
-torre1.lineTo( 10, 40 );
-torre1.lineTo( 40, 40 );
-torre1.lineTo( 40, 10 );
-torre1.lineTo( 10, 10 );
+base.moveTo( 10, 10 );
+base.lineTo( 10, 40 );
+base.lineTo( 40, 40 );
+base.lineTo( 40, 10 );
+base.lineTo( 10, 10 );
 
-var base = new THREE.ExtrudeGeometry(torre1, { amount:10 } );
+var torre1 = new THREE.ExtrudeGeometry(base, { amount:10 } );
 var material1 = new THREE.MeshNormalMaterial();
-var malla1 = new THREE.Mesh(base, material1);
+var malla1 = new THREE.Mesh(torre1, material1);
 malla1.rotateY( Math.PI/4 );
 
 //Mitad de la torre
@@ -38,7 +38,7 @@ var escena = new THREE.Scene();
 escena.add(mallaTorre);
 
 var camara = new THREE.PerspectiveCamera();
-camara.position.z = 5;
+camara.position.z = 500;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
