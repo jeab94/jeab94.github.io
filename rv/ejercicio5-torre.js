@@ -10,7 +10,7 @@ base.lineTo( 10, 10 );
 var torre1 = new THREE.ExtrudeGeometry(base, { amount:10 } );
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
-malla1.rotateY( Math.PI/4 );
+malla1.rotateX( Math.PI/4 );
 
 //Mitad de la torre
 var puntos = [];
@@ -24,7 +24,7 @@ var torre2 = new THREE.LatheGeometry(puntos); //Torno
 var material2 = new THREE.MeshNormalMaterial();
 
 var malla2 = new THREE.Mesh( torre2, material2 );
-malla2.rotateY( Math.PI/6 );
+malla2.rotateX( Math.PI/6 );
 
 //Unión
 var torreForma = new THREE.Geometry();
