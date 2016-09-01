@@ -16,7 +16,7 @@ var malla1 = new THREE.Mesh(torre1, material1);
 var puntos = [];
 
 for( var i = 0; i < 50; i++ ){ //Son 50 puntos
-  puntos.push( new THREE.Vector2( Math.sin((-i+10)*Math.PI), Math.cos((i+2)*Math.PI)) );
+  puntos.push( new THREE.Vector2( Math.sin(i*0.2)*15+50, (i-5)*2) );
 }
 
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
