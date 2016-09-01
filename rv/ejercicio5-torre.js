@@ -26,31 +26,31 @@ var material2 = new THREE.MeshNormalMaterial();
 var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
 
-//Terminación de la torre
-var puntos2 = [];
+////Terminación de la torre
+//var puntos2 = [];
 
-for ( var j = 0; j < 100 ; j++ ){
-  puntos2.push( new THREE.Vector2( 50, (j-5)*2));
-}
+//for ( var j = 0; j < 100 ; j++ ){
+  //puntos2.push( new THREE.Vector2( 50, (j-5)*2));
+//}
 
-var torre3 = new THREE.LatheGeometry(puntos2);
+//var torre3 = new THREE.LatheGeometry(puntos2);
 
-var material3 = new THREE.MeshNormalMaterial();
+//var material3 = new THREE.MeshNormalMaterial();
 
-var malla3 = new THREE.Mesh( torre3, material3 );
+//var malla3 = new THREE.Mesh( torre3, material3 );
 
 
 //Unión
 var torreForma1 = new THREE.Geometry();
-var torreForma2 = new THREE.Geometry();
+//var torreForma2 = new THREE.Geometry();
 torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
 torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
-torreForma2.merge(malla3.geometry, malla3.matrix);//
+//torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
+//torreForma2.merge(malla3.geometry, malla3.matrix);//
 
 
 var material = new THREE.MeshNormalMaterial();
-var mallaTorre = new THREE.Mesh(torreForma2, material);
+var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 var escena = new THREE.Scene();
 escena.add(mallaTorre);
