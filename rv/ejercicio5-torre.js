@@ -4,7 +4,7 @@ var base = new THREE.Shape();
 base.moveTo( -20, -10 );
 base.lineTo( -20, 10 );
 base.lineTo( 20, 10 );
-base.lineTo( -20, 10 );
+base.lineTo( 20, -10 );
 base.lineTo( -20, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount:80 } );
