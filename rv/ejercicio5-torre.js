@@ -27,11 +27,9 @@ var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
 
 //Terminación de la torre
-var termino = new THREE.Shape();
-
 var puntos2 = [];
 
-for ( var j=1; j=100; i++ ){
+for ( var j = 0; j < 100 ; j++ ){
   puntos2.push( new THREE.Vector2( 50, (j-5)*2));
 }
 
