@@ -1,16 +1,16 @@
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( 10, 10 );
-base.lineTo( 10, 40 );
-base.lineTo( 40, 40 );
-base.lineTo( 40, 10 );
-base.lineTo( 10, 10 );
+base.moveTo( -80, -10 );
+base.lineTo( -80, 10 );
+base.lineTo( 80, 10 );
+base.lineTo( -80, 10 );
+base.lineTo( -80, -10 );
 
-var torre1 = new THREE.ExtrudeGeometry(base, { amount:10 } );
+var torre1 = new THREE.ExtrudeGeometry(base, { amount:800 } );
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
-//malla1.rotateZ( Math.PI/4 );
+malla1.translateZ( -50 );
 
 //Mitad de la torre
 var puntos = [];
