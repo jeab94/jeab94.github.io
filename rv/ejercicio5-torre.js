@@ -1,13 +1,13 @@
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( -80, -10 );
-base.lineTo( -80, 10 );
-base.lineTo( 80, 10 );
-base.lineTo( -80, 10 );
-base.lineTo( -80, -10 );
+base.moveTo( -8, -1 );
+base.lineTo( -80, 1 );
+base.lineTo( 8, 1 );
+base.lineTo( -8, 1 );
+base.lineTo( -8, -1 );
 
-var torre1 = new THREE.ExtrudeGeometry(base, { amount:800 } );
+var torre1 = new THREE.ExtrudeGeometry(base, { amount:80 } );
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
 malla1.translateZ( -50 );
