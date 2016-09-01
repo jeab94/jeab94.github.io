@@ -46,7 +46,7 @@ var torreForma2 = new THREE.Geometry();
 torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
 torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
 torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
-torreForma2.merge(malla3.geometry, malla3.matrix);
+torreForma2.merge(malla3.geometry, malla3.matrix);//
 
 
 var material = new THREE.MeshNormalMaterial();
