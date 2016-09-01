@@ -41,13 +41,16 @@ var malla3 = new THREE.Mesh( torre3, material3 );
 
 
 //Unión
-var torreForma = new THREE.Geometry();
-torreForma.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
-torreForma.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-//torreForma.merge(malla3.geometry, malla3.matrix);
+var torreForma1 = new THREE.Geometry();
+var torreForma2 = new THREE.Geometry();
+torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
+torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
+torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
+torreForma2.merge(malla3.geometry, malla3.matrix);
+
 
 var material = new THREE.MeshNormalMaterial();
-var mallaTorre = new THREE.Mesh(torreForma, material);
+var mallaTorre = new THREE.Mesh(torreForma2, material);
 
 var escena = new THREE.Scene();
 escena.add(mallaTorre);
