@@ -32,7 +32,7 @@ var malla2 = new THREE.Mesh( torre2, material2 );
 var puntos2 = [];
 
 for ( var j = 100; j > 50 ; j-- ){
-  puntos2.push( new THREE.Vector2( j-50, (j-5)*2));
+  puntos2.push( new THREE.Vector2( j-50, (-j-5)*2));
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
