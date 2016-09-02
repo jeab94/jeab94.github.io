@@ -27,18 +27,18 @@ var material2 = new THREE.MeshNormalMaterial();
 var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
 
-////Terminación de la torre
-//var puntos2 = [];
+//Terminación de la torre
+var puntos2 = [];
 
-//for ( var j = 0; j < 100 ; j++ ){
-  //puntos2.push( new THREE.Vector2( 50, (j-5)*2));
-//}
+for ( var j = 0; j < 100 ; j++ ){
+  puntos2.push( new THREE.Vector2( 50, (j-5)*2));
+}
 
-//var torre3 = new THREE.LatheGeometry(puntos2);
+var torre3 = new THREE.LatheGeometry(puntos2);
 
-//var material3 = new THREE.MeshNormalMaterial();
+var material3 = new THREE.MeshNormalMaterial();
 
-//var malla3 = new THREE.Mesh( torre3, material3 );
+var malla3 = new THREE.Mesh( torre3, material3 );
 
 
 //Unión
@@ -54,7 +54,7 @@ var material = new THREE.MeshNormalMaterial();
 var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 var escena = new THREE.Scene();
-escena.add(mallaTorre);
+escena.add(mallaTorre, malla3);
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = -500;
