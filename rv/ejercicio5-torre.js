@@ -29,9 +29,9 @@ var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
 
 //Mitad superior de la torre
-var superior = new THREE.CylinderGeometry( 42, 42, 65, 32);
+var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
-superior.translate( 0, 147.5, 0 );
+superior.translate( 0, 125, 0 );
 
 var material4 = new THREE.MeshNormalMaterial();
 
@@ -41,8 +41,8 @@ var malla4 = new THREE.Mesh( superior, material4 );
 //Terminación de la torre
 var puntos2 = [];
 
-for ( var j = 0; j < 100 ; j++ ){
-  puntos2.push( new THREE.Vector2( 100-j, (j)+180 ) );
+for ( var j = 0; j < 50 ; j++ ){
+  puntos2.push( new THREE.Vector2( 50-j, j+135 ) );
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
