@@ -31,8 +31,8 @@ var malla2 = new THREE.Mesh( torre2, material2 );
 //Terminación de la torre
 var puntos2 = [];
 
-for ( var j = 0; j < 100 ; j++ ){
-  puntos2.push( new THREE.Vector2( 100-j, j*2 ) );
+for ( var j = 0; j < 50 ; j++ ){
+  puntos2.push( new THREE.Vector2( 50-j, (j*2)+65 ) );
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
