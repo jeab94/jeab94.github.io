@@ -13,7 +13,7 @@ var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
 
 
-//Mitad de la torre
+//Mitad inferior de la torre
 var puntos = [];
 
 for( var i = 0; i < 100; i++ ){ //Son 50 puntos
@@ -28,11 +28,19 @@ var material2 = new THREE.MeshNormalMaterial();
 var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
 
+//Mitad superior de la torre
+var superior = new THREE.CylinderGeometry( 75, 41.8, 10, 32);
+
+var material4 = new THREE.MeshNormalMaterial();
+
+var malla4 = new THREE.Mesh( superior, material4 );
+
+
 //Terminación de la torre
 var puntos2 = [];
 
 for ( var j = 0; j < 75 ; j++ ){
-  puntos2.push( new THREE.Vector2( 75-j, (j*2)+65 ) );
+  puntos2.push( new THREE.Vector2( 75-j, (j*2)+130 ) );
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
@@ -55,7 +63,7 @@ var material = new THREE.MeshNormalMaterial();
 var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 var escena = new THREE.Scene();
-escena.add(mallaTorre, malla3);
+escena.add(mallaTorre, malla3, malla4);
 
 var camara = new THREE.PerspectiveCamera();
 camara.position.z = -500;
