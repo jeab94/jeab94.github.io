@@ -8,7 +8,7 @@ base.lineTo( 65, -10 );
 base.lineTo( -65, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-torre1.translate(0, 0, -65);
+torre1.translate(0, -95, -65);
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
 
@@ -21,6 +21,7 @@ for( var i = 0; i < 100; i++ ){ //Son 50 puntos
 }
 
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
+torre2.translate(0, -95, 0);
 
 var material2 = new THREE.MeshNormalMaterial();
 
