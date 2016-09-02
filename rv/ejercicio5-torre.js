@@ -70,7 +70,7 @@ escena.add(mallaTorre);
 
 var camara = new THREE.PerspectiveCamera();
 //camara.position.y = -95;
-//camara.position.z = -500;
+camara.position.z = -500;
 //camara.position.x = 0;
 //camara.lookAt(new THREE.Vector3(0,0,0));
 
