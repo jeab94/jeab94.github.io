@@ -7,8 +7,8 @@ base.lineTo( 40, 10 );
 base.lineTo( 40, -10 );
 base.lineTo( -40, -10 );
 
-var torre1 = new THREE.ExtrudeGeometry(base, { amount:400 } );
-torre1.translate(0, 0, -100);
+var torre1 = new THREE.ExtrudeGeometry(base, { amount:300 } );
+torre1.translate(0, 0, -150);
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
 
