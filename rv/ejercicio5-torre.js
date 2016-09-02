@@ -10,7 +10,7 @@ base.lineTo( -40, -10 );
 var torre1 = new THREE.ExtrudeGeometry(base, { amount:100 } );
 var material1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, material1);
-malla1.position.x( 1600 );
+
 
 //Mitad de la torre
 var puntos = [];
