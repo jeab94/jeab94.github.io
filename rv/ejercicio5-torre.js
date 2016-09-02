@@ -31,7 +31,7 @@ var malla2 = new THREE.Mesh( torre2, material2 );
 //Mitad superior de la torre
 var superior = new THREE.CylinderGeometry( 75, 41.8, 65, 32);
 
-superior.translate( 0, 65, 0 );
+superior.translate( 0, 130, 0 );
 
 var material4 = new THREE.MeshNormalMaterial();
 
