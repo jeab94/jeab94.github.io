@@ -10,7 +10,7 @@ camara.updateProjectionMatrix(); //Actualiza la matriz de proyección
 
 camara.position.z = 100;
 
-var cubo = new THREE.Mesh( new THREE.BoxGeometry(30,30,30), new THREE.MeshNormalGeometry() );
+var cubo = new THREE.Mesh( new THREE.BoxGeometry(30,30,30), new THREE.MeshNormalMaterial() );
 cubo.rotateY(Math.PI/4);
 
 var esfera1 = new THREE.Mesh( new THREE.SphereGeometry(15), new THREE.MeshNormalMaterial() );
