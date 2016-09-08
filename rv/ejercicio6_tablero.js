@@ -1,4 +1,4 @@
-ar camara = new THREE.PerspectiveCamera();
+var camara = new THREE.PerspectiveCamera();
 camara.position.y = -190;
 camara.position.z = -500;
 camara.position.x = 0;
