@@ -20,7 +20,7 @@ for (var j=0;j<=7;j++){
     else{
         material= materialGris;
         }
-    var cubo = new THREE.Mesh(THREE.BoxGeometry(10,10,5),material);
+    var cubo = new THREE.Mesh(THREE.BoxGeometry(1,1,1),material);
     cubos.push(cubo)
     c=c++;
 }
