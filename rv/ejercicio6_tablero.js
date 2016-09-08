@@ -4,6 +4,10 @@ camara.position.z = -500;
 camara.position.x = 0;
 camara.lookAt(new THREE.Vector3(0,0,0));
 
+var materialBlanco = new THREE.MeshNormalMaterial("#ffffff");
+var materialGris = new THREE.MeshNormalMaterial("#888888");
+
+
 //Tablero
 var cubos = new Array();
 for( int i=0; i<4; i++ )
@@ -11,11 +15,16 @@ for( int i=0; i<4; i++ )
 var c=0;
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
-var cubos.push( (property: cubos[c]) );
-cubos[c].position.x = i*10;
-cubos[c].position.y = j*10;
+    if ((i+j) % 2 == 0){
+        material= materialBlanco;
+        }
+    else{
+        material= materialGris;
+        }
+    var cubo = new Mesg(THREE.BoxGeometry(10,10,5),material);
+    cubos.push(cubo)
+    c=c++;
 }
-c=c++;
 }
 
 var escena = new THREE.Scene();
