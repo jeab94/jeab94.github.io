@@ -4,8 +4,8 @@ camara.position.z = -500;
 camara.position.x = 0;
 camara.lookAt(new THREE.Vector3(0,0,0));
 
-var materialBlanco = new THREE.MeshNormalMaterial("#ffffff");
-var materialGris = new THREE.MeshNormalMaterial("#888888");
+var materialBlanco = new THREE.MeshNormalMaterial({color: #d3d3d3 });
+var materialGris = new THREE.MeshNormalMaterial({color: #ffffff});
 
 
 //Tablero
