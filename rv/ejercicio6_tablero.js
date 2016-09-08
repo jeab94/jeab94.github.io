@@ -10,8 +10,7 @@ var materialGris = new THREE.MeshNormalMaterial("#888888");
 
 //Tablero
 var cubos = new Array();
-for( int i=0; i<4; i++ )
-    arr[i] = new A();
+
 var c=0;
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
