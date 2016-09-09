@@ -32,14 +32,14 @@ for (var j=0;j<=7;j++){
 }
 
 //Unión
-for (i=1; i<64;i++){
-    cubos[0].add(cubos[i]); //
+//for (i=1; i<64;i++){
+  //  cubos[0].add(cubos[i]); //¿?
     
-}
+//}
 
 var escena = new THREE.Scene();
 for (i=1; i<64;i++){
-    escena.add(cubos[i]);
+    escena.add(cubos[i]); //¿?
 
 }
 
