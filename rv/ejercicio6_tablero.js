@@ -14,20 +14,19 @@ materialBlanco.color = whiteColor;
 //Tablero
 var cubos = [];
 
-var c=0;
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
     if ((i+j) % 2 == 0){
-        material= materialGris;
+        var material= materialGris;
         }
     else{
-        material= materialBlanco;
+        var material= materialBlanco;
         }
     var lado = 10;
     var forma = new THREE.BoxGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
-    cubo.position.x = i*lado;
-    cubo.position.y = j*lado;
+    cubo.position.x = j*lado;
+    cubo.position.y = i*lado;
     cubos.push(cubo)
     }
 }
@@ -37,8 +36,12 @@ for (i=1; i<64;i++){
     cubos[0].add(cubos[i]);
     
 }
+
 var escena = new THREE.Scene();
-escena.add(cubos);
+for (i=1; i<64;i++){
+    escena.add(cubos[i]);
+
+}
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
