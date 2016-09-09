@@ -31,7 +31,7 @@ for (var j=0;j<=7;j++){
     }
 }
 
-Unión
+//Unión
 for (i=0; i<64;i++){
     cubos[0].add(cubos[i]); //¿?
 
