@@ -13,6 +13,10 @@ materialBlanco.color = whiteColor;
 
 //Tablero
 var cubos = [];
+var material = materialGris;
+var forma = new THREE.BoxGeometry(lado,lado,lado);
+var cubo = new THREE.Mesh(forma ,material);
+cubos.push(cubo)
 
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
