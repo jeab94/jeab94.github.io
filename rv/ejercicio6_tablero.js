@@ -33,7 +33,7 @@ for (var j=0;j<=7;j++){
 
 //Unión
 for (i=1; i<64;i++){
-    cubos[0].add(cubos[i]);
+    cubos.add(cubos[i]); //
     
 }
 
