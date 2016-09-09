@@ -23,8 +23,10 @@ for (var j=0;j<=7;j++){
     else{
         material= materialBlanco;
         }
-    var cubo = new THREE.Mesh(new THREE.BoxGeometry(10,10,10),material);
-    cubeSize = cubo.BoxGeometry.height;
+    var forma = new THREE.BoxGeometry(10,10,10);
+    var cubo = new THREE.Mesh(forma ,material);
+    var keys = Object.keys(forma);
+    cubeSize = keys.height;
     cubo.position.x = i*cubeSize;
     cubo.position.y = j*cubeSize;
     cubos.push(cubo)
