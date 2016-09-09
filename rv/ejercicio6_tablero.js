@@ -4,9 +4,12 @@ camara.position.z = -500;
 camara.position.x = 0;
 camara.lookAt(new THREE.Vector3(0,0,0));
 
-var materialBlanco = new THREE.MeshBasicMaterial({color: 0xd3d3d3 });
-var materialGris = new THREE.MeshBasicMaterial({color: 0xffffff});
-
+var grayColor = new THREE.color("rgb(128,128,128)");
+var whiteColor = nte THREE.color("rgb(255,255,255)");
+var materialBlanco = new THREE.MeshBasicMaterial();
+var materialGris = new THREE.MeshBasicMaterial();
+materialGris.color = grayColor;
+materialBlanco = whiteColor;
 
 //Tablero
 var cubos = new Array();
