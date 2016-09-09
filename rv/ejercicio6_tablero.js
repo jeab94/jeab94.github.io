@@ -24,7 +24,7 @@ for (var j=0;j<=7;j++){
         material= materialBlanco;
         }
     var cubo = new THREE.Mesh(new THREE.BoxGeometry(10,10,10),material);
-    cubeSize = cubo.BoxGeometry.Height;
+    cubeSize = cubo.BoxGeometry.height;
     cubo.position.x = i*cubeSize;
     cubo.position.y = j*cubeSize;
     cubos.push(cubo)
