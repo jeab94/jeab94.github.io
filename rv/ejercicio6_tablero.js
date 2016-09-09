@@ -41,13 +41,11 @@ for (i=0; i<64;i++){
 
 }
 
-//var escena = new THREE.Scene();
-//for (i=1; i<64;i++){
-    //escena.add(cubos[i]); //¿?
+var escena = new THREE.Scene();
+for (i=1; i<64;i++){
+    escena.add(cubos[i]); //¿?
 
-//}
-
-escena.add(cubos); 
+}
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
