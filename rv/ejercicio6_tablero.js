@@ -4,8 +4,8 @@ camara.position.z = 100;
 camara.position.x = 100;
 camara.lookAt(new THREE.Vector3(0,0,0));
 
-var grayColor = new THREE.color("rgb(128,128,128)");
-var whiteColor = new THREE.color("rgb(255,255,255)");
+var grayColor = new THREE.Color("rgb(128,128,128)");
+var whiteColor = new THREE.Color("rgb(255,255,255)");
 var materialBlanco = new THREE.MeshBasicMaterial();
 var materialGris = new THREE.MeshBasicMaterial();
 materialGris.color = grayColor;
