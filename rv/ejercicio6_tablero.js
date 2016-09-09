@@ -26,7 +26,7 @@ for (var j=0;j<=7;j++){
     var forma = new THREE.BoxGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado;
-    cubo.position.y = i*lado;
+    cubo.position.z = i*lado;
     cubos.push(cubo)
     }
 }
