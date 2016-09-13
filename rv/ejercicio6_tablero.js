@@ -6,10 +6,13 @@ camara.lookAt(new THREE.Vector3(0,0,0));
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
 var whiteColor = new THREE.Color("rgb(255,255,255)");
+var brownColor = new THREE.Color("rgb(76,39,31)");
 var materialBlanco = new THREE.MeshBasicMaterial();
 var materialGris = new THREE.MeshBasicMaterial();
+var materialCafe = new THREE.MeshBasicMaterial();
 materialGris.color = grayColor;
 materialBlanco.color = whiteColor;
+materialCafe.color = brownColor;
 
 //Tablero
 var cubos = [];
@@ -34,6 +37,7 @@ for (var j=0;j<=7;j++){
     cubos.push(cubo)
     }
 }
+
 
 var escena = new THREE.Scene();
 for (i=1; i<=64;i++){
