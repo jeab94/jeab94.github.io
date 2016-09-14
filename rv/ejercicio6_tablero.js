@@ -14,7 +14,7 @@ camara.rotation.x = -Math.PI/2;
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
 var whiteColor = new THREE.Color("rgb(255,255,255)");
-var brownColor = new THREE.Color("rgb(0,0,255)");
+var brownColor = new THREE.Color("rgb(118,57,49)");
 var materialBlanco = new THREE.MeshBasicMaterial();
 var materialGris = new THREE.MeshBasicMaterial();
 var materialCafe = new THREE.MeshBasicMaterial();
