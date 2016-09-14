@@ -70,7 +70,7 @@ var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
 
-var orilla3 = nes THREE.Shape();
+var orilla3 = new THREE.Shape();
 orilla3.moveTo(-10,-5);
 orilla3.lineTo(75,-5);
 orilla3.lineTo(75,5);
