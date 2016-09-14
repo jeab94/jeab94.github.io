@@ -50,7 +50,7 @@ orilla1.lineTo(80,-5);
 orilla1.lineTo(80,5);
 orilla1.lineTo(-10,5);
 
-var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: -10});
+var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: -5});
 var material2 = materialCafe;
 var marco1 = new THREE.Mesh(forma1, material2);
 marco1.translateZ(-5);
@@ -65,10 +65,28 @@ var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 85});
 var material2 = materialCafe;
 var marco2 = new THREE.Mesh(forma2, material2);
 marco2.translateZ(-5);
+marco2.translateX(5);
+var escena = new THREE.Scene();
+escena.add(marco1);
+escena.add(marco2);
+
+var orilla3 = nes THREE.Shape();
+orilla3.moveTo(-10,-5);
+orilla3.lineTo(75,-5);
+orilla3.lineTo(75,5);
+orilla3.lineTo(-10,5);
+
+
+var forma3 = new THREE.Extrudegeometry(orilla3, {amount: 5});
+var material3 = materialCafe;
+var marco3 = new THREE.Mesh(forma3, material3);
+marco3.translateZ(75);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
+escena.add(marco3);
+
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
