@@ -8,7 +8,7 @@ camara.near = 0.1;
 camara.far = 1000;
 camara.updateProjectionMatrix(); //Actualiza la matriz de proyección
 
-camara.position.z = 150;
+camara.position.y = 150;
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
 var whiteColor = new THREE.Color("rgb(255,255,255)");
