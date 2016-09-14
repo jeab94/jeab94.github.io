@@ -47,14 +47,16 @@ orilla.lineTo(-10,10);
 var forma = new THREE.ExtrudeGeometry(orilla, {amount: 10});
 var material2 = materialCafe;
 var marco = new THREE.Mesh(forma, material2);
-cubos.push(marco)
 
+var tablero = new THREE.Geometry();
+tablero.merge(marco.geometry, marco.matrix);
 
 var escena = new THREE.Scene();
 for (i=1; i<=64;i++){
-    escena.add(cubos[i]); //¿?
-
+    tablero.merge(cubos[i].geometry, cubos[i].matrix);
+    
 }
+escena.add(tablero);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
