@@ -54,7 +54,7 @@ var escena = new THREE.Scene();
   //  tablero.merge(cubos[i].geometry, cubos[i].matrix);
     
 //}
-escena.add(tablero);
+escena.add(marco);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
