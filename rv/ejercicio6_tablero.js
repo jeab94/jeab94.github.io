@@ -32,6 +32,7 @@ for (var j=0;j<=7;j++){
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado;
     cubo.position.z = i*lado;
+    tablero.merge(cubo.geometry, cubo.matrix);
     cubos.push(cubo)
     }
 }
@@ -48,11 +49,11 @@ var marco = new THREE.Mesh(forma, material2);
 
 var tablero = new THREE.Geometry();
 
-var escena = new THREE.Scene();
-for (i=1; i<=64;i++){
-  tablero.merge(cubos[i].geometry, cubos[i].matrix);
+//var escena = new THREE.Scene();
+//for (i=1; i<=64;i++){
+  //
     
-}
+//}
 tablero.merge(marco.geometry, marco.matrix);
 escena.add(tablero);
 
