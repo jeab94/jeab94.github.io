@@ -38,10 +38,10 @@ for (var j=0;j<=7;j++){
 }
 
 var orilla1 = new THREE.Shape();
-orilla1.moveTo(-10,0);
-orilla1.lineTo(90,0);
-orilla1.lineTo(90,10);
-orilla1.lineTo(-10,10);
+orilla1.moveTo(-5,0);
+orilla1.lineTo(85,0);
+orilla1.lineTo(85,10);
+orilla1.lineTo(-5,10);
 
 var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: -10});
 var material2 = materialCafe;
@@ -49,11 +49,11 @@ var marco1 = new THREE.Mesh(forma1, material2);
 
 var orilla2 = new THREE.Shape();
 orilla2.moveTo(80,0);
-orilla2.lineTo(90,0);
-orilla2.lineTo(90,10);
+orilla2.lineTo(85,0);
+orilla2.lineTo(85,10);
 orilla2.lineTo(80,10);
 
-var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 90});
+var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 85});
 var material2 = materialCafe;
 var marco2 = new THREE.Mesh(forma2, material2);
 
