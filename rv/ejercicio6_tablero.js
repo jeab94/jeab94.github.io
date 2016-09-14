@@ -18,6 +18,7 @@ materialCafe.color = brownColor;
 var cubos = [];
 var material = materialGris;
 var forma = new THREE.BoxGeometry(lado,lado,lado);
+var tablero = new THREE.Geometry()
 
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
@@ -32,8 +33,9 @@ for (var j=0;j<=7;j++){
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado;
     cubo.position.z = i*lado;
+    
     tablero.merge(cubo.geometry, cubo.matrix);
-    cubos.push(cubo)
+    //cubos.push(cubo)
     }
 }
 
@@ -46,8 +48,6 @@ orilla.lineTo(-10,10);
 var forma = new THREE.ExtrudeGeometry(orilla, {amount: 10});
 var material2 = materialCafe;
 var marco = new THREE.Mesh(forma, material2);
-
-var tablero = new THREE.Geometry();
 
 //var escena = new THREE.Scene();
 //for (i=1; i<=64;i++){
