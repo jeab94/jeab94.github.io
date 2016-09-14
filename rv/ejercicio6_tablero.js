@@ -49,7 +49,7 @@ var forma = new THREE.ExtrudeGeometry(orilla, {amount: 10});
 var material2 = materialCafe;
 var marco = new THREE.Mesh(forma, material2);
 
-//var escena = new THREE.Scene();
+var escena = new THREE.Scene();
 //for (i=1; i<=64;i++){
   //
     
