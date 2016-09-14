@@ -43,7 +43,7 @@ orilla.lineTo(90,0);
 orilla.lineTo(90,10);
 orilla.lineTo(-10,10);
 
-var forma = new THREE.ExtrudeGeometry(orilla, {amount: 10});
+var forma = new THREE.ExtrudeGeometry(orilla, {amount: -10});
 var material2 = materialCafe;
 var marco = new THREE.Mesh(forma, material2);
 
