@@ -38,10 +38,12 @@ for (var j=0;j<=7;j++){
     }
 }
 
-var marco = [];
-var material2 = materialCafe;
-var forma2 = new THREE.BoxGeometry(100,10,10);
-var orilla = new THREE.Mesh(forma2,material2);
+var orilla = new THREE.Shape();
+orilla.moveTo(-10,0);
+orilla.lineTo(90,0);
+orilla.lineTo(90,10);
+orilla.lineTo(-10,10);
+
 
 var escena = new THREE.Scene();
 for (i=1; i<=64;i++){
