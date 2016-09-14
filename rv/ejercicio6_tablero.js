@@ -1,6 +1,6 @@
 var camara = new THREE.PerspectiveCamera();
 camara.position.y = 0;
-camara.position.z = 150;
+camara.position.z = 250;
 camara.position.x = 40;
 camara.lookAt(new THREE.Vector3(40,0,0));
 
@@ -38,20 +38,20 @@ for (var j=0;j<=7;j++){
 }
 
 var orilla1 = new THREE.Shape();
-orilla1.moveTo(-5,0);
-orilla1.lineTo(85,0);
-orilla1.lineTo(85,10);
-orilla1.lineTo(-5,10);
+orilla1.moveTo(-5,-5);
+orilla1.lineTo(85,-5);
+orilla1.lineTo(85,5);
+orilla1.lineTo(-5,5);
 
 var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: -10});
 var material2 = materialCafe;
 var marco1 = new THREE.Mesh(forma1, material2);
 
 var orilla2 = new THREE.Shape();
-orilla2.moveTo(80,0);
-orilla2.lineTo(85,0);
-orilla2.lineTo(85,10);
-orilla2.lineTo(80,10);
+orilla2.moveTo(80,-5);
+orilla2.lineTo(85,-5);
+orilla2.lineTo(85,5);
+orilla2.lineTo(80,5);
 
 var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 85});
 var material2 = materialCafe;
