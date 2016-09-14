@@ -33,9 +33,7 @@ for (var j=0;j<=7;j++){
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado;
     cubo.position.z = i*lado;
-    
-    tablero.merge(cubo.geometry, cubo.matrix);
-    //cubos.push(cubo)
+    cubos.push(cubo)
     }
 }
 
@@ -50,12 +48,11 @@ var material2 = materialCafe;
 var marco = new THREE.Mesh(forma, material2);
 
 var escena = new THREE.Scene();
-//for (i=1; i<=64;i++){
-  //
-    
-//}
-tablero.merge(marco.geometry, marco.matrix);
-escena.add(tablero);
+escena.add(marco);
+for (i = 0; i < 64; i++) {
+escena.add(cubos[i]);
+}
+
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
