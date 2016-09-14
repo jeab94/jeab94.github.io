@@ -37,18 +37,30 @@ for (var j=0;j<=7;j++){
     }
 }
 
-var orilla = new THREE.Shape();
-orilla.moveTo(-10,0);
-orilla.lineTo(90,0);
-orilla.lineTo(90,10);
-orilla.lineTo(-10,10);
+var orilla1 = new THREE.Shape();
+orilla1.moveTo(-10,0);
+orilla1.lineTo(90,0);
+orilla1.lineTo(90,10);
+orilla1.lineTo(-10,10);
 
-var forma = new THREE.ExtrudeGeometry(orilla, {amount: -10});
+var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: -10});
 var material2 = materialCafe;
-var marco = new THREE.Mesh(forma, material2);
+var marco1 = new THREE.Mesh(forma1, material2);
+
+var orilla2 = new THREE.Shape();
+orilla2.moveTo(80,0);
+orilla2.lineTo(90,0);
+orilla2.lineTo(90,10);
+orilla2.lineTo(80,10);
+
+var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 90});
+var material2 = materialCafe;
+var marco2 = new THREE.Mesh(forma2, material2);
 
 var escena = new THREE.Scene();
-escena.add(marco);
+escena.add(marco1);
+escena.add(marco2);
+
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
 }
