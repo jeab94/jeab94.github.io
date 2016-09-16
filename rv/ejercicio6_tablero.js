@@ -75,7 +75,7 @@ orilla3.lineTo(3,5);
 var forma3 = new THREE.ExtrudeGeometry(orilla3, {amount: 5 });
 var material3 = materialCafe;
 var marco3 = new THREE.Mesh(forma3, material3);
-marco3.translateZ(80);
+marco3.translateZ(85);
 
 var orilla4 = new THREE.Shape();
 orilla4.moveTo(3,-5);
