@@ -1,8 +1,8 @@
 var camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 150;
-camara.position.x = 150;
-camara.position.z = 150;
+camara.position.x = 200;
+camara.position.z = 200;
 camara.lookAt(new THREE.Vector3(40,40,40));
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
