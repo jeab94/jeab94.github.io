@@ -10,7 +10,7 @@ camara.updateProjectionMatrix(); //Actualiza la matriz de proyección
 
 camara.position.y = 100;
 camara.position.x = 40;
-//camara.position.z = 200;
+camara.position.z = 40;
 camara.rotation.x = -Math.PI/2; 
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
