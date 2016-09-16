@@ -3,7 +3,7 @@ var camara = new THREE.PerspectiveCamera();
 camara.position.y = 150;
 camara.position.x = 200;
 camara.position.z = 200;
-camara.lookAt(new THREE.Vector3(40,40,40));
+camara.lookAt(new THREE.Vector3(40,0,40));
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
 var whiteColor = new THREE.Color("rgb(255,255,255)");
@@ -70,10 +70,10 @@ var marco3 = new THREE.Mesh(forma3, material3);
 marco3.translateZ(85);
 
 var orilla4 = new THREE.Shape();
-orilla4.moveTo(3,-5);
-orilla4.lineTo(5,-5);
-orilla4.lineTo(5,5);
-orilla4.lineTo(3,5);
+orilla4.moveTo(-2,-5);
+orilla4.lineTo(0,-5);
+orilla4.lineTo(0,5);
+orilla4.lineTo(-2,5);
 
 var forma4 = new THREE.ExtrudeGeometry(orilla4, {amount: 80})
 var material4 = materialCafe;
