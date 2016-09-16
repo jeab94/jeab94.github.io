@@ -8,7 +8,7 @@ camara.near = 0.1;
 camara.far = 1000;
 camara.updateProjectionMatrix(); //Actualiza la matriz de proyección
 
-camara.position.y = 100;
+camara.position.y = 50;
 camara.position.x = 40;
 camara.position.z = 40;
 camara.rotation.x = -Math.PI/2; 
