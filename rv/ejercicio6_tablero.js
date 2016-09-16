@@ -1,4 +1,4 @@
-var camara = new THREE.OrthographicCamera();
+var camara = new THREE.PerspectiveCamera();
 
 camara.left = window.innerWidth/-2;
 camara.right = window.innerWidth/2;
@@ -8,10 +8,10 @@ camara.near = 0.1;
 camara.far = 100;
 camara.updateProjectionMatrix(); //Actualiza la matriz de proyección
 
-camara.position.y = 50;
-camara.position.x = 10;
-camara.position.z = 40;
-camara.rotation.x = -Math.PI/2; 
+camara.position.y = 150;
+camara.position.x = 150;
+camara.position.z = 150;
+camara.lookAt(new THREE.Vector3(40,40,40));
 
 var grayColor = new THREE.Color("rgb(128,128,128)");
 var whiteColor = new THREE.Color("rgb(255,255,255)");
