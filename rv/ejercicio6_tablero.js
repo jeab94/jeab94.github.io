@@ -122,7 +122,7 @@ torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
 torre1.translateY(10);
-torre1.scale.set(0.05,0.05,0.05);
+torre1.scale.set(0.075,0.05,0.075);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
