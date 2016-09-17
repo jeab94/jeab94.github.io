@@ -51,6 +51,17 @@ var marco2 = new THREE.Mesh( orilla2, material2);
 marco2.translateZ(40);
 marco2.translateX(82.5);
 
+var orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
+var material3 = materialCafe;
+var marco3 = new THREE.Mesh( orilla3, material3);
+marco3.translateZ(82.5);
+marco3.translateX(40);
+
+var orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
+var material4 = materialCafe;
+var marco4 = new THREE.Mesh( orilla4, material4);
+marco4.translateZ(40);
+marco4.translateX(-2.5);
 
 //var orilla1 = new THREE.Shape();
 //orilla1.moveTo(-2,-5);
@@ -99,8 +110,8 @@ marco2.translateX(82.5);
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
-//escena.add(marco3);
-//escena.add(marco4);
+escena.add(marco3);
+escena.add(marco4);
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
