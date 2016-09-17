@@ -42,7 +42,7 @@ for (var j=0;j<=7;j++){
 var orilla1 = new THREE.BoxGeometry( 84, 10, 5 );
 var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
-marco1.translateY(-5);
+marco1.translateY(-2.5);
 marco1.translateZ(-10);
 marco1.translateX(40);
 
