@@ -70,10 +70,10 @@ var marco3 = new THREE.Mesh(forma3, material3);
 marco3.translateZ(85);
 
 var orilla4 = new THREE.Shape();
-orilla4.moveTo(-2,-5);
-orilla4.lineTo(0,-5);
-orilla4.lineTo(0,5);
-orilla4.lineTo(-2,5);
+orilla4.moveTo(-5,-5);
+orilla4.lineTo(-3,-5);
+orilla4.lineTo(-3,5);
+orilla4.lineTo(-5,5);
 
 var forma4 = new THREE.ExtrudeGeometry(orilla4, {amount: 80})
 var material4 = materialCafe;
