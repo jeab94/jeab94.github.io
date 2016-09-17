@@ -68,11 +68,11 @@ marco4.translateX(-2.5);
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( -6.5, -10 );
-base.lineTo( -6.5, 10 );
-base.lineTo( 6.5, 10 );
-base.lineTo( 6.5, -10 );
-base.lineTo( -6.5, -10 );
+base.moveTo( -6.5, -1.0 );
+base.lineTo( -6.5, 1.0 );
+base.lineTo( 6.5, 1.0 );
+base.lineTo( 6.5, -1.0 );
+base.lineTo( -6.5, -1.0 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 13.0 } );
 torre1.translate(0, -9.5, -6.5);
