@@ -10,11 +10,10 @@ var whiteColor = new THREE.Color("rgb(255,255,255)");
 var brownColor = new THREE.Color("rgb(118,57,49)");
 var materialBlanco = new THREE.MeshBasicMaterial();
 var materialGris = new THREE.MeshBasicMaterial();
-//var materialCafe = new THREE.MeshBasicMaterial();
-var materialCafe = new THREE.MeshNormalMaterial();
+var materialCafe = new THREE.MeshBasicMaterial();
 materialGris.color = grayColor;
 materialBlanco.color = whiteColor;
-//materialCafe.color = brownColor;
+materialCafe.color = brownColor;
 
 //Tablero
 var lado = 10;
@@ -62,50 +61,6 @@ var material4 = materialCafe;
 var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40);
 marco4.translateX(-2.5);
-
-//var orilla1 = new THREE.Shape();
-//orilla1.moveTo(-2,-5);
-//orilla1.lineTo(82,-5);
-//orilla1.lineTo(82,5);
-//orilla1.lineTo(-2,5);
-
-//var forma1 = new THREE.ExtrudeGeometry(orilla1, {amount: 2});
-//var material2 = materialCafe;
-//var marco1 = new THREE.Mesh(forma1, material2);
-//marco1.translateZ(-5);
-
-//var orilla2 = new THREE.Shape();
-//orilla2.moveTo(80,-5);
-//orilla2.lineTo(82,-5);
-//orilla2.lineTo(82,5);
-//orilla2.lineTo(80,5);
-
-//var forma2 = new THREE.ExtrudeGeometry(orilla2, {amount: 80});
-//var material2 = materialCafe;
-//var marco2 = new THREE.Mesh(forma2, material2);
-//marco2.translateZ();
-
-//var orilla3 = new THREE.Shape();
-//orilla3.moveTo(-2,-5);
-//orilla3.lineTo(82,-5);
-//orilla3.lineTo(82,5);
-//orilla3.lineTo(-2,5);
-
-//var forma3 = new THREE.ExtrudeGeometry(orilla3, {amount: 2 });
-//var material3 = materialCafe;
-//var marco3 = new THREE.Mesh(forma3, material3);
-//marco3.translateZ(80);
-
-//var orilla4 = new THREE.Shape();
-//orilla4.moveTo(-2,-5);
-//orilla4.lineTo(0,-5);
-//orilla4.lineTo(0,5);
-//orilla4.lineTo(-2,5);
-
-//var forma4 = new THREE.ExtrudeGeometry(orilla4, {amount: 80})
-//var material4 = materialCafe;
-//var marco4 = new THREE.Mesh(forma4, material4);
-//marco.translateZ();
 
 var escena = new THREE.Scene();
 escena.add(marco1);
