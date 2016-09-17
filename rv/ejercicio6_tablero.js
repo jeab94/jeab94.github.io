@@ -1,4 +1,4 @@
-var luzPuntual = new THREE.PointLight(0xFFFFFF,10);
+var luzPuntual = new THREE.PointLight(0xFFFFFF,1);
 luzPuntual.position.x = 100;
 luzPuntual.position.y = 100;
 luzPuntual.position.z = 40;
