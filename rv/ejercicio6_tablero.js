@@ -8,12 +8,22 @@ camara.lookAt(new THREE.Vector3(0,0,40));
 var grayColor = new THREE.Color(0x888888);
 var whiteColor = new THREE.Color(0xffffff);
 var brownColor = new THREE.Color(0x654321);
-var materialBlanco = new THREE.MeshBasicMaterial();
-var materialGris = new THREE.MeshBasicMaterial();
-var materialCafe = new THREE.MeshBasicMaterial();
-materialGris.color = grayColor;
-materialBlanco.color = whiteColor;
-materialCafe.color = brownColor;
+var materialBlanco = new new THREE.MeshPhongMaterial( { 
+    whiteColor, 
+    specular: 0x050505,
+    shininess: 100
+} ) 
+var materialGris = THREE.MeshPhongMaterial( { 
+    grayColor, 
+    specular: 0x050505,
+    shininess: 100
+} ) 
+var materialCafe = THREE.MeshPhongMaterial( { 
+    brownColor, 
+    specular: 0x050505,
+    shininess: 100
+} ) 
+
 
 var materialTorre1 = materialBlanco;
 var materialTorre2 = materialGris;
