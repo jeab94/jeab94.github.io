@@ -1,7 +1,7 @@
 var luzPuntual = new THREE.PointLight(0xFFFFFF,1);
 luzPuntual.position.x = 100;
 luzPuntual.position.y = 100;
-luzPuntual.position.z = 40;
+luzPuntual.position.z = 100;
 
 var camara = new THREE.PerspectiveCamera();
 
