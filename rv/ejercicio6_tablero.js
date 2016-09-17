@@ -74,7 +74,7 @@ base.lineTo( 40, 10 );
 base.lineTo( 40, -10 );
 base.lineTo( -40, -10 );
 
-var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
+var torre1 = new THREE.ExtrudeGeometry(base, { amount: 80 } );
 torre1.translate(0, -95, -40);
 var materialTorre1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, materialTorre1);
