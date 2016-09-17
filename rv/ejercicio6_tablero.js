@@ -68,14 +68,14 @@ marco4.translateX(-2.5);
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( -65, -10 );
-base.lineTo( -65, 10 );
-base.lineTo( 65, 10 );
-base.lineTo( 65, -10 );
-base.lineTo( -65, -10 );
+base.moveTo( -60, -10 );
+base.lineTo( -60, 10 );
+base.lineTo( 60, 10 );
+base.lineTo( 60, -10 );
+base.lineTo( -60, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-torre1.translate(0, -95, -65);
+torre1.translate(0, -95, -60);
 var materialTorre1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, materialTorre1);
 
@@ -122,7 +122,7 @@ torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
 torre1.translateY(10);
-torre1.scale.set(0.075,0.05,0.075);
+torre1.scale.set(0.005,0.05,0.05);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
