@@ -240,6 +240,62 @@ marco4.translateX(-2.5);
     torre3.translateX(75);
     torre3.translateZ(5);
 
+//Torre4Negra
+
+    //Base de la torre
+    var base4 = new THREE.Shape();
+    
+    base4.moveTo( -40, -10 );
+    base4.lineTo( -40, 10 );
+    base4.lineTo( 40, 10 );
+    base4.lineTo( 40, -10 );
+    base4.lineTo( -40, -10 );
+    
+    var torre14 = new THREE.ExtrudeGeometry(base4, { amount: 80 } );
+    torre14.translate(0, -95, -40);
+    var malla14 = new THREE.Mesh(torre14, materialTorre2);
+    
+    //Mitad inferior de la torre
+    var puntos14 = [];
+    
+    for( var i = 0; i < 100; i++ ){ //Son 50 puntos
+      puntos14.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
+    }
+    
+    var torre24 = new THREE.LatheGeometry(puntos14); //Torno
+    torre24.translate(0, -75, 0);
+    
+    var malla24 = new THREE.Mesh( torre24, materialTorre2 );
+    
+    //Mitad superior de la torre
+    var superior4 = new THREE.CylinderGeometry( 42, 42, 20, 32);
+    
+    superior4.translate( 0, 125, 0 );
+    
+    var malla44 = new THREE.Mesh( superior4, materialTorre2 );
+    
+    //Terminación de la torre
+    var puntos24 = [];
+    
+    for ( var j = 0; j < 100 ; j++ ){
+      puntos24.push( new THREE.Vector2( 25-j/4, j+135 ) );
+    }
+    
+    var torre34 = new THREE.LatheGeometry(puntos24);
+    var malla34 = new THREE.Mesh( torre34, materialTorre2 );
+    
+    //Unión
+    var torreForma14 = new THREE.Geometry();
+    torreForma14.merge(malla14.geometry, malla14.matrix); //La malla calcula la matriz de la cinemática del objeto
+    torreForma14.merge(malla24.geometry, malla24.matrix); //La malla calcula la matriz de la cinemática del objeto
+    torreForma14.merge(malla33.geometry, malla34.matrix);//
+    torreForma14.merge(malla43.geometry, malla34.matrix);
+    
+    var torre4 = new THREE.Mesh(torreForma14, materialTorre2);
+    torre4.scale.set(0.07,0.05,0.07);
+    torre4.translateY(10);
+    torre4.translateX(75);
+    torre4.translateZ(75);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
