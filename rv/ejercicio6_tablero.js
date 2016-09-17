@@ -32,8 +32,8 @@ for (var j=0;j<=7;j++){
     var lado = 10;
     var forma = new THREE.BoxGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
-    cubo.position.x = j*lado+5;
-    cubo.position.z = i*lado+5;
+    cubo.position.x = j*lado+10;
+    cubo.position.z = i*lado+10;
     cubos.push(cubo)
     }
 }
