@@ -133,7 +133,7 @@ marco4.translateX(-2.5);
     torreForma11.merge(malla41.geometry, malla31.matrix);
     
     var torre1 = new THREE.Mesh(torreForma11, materialTorre1);
-    torre1.scale.set(0.07,0.05,0.07);
+    torre1.scale.set(0.07,0.07,0.07);
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
@@ -190,7 +190,7 @@ marco4.translateX(-2.5);
     torreForma12.merge(malla42.geometry, malla32.matrix);
     
     var torre2 = new THREE.Mesh(torreForma12, materialTorre1);
-    torre2.scale.set(0.07,0.05,0.07);
+    torre2.scale.set(0.07,0.07,0.07);
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
@@ -247,7 +247,7 @@ marco4.translateX(-2.5);
     torreForma13.merge(malla43.geometry, malla33.matrix);
     
     var torre3 = new THREE.Mesh(torreForma13, materialTorre2);
-    torre3.scale.set(0.07,0.05,0.07);
+    torre3.scale.set(0.07,0.07,0.07);
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
@@ -304,7 +304,7 @@ marco4.translateX(-2.5);
     torreForma14.merge(malla43.geometry, malla34.matrix);
     
     var torre4 = new THREE.Mesh(torreForma14, materialTorre2);
-    torre4.scale.set(0.07,0.05,0.07);
+    torre4.scale.set(0.07,0.07,0.07);
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
