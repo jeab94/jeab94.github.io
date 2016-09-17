@@ -5,9 +5,9 @@ camara.position.x = 150;
 camara.position.z = 150;
 camara.lookAt(new THREE.Vector3(0,0,40));
 
-var grayColor = new THREE.Color("rgb(128,128,128)");
-var whiteColor = new THREE.Color("rgb(255,255,255)");
-var brownColor = new THREE.Color("rgb(118,57,49)");
+var grayColor = new THREE.Color(0x888888);
+var whiteColor = new THREE.Color(0xffffff);
+var brownColor = new THREE.Color(0x654321);
 var materialBlanco = new THREE.MeshPhongMaterial();
 var materialGris = new THREE.MeshPhongMaterial();
 var materialCafe = new THREE.MeshPhongMaterial();
