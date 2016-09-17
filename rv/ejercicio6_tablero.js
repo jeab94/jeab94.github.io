@@ -18,7 +18,7 @@ materialCafe.color = brownColor;
 //Tablero
 var cubos = [];
 var material = materialGris;
-var forma = new THREE.BoxGeometry(lado,lado,lado);
+var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
 var tablero = new THREE.Geometry()
 
 for (i=0;i<=7;i++){
@@ -30,7 +30,7 @@ for (var j=0;j<=7;j++){
         var material= materialBlanco;
         }
     var lado = 10;
-    var forma = new THREE.BoxGeometry(lado,lado,lado);
+    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado+5;
     cubo.position.z = i*lado+5;
