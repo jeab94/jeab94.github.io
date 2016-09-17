@@ -43,6 +43,8 @@ var orilla1 = new THREE.BoxGeometry( 84, 10, 2 );
 var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
 marco1.translateZ(-10);
+marco1.translateY(-10);
+marco1.translateX(42);
 
 //var orilla1 = new THREE.Shape();
 //orilla1.moveTo(-2,-5);
