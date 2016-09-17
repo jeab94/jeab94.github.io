@@ -42,9 +42,15 @@ for (var j=0;j<=7;j++){
 var orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
 var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
-//marco1.translateY(-2.5);
 marco1.translateZ(-2.5);
 marco1.translateX(40);
+
+var orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
+var material2 = materialCafe;
+var marco2 = new THREE.Mesh();
+marco1.translateZ(2.5);
+marco1.translateX(40);
+
 
 //var orilla1 = new THREE.Shape();
 //orilla1.moveTo(-2,-5);
@@ -92,7 +98,7 @@ marco1.translateX(40);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
-//escena.add(marco2);
+escena.add(marco2);
 //escena.add(marco3);
 //escena.add(marco4);
 
