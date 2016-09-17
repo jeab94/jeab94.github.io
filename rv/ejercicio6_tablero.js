@@ -98,7 +98,7 @@ marco1.translateX(40);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
-escena.add(marco2);
+//escena.add(marco2);
 //escena.add(marco3);
 //escena.add(marco4);
 
