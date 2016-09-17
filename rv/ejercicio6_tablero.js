@@ -5,21 +5,18 @@ camara.position.x = 150;
 camara.position.z = 150;
 camara.lookAt(new THREE.Vector3(0,0,40));
 
-var grayColor = new THREE.Color(0x888888);
-var whiteColor = new THREE.Color(0xffffff);
-var brownColor = new THREE.Color(0x654321);
 var materialBlanco = new THREE.MeshPhongMaterial( { 
-    whiteColor, 
+    color: 0xffffff, 
     specular: 0x050505,
     shininess: 100
 } ) 
 var materialGris = new THREE.MeshPhongMaterial( { 
-    grayColor, 
+    color: 0x888888, 
     specular: 0x050505,
     shininess: 100
 } ) 
 var materialCafe = new THREE.MeshPhongMaterial( { 
-    brownColor, 
+    color: 0x654321, 
     specular: 0x050505,
     shininess: 100
 } ) 
