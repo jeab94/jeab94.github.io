@@ -6,7 +6,7 @@ luzPuntual.position.z = 40;
 var camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 150;
-camara.position.x = 100;
+camara.position.x = 150;
 camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(0,0,40));
 
