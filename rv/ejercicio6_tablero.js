@@ -81,10 +81,10 @@ var marco4 = new THREE.Mesh(forma4, material4);
 
 
 var escena = new THREE.Scene();
-escena.add(marco1);
-escena.add(marco2);
-escena.add(marco3);
-escena.add(marco4);
+//escena.add(marco1);
+//escena.add(marco2);
+//escena.add(marco3);
+//escena.add(marco4);
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
