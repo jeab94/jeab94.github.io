@@ -68,14 +68,14 @@ marco4.translateX(-2.5);
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( -60, -10 );
-base.lineTo( -60, 10 );
-base.lineTo( 60, 10 );
-base.lineTo( 60, -10 );
-base.lineTo( -60, -10 );
+base.moveTo( -40, -10 );
+base.lineTo( -40, 10 );
+base.lineTo( 40, 10 );
+base.lineTo( 40, -10 );
+base.lineTo( -40, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-torre1.translate(0, -95, -60);
+torre1.translate(0, -95, -40);
 var materialTorre1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, materialTorre1);
 
