@@ -83,7 +83,7 @@ var malla1 = new THREE.Mesh(torre1, materialTorre1);
 var puntos = [];
 
 for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+30, (i-5)*2) );
+  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
 }
 
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
@@ -121,8 +121,10 @@ torreForma1.merge(malla3.geometry, malla3.matrix);//
 torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
-torre1.translateY(10);
 torre1.scale.set(0.07,0.05,0.07);
+torre1.translateY(10);
+torre1.translateX(10);
+torre1.translateZ(10);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
