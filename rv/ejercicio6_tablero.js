@@ -165,7 +165,7 @@ marco4.translateX(-2.5);
     }
     
     var torre32 = new THREE.LatheGeometry(puntos22);
-    var malla31 = new THREE.Mesh( torre31, materialTorre1 );
+    var malla32 = new THREE.Mesh( torre32, materialTorre1 );
     
     //Unión
     var torreForma12 = new THREE.Geometry();
