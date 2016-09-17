@@ -120,7 +120,7 @@ torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
 torre1.scale.set(0.07,0.05,0.07);
-torre1.translateY(5);
+torre1.translateY(10);
 torre1.translateX(5);
 torre1.translateZ(5);
 
