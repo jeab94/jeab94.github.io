@@ -1,3 +1,8 @@
+var luzPuntual = new THREE.PointLight(0x00FF00,10);
+luzPuntual.position.x = 100;
+luzPuntual.position.y = 100;
+luzPuntual.position.z = 40;
+
 var camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 150;
@@ -313,6 +318,7 @@ escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
 escena.add(torre4);
+escena.add(luzPuntual);
 
 
 for (i = 0; i < 64; i++) {
