@@ -107,9 +107,7 @@ for ( var j = 0; j < 100 ; j++ ){
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
-
 var malla3 = new THREE.Mesh( torre3, materialTorre1 );
-
 
 //Unión
 var torreForma1 = new THREE.Geometry();
@@ -122,9 +120,10 @@ torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
 torre1.scale.set(0.07,0.05,0.07);
-torre1.translateY(10);
-torre1.translateX(10);
-torre1.translateZ(10);
+//torre1.translateY(10);
+torre1.translateX(5);
+torre1.translateZ(5);
+
 
 var escena = new THREE.Scene();
 escena.add(marco1);
