@@ -10,10 +10,11 @@ var whiteColor = new THREE.Color("rgb(255,255,255)");
 var brownColor = new THREE.Color("rgb(118,57,49)");
 var materialBlanco = new THREE.MeshBasicMaterial();
 var materialGris = new THREE.MeshBasicMaterial();
-var materialCafe = new THREE.MeshBasicMaterial();
+//var materialCafe = new THREE.MeshBasicMaterial();
+var materialCafe = new THREE.MeshNormalMaterial();
 materialGris.color = grayColor;
 materialBlanco.color = whiteColor;
-materialCafe.color = brownColor;
+//materialCafe.color = brownColor;
 
 //Tablero
 var cubos = [];
