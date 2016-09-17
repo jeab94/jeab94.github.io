@@ -68,14 +68,14 @@ marco4.translateX(-2.5);
 //Base de la torre
 var base = new THREE.Shape();
 
-base.moveTo( -6.5, -1.0 );
-base.lineTo( -6.5, 1.0 );
-base.lineTo( 6.5, 1.0 );
-base.lineTo( 6.5, -1.0 );
-base.lineTo( -6.5, -1.0 );
+base.moveTo( -65, -10 );
+base.lineTo( -65, 10 );
+base.lineTo( 65, 10 );
+base.lineTo( 65, -10 );
+base.lineTo( -65, -10 );
 
-var torre1 = new THREE.ExtrudeGeometry(base, { amount: 13.0 } );
-torre1.translate(0, -9.5, -6.5);
+var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
+torre1.translate(0, -95, -65);
 var materialTorre1 = new THREE.MeshNormalMaterial();
 var malla1 = new THREE.Mesh(torre1, materialTorre1);
 
@@ -83,28 +83,27 @@ var malla1 = new THREE.Mesh(torre1, materialTorre1);
 var puntos = [];
 
 for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*1.5+4.0, (i-5)*.2) );
+  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
 }
 
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
-torre2.translate(0, -7.5, 0);
+torre2.translate(0, -75, 0);
 
 var malla2 = new THREE.Mesh( torre2, materialTorre1 );
 //malla2.rotateZ( Math.PI/6 );
 
 //Mitad superior de la torre
-var superior = new THREE.CylinderGeometry( 4.2, 4.2, 2.0, 3.2);
+var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
-superior.translate( 0, 12.5, 0 );
+superior.translate( 0, 125, 0 );
 
 var malla4 = new THREE.Mesh( superior, materialTorre1 );
-
 
 //Terminación de la torre
 var puntos2 = [];
 
 for ( var j = 0; j < 100 ; j++ ){
-  puntos2.push( new THREE.Vector2( 2.5-0.1*j/4, 0.1*j+13.5 ) );
+  puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
 }
 
 var torre3 = new THREE.LatheGeometry(puntos2);
@@ -123,6 +122,7 @@ torreForma1.merge(malla4.geometry, malla3.matrix);
 
 var torre1 = new THREE.Mesh(torreForma1, materialTorre1);
 torre1.translateY(10);
+torre1.scale.set(0.1,0.1,0.1);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
