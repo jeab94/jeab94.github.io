@@ -44,7 +44,7 @@ var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
 //marco1.translateY(-2.5);
 marco1.translateZ(-2.5);
-marco1.translateX(41);
+marco1.translateX(40);
 
 //var orilla1 = new THREE.Shape();
 //orilla1.moveTo(-2,-5);
