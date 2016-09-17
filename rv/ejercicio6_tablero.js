@@ -305,6 +305,7 @@ escena.add(marco4);
 escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
+escena.add(torre4);
 
 
 for (i = 0; i < 64; i++) {
