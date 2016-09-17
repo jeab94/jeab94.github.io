@@ -48,8 +48,8 @@ marco1.translateX(40);
 var orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
 var material2 = materialCafe;
 var marco2 = new THREE.Mesh();
-marco1.translateZ(2.5);
-marco1.translateX(40);
+marco2.translateZ(2.5);
+marco2.translateX(40);
 
 
 //var orilla1 = new THREE.Shape();
@@ -98,7 +98,7 @@ marco1.translateX(40);
 
 var escena = new THREE.Scene();
 escena.add(marco1);
-//escena.add(marco2);
+escena.add(marco2);
 //escena.add(marco3);
 //escena.add(marco4);
 
