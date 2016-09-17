@@ -237,7 +237,7 @@ marco4.translateX(-2.5);
     var torre3 = new THREE.Mesh(torreForma13, materialTorre2);
     torre3.scale.set(0.07,0.05,0.07);
     torre3.translateY(10);
-    torre3.translateX(85);
+    torre3.translateX(75);
     torre3.translateZ(5);
 
 
