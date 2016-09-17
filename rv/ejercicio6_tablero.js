@@ -33,8 +33,8 @@ for (var j=0;j<=7;j++){
         }
     var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
-    cubo.position.x = j*lado;
-    cubo.position.z = i*lado;
+    cubo.position.x = j*lado+5;
+    cubo.position.z = i*lado+5;
     cubos.push(cubo)
     }
 }
@@ -43,7 +43,7 @@ var orilla1 = new THREE.BoxGeometry( 80, 10, 5 );
 var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
 //marco1.translateY(-2.5);
-//marco1.translateZ(-10);
+marco1.translateZ(-10);
 //marco1.translateX(31.5);
 
 //var orilla1 = new THREE.Shape();
