@@ -39,7 +39,7 @@ for (var j=0;j<=7;j++){
     }
 }
 
-var orilla1 = new THREE.BoxGeometry( 82, 10, 5 );
+var orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
 var material1 = materialCafe;
 var marco1 = new THREE.Mesh( orilla1, material1 );
 //marco1.translateY(-2.5);
