@@ -147,7 +147,8 @@ marco4.translateX(-2.5);
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
-
+    torre1.castShadow = true;
+    
 //Torre2Blanca
 
 //Base de la torre
@@ -204,7 +205,8 @@ marco4.translateX(-2.5);
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
-
+    torre2.castShadow = true;
+    
 //Torre3Negra
 
     //Base de la torre
@@ -261,6 +263,7 @@ marco4.translateX(-2.5);
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
+    torre3.castShadow = true;
 
 //Torre4Negra
 
@@ -318,6 +321,10 @@ marco4.translateX(-2.5);
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
+    torre4.castShadow = true;
+    
+object3d.castShadow = true;
+object3d.receiveShadow = false;
 
 var escena = new THREE.Scene();
 escena.add(marco1);
@@ -333,7 +340,9 @@ escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
+cubos[i].receiveShadow = true;
 }
+
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
