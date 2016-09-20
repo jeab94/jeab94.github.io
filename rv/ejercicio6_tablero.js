@@ -90,6 +90,10 @@ var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40);
 marco4.translateX(-2.5);
 
+marco1.receiveShadow = true;
+marco2.receiveShadow = true;
+marco3.receiveShadow = true;
+marco4.receiveShadow = true;
 
 //Torre1Blanca
 
