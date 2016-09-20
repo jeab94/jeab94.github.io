@@ -60,6 +60,7 @@ for (var j=0;j<=7;j++){
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado+5;
     cubo.position.z = i*lado+5;
+    cubo.receiveShadow = true;
     cubos.push(cubo)
     }
 }
@@ -339,8 +340,13 @@ escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
-cubos[i].receiveShadow = true;
+
 }
+
+luzPuntual1.castShadow = true;
+luzPuntual2.castShadow = true;
+luzPuntual3.castShadow = true;
+luzPuntual4.castShadow = true;
 
 
 var renderizador = new THREE.WebGLRenderer();
