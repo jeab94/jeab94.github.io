@@ -323,8 +323,7 @@ marco4.translateX(-2.5);
     torre4.translateZ(75);
     torre4.castShadow = true;
     
-object3d.castShadow = true;
-object3d.receiveShadow = false;
+
 
 var escena = new THREE.Scene();
 escena.add(marco1);
