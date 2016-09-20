@@ -13,6 +13,10 @@ luzPuntual3.position.x = 130;
 luzPuntual3.position.y = 100;
 luzPuntual3.position.z = 130;
 
+luzPuntual1.castShadow = true;
+luzPuntual2.castShadow = true;
+luzPuntual3.castShadow = true;
+
 var camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 100;
@@ -324,8 +328,6 @@ marco4.translateX(-2.5);
     torre4.translateZ(75);
     torre4.castShadow = true;
     
-
-
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
@@ -342,10 +344,6 @@ for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
 
 }
-
-luzPuntual1.castShadow = true;
-luzPuntual2.castShadow = true;
-luzPuntual3.castShadow = true;
 
 
 var renderizador = new THREE.WebGLRenderer();
