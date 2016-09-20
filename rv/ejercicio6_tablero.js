@@ -29,8 +29,8 @@ var materialBlanco = new THREE.MeshLambertMaterial( {
    
 } ) 
 
-var materialGris = new THREE.MeshLambertMaterial( { 
-    color: 0x888888 
+var materialNegro = new THREE.MeshLambertMaterial( { 
+    color: 0x000000 
    
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
@@ -40,7 +40,7 @@ var materialCafe = new THREE.MeshLambertMaterial( {
 
 
 var materialTorre1 = materialBlanco;
-var materialTorre2 = materialGris;
+var materialTorre2 = materialNegro;
         
 
 //Tablero
