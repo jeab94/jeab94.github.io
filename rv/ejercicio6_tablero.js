@@ -25,21 +25,21 @@ camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
 var materialBlanco = new THREE.MeshLambertMaterial( { 
-    color: 0xffffff 
-   
+    color: 0xffffff, 
+   opacity: 0
 } ) 
 
 var materialNegro = new THREE.MeshLambertMaterial( { 
     color: 0x000000 
-   
+    opacity: 0
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
-   
+    opacity: 0
 } ) 
 var materialGris = new THREE.MeshLambertMaterial({
     color: 0x888888  
-    
+    opacity: 0
 } )
 
 
@@ -155,7 +155,7 @@ marco4.receiveShadow = true;
     torreForma11.merge(malla31.geometry, malla31.matrix);//
     torreForma11.merge(malla41.geometry, malla31.matrix);
     
-    materialTorre1.opacity = 1;
+    //materialTorre1.opacity = 1;
     var torre1 = new THREE.Mesh(torreForma11, materialTorre1);
     torre1.scale.set(0.07,0.07,0.07);
     torre1.translateY(10);
@@ -214,7 +214,7 @@ marco4.receiveShadow = true;
     torreForma12.merge(malla32.geometry, malla32.matrix);//
     torreForma12.merge(malla42.geometry, malla32.matrix);
     
-    materialTorre1.opacity = 0.75;
+    //materialTorre1.opacity = 0.75;
     var torre2 = new THREE.Mesh(torreForma12, materialTorre1);
     torre2.scale.set(0.07,0.07,0.07);
     torre2.translateY(10);
@@ -273,7 +273,7 @@ marco4.receiveShadow = true;
     torreForma13.merge(malla33.geometry, malla33.matrix);//
     torreForma13.merge(malla43.geometry, malla33.matrix);
     
-    materialTorre2.opacity = 0.5;
+    //materialTorre2.opacity = 0.5;
     var torre3 = new THREE.Mesh(torreForma13, materialTorre2);
     torre3.scale.set(0.07,0.07,0.07);
     torre3.translateY(10);
@@ -332,7 +332,7 @@ marco4.receiveShadow = true;
     torreForma14.merge(malla33.geometry, malla34.matrix);//
     torreForma14.merge(malla43.geometry, malla34.matrix);
     
-    materialTorre2.opacity = 0;
+    //materialTorre2.opacity = 0;
     var torre4 = new THREE.Mesh(torreForma14, materialTorre2);
     torre4.scale.set(0.07,0.07,0.07);
     torre4.translateY(10);
@@ -340,11 +340,7 @@ marco4.receiveShadow = true;
     torre4.translateZ(75);
     torre4.castShadow = true;
     
-//torre1.material.opacity = 1;
-//torre2.material.opacity = 0.75;
-//torre3.material.opacity = 0.5;
-//torre4.material.opacity = 0.25;
-    
+
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
