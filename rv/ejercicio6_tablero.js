@@ -1,14 +1,14 @@
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.3);
+var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.7);
 luzPuntual1.position.x = -50;
 luzPuntual1.position.y = 100;
 luzPuntual1.position.z = -50;
 
-var luzPuntual2 = new THREE.PointLight(0xFFFFFF,0.3);
+var luzPuntual2 = new THREE.PointLight(0xFFFFFF,0.7);
 luzPuntual2.position.x = 130;
 luzPuntual2.position.y = 100;
 luzPuntual2.position.z = -50;
 
-var luzPuntual3 = new THREE.PointLight(0xFFFFFF,0.3);
+var luzPuntual3 = new THREE.PointLight(0xFFFFFF,0.7);
 luzPuntual3.position.x = 130;
 luzPuntual3.position.y = 100;
 luzPuntual3.position.z = 130;
