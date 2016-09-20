@@ -45,7 +45,7 @@ var materialTorre2 = materialGris;
 //Tablero
 var lado = 10;
 var cubos = [];
-//var material = materialGris;
+var material = materialGris;
 //var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
 var tablero = new THREE.Geometry()
 
