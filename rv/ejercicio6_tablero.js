@@ -346,7 +346,6 @@ escena.add(cubos[i]);
 luzPuntual1.castShadow = true;
 luzPuntual2.castShadow = true;
 luzPuntual3.castShadow = true;
-luzPuntual4.castShadow = true;
 
 
 var renderizador = new THREE.WebGLRenderer();
