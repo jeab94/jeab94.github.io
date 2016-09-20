@@ -30,7 +30,7 @@ var materialBlanco = new THREE.MeshLambertMaterial( {
 } ) 
 
 var materialGris = new THREE.MeshLambertMaterial( { 
-    color: 0x888888, 
+    color: 0x887888, 
    
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
