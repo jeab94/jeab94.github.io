@@ -1,7 +1,17 @@
-var luzPuntual = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual.position.x = 100;
+var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual.position.x = -50;
 luzPuntual.position.y = 100;
-luzPuntual.position.z = 100;
+luzPuntual.position.z = -50;
+
+var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual.position.x = 130;
+luzPuntual.position.y = 100;
+luzPuntual.position.z = -50;
+
+var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual.position.x = 130;
+luzPuntual.position.y = 100;
+luzPuntual.position.z = 130;
 
 var camara = new THREE.PerspectiveCamera();
 
@@ -318,7 +328,7 @@ escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
 escena.add(torre4);
-escena.add(luzPuntual);
+escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
 
 
 for (i = 0; i < 64; i++) {
