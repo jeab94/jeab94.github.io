@@ -30,7 +30,7 @@ var materialBlanco = new THREE.MeshLambertMaterial( {
 } ) 
 
 var materialGris = new THREE.MeshLambertMaterial( { 
-    color: 0x654321//0x888888, 
+    color: 0x888888 
    
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
@@ -53,7 +53,7 @@ var tablero = new THREE.Geometry()
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
     if ((i+j) % 2 == 0){
-        var material= materialGris;
+        var material= materialNegro;
         }
     else{
         var material= materialBlanco;
