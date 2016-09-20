@@ -336,10 +336,10 @@ marco4.receiveShadow = true;
     torre4.translateZ(75);
     torre4.castShadow = true;
     
-torre1.opacity = 100;
-torre2.opacity = 100;
-torre3.opacity = 100;
-torre4.opacity = 100;
+torre1.opacity = 1;
+torre2.opacity = 0.75;
+torre3.opacity = 0.5;
+torre4.opacity = 0.25;
     
 var escena = new THREE.Scene();
 escena.add(marco1);
