@@ -61,8 +61,9 @@ for (var j=0;j<=7;j++){
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado+5;
     cubo.position.z = i*lado+5;
-    cubo.receiveShadow = true;
     cubos.push(cubo)
+    cubos.receiveShadow = true;
+    
     }
 }
 
