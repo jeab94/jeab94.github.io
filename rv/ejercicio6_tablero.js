@@ -28,6 +28,7 @@ var materialBlanco = new THREE.MeshLambertMaterial( {
     color: 0xffffff, 
    
 } ) 
+
 var materialGris = new THREE.MeshLambertMaterial( { 
     color: 0x888888, 
    
@@ -45,7 +46,7 @@ var materialTorre2 = materialGris;
 //Tablero
 var lado = 10;
 var cubos = [];
-var material = materialGris;
+//var material = materialGris;
 //var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
 var tablero = new THREE.Geometry()
 
@@ -59,9 +60,9 @@ for (var j=0;j<=7;j++){
         }
     var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
-    cubo.receiveShadow = true;
     cubo.position.x = j*lado+5;
     cubo.position.z = i*lado+5;
+    cubo.receiveShadow = true;
     cubos.push(cubo)
     
     
