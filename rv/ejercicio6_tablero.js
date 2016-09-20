@@ -45,8 +45,8 @@ var materialTorre2 = materialGris;
 //Tablero
 var lado = 10;
 var cubos = [];
-var material = materialGris;
-var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+//var material = materialGris;
+//var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
 var tablero = new THREE.Geometry()
 
 for (i=0;i<=7;i++){
@@ -59,10 +59,11 @@ for (var j=0;j<=7;j++){
         }
     var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
+    cubo.receiveShadow = true;
     cubo.position.x = j*lado+5;
     cubo.position.z = i*lado+5;
     cubos.push(cubo)
-    cubos.receiveShadow = true;
+    
     
     }
 }
