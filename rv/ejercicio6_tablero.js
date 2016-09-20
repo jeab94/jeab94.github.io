@@ -30,7 +30,7 @@ var materialGris = new THREE.MeshLambertMaterial( {
     specular: 0x050505,
     shininess: 100
 } ) 
-var materialCafe = new MeshLambertMaterial( { 
+var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321, 
     specular: 0x050505,
     shininess: 100
