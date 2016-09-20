@@ -25,16 +25,16 @@ camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
 var materialBlanco = new THREE.MeshLambertMaterial( { 
-    color: 0xffffff, 
+    color: 0xffffff 
    
 } ) 
 
 var materialGris = new THREE.MeshLambertMaterial( { 
-    color: 0x887888, 
+    color: 0x654321//0x888888, 
    
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
-    color: 0x654321, 
+    color: 0x654321 
    
 } ) 
 
