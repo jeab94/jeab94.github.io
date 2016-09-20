@@ -332,7 +332,7 @@ marco4.receiveShadow = true;
     torreForma14.merge(malla33.geometry, malla34.matrix);//
     torreForma14.merge(malla43.geometry, malla34.matrix);
     
-    materialTorre2.opacity = 0.05;
+    materialTorre2.opacity = 0;
     var torre4 = new THREE.Mesh(torreForma14, materialTorre2);
     torre4.scale.set(0.07,0.07,0.07);
     torre4.translateY(10);
