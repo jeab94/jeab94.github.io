@@ -68,7 +68,7 @@ var tablero = new THREE.Geometry()
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
     if ((i+j) % 2 == 0){
-        var material= materialGris;
+        var material= materialCafe;
         }
     else{
         var material= materialBlanco;
@@ -126,7 +126,7 @@ marco4.receiveShadow = true;
     
     var torre11 = new THREE.ExtrudeGeometry(base1, { amount: 80 } );
     torre11.translate(0, -95, -40);
-    var malla11 = new THREE.Mesh(torre11, new THREE.Material());
+    var malla11 = new THREE.Mesh(torre11, new THREE.MeshBasicMaterial());
     
     //Mitad inferior de la torre
     var puntos11 = [];
@@ -138,14 +138,14 @@ marco4.receiveShadow = true;
     var torre21 = new THREE.LatheGeometry(puntos11); //Torno
     torre21.translate(0, -75, 0);
     
-    var malla21 = new THREE.Mesh( torre21, new THREE.Material() );
+    var malla21 = new THREE.Mesh( torre21, THREE.MeshBasicMaterial() );
     
     //Mitad superior de la torre
     var superior1 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior1.translate( 0, 125, 0 );
     
-    var malla41 = new THREE.Mesh( superior1, new THREE.Material() );
+    var malla41 = new THREE.Mesh( superior1, new THREE.MeshBasicMaterial() );
     
     //Terminación de la torre
     var puntos21 = [];
@@ -155,7 +155,7 @@ marco4.receiveShadow = true;
     }
     
     var torre31 = new THREE.LatheGeometry(puntos21);
-    var malla31 = new THREE.Mesh( torre31, new THREE.Material() );
+    var malla31 = new THREE.Mesh( torre31, new THREE.MeshBasicMaterial() );
     
     //Unión
     var torreForma11 = new THREE.Geometry();
@@ -164,7 +164,7 @@ marco4.receiveShadow = true;
     torreForma11.merge(malla21.geometry, malla21.matrix); //La malla calcula la matriz de la cinemática del objeto
     //torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
     torreForma11.merge(malla31.geometry, malla31.matrix);//
-    torreForma11.merge(malla41.geometry, malla31.matrix);
+    torreForma11.merge(malla41.geometry, malla41.matrix);
     
     //materialTorre1.opacity = 1;
     var torre1 = new THREE.Mesh(torreForma11, materialTorre1);
@@ -187,7 +187,7 @@ marco4.receiveShadow = true;
     
     var torre12 = new THREE.ExtrudeGeometry(base2, { amount: 80 } );
     torre12.translate(0, -95, -40);
-    var malla12 = new THREE.Mesh(torre11, new THREE.Material());
+    var malla12 = new THREE.Mesh(torre11, new THREE.MeshBasicMaterial());
     
     //Mitad inferior de la torre
     var puntos12 = [];
@@ -199,14 +199,14 @@ marco4.receiveShadow = true;
     var torre22 = new THREE.LatheGeometry(puntos12); //Torno
     torre22.translate(0, -75, 0);
     
-    var malla22 = new THREE.Mesh( torre22, new THREE.Material() );
+    var malla22 = new THREE.Mesh( torre22, new THREE.MeshBasicMaterial() );
     
     //Mitad superior de la torre
     var superior2 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior2.translate( 0, 125, 0 );
     
-    var malla42 = new THREE.Mesh( superior2, new THREE.Material() );
+    var malla42 = new THREE.Mesh( superior2, new THREE.MeshBasicMaterial() );
     
     //Terminación de la torre
     var puntos22 = [];
@@ -216,14 +216,14 @@ marco4.receiveShadow = true;
     }
     
     var torre32 = new THREE.LatheGeometry(puntos22);
-    var malla32 = new THREE.Mesh( torre32, new THREE.Material() );
+    var malla32 = new THREE.Mesh( torre32, new THREE.MeshBasicMaterial() );
     
     //Unión
     var torreForma12 = new THREE.Geometry();
     torreForma12.merge(malla12.geometry, malla12.matrix); //La malla calcula la matriz de la cinemática del objeto
     torreForma12.merge(malla22.geometry, malla22.matrix); //La malla calcula la matriz de la cinemática del objeto
     torreForma12.merge(malla32.geometry, malla32.matrix);//
-    torreForma12.merge(malla42.geometry, malla32.matrix);
+    torreForma12.merge(malla42.geometry, malla42.matrix);
     
     //materialTorre1.opacity = 0.75;
     var torre2 = new THREE.Mesh(torreForma12, materialTorre2);
@@ -246,7 +246,7 @@ marco4.receiveShadow = true;
     
     var torre13 = new THREE.ExtrudeGeometry(base3, { amount: 80 } );
     torre13.translate(0, -95, -40);
-    var malla13 = new THREE.Mesh(torre11, new THREE.Material());
+    var malla13 = new THREE.Mesh(torre11, new THREE.MeshBasicMaterial());
     
     //Mitad inferior de la torre
     var puntos13 = [];
@@ -258,14 +258,14 @@ marco4.receiveShadow = true;
     var torre23 = new THREE.LatheGeometry(puntos13); //Torno
     torre23.translate(0, -75, 0);
     
-    var malla23 = new THREE.Mesh( torre23, new THREE.Material() );
+    var malla23 = new THREE.Mesh( torre23, new THREE.MeshBasicMaterial() );
     
     //Mitad superior de la torre
     var superior3 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior3.translate( 0, 125, 0 );
     
-    var malla43 = new THREE.Mesh( superior3, new THREE.Material() );
+    var malla43 = new THREE.Mesh( superior3, new THREE.MeshBasicMaterial() );
     
     //Terminación de la torre
     var puntos23 = [];
@@ -275,14 +275,14 @@ marco4.receiveShadow = true;
     }
     
     var torre33 = new THREE.LatheGeometry(puntos23);
-    var malla33 = new THREE.Mesh( torre33, new THREE.Material() );
+    var malla33 = new THREE.Mesh( torre33, new THREE.MeshBasicMaterial() );
     
     //Unión
     var torreForma13 = new THREE.Geometry();
     torreForma13.merge(malla13.geometry, malla13.matrix); //La malla calcula la matriz de la cinemática del objeto
     torreForma13.merge(malla23.geometry, malla23.matrix); //La malla calcula la matriz de la cinemática del objeto
     torreForma13.merge(malla33.geometry, malla33.matrix);//
-    torreForma13.merge(malla43.geometry, malla33.matrix);
+    torreForma13.merge(malla43.geometry, malla43.matrix);
     
     //materialTorre2.opacity = 0.5;
     var torre3 = new THREE.Mesh(torreForma13, materialTorre3);
@@ -305,7 +305,7 @@ marco4.receiveShadow = true;
     
     var torre14 = new THREE.ExtrudeGeometry(base4, { amount: 80 } );
     torre14.translate(0, -95, -40);
-    var malla14 = new THREE.Mesh(torre14, new THREE.Material());
+    var malla14 = new THREE.Mesh(torre14, new THREE.MeshBasicMaterial());
     
     //Mitad inferior de la torre
     var puntos14 = [];
@@ -317,14 +317,14 @@ marco4.receiveShadow = true;
     var torre24 = new THREE.LatheGeometry(puntos14); //Torno
     torre24.translate(0, -75, 0);
     
-    var malla24 = new THREE.Mesh( torre24, new THREE.Material() );
+    var malla24 = new THREE.Mesh( torre24, new THREE.MeshBasicMaterial() );
     
     //Mitad superior de la torre
     var superior4 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior4.translate( 0, 125, 0 );
     
-    var malla44 = new THREE.Mesh( superior4, new THREE.Material() );
+    var malla44 = new THREE.Mesh( superior4, new THREE.MeshBasicMaterial() );
     
     //Terminación de la torre
     var puntos24 = [];
@@ -334,14 +334,14 @@ marco4.receiveShadow = true;
     }
     
     var torre34 = new THREE.LatheGeometry(puntos24);
-    var malla34 = new THREE.Mesh( torre34, new THREE.Material() );
+    var malla34 = new THREE.Mesh( torre34, new THREE.MeshBasicMaterial() );
     
     //Unión
     var torreForma14 = new THREE.Geometry();
     torreForma14.merge(malla14.geometry, malla14.matrix); //La malla calcula la matriz de la cinemática del objeto
     torreForma14.merge(malla24.geometry, malla24.matrix); //La malla calcula la matriz de la cinemática del objeto
-    torreForma14.merge(malla33.geometry, malla34.matrix);//
-    torreForma14.merge(malla43.geometry, malla34.matrix);
+    torreForma14.merge(malla34.geometry, malla34.matrix);//
+    torreForma14.merge(malla44.geometry, malla44.matrix);
     
     //materialTorre2.opacity = 0;
     var torre4 = new THREE.Mesh(torreForma14, materialTorre4);
