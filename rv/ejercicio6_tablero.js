@@ -44,7 +44,7 @@ var materialTorre1 = new THREE.MeshLambertMaterial( {
 var materialTorre2 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     transparent: true
-    opacity: 0.75,
+    opacity: 0.75
 } );
 var materialTorre3 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
