@@ -372,7 +372,7 @@ escena.add(cubos[i]);
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
-renderizador.shadowMapEnabled = true;
+renderizador.shadowMap.enabled = true;
 
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
