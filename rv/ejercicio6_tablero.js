@@ -26,35 +26,35 @@ camara.lookAt(new THREE.Vector3(40,5,40));
 
 var materialBlanco = new THREE.MeshLambertMaterial( { 
     color: 0xffffff
-} );
+} )
 
 var materialGris = new THREE.MeshLambertMaterial( { 
     color: 0x888888 
-} ); 
+} ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
-} ); 
+} ) 
 
 
 var materialTorre1 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     transparent: true
-} );
+} )
 materialTorre1.opacity = 1;
 var materialTorre2 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     transparent: true
-} );
+} )
 materialTorre2.opacity = 0.75;
 var materialTorre3 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
     transparent: true
-} );
+} )
 materialTorre3.opacity = 0.5;
 var materialTorre4 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
     transparent: true
-} );
+} )
 materialTorre4.opacity = 0.25;
         
 
