@@ -10,7 +10,7 @@ luzPuntual1.position.x = 40;
 luzPuntual1.position.y = 100;
 luzPuntual1.position.z = 40;
 
-whiteColor = new THREE.Color(0xffffff);
+whiteColor = new THREE.Color(0xeeeeee);
 var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
 
 brownColor = new THREE.Color(0x654321);
