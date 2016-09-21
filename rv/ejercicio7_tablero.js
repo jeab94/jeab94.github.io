@@ -63,35 +63,40 @@ var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40);
 marco4.translateX(-2.5);
 
+var materialBlanco1 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 1, transparent: true } );
 //Torre1Blanca
     torre1 = mallaTorre.clone();
     torre1.scale.set(0.07,0.07,0.07);
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
-    torre1.material = materialBlanco;
+    torre1.material = materialBlanco1;
     
+var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 0.75, transparent: true } );
 //Torre2Blanca
     torre2 = mallaTorre.clone();
     torre2.scale.set(0.07,0.07,0.07);
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
-    torre2.material = materialBlanco;
+    torre2.material = materialBlanco2;
     
+var materialNegro1 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 0.5, transparent: true } );
 //Torre3Negra
     torre3 = mallaTorre.clone();
     torre3.scale.set(0.07,0.07,0.07);
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
-    
+    torre3.material = materialNegro1;
+var materialNegro2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 0.25, transparent: true } );
 //Torre4Negra
     torre4 = mallaTorre.clone();
     torre4.scale.set(0.07,0.07,0.07);
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
+    torre4.material = materialNegro2;
     
 var escena = new THREE.Scene();
 escena.add(marco1);
