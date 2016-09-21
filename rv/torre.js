@@ -37,7 +37,7 @@ var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
 superior.translate( 0, 125, 0 );
 
-var material4 = new materialGris;
+var material4 = materialGris;
 
 var malla4 = new THREE.Mesh( superior, material4 );
 
@@ -63,7 +63,7 @@ torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz 
 torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
 //torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
 torreForma1.merge(malla3.geometry, malla3.matrix);//
-torreForma1.merge(malla4.geometry, malla3.matrix);
+torreForma1.merge(malla4.geometry, malla4.matrix);
 
 
 var material = materialGris;
