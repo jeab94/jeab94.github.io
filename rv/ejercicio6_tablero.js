@@ -39,22 +39,22 @@ var materialCafe = new THREE.MeshLambertMaterial( {
 var materialTorre1 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     opacity: 1,
-    transparency: true
+    transparent: true
 } );
 var materialTorre2 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     opacity: 0.75,
-    transparency: true
+    transparent: true
 } );
 var materialTorre3 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
     opacity: 0.5,
-    transparency: true
+    transparent: true
 } );
 var materialTorre4 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
     opacity: 0.25,
-    transparency: true
+    transparent: true
 } );
         
 
