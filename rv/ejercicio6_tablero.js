@@ -38,24 +38,24 @@ var materialCafe = new THREE.MeshLambertMaterial( {
 
 var materialTorre1 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
-    transparent: true,
-    opacity: 1
+    transparent: true
 } );
+materialTorre1.opacity = 1;
 var materialTorre2 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
     transparent: true
-    opacity: 0.75
 } );
+materialTorre2.opacity = 0.75;
 var materialTorre3 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
-    transparent: true,
-    opacity: 0.5
+    transparent: true
 } );
+materialTorre3.opacity = 0.5;
 var materialTorre4 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
-    transparent: true,
-    opacity: 0.25,
+    transparent: true
 } );
+materialTorre4.opacity = 0.25;
         
 
 //Tablero
