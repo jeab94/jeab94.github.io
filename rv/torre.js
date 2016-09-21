@@ -37,9 +37,9 @@ var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
 superior.translate( 0, 125, 0 );
 
-var material4 = materialGris;
+var material3 = materialGris;
 
-var malla4 = new THREE.Mesh( superior, material4 );
+var malla3 = new THREE.Mesh( superior, material3 );
 
 
 //Terminación de la torre
@@ -49,19 +49,17 @@ for ( var j = 0; j < 100 ; j++ ){
   puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
 }
 
-var torre3 = new THREE.LatheGeometry(puntos2);
+var torre4 = new THREE.LatheGeometry(puntos2);
 
-var material3 = materialGris;
+var material4 = materialGris;
 
-var malla3 = new THREE.Mesh( torre3, material3 );
+var malla4 = new THREE.Mesh( torre4, material4 );
 
 
 //Unión
 var torreForma1 = new THREE.Geometry();
-//var torreForma2 = new THREE.Geometry();
 torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
 torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-//torreForma2.merge(torreForma1.geometry, torreForma1.matrix);
 torreForma1.merge(malla3.geometry, malla3.matrix);//
 torreForma1.merge(malla4.geometry, malla4.matrix);
 
