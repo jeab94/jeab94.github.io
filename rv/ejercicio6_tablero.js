@@ -138,7 +138,7 @@ marco4.receiveShadow = true;
     var torre21 = new THREE.LatheGeometry(puntos11); //Torno
     torre21.translate(0, -75, 0);
     
-    var malla21 = new THREE.Mesh( torre21, THREE.MeshBasicMaterial() );
+    var malla21 = new THREE.Mesh( torre21, new THREE.MeshBasicMaterial() );
     
     //Mitad superior de la torre
     var superior1 = new THREE.CylinderGeometry( 42, 42, 20, 32);
