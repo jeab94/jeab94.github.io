@@ -34,6 +34,7 @@ var materialNegro = new THREE.MeshLambertMaterial( {
     color: 0x000000 
     opacity: 0.1
     transparent: true
+    
 } ) 
 var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
