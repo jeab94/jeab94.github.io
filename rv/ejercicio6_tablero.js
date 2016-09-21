@@ -6,9 +6,9 @@ camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
 var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.8);
-luzPuntual1.position.x = -50;
+luzPuntual1.position.x = 40;
 luzPuntual1.position.y = 100;
-luzPuntual1.position.z = -50;
+luzPuntual1.position.z = 40;
 
 var luzPuntual2 = new THREE.PointLight(0xFFFFFF,0.8);
 luzPuntual2.position.x = 130;
