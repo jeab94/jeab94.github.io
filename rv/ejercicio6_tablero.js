@@ -1,28 +1,28 @@
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual1.position.x = -50;
-luzPuntual1.position.y = 100;
-luzPuntual1.position.z = -50;
-
-var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual2.position.x = 130;
-luzPuntual2.position.y = 100;
-luzPuntual2.position.z = -50;
-
-var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual3.position.x = 130;
-luzPuntual3.position.y = 100;
-luzPuntual3.position.z = 130;
-
-luzPuntual1.castShadow = true;
-luzPuntual2.castShadow = true;
-luzPuntual3.castShadow = true;
-
 var camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 100;
 camara.position.x = 100;
-camara.position.z = 100;
+//camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
+
+var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual1.position.x = -50;
+luzPuntual1.position.y = 100;
+//luzPuntual1.position.z = -50;
+
+var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual2.position.x = 130;
+luzPuntual2.position.y = 100;
+//luzPuntual2.position.z = -50;
+
+var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual3.position.x = 130;
+luzPuntual3.position.y = 100;
+//luzPuntual3.position.z = 130;
+
+luzPuntual1.castShadow = true;
+luzPuntual2.castShadow = true;
+luzPuntual3.castShadow = true;
 
 var materialBlanco = new THREE.MeshLambertMaterial( { 
     color: 0xffffff
