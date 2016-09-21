@@ -355,12 +355,12 @@ marco4.receiveShadow = true;
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
-escena.add(marco3);
-escena.add(marco4);
-escena.add(torre1);
-escena.add(torre2);
-escena.add(torre3);
-escena.add(torre4);
+//escena.add(marco3);
+//escena.add(marco4);
+//escena.add(torre1);
+//escena.add(torre2);
+//escena.add(torre3);
+//escena.add(torre4);
 escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
 
 
