@@ -21,7 +21,7 @@ var lienzo = document.getElementById("luzSinSombras");
 var renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias:true});
 
 renderizador.setSize(600,600);
-renderizador.shadowMapEnabled = true;
+renderizador.shadowMap.enabled = true;
 malla.castShadow = true;
 base.receiveShadow = true;
 luzPuntual.castShadow = true;
