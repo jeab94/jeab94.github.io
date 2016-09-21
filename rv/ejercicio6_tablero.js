@@ -20,10 +20,6 @@ luzPuntual3.position.x = 130;
 luzPuntual3.position.y = 100;
 luzPuntual3.position.z = 130;
 
-luzPuntual1.castShadow = true;
-luzPuntual2.castShadow = true;
-luzPuntual3.castShadow = true;
-
 var materialBlanco = new THREE.MeshLambertMaterial( { 
     color: 0xffffff
 } );
@@ -116,6 +112,7 @@ marco4.receiveShadow = true;
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
+    torre1.Material = materialBlanco;
     torre1.transparent = true;
     torre1.opacity = 1;
     torre1.castShadow = true;
@@ -126,6 +123,7 @@ marco4.receiveShadow = true;
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
+    torre2.Material = materialBlanco;
     torre2.transparent = true;
     torre2.opacity = 1;
     torre2.castShadow = true;
@@ -136,6 +134,7 @@ marco4.receiveShadow = true;
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
+    torre3.Material = materialGris;
     torre3.transparent = true;
     torre3.opacity = 1;
     torre3.castShadow = true;
@@ -146,6 +145,7 @@ marco4.receiveShadow = true;
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
+    torre4.Material = materialBlanco;
     torre4.transparent = true;
     torre4.opacity = 1;
     torre4.castShadow = true;
@@ -172,6 +172,9 @@ escena.add(cubos[i]);
 var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 renderizador.shadowMap.enabled = true;
+luzPuntual1.castShadow=true;
+luzPuntual2.castShadow=true;
+luzPuntual3.castShadow=true;
 
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
