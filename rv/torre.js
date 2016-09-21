@@ -1,3 +1,7 @@
+var materialGris = new THREE.MeshLambertMaterial( { 
+    color: 0x888888 
+} ); 
+
 //Base de la torre
 var base = new THREE.Shape();
 
@@ -9,7 +13,7 @@ base.lineTo( -65, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
 torre1.translate(0, -95, -65);
-var material1 = new THREE.MeshNormalMaterial();
+var material1 = materialGris;
 var malla1 = new THREE.Mesh(torre1, material1);
 
 
@@ -23,7 +27,7 @@ for( var i = 0; i < 100; i++ ){ //Son 50 puntos
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
 torre2.translate(0, -75, 0);
 
-var material2 = new THREE.MeshNormalMaterial();
+var material2 = materialGris;
 
 var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
@@ -33,7 +37,7 @@ var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
 superior.translate( 0, 125, 0 );
 
-var material4 = new THREE.MeshNormalMaterial();
+var material4 = new materialGris;
 
 var malla4 = new THREE.Mesh( superior, material4 );
 
@@ -47,7 +51,7 @@ for ( var j = 0; j < 100 ; j++ ){
 
 var torre3 = new THREE.LatheGeometry(puntos2);
 
-var material3 = new THREE.MeshNormalMaterial();
+var material3 = materialGris;
 
 var malla3 = new THREE.Mesh( torre3, material3 );
 
@@ -62,5 +66,5 @@ torreForma1.merge(malla3.geometry, malla3.matrix);//
 torreForma1.merge(malla4.geometry, malla3.matrix);
 
 
-var material = new THREE.MeshNormalMaterial();
+var material = materialGris;
 var mallaTorre = new THREE.Mesh(torreForma1, material);
