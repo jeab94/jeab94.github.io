@@ -108,6 +108,7 @@ marco4.receiveShadow = true;
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
+    torre1.material = materialBlanco;
     torre1.castShadow = true;
     
 //Torre2Blanca
@@ -116,6 +117,7 @@ marco4.receiveShadow = true;
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
+    torre2.material = materialBlanco;
     torre2.castShadow = true;
     
 //Torre3Negra
