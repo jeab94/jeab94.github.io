@@ -1,4 +1,4 @@
-var materialGris = new THREE.MeshBasicMaterial( { 
+var materialGris = new THREE.MeshLambertMaterial( { 
     color: 0x888888 
 } ); 
 
