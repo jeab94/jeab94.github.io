@@ -20,30 +20,30 @@ luzPuntual3.position.x = 130;
 luzPuntual3.position.y = 100;
 luzPuntual3.position.z = 130;
 
-var materialBlanco = new THREE.MeshLambertMaterial( { 
+var materialBlanco = new THREE.MeshBasicMaterial( { 
     color: 0xffffff
 } );
 
-var materialCafe = new THREE.MeshLambertMaterial( { 
+var materialCafe = new THREE.MeshBasicMaterial( { 
     color: 0x654321 
 } );
 
-var materialTorre1 = new THREE.MeshLambertMaterial( {
+var materialTorre1 = new THREE.MeshBasicMaterial( {
     color: 0xffffff,
     //opacity: 1
 } );
 //materialTorre1.opacity = 1;
-var materialTorre2 = new THREE.MeshLambertMaterial( {
+var materialTorre2 = new THREE.MeshBasicMaterial( {
     color: 0xffffff,
     //opacity: 0.75
 } );
 //materialTorre2.opacity = 0.75;
-var materialTorre3 = new THREE.MeshLambertMaterial( {
+var materialTorre3 = new THREE.MeshBasicMaterial( {
     color: 0x000000,
     //opacity: 0.5
 } );
 //materialTorre3.opacity = 0.5;
-var materialTorre4 = new THREE.MeshLambertMaterial( {
+var materialTorre4 = new THREE.MeshBasicMaterial( {
     color: 0x000000,
     //opacity: 0.25
 } );
