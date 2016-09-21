@@ -25,31 +25,37 @@ camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
 var materialBlanco = new THREE.MeshLambertMaterial( { 
-    color: 0xffffff, 
-   opacity: 0.1
-   transparent: true
-} ) 
+    color: 0xffffff
+} );
 
-var materialNegro = new THREE.MeshLambertMaterial( { 
-    color: 0x000000 
-    opacity: 0.1
-    transparent: true
-    
-} ) 
+var materialGris = new THREE.MeshLambertMaterial( { 
+    color: 0x888888 
+} ); 
 var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
-    opacity: 0.1
-    transparent: true
-} ) 
-var materialGris = new THREE.MeshLambertMaterial({
-    color: 0x888888  
-    opacity: 0.1
-    transparent: true
-} )
+} ); 
 
 
-var materialTorre1 = materialBlanco;
-var materialTorre2 = materialGris;
+var materialTorre1 = new THREE.MeshLambertMaterial( {
+    color: 0xffffff,
+    opacity: 1,
+    transparency: true
+} );
+var materialTorre2 = new THREE.MeshLambertMaterial( {
+    color: 0xffffff,
+    opacity: 0.75,
+    transparency: true
+} );
+var materialTorre3 = new THREE.MeshLambertMaterial( {
+    color: 0x000000,
+    opacity: 0.5,
+    transparency: true
+} );
+var materialTorre4 = new THREE.MeshLambertMaterial( {
+    color: 0x000000,
+    opacity: 0.25,
+    transparency: true
+} );
         
 
 //Tablero
@@ -62,7 +68,7 @@ var tablero = new THREE.Geometry()
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
     if ((i+j) % 2 == 0){
-        var material= materialNegro;
+        var material= materialGris;
         }
     else{
         var material= materialBlanco;
@@ -181,7 +187,7 @@ marco4.receiveShadow = true;
     
     var torre12 = new THREE.ExtrudeGeometry(base2, { amount: 80 } );
     torre12.translate(0, -95, -40);
-    var malla12 = new THREE.Mesh(torre11, materialTorre1);
+    var malla12 = new THREE.Mesh(torre11, materialTorre2);
     
     //Mitad inferior de la torre
     var puntos12 = [];
@@ -193,14 +199,14 @@ marco4.receiveShadow = true;
     var torre22 = new THREE.LatheGeometry(puntos12); //Torno
     torre22.translate(0, -75, 0);
     
-    var malla22 = new THREE.Mesh( torre22, materialTorre1 );
+    var malla22 = new THREE.Mesh( torre22, materialTorre2 );
     
     //Mitad superior de la torre
     var superior2 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior2.translate( 0, 125, 0 );
     
-    var malla42 = new THREE.Mesh( superior2, materialTorre1 );
+    var malla42 = new THREE.Mesh( superior2, materialTorre2 );
     
     //Terminación de la torre
     var puntos22 = [];
@@ -210,7 +216,7 @@ marco4.receiveShadow = true;
     }
     
     var torre32 = new THREE.LatheGeometry(puntos22);
-    var malla32 = new THREE.Mesh( torre32, materialTorre1 );
+    var malla32 = new THREE.Mesh( torre32, materialTorre2 );
     
     //Unión
     var torreForma12 = new THREE.Geometry();
@@ -220,7 +226,7 @@ marco4.receiveShadow = true;
     torreForma12.merge(malla42.geometry, malla32.matrix);
     
     //materialTorre1.opacity = 0.75;
-    var torre2 = new THREE.Mesh(torreForma12, materialTorre1);
+    var torre2 = new THREE.Mesh(torreForma12, materialTorre2);
     torre2.scale.set(0.07,0.07,0.07);
     torre2.translateY(10);
     torre2.translateX(5);
@@ -240,7 +246,7 @@ marco4.receiveShadow = true;
     
     var torre13 = new THREE.ExtrudeGeometry(base3, { amount: 80 } );
     torre13.translate(0, -95, -40);
-    var malla13 = new THREE.Mesh(torre11, materialTorre2);
+    var malla13 = new THREE.Mesh(torre11, materialTorre3);
     
     //Mitad inferior de la torre
     var puntos13 = [];
@@ -252,14 +258,14 @@ marco4.receiveShadow = true;
     var torre23 = new THREE.LatheGeometry(puntos13); //Torno
     torre23.translate(0, -75, 0);
     
-    var malla23 = new THREE.Mesh( torre23, materialTorre2 );
+    var malla23 = new THREE.Mesh( torre23, materialTorre3 );
     
     //Mitad superior de la torre
     var superior3 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior3.translate( 0, 125, 0 );
     
-    var malla43 = new THREE.Mesh( superior3, materialTorre2 );
+    var malla43 = new THREE.Mesh( superior3, materialTorre3 );
     
     //Terminación de la torre
     var puntos23 = [];
@@ -269,7 +275,7 @@ marco4.receiveShadow = true;
     }
     
     var torre33 = new THREE.LatheGeometry(puntos23);
-    var malla33 = new THREE.Mesh( torre33, materialTorre2 );
+    var malla33 = new THREE.Mesh( torre33, materialTorre3 );
     
     //Unión
     var torreForma13 = new THREE.Geometry();
@@ -279,7 +285,7 @@ marco4.receiveShadow = true;
     torreForma13.merge(malla43.geometry, malla33.matrix);
     
     //materialTorre2.opacity = 0.5;
-    var torre3 = new THREE.Mesh(torreForma13, materialTorre2);
+    var torre3 = new THREE.Mesh(torreForma13, materialTorre3);
     torre3.scale.set(0.07,0.07,0.07);
     torre3.translateY(10);
     torre3.translateX(75);
@@ -299,7 +305,7 @@ marco4.receiveShadow = true;
     
     var torre14 = new THREE.ExtrudeGeometry(base4, { amount: 80 } );
     torre14.translate(0, -95, -40);
-    var malla14 = new THREE.Mesh(torre14, materialTorre2);
+    var malla14 = new THREE.Mesh(torre14, materialTorre4);
     
     //Mitad inferior de la torre
     var puntos14 = [];
@@ -311,14 +317,14 @@ marco4.receiveShadow = true;
     var torre24 = new THREE.LatheGeometry(puntos14); //Torno
     torre24.translate(0, -75, 0);
     
-    var malla24 = new THREE.Mesh( torre24, materialTorre2 );
+    var malla24 = new THREE.Mesh( torre24, materialTorre4 );
     
     //Mitad superior de la torre
     var superior4 = new THREE.CylinderGeometry( 42, 42, 20, 32);
     
     superior4.translate( 0, 125, 0 );
     
-    var malla44 = new THREE.Mesh( superior4, materialTorre2 );
+    var malla44 = new THREE.Mesh( superior4, materialTorre4 );
     
     //Terminación de la torre
     var puntos24 = [];
@@ -328,7 +334,7 @@ marco4.receiveShadow = true;
     }
     
     var torre34 = new THREE.LatheGeometry(puntos24);
-    var malla34 = new THREE.Mesh( torre34, materialTorre2 );
+    var malla34 = new THREE.Mesh( torre34, materialTorre4 );
     
     //Unión
     var torreForma14 = new THREE.Geometry();
@@ -338,7 +344,7 @@ marco4.receiveShadow = true;
     torreForma14.merge(malla43.geometry, malla34.matrix);
     
     //materialTorre2.opacity = 0;
-    var torre4 = new THREE.Mesh(torreForma14, materialTorre2);
+    var torre4 = new THREE.Mesh(torreForma14, materialTorre4);
     torre4.scale.set(0.07,0.07,0.07);
     torre4.translateY(10);
     torre4.translateX(75);
