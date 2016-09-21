@@ -1,5 +1,5 @@
 grayColor = new THREE.Color(0x888888);
-var materialGris = new THREE.MeshLambertMaterial( { grayColor } ); 
+var materialGris = new THREE.MeshLambertMaterial( { color: grayColor } ); 
 
 //Base de la torre
 var base = new THREE.Shape();
