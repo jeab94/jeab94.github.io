@@ -24,32 +24,28 @@ var materialBlanco = new THREE.MeshLambertMaterial( {
     color: 0xffffff
 } );
 
-var materialGris = new THREE.MeshLambertMaterial( { 
-    color: 0x888888 
-} ); 
 var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
 } );
 
-
 var materialTorre1 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
-    opacity: 1
+    //opacity: 1
 } );
 //materialTorre1.opacity = 1;
 var materialTorre2 = new THREE.MeshLambertMaterial( {
     color: 0xffffff,
-    opacity: 0.75
+    //opacity: 0.75
 } );
 //materialTorre2.opacity = 0.75;
 var materialTorre3 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
-    opacity: 0.5
+    //opacity: 0.5
 } );
 //materialTorre3.opacity = 0.5;
 var materialTorre4 = new THREE.MeshLambertMaterial( {
     color: 0x000000,
-    opacity: 0.25
+    //opacity: 0.25
 } );
 //materialTorre4.opacity = 0.25;
         
@@ -71,7 +67,7 @@ for (var j=0;j<=7;j++){
     var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
     cubo.position.x = j*lado+5;
-    cubo.position.z = i*lado+5;
+    cubo.position.y = i*lado+5;
     cubos.push(cubo)
     
     }
@@ -112,9 +108,6 @@ marco4.receiveShadow = true;
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
-    torre1.Material = materialBlanco;
-    torre1.transparent = true;
-    torre1.opacity = 1;
     torre1.castShadow = true;
     
 //Torre2Blanca
@@ -123,9 +116,6 @@ marco4.receiveShadow = true;
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
-    torre2.Material = materialBlanco;
-    torre2.transparent = true;
-    torre2.opacity = 1;
     torre2.castShadow = true;
     
 //Torre3Negra
@@ -134,9 +124,6 @@ marco4.receiveShadow = true;
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
-    torre3.Material = materialGris;
-    torre3.transparent = true;
-    torre3.opacity = 1;
     torre3.castShadow = true;
 
 //Torre4Negra
@@ -145,9 +132,6 @@ marco4.receiveShadow = true;
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
-    torre4.Material = materialBlanco;
-    torre4.transparent = true;
-    torre4.opacity = 1;
     torre4.castShadow = true;
     
 
@@ -171,10 +155,10 @@ escena.add(cubos[i]);
 
 var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
-renderizador.shadowMap.enabled = true;
-luzPuntual1.castShadow=true;
-luzPuntual2.castShadow=true;
-luzPuntual3.castShadow=true;
+renderizador.shadowMapEnabled=true;
+luzPuntual1.castShadow = true;
+luzPuntual2.castShadow = true;
+luzPuntual3.castShadow = true;
 
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
