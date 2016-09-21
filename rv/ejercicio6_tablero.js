@@ -10,11 +10,11 @@ luzPuntual1.position.x = 40;
 luzPuntual1.position.y = 100;
 luzPuntual1.position.z = 40;
 
-var materialBlanco = new THREE.MeshBasicMaterial( { 
+var materialBlanco = new THREE.MeshLambertMaterial( { 
     color: 0xffffff
 } );
 
-var materialCafe = new THREE.MeshBasicMaterial( { 
+var materialCafe = new THREE.MeshLambertMaterial( { 
     color: 0x654321 
 } );
 
