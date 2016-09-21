@@ -11,10 +11,10 @@ luzPuntual1.position.y = 100;
 luzPuntual1.position.z = 40;
 
 whiteColor = new THREE.Color(0xffffff);
-var materialBlanco = new THREE.MeshBasicMaterial( { color: whiteColor } ); 
+var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
 
 brownColor = new THREE.Color(0x654321);
-var materialCafe = new THREE.MeshBasicMaterial( { color: brownColor } ); 
+var materialCafe = new THREE.MeshPhongMaterial( { color: brownColor } ); 
 
 //Tablero
 var lado = 10;
