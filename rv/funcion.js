@@ -9,7 +9,7 @@ function init(p){
   camara.position.z = 5*p;
   
   renderizador = new THREE.WebGLRenderer(); //Sin var son variables globales
-  renderizador.setSize(100, 700);
+  renderizador.setSize(700, 700);
   document.body.appendChild(renderizador.domElement);
 }
 
