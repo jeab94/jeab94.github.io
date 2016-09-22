@@ -121,7 +121,7 @@ cubos[i].receiveShadow = true;
 var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
-renderizador.shadowMap.enable = true;
+renderizador.shadowMapEnabled = true;
 luzPuntual1.castShadow = true;
 marco1.receiveShadow = true;
 marco2.receiveShadow = true;
