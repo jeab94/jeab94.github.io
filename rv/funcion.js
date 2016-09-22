@@ -11,7 +11,7 @@ function init(p){
 }
 
 var main = function (p){
-  renderizador.renderer(escena, camara);
+  renderizador.render(escena, camara);
 }
 
 var escena, camara, renderizador;
