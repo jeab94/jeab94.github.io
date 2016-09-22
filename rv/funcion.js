@@ -1,7 +1,7 @@
 var escena, camara, renderizador, malla;
 
 function init(p){
-  malla = new THREE.Mesh(new THREE.BoxGeometry(p,p,p), new THREE.MeshNormalMaterial());
+  malla = new THREE.Mesh(new THREE.BoxGeometry(p,p,p), new THREE.MeshNormalMaterial()); //malla es variable global
   escena = new THREE.Scene(); //Sin var son variables globales
   escena.add(malla);
   
