@@ -140,6 +140,7 @@ torre2.castShadow = true;
 torre3.castShadow = true;
 torre4.castShadow = true;
 
+
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
 
