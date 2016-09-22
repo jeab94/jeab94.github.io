@@ -7,7 +7,7 @@ function init(p){
   
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 5*p;
-  step = 0.1;
+  step = 1;
   
   renderizador = new THREE.WebGLRenderer(); //Sin var son variables globales
   renderizador.setSize(700, 700);
