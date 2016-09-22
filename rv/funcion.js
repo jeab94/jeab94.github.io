@@ -1,4 +1,4 @@
-var escena, camara, renderizador;
+var escena, camara, renderizador, malla;
 
 function init(p){
   var malla = new THREE.Mesh(new THREE.BoxGeometry(p,p,p), new THREE.MeshNormalMaterial());
@@ -25,6 +25,6 @@ var loop = function(){ //while
   malla.rotateY = (0.01);
 }
 
-var escena, camara, renderizador, malla;
+
 init(1)
 loop();
