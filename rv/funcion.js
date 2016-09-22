@@ -26,7 +26,7 @@ var loop = function(){ //while
   malla.rotateY(0.01);
   if(Math.abs(malla.position.x) < 300){
     step = -step;
-    malla.position.x+ = step;
+    malla.position.x = malla.position.x+step;
   }
   
 }
