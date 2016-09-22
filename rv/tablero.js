@@ -129,8 +129,8 @@ renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en t
 
 renderizador.shadowMap.enabled = true;
 luzPuntual1.castShadow = true;
-//luzPuntual2.castShadow = true;
-//luzPuntual3.castSahdow = true;
+luzPuntual2.castShadow = true;
+luzPuntual3.castShadow = true;
 marco1.receiveShadow = true;
 marco2.receiveShadow = true;
 marco3.receiveShadow = true;
