@@ -20,7 +20,7 @@ function init(p){
 //main(init);
 
 var loop = function(){ //while
-  requestAnimationFrame(loop);
+   window.requestAnimationFrame(loop);
   renderizador.render(escena, camara);
   malla.rotateY(0.01);
 }
