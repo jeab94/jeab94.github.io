@@ -5,14 +5,14 @@ camara.position.x = 100;
 camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual1.position.set(0,100,0);
+var luzPuntual1 = new THREE.PointLight(0xFFFFFF);
+luzPuntual1.position.set(0,20,0);
 
-var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual2.position.set(80,100,0);
+var luzPuntual2 = new THREE.PointLight(0xFFFFFF);
+luzPuntual2.position.set(80,20,0);
 
-var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual3.position.set(0,100,80);
+var luzPuntual3 = new THREE.PointLight(0xFFFFFF);
+luzPuntual3.position.set(0,20,80);
 
 whiteColor = new THREE.Color(0xffffff);
 var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
@@ -135,6 +135,14 @@ marco1.receiveShadow = true;
 marco2.receiveShadow = true;
 marco3.receiveShadow = true;
 marco4.receiveShadow = true;
+torre1.castShadow = true;
+torre2.castShadow = true;
+torre3.castShadow = true;
+torre4.castShadow = true;
+torre1.castShadow = true;
+torre2.castShadow = true;
+torre3.castShadow = true;
+torre4.castShadow = true;
 torre1.castShadow = true;
 torre2.castShadow = true;
 torre3.castShadow = true;
