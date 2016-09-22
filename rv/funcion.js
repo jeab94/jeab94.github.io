@@ -13,10 +13,18 @@ function init(p){
   document.body.appendChild(renderizador.domElement);
 }
 
-var main = function (p){
-  p(1);
+//var main = function (p){
+//  p(1);
+//  renderizador.render(escena, camara);
+//}
+//main(init);
+
+var loop = function(){ //while
+  requestAnimationFrame(loop);
   renderizador.render(escena, camara);
+  malla.rotateY(0.01);
 }
 
-
-main(init);
+var escena, camara, renderizador, malla;
+init(1)
+loop();
