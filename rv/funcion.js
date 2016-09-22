@@ -1,4 +1,4 @@
-var escena, camara, renderizador, malla;
+var escena, camara, renderizador, malla, step;
 
 function init(p){
   malla = new THREE.Mesh(new THREE.BoxGeometry(p,p,p), new THREE.MeshNormalMaterial()); //malla es variable global
@@ -7,6 +7,7 @@ function init(p){
   
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 5*p;
+  step = 0.1;
   
   renderizador = new THREE.WebGLRenderer(); //Sin var son variables globales
   renderizador.setSize(700, 700);
@@ -23,6 +24,11 @@ var loop = function(){ //while
   window.requestAnimationFrame(loop);
   renderizador.render(escena, camara);
   malla.rotateY(0.01);
+  if(Math.abs(malla.position.x) < 300){
+    step = -step;
+    malla.position.x+ = step;
+  }
+  
 }
 
 
