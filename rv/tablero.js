@@ -120,7 +120,7 @@ escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
 escena.add(torre4);
-//escena.add(luzPuntual1);
+escena.add(luzPuntual1);
 //escena.add(luzPuntual2);
 //escena.add(luzPuntual3);
 
