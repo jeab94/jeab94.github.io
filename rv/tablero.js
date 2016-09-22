@@ -115,10 +115,18 @@ escena.add(luzPuntual1);
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
+cubos[i].receiveShadow = true;
 }
 
 var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
+
+renderizador.shadowMap.enable = true;
+luzPuntual1.castShadow = true;
+marco1.receiveShadow = true;
+marco2.receiveShadow = true;
+marco3.receiveShadow = true;
+marco4.receiveShadow = true;
 
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
