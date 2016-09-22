@@ -6,19 +6,13 @@ camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
 var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual1.position.x = -50;
-luzPuntual1.position.y = 100;
-luzPuntual1.position.z = -50;
+luzPuntual1.position.set(-50,100,-50);
 
 var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual2.position.x = 130;
-luzPuntual2.position.y = 100;
-luzPuntual2.position.z = -50;
+luzPuntual2.position.set(130,100,-50);
 
 var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual3.position.x = -50;
-luzPuntual3.position.y = 100;
-luzPuntual3.position.z = 130;
+luzPuntual3.position.set(-50,100,130);
 
 whiteColor = new THREE.Color(0xffffff);
 var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
