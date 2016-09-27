@@ -1,0 +1,31 @@
+var VENTANA = new Object(); //Módulo
+
+VENTANA.listener = fucntion(){
+  VENTANA.camara.aspect = window.innerWidth/window.innerHeight;
+  VENTANA.camara.updateProjectMatrix();
+  VENTANA.renderizador.setSize(window.innerWidth, window.innerHeight);
+  }
+  
+ VENTANA.setup = fucntion(){
+   var tipo_evento = 'resize';
+   var capturarp = false;
+   window.addEventListener(tipo_evento, VENTANA.listener, capturarp);
+   VENTANA.escena = new THREE.Scene();
+   VENTANA.camara = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight 0.1, 1000);
+   VENTANA.camara.position.z = 5;
+  
+   var lienzo = document.getelementById("ejemplo-ventana");
+   VENTANA.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+   VENTANA.renderizador.serSize(window.innerWidth, window.innerHeight);
+   
+   VENTANA.malla = new THREE.Mesh( new THREE.BoxGeometry(1,1,1), new THREE.MeshNormalMaterial() );
+   VENTANA.escena.add(VENTANA.malla);
+}
+
+VENTANA.loop = fucntion(){
+  requestAnimationFrame(VENTANA.loop);
+  VENTANA.malla.rotateX(0.01);
+  VENTANA.malla.rotateY(0.01);
+  VENTANA.renderizador.render(VENTANA.escena, VENTANA.camara);
+
+}
