@@ -22,7 +22,7 @@ VENTANA.listener = function(){
    VENTANA.escena.add(VENTANA.malla);
 }
 
-VENTANA.loop = fucntion(){
+VENTANA.loop = function(){
   requestAnimationFrame(VENTANA.loop);
   VENTANA.malla.rotateX(0.01);
   VENTANA.malla.rotateY(0.01);
