@@ -1,12 +1,12 @@
 var VENTANA = new Object(); //Módulo
 
-VENTANA.listener = fucntion(){
+VENTANA.listener = function(){
   VENTANA.camara.aspect = window.innerWidth/window.innerHeight;
   VENTANA.camara.updateProjectMatrix();
   VENTANA.renderizador.setSize(window.innerWidth, window.innerHeight);
   }
   
- VENTANA.setup = fucntion(){
+ VENTANA.setup = function(){
    var tipo_evento = 'resize';
    var capturarp = false;
    window.addEventListener(tipo_evento, VENTANA.listener, capturarp);
