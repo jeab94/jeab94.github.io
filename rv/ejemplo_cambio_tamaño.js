@@ -2,7 +2,7 @@ var VENTANA = new Object(); //Módulo
 
 VENTANA.listener = function(){
   VENTANA.camara.aspect = window.innerWidth/window.innerHeight;
-  VENTANA.camara.updateProjectMatrix();
+  VENTANA.camara.updateProjectionMatrix();
   VENTANA.renderizador.setSize(window.innerWidth, window.innerHeight);
   }
   
