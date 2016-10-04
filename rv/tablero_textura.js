@@ -155,7 +155,6 @@ marco4.translateX(-2.5);
     torre1.translateZ(5);
     torre1.material = Blanco;
     
-var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 1, transparent: true } );
 //Torre2Blanca
     torre2 = mallaTorre.clone();
     torre2.scale.set(0.07,0.07,0.07);
