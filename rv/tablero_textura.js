@@ -2,6 +2,9 @@ var mat1 = false;
 var mat2 = false;
 var mat3 = false;
 
+var escena = new THREE.Scene();
+var renderizador = new THREE.WebGLRenderer();
+
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
    mat1 = true;
@@ -180,11 +183,6 @@ marco4.translateX(-2.5);
     torre5.material = Gris;
     
 
-for (i = 0; i < 64; i++) {
-escena.add(cubos[i]);
-}
-
-var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
 escena.add(marco3);
@@ -195,11 +193,15 @@ escena.add(torre3);
 escena.add(torre5);
 escena.add(luzPuntual1);
    
-var renderizador = new THREE.WebGLRenderer();
+for (i = 0; i < 64; i++) {
+escena.add(cubos[i]);
+}
+
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
 }
+
 var didSetup = false;
 
 var loop = function(){
