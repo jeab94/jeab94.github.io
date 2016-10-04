@@ -101,11 +101,6 @@ camara.position.x = 100;
 camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
-luzPuntual1.position.x = 40;
-luzPuntual1.position.y = 100;
-luzPuntual1.position.z = 40;
-
 //Tablero
 var lado = 10;
 var cubos = [];
@@ -183,7 +178,9 @@ marco4.translateX(-2.5);
     torre5.translateX(75);
     torre5.translateZ(75);
     torre5.material = Gris;
-  
+
+escena = new THREE.Scene();
+   
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
 escena.add(marco1);
@@ -194,7 +191,6 @@ escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
 escena.add(torre5);
-escena.add(luzPuntual1);
 }
 
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
