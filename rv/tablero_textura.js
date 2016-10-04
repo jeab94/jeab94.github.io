@@ -22,6 +22,7 @@ cargadorWhite.load("white_marmol.jpg", fnWhite);
 var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("wood.jpg", fnWood);
 
+var poner=function(){
 //Base de la torre
 var base = new THREE.Shape();
 
@@ -198,6 +199,7 @@ var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
+}
 var didSetup = false;
 
 var loop = function(){
