@@ -27,5 +27,17 @@ var CONSTRUCTOR.setup = function(){
   var lienzo = document.getElementById("ejemplo-constructor");
   CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
   CONSTRUCTOR.renderizador.setSize(600,600);
+  
+  CONSTRUCTOR.escena = new THREE.Scene();
+  CONSTRUCTOR.escena.add(arbol1.malla);
+  CONSTRUCTOR.escena.add(arbol2.malla);
 
 }
+
+CONSTRUCTOR.loop = function(){
+  requestAnimationFrame(CONSTRUCTOR.loop); 
+  CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena, CONSTRUCTOR.camara);
+}
+
+CONSTRUCTOR.setup();
+CONSTRUCTOR.loop();
