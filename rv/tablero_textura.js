@@ -172,12 +172,12 @@ marco4.translateX(-2.5);
     torre3.translateZ(5);
     torre3.material = Gris;
 //Torre4Negra
-    torre4 = mallaTorre.clone();
-    torre4.scale.set(0.07,0.07,0.07);
-    torre4.translateY(10);
-    torre4.translateX(75);
-    torre4.translateZ(75);
-    torre4.material = Gris;
+    torre5 = mallaTorre.clone();
+    torre5.scale.set(0.07,0.07,0.07);
+    torre5.translateY(10);
+    torre5.translateX(75);
+    torre5.translateZ(75);
+    torre5.material = Gris;
     
 var escena = new THREE.Scene();
 escena.add(marco1);
@@ -187,7 +187,7 @@ escena.add(marco4);
 escena.add(torre1);
 escena.add(torre2);
 escena.add(torre3);
-escena.add(torre4);
+escena.add(torre5);
 escena.add(luzPuntual1);
 
 
