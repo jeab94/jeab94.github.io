@@ -2,8 +2,10 @@ var mat1 = false;
 var mat2 = false;
 var mat3 = false;
 
-var escena = new THREE.Scene();
-var renderizador = new THREE.WebGLRenderer();
+var escena;
+var renderizador;
+var camara;
+
 
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
@@ -92,7 +94,7 @@ var material = Gris;
 var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 
-var camara = new THREE.PerspectiveCamera();
+camara = new THREE.PerspectiveCamera();
 
 camara.position.y = 100;
 camara.position.x = 100;
