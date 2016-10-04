@@ -1,212 +1,70 @@
-var TEXTURA = new Object();
+grayColor = new THREE.Color(0x888888);
+var materialGris = new THREE.MeshPhongMaterial( { color: grayColor } ); 
 
-TEXTURA.retrollamada1 = function(textura){
-  var  materialGris = new THREE.MeshBasicMaterial({map: textura}); //mapeo la imagen como material
-  //Base de la torre
-  var base = new THREE.Shape();
+//Base de la torre
+var base = new THREE.Shape();
 
-  base.moveTo( -65, -10 );
-  base.lineTo( -65, 10 );
-  base.lineTo( 65, 10 );
-  base.lineTo( 65, -10 );
-  base.lineTo( -65, -10 );
+base.moveTo( -65, -10 );
+base.lineTo( -65, 10 );
+base.lineTo( 65, 10 );
+base.lineTo( 65, -10 );
+base.lineTo( -65, -10 );
 
-  var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-  torre1.translate(0, -95, -65);
-  var material1 = materialGris;
-  var malla1 = new THREE.Mesh(torre1, material1);
-
-
-  //Mitad inferior de la torre
-  var puntos = [];
-
-  for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-    puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
-  }
-
-  var torre2 = new THREE.LatheGeometry(puntos); //Torno
-  torre2.translate(0, -75, 0);
-
-  var material2 = materialGris;
-
-  var malla2 = new THREE.Mesh( torre2, material2 );
-  //malla2.rotateZ( Math.PI/6 );
-
-  //Mitad superior de la torre
-  var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
-
-  superior.translate( 0, 125, 0 );
-
-  var material3 = materialGris;
-
-  var malla3 = new THREE.Mesh( superior, material3 );
+var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
+torre1.translate(0, -95, -65);
+var material1 = materialGris;
+var malla1 = new THREE.Mesh(torre1, material1);
 
 
-  //Terminación de la torre
-  var puntos2 = [];
+//Mitad inferior de la torre
+var puntos = [];
 
-  for ( var j = 0; j < 100 ; j++ ){
-    puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
-  }
-
-  var torre4 = new THREE.LatheGeometry(puntos2);
-
-  var material4 = materialGris;
-
-  var malla4 = new THREE.Mesh( torre4, material4 );
-
-
-  //Unión
-  var torreForma1 = new THREE.Geometry();
-  torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla3.geometry, malla3.matrix);//
-  torreForma1.merge(malla4.geometry, malla4.matrix);
-
-
-  var material = materialGris;
-  var mallaTorre = new THREE.Mesh(torreForma1, material);
-  TEXTURA.escena.add(TEXTURA.mallaTorre);
+for( var i = 0; i < 100; i++ ){ //Son 50 puntos
+  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
 }
 
-TEXTURA.retrollamada2 = function(textura){
-  var  materialGris = new THREE.MeshBasicMaterial({map: textura}); //mapeo la imagen como material
-  //Base de la torre
-  var base = new THREE.Shape();
+var torre2 = new THREE.LatheGeometry(puntos); //Torno
+torre2.translate(0, -75, 0);
 
-  base.moveTo( -65, -10 );
-  base.lineTo( -65, 10 );
-  base.lineTo( 65, 10 );
-  base.lineTo( 65, -10 );
-  base.lineTo( -65, -10 );
+var material2 = materialGris;
 
-  var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-  torre1.translate(0, -95, -65);
-  var material1 = materialGris;
-  var malla1 = new THREE.Mesh(torre1, material1);
+var malla2 = new THREE.Mesh( torre2, material2 );
+//malla2.rotateZ( Math.PI/6 );
 
+//Mitad superior de la torre
+var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
-  //Mitad inferior de la torre
-  var puntos = [];
+superior.translate( 0, 125, 0 );
 
-  for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-    puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
-  }
+var material3 = materialGris;
 
-  var torre2 = new THREE.LatheGeometry(puntos); //Torno
-  torre2.translate(0, -75, 0);
-
-  var material2 = materialGris;
-
-  var malla2 = new THREE.Mesh( torre2, material2 );
-  //malla2.rotateZ( Math.PI/6 );
-
-  //Mitad superior de la torre
-  var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
-
-  superior.translate( 0, 125, 0 );
-
-  var material3 = materialGris;
-
-  var malla3 = new THREE.Mesh( superior, material3 );
+var malla3 = new THREE.Mesh( superior, material3 );
 
 
-  //Terminación de la torre
-  var puntos2 = [];
+//Terminación de la torre
+var puntos2 = [];
 
-  for ( var j = 0; j < 100 ; j++ ){
-    puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
-  }
-
-  var torre4 = new THREE.LatheGeometry(puntos2);
-
-  var material4 = materialGris;
-
-  var malla4 = new THREE.Mesh( torre4, material4 );
-
-
-  //Unión
-  var torreForma1 = new THREE.Geometry();
-  torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla3.geometry, malla3.matrix);//
-  torreForma1.merge(malla4.geometry, malla4.matrix);
-
-
-  var material = materialGris;
-  var mallaTorre = new THREE.Mesh(torreForma1, material);
-  TEXTURA.escena.add(TEXTURA.mallaTorre);
+for ( var j = 0; j < 100 ; j++ ){
+  puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
 }
 
-TEXTURA.retrollamada2 = function(textura){
-  var  materialGris = new THREE.MeshBasicMaterial({map: textura}); //mapeo la imagen como material
-  //Base de la torre
-  var base = new THREE.Shape();
+var torre4 = new THREE.LatheGeometry(puntos2);
 
-  base.moveTo( -65, -10 );
-  base.lineTo( -65, 10 );
-  base.lineTo( 65, 10 );
-  base.lineTo( 65, -10 );
-  base.lineTo( -65, -10 );
+var material4 = materialGris;
 
-  var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-  torre1.translate(0, -95, -65);
-  var material1 = materialGris;
-  var malla1 = new THREE.Mesh(torre1, material1);
+var malla4 = new THREE.Mesh( torre4, material4 );
 
 
-  //Mitad inferior de la torre
-  var puntos = [];
-
-  for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-    puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
-  }
-
-  var torre2 = new THREE.LatheGeometry(puntos); //Torno
-  torre2.translate(0, -75, 0);
-
-  var material2 = materialGris;
-
-  var malla2 = new THREE.Mesh( torre2, material2 );
-  //malla2.rotateZ( Math.PI/6 );
-
-  //Mitad superior de la torre
-  var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
-
-  superior.translate( 0, 125, 0 );
-
-  var material3 = materialGris;
-
-  var malla3 = new THREE.Mesh( superior, material3 );
+//Unión
+var torreForma1 = new THREE.Geometry();
+torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
+torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
+torreForma1.merge(malla3.geometry, malla3.matrix);//
+torreForma1.merge(malla4.geometry, malla4.matrix);
 
 
-  //Terminación de la torre
-  var puntos2 = [];
-
-  for ( var j = 0; j < 100 ; j++ ){
-    puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
-  }
-
-  var torre4 = new THREE.LatheGeometry(puntos2);
-
-  var material4 = materialGris;
-
-  var malla4 = new THREE.Mesh( torre4, material4 );
-
-
-  //Unión
-  var torreForma1 = new THREE.Geometry();
-  torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-  torreForma1.merge(malla3.geometry, malla3.matrix);//
-  torreForma1.merge(malla4.geometry, malla4.matrix);
-
-
-  var material = materialGris;
-  var mallaTorre = new THREE.Mesh(torreForma1, material);
-  TEXTURA.escena.add(TEXTURA.mallaTorre);
-}
-
+var material = materialGris;
+var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 
 var camara = new THREE.PerspectiveCamera();
@@ -216,14 +74,10 @@ camara.position.x = 100;
 camara.position.z = 100;
 camara.lookAt(new THREE.Vector3(40,5,40));
 
-var luzPuntual1 = new THREE.PointLight(0xFFFFFF, 0.5);
-luzPuntual1.position.set(0,100,0);
-
-var luzPuntual2 = new THREE.PointLight(0xFFFFFF,0.5);
-luzPuntual2.position.set(80,100,0);
-
-var luzPuntual3 = new THREE.PointLight(0xFFFFFF,0.5);
-luzPuntual3.position.set(0,100,80);
+var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
+luzPuntual1.position.x = 40;
+luzPuntual1.position.y = 100;
+luzPuntual1.position.z = 40;
 
 whiteColor = new THREE.Color(0xffffff);
 var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
@@ -326,31 +180,14 @@ escena.add(torre2);
 escena.add(torre3);
 escena.add(torre4);
 escena.add(luzPuntual1);
-escena.add(luzPuntual2);
-escena.add(luzPuntual3);
 
 
 for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
-cubos[i].receiveShadow = true;
 }
 
 var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
-
-renderizador.shadowMap.enabled = true;
-luzPuntual1.castShadow = true;
-luzPuntual2.castShadow = true;
-luzPuntual3.castShadow = true;
-marco1.receiveShadow = true;
-marco2.receiveShadow = true;
-marco3.receiveShadow = true;
-marco4.receiveShadow = true;
-torre1.castShadow = true;
-torre2.castShadow = true;
-torre3.castShadow = true;
-torre4.castShadow = true;
-
 
 document.body.appendChild(renderizador.domElement);
 renderizador.render(escena, camara);
