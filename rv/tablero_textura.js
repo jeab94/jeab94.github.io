@@ -1,6 +1,30 @@
 grayColor = new THREE.Color(0x888888);
 var materialGris = new THREE.MeshPhongMaterial( { color: grayColor } ); 
 
+var mat1 = false;
+var mat2 = false;
+var mat3 = false;
+
+var fnBlack = function(textura) {
+   Gris = new THREE.MeshBasicMaterial({map: textura});  
+   mat1 = true;
+}
+var fnWhite = function(textura) {
+   Blanco = new THREE.MeshBasicMaterial({map: textura});  
+   mat2 = true;
+}
+var fnWood = function(textura) {
+   Marco = new THREE.MeshBasicMaterial({map: textura});  
+   mat3 = true;
+}
+
+var cargadorBlack=new THREE.TextureLoader();
+cargadorBlack.load("black_marmol.jpg", fnBlack);
+var cargadorWhite=new THREE.TextureLoader();
+cargadorWhite.load("white_marmol.jpg", fnWhite);
+var cargadorWood=new THREE.TextureLoader();
+cargadorWood.load("wood.jpg", fnWood);
+
 //Base de la torre
 var base = new THREE.Shape();
 
@@ -63,7 +87,7 @@ torreForma1.merge(malla3.geometry, malla3.matrix);//
 torreForma1.merge(malla4.geometry, malla4.matrix);
 
 
-var material = materialGris;
+var material = Gris;
 var mallaTorre = new THREE.Mesh(torreForma1, material);
 
 
@@ -94,10 +118,10 @@ var tablero = new THREE.Geometry()
 for (i=0;i<=7;i++){
 for (var j=0;j<=7;j++){
     if ((i+j) % 2 == 0){
-        material= materialGris;
+        material= Gris;
         }
     else{
-        material= materialBlanco;
+        material= Blanco;
         }
     var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
     var cubo = new THREE.Mesh(forma ,material);
@@ -109,25 +133,25 @@ for (var j=0;j<=7;j++){
 }
 
 var orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
-var material1 = materialCafe;
+var material1 = Marco;
 var marco1 = new THREE.Mesh( orilla1, material1 );
 marco1.translateZ(-2.5);
 marco1.translateX(40);
 
 var orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
-var material2 = materialCafe;
+var material2 = Marco;
 var marco2 = new THREE.Mesh( orilla2, material2);
 marco2.translateZ(40);
 marco2.translateX(82.5);
 
 var orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
-var material3 = materialCafe;
+var material3 = Marco;
 var marco3 = new THREE.Mesh( orilla3, material3);
 marco3.translateZ(82.5);
 marco3.translateX(40);
 
 var orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
-var material4 = materialCafe;
+var material4 = Marco;
 var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40);
 marco4.translateX(-2.5);
@@ -139,7 +163,7 @@ var materialBlanco1 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity:
     torre1.translateY(10);
     torre1.translateX(5);
     torre1.translateZ(5);
-    torre1.material = materialBlanco1;
+    torre1.material = Blanco;
     
 var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 1, transparent: true } );
 //Torre2Blanca
@@ -148,7 +172,7 @@ var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity:
     torre2.translateY(10);
     torre2.translateX(5);
     torre2.translateZ(75);
-    torre2.material = materialBlanco2;
+    torre2.material = Blanco;
 
 grayColor = new THREE.Color(0x888888);
 brownColor = new THREE.Color(0x654321);
@@ -160,7 +184,7 @@ var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1
     torre3.translateY(10);
     torre3.translateX(75);
     torre3.translateZ(5);
-    torre3.material = materialNegro1;
+    torre3.material = Gris;
 var materialNegro2 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1, transparent: true } );
 //Torre4Negra
     torre4 = mallaTorre.clone();
@@ -168,7 +192,7 @@ var materialNegro2 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1
     torre4.translateY(10);
     torre4.translateX(75);
     torre4.translateZ(75);
-    torre4.material = materialNegro2;
+    torre4.material = Gris;
     
 var escena = new THREE.Scene();
 escena.add(marco1);
@@ -190,4 +214,18 @@ var renderizador = new THREE.WebGLRenderer({});
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
-renderizador.render(escena, camara);
+var didSetup = false;
+
+var loop = function(){
+   requestAnimationFrame(loop);
+   if(mat1 && mat2 && mat3){
+      if (didSetup == false) {
+      poner();
+      didSetup = true;
+      }
+   
+   renderizador.render(escena, camara);
+   }
+}
+loop();
+
