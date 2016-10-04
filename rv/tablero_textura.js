@@ -1,6 +1,3 @@
-grayColor = new THREE.Color(0x888888);
-var materialGris = new THREE.MeshPhongMaterial( { color: grayColor } ); 
-
 var mat1 = false;
 var mat2 = false;
 var mat3 = false;
@@ -36,7 +33,7 @@ base.lineTo( -65, -10 );
 
 var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
 torre1.translate(0, -95, -65);
-var material1 = materialGris;
+var material1 = Gris;
 var malla1 = new THREE.Mesh(torre1, material1);
 
 
@@ -50,7 +47,7 @@ for( var i = 0; i < 100; i++ ){ //Son 50 puntos
 var torre2 = new THREE.LatheGeometry(puntos); //Torno
 torre2.translate(0, -75, 0);
 
-var material2 = materialGris;
+var material2 = Gris;
 
 var malla2 = new THREE.Mesh( torre2, material2 );
 //malla2.rotateZ( Math.PI/6 );
@@ -60,7 +57,7 @@ var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
 
 superior.translate( 0, 125, 0 );
 
-var material3 = materialGris;
+var material3 = Gris;
 
 var malla3 = new THREE.Mesh( superior, material3 );
 
@@ -74,7 +71,7 @@ for ( var j = 0; j < 100 ; j++ ){
 
 var torre4 = new THREE.LatheGeometry(puntos2);
 
-var material4 = materialGris;
+var material4 = Gris;
 
 var malla4 = new THREE.Mesh( torre4, material4 );
 
@@ -103,16 +100,10 @@ luzPuntual1.position.x = 40;
 luzPuntual1.position.y = 100;
 luzPuntual1.position.z = 40;
 
-whiteColor = new THREE.Color(0xffffff);
-var materialBlanco = new THREE.MeshPhongMaterial( { color: whiteColor } ); 
-
-brownColor = new THREE.Color(0x654321);
-var materialCafe = new THREE.MeshPhongMaterial( { color: brownColor } ); 
-
 //Tablero
 var lado = 10;
 var cubos = [];
-var material = materialGris;
+var material = Gris;
 var tablero = new THREE.Geometry()
 
 for (i=0;i<=7;i++){
@@ -156,7 +147,6 @@ var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40);
 marco4.translateX(-2.5);
 
-var materialBlanco1 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 1, transparent: true } );
 //Torre1Blanca
     torre1 = mallaTorre.clone();
     torre1.scale.set(0.07,0.07,0.07);
@@ -174,10 +164,6 @@ var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity:
     torre2.translateZ(75);
     torre2.material = Blanco;
 
-grayColor = new THREE.Color(0x888888);
-brownColor = new THREE.Color(0x654321);
-var materialCafe = new THREE.MeshPhongMaterial( { color: brownColor } );     
-var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1, transparent: true } );
 //Torre3Negra
     torre3 = mallaTorre.clone();
     torre3.scale.set(0.07,0.07,0.07);
@@ -185,7 +171,6 @@ var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1
     torre3.translateX(75);
     torre3.translateZ(5);
     torre3.material = Gris;
-var materialNegro2 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1, transparent: true } );
 //Torre4Negra
     torre4 = mallaTorre.clone();
     torre4.scale.set(0.07,0.07,0.07);
