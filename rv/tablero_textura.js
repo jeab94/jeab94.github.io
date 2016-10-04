@@ -141,7 +141,7 @@ var materialBlanco1 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity:
     torre1.translateZ(5);
     torre1.material = materialBlanco1;
     
-var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 0.75, transparent: true } );
+var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity: 1, transparent: true } );
 //Torre2Blanca
     torre2 = mallaTorre.clone();
     torre2.scale.set(0.07,0.07,0.07);
@@ -153,7 +153,7 @@ var materialBlanco2 = new THREE.MeshPhongMaterial( { color: whiteColor, opacity:
 grayColor = new THREE.Color(0x888888);
 brownColor = new THREE.Color(0x654321);
 var materialCafe = new THREE.MeshPhongMaterial( { color: brownColor } );     
-var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 0.5, transparent: true } );
+var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1, transparent: true } );
 //Torre3Negra
     torre3 = mallaTorre.clone();
     torre3.scale.set(0.07,0.07,0.07);
@@ -161,7 +161,7 @@ var materialNegro1 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 0
     torre3.translateX(75);
     torre3.translateZ(5);
     torre3.material = materialNegro1;
-var materialNegro2 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 0.25, transparent: true } );
+var materialNegro2 = new THREE.MeshPhongMaterial( { color: grayColor, opacity: 1, transparent: true } );
 //Torre4Negra
     torre4 = mallaTorre.clone();
     torre4.scale.set(0.07,0.07,0.07);
