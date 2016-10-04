@@ -193,6 +193,7 @@ escena.add(torre3);
 escena.add(torre5);
 }
 
+renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
