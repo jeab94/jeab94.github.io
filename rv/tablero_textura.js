@@ -183,8 +183,9 @@ marco4.translateX(-2.5);
     torre5.translateX(75);
     torre5.translateZ(75);
     torre5.material = Gris;
-    
-
+  
+for (i = 0; i < 64; i++) {
+escena.add(cubos[i]);
 escena.add(marco1);
 escena.add(marco2);
 escena.add(marco3);
@@ -194,9 +195,6 @@ escena.add(torre2);
 escena.add(torre3);
 escena.add(torre5);
 escena.add(luzPuntual1);
-   
-for (i = 0; i < 64; i++) {
-escena.add(cubos[i]);
 }
 
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
