@@ -195,7 +195,7 @@ for (i = 0; i < 64; i++) {
 escena.add(cubos[i]);
 }
 
-var renderizador = new THREE.WebGLRenderer({});
+renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
