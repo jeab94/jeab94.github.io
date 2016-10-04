@@ -179,6 +179,11 @@ marco4.translateX(-2.5);
     torre5.translateZ(75);
     torre5.material = Gris;
     
+
+for (i = 0; i < 64; i++) {
+escena.add(cubos[i]);
+}
+
 var escena = new THREE.Scene();
 escena.add(marco1);
 escena.add(marco2);
@@ -189,13 +194,8 @@ escena.add(torre2);
 escena.add(torre3);
 escena.add(torre5);
 escena.add(luzPuntual1);
-
-
-for (i = 0; i < 64; i++) {
-escena.add(cubos[i]);
-}
-
-renderizador = new THREE.WebGLRenderer();
+   
+var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerWidth, window.innerHeight); //Renderizador en toda la pantalla
 
 document.body.appendChild(renderizador.domElement);
