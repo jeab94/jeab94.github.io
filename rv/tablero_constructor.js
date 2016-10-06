@@ -21,9 +21,9 @@ var fnWood = function(textura) {
 }
 
 var cargadorBlack=new THREE.TextureLoader();
-cargadorBlack.load("black_marmol.jpg", fnBlack);
+cargadorBlack.load("black_wood.jpg", fnBlack);
 var cargadorWhite=new THREE.TextureLoader();
-cargadorWhite.load("white_marmol.jpg", fnWhite);
+cargadorWhite.load("white_wood.jpg", fnWhite);
 var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("wood.jpg", fnWood);
 
