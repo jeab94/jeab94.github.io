@@ -32,8 +32,6 @@ function setup(){
 loop = function(){
   requestAnimationFrame(loop);
   renderizador.render(escena, camara);
-  pieza.piernaIzq.applyMatrix( new THREE.Matrix4().makeTranslation(0, 5, 0) );
-  pieza.piernaDer.applyMatrix( new THREE.Matrix4().makeTranslation(0, 5, 0) );
   pieza.rotateY(0.01);
   pieza.piernaIzq.rotateZ(0.01);
   pieza.piernaDer.rotateZ(0.01);
