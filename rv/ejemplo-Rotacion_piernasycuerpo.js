@@ -1,4 +1,4 @@
-fucntion Pieza(){
+function Pieza(){
   THREE.Object3D.call(this);
   var piernaIzq = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   var piernaDer = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
