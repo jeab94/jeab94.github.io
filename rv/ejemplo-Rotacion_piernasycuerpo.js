@@ -37,15 +37,15 @@ loop = function(){
   if (i>15){
   pieza.piernaIzq.rotateZ(0.01);
   pieza.piernaDer.rotateZ(0.01);
-    }
+  }  
   else {
   pieza.piernaIzq.rotateZ(-0.01);
   pieza.piernaDer.rotateZ(-0.01);
-  
-    }
   }
-  
+  }
 }
+  
+
 
 setup();
 loop();
