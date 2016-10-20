@@ -32,7 +32,7 @@ function setup(){
 loop = function(){
   requestAnimationFrame(loop);
   renderizador.render(escena, camara);
-  pieza.rotateY(0.1);
+  pieza.rotateY(0.01);
   pieza.piernaIzq.rotateZ(0.01);
   pieza.piernaDer.rotateZ(0.01);
 }
