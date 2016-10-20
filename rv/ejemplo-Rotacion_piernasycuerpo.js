@@ -1,10 +1,10 @@
 function Pieza(){
   
   THREE.Object3D.call(this);
-  var piernaIzq = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
-  var piernaDer = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernaIzq = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
+  this.piernaDer = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   var cuerpo = new THREE.Mesh(new THREE.BoxGeometry(5,10,5));
-  this.add(this.piernaIzq,this.piernaDer,this.cuerpo);
+  this.add(this.piernaIzq,this.piernaDer,cuerpo);
   piernaIzq.position.set(0, -2.5,-2)
   piernaDer.position.set(0, -2.5, 2)
   cuerpo.position.set(0, 0, 2.5)
