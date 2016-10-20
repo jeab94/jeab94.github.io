@@ -33,8 +33,18 @@ loop = function(){
   requestAnimationFrame(loop);
   renderizador.render(escena, camara);
   pieza.rotateY(0.01);
+  for (int i=1;i<=30;i++){
+  if (i>15){
   pieza.piernaIzq.rotateZ(0.01);
   pieza.piernaDer.rotateZ(0.01);
+    }
+  else {
+  pieza.piernaIzq.rotateZ(-0.01);
+  pieza.piernaDer.rotateZ(-0.01);
+  
+    }
+  }
+  
 }
 
 setup();
