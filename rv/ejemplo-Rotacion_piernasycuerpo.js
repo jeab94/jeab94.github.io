@@ -28,13 +28,10 @@ function setup(){
   
 }
 
-function loop(){
-  this.pieza.rotateY = 0.1;
-}
-
 loop = function(){
-  requestAnimationFrame(loop); 
- renderizador.render(escena, camara);
+  requestAnimationFrame(loop);
+  this.pieza.rotateY = 0.1;
+  renderizador.render(escena, camara);
 }
 
 setup();
