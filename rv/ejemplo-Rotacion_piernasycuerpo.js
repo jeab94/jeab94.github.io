@@ -34,6 +34,7 @@ loop = function(){
   renderizador.render(escena, camara);
   pieza.rotateY(0.1);
   pieza.piernaIzq.rotateZ(0.1);
+  pieza.piernaDer.rotateZ(0.1);
 }
 
 setup();
