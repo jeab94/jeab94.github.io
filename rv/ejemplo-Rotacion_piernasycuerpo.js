@@ -10,6 +10,7 @@ function Pieza(){
   cuerpo.position.set(0, 0, 2.5)
   
 }
+var pieza;
 
 Pieza.prototype = new THREE.Object3D;
 
