@@ -7,7 +7,7 @@ function Pieza(){
   this.add(this.piernaIzq,this.piernaDer,cuerpo);
   this.piernaIzq.position.set(0, -2.5,-2)
   this.piernaDer.position.set(0, -2.5, 2)
-  cuerpo.position.set(0, 0, 2.5)
+  cuerpo.position.set(0, 2.5, 0)
   
 }
 var pieza;
