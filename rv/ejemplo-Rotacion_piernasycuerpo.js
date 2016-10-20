@@ -31,8 +31,9 @@ function setup(){
 
 loop = function(){
   requestAnimationFrame(loop);
-  this.pieza.rotateY = 0.1;
   renderizador.render(escena, camara);
+  this.pieza.rotateY = 0.1;
+  
 }
 
 setup();
