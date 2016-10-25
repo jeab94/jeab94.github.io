@@ -25,14 +25,14 @@ Environment.prototype.sense = function(){
 
 Environment.prototype.plan = function(){
   for (var i=0; i<this.children.length; i++){
-   if (this.children[i].plan !== undefined) //Si pueden planificar
-     this.children[i].plan(this);           //Que planifiquen sobre el entorno
+   if (this.children[i].plan !== undefined) //Si puede planificar
+     this.children[i].plan(this);           //Que planifique sobre el entorno
   }
 }
 
 Environment.prototype.act = function(){
   for (var i=0; i<this.children.length; i++){
-   if (this.children[i].act !== undefined)
-     this.children[i].act(this);
+   if (this.children[i].act !== undefined) //Si puede actuar
+     this.children[i].act(this);          //Que actue sobre el entorno
   }
 }
