@@ -97,7 +97,9 @@ function setup() {
   entorno.add(new Pelota(0.5));
   entorno.add(camara);
   
-  renderer = new THREE.WebGLRenderer();
+   var lienzo = document.getElementById("ejemplo-Agentes");
+  
+  renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
   renderer .setSize(window.innerHeight*.95, window.innerHeight*.95);
   document.body.appendChild(renderer.domElement);
 }
