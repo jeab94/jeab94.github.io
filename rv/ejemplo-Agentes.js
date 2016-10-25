@@ -99,7 +99,7 @@ function setup() {
   
    var lienzo = document.getElementById("ejemplo-Agentes");
   
-  renderizador = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
+  renderer = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
   document.body.appendChild(renderer.domElement);
 }
