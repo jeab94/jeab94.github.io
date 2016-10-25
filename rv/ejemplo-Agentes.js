@@ -82,3 +82,31 @@ function Pared(size, x=0, y=0){
 }
   
 Pared.prototype = new THREE.Object3D();
+  
+function setup() {
+  entorno = new Environment();
+  camara = new THREE.PerspectiveCamera();
+  camara.position.z = 30;
+  
+  entorno.add(new Pared(1, 7, 0));
+  entorno.add(new Pared(1, -7, 0));
+  entorno.add(new Pared(1, 7, 1));
+  entorno.add(new Pared(1, -7, 1));
+  entorno.add(new Pared(1, 7, -1));
+  entorno.add(new Pared(1, -7, -1));
+  entorno.add(new Pelota(0.5));
+  entorno.add(camara);
+  
+  renderer = new THREE.WebGLRenderer();
+  renderer .setSize(window.innerHeight*.95, window.innerHeight*.95);
+  document.body.appendChild(renderer.domElement);
+}
+
+function loop(){
+  requestAnimationFrame(loop);
+  
+  entorno.sense();
+  entorno.plan();
+  entorno.act();
+  renderer.render(entorno, camara);
+}
