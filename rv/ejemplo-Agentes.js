@@ -36,3 +36,49 @@ Environment.prototype.act = function(){
      this.children[i].act(this);          //Que actue sobre el entorno
   }
 }
+
+function Pelota (r, x=0, y=0){
+  Agent.call(this,x,y); //Hereda de clase agente
+  this.add(new THREE.Mesh(new THREE.SphereGeometry(r), new THREE.MeshNormalMaterial()));
+  
+  this.step = 0.1;
+  this.colision = 0;
+  this.radius = r;
+  this.sensor = new THREE.Raycaster(this.position, new THREE.Vector3(1, 0, 0));
+}
+
+Pelota.prototype = new Agent();
+
+Pelota.prototype.sense = function(environment){
+  this.sensor.set(this.position, new THREE.Vector3(1, 0, 0));
+  var obstaculo1 = this.sensor.intersectObjects (environment.children, true);
+  
+  this.sensor.set(this.position, new THREE.Vector3(-1, 0, 0));
+  var obstaculo2 = this.sensor.intersectObjects (environment.children, true);
+
+    if ((obstaculo1.length > 0 && //Determina si la distancia al primer objeto es <= al radio
+       (obstaculo1[0].distance <= this.radius)) ||
+       (obstaculo2.length > 0 && //Obstáculo 1 es en un sentido, Obstáculo 2 es en el otro sentido
+       (obstaculo2[0].distance <= this.radius) ))
+        this.colision = 1; //Marca colisión si hay obstáculo en un sentido o el otro
+    else
+        this.colision = 0;
+}
+
+Pelota.prototype.act = function(environment){
+  if (this.colision === 1
+      this.step = -this.step;
+  this.position.x += this.step;
+}
+      
+function Pared(size, x=0, y=0){
+  THREE.Object3D.call(this, x, y);
+    
+    this.add(new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshNormalMaterial()));
+    
+    this.size = size;
+    this.position.x = x;
+    this.position.y = y;
+}
+  
+Pared.prototype = new THREE.Object3D();
