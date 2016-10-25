@@ -37,7 +37,7 @@ Environment.prototype.act = function(){
   }
 }
 
-function Pelota (r, x=0, y=0){
+function Pelota (r, x, y){
   Agent.call(this,x,y); //Hereda de clase agente
   this.add(new THREE.Mesh(new THREE.SphereGeometry(r), new THREE.MeshNormalMaterial()));
   
@@ -94,7 +94,9 @@ function setup() {
   entorno.add(new Pared(1, -7, 1));
   entorno.add(new Pared(1, 7, -1));
   entorno.add(new Pared(1, -7, -1));
-  entorno.add(new Pelota(0.5));
+  entorno.add(new Pelota(0.5, 0, 0));
+  entorno.add(new Pelota(0.5, 0.5, 0));
+  
   entorno.add(camara);
   
    var lienzo = document.getElementById("ejemplo-Agentes");
