@@ -10,3 +10,29 @@ Agent.prototype.sense = function(environment) {};
 Agent.prototype.plan = function(environment) {};
 Agent.prototype.act = function(environment) {};
 
+function Environment(){
+  THREE.Scene.call(this); 
+}
+
+Environment.prototype = new THREE.Scene();
+
+Environment.prototype.sense = function(){
+  for (var i=0; i<this.children.length; i++){
+   if (this.children[i].sense !== undefined) //Children son los objetos agregados a la escena (arreglo)
+     this.children[i].sense(this);
+  }
+}
+
+Environment.prototype.plan = function(){
+  for (var i=0; i<this.children.length; i++){
+   if (this.children[i].plan !== undefined) //Si pueden planificar
+     this.children[i].plan(this);           //Que planifiquen sobre el entorno
+  }
+}
+
+Environment.prototype.act = function(){
+  for (var i=0; i<this.children.length; i++){
+   if (this.children[i].act !== undefined)
+     this.children[i].act(this);
+  }
+}
