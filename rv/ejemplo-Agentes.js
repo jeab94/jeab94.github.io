@@ -87,7 +87,8 @@ function setup() {
   entorno = new Environment();
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 30;
-  camara.position.x = 2;
+  camara.position.y = 2;
+  camara.lookAt(0,0,0);
   
   entorno.add(new Pared(1, 7, 0));
   entorno.add(new Pared(1, -7, 0));
