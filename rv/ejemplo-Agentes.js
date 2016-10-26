@@ -86,7 +86,7 @@ Pared.prototype = new THREE.Object3D();
 function setup() {
   entorno = new Environment();
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 30;
+  camara.position.z = 15;
   camara.position.y = 2;
   camara.lookAt(0,0,0);
   
