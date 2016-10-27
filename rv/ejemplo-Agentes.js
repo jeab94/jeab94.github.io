@@ -93,16 +93,18 @@ function setup() {
   entorno.add(new Pared(1, 7, 0));
   entorno.add(new Pared(1, -7, 0));
   entorno.add(new Pared(1, 7, 1));
+  
   entorno.add(new Pared(1, -7, 1));
   entorno.add(new Pared(1, 7, -1));
   entorno.add(new Pared(1, -7, -1));
   
-  entorno.add(new Pared(1, 0, 7));
-  entorno.add(new Pared(1, 0, -7));
-  entorno.add(new Pared(1, 1, 7));
-  entorno.add(new Pared(1, 1, -7));
-  entorno.add(new Pared(1, -1, 7));
-  entorno.add(new Pared(1, -1, -7));
+  //entorno.add(new Pared(1, 0, 7));
+  //entorno.add(new Pared(1, 0, -7));
+  //entorno.add(new Pared(1, 1, 7));
+  
+  // entorno.add(new Pared(1, 1, -7));
+  //entorno.add(new Pared(1, -1, 7));
+  //entorno.add(new Pared(1, -1, -7));
   
   entorno.add(new Pelota(0.5, 0, 0));
   entorno.add(new Pelota(0.5, 3.5, 0));
