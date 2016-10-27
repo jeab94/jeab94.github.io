@@ -6,9 +6,9 @@ function Agent(x=0, y=0){ //Constructor
 
 Agent.prototype = new THREE.Object3D(); //Herencia
 
-Agent.prototype.sense = function(environment) {};
-Agent.prototype.plan = function(environment) {};
-Agent.prototype.act = function(environment) {};
+//Agent.prototype.sense = function(environment) {};
+//Agent.prototype.plan = function(environment) {};
+//Agent.prototype.act = function(environment) {};
 
 function Environment(){
   THREE.Scene.call(this); 
