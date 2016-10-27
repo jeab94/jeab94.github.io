@@ -121,7 +121,7 @@ function Sensor(position, direction){
   this. colision = false;
 }
 
-Sensor.prototype = new THREE.rayCaster();
+Sensor.prototype = new THREE.Raycaster();
 
 function Robot(size, x, y){
  Agent.call(this, x, y);
