@@ -101,3 +101,35 @@ function setup(){
   environment.add(camera);
 
 }
+
+function loop(){
+  requestAnimationFrame(loop);
+  
+  environment.sense();
+  environment.plan();
+  environment.act();
+  
+  renderer.render(environment, camera);
+}
+
+var environment, camera, renderer;
+
+function Sensor(position, direction){
+  THREE.Raycaster.call(this, position, direction);
+  this. colision = false;
+}
+
+Sensor.prototype = new THREE.rayCaster();
+
+function Robot(size, x, y){
+ Agent.call(this, x, y);
+  
+ this.sensor = new Sensor();
+ this.actuator = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({color: '#aa0000'}));
+ this.actuator.commands = [];
+ this.add(this.actuator);
+}
+
+
+setup();
+loop();
