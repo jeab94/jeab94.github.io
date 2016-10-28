@@ -94,7 +94,7 @@ function setup(){
   camera = new THREE.PerspectiveCamera();
   camera.position.z = 30;
   
-  var lienzo = document.getElementById("ejemplo-robot");
+  var lienzo = document.getElementById("ejemplo-Agente_mapa");
   
   renderer = new THREE.WebGLRenderer({canvas: lienzo, antialias: true});
   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
