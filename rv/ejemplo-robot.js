@@ -150,7 +150,7 @@ Robot.prototype.plan = function(environment){
  if (this.sensor.colision == true)
    this.actuator.commands.push('rotateCCW');
  else
-   this.actuator.commands.push('gostraight');
+   this.actuator.commands.push('goStraight');
 }
 
 Robot.prototype.act = function(environment){
@@ -175,8 +175,8 @@ Robot.prototype.operations.goStraight = function(robot, distance){
 
 Robot.prototype.operations.rotateCW = function(robot, angle){
  if (angle===undefined)
-   angle = Math.PI/2;
-  robot.rotation.z -= angle;
+   angle = -Math.PI/2;
+  robot.rotation.z += angle;
 }
 
 Robot.prototype.operations.rotateCCW = function(robot, angle){
