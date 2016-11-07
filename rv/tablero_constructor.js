@@ -7,28 +7,26 @@ var renderizador;
 var camara;
 
 
-//var fnBlack = function(textura) {
-   //Gris = new THREE.MeshBasicMaterial({map: textura});  
-  // mat1 = true;
-//}
-//var fnWhite = function(textura) {
-   //Blanco = new THREE.MeshBasicMaterial({map: textura});  
-  // mat2 = true;
-//}
-//var fnWood = function(textura) {
-  // Marco = new THREE.MeshBasicMaterial({map: textura});  
-   //mat3 = true;
-//}
-   Gris = new THREE.MeshBasicMaterial({map: "black_wood.jpg"});
-   Blanco = new THREE.MeshBasicMaterial({map: "white_wood.jpg"});  
-   Marco = new THREE.MeshBasicMaterial({map: "wood.jpg"});  
+var fnBlack = function(textura) {
+   Gris = new THREE.MeshBasicMaterial({map: textura});  
+   mat1 = true;
+}
+var fnWhite = function(textura) {
+   Blanco = new THREE.MeshBasicMaterial({map: textura});  
+   mat2 = true;
+}
+var fnWood = function(textura) {
+   Marco = new THREE.MeshBasicMaterial({map: textura});  
+   mat3 = true;
+}
+ 
    
-//var cargadorBlack=new THREE.TextureLoader();
-//cargadorBlack.load("black_wood.jpg", fnBlack);
-//var cargadorWhite=new THREE.TextureLoader();
-//cargadorWhite.load("white_wood.jpg", fnWhite);
-//var cargadorWood=new THREE.TextureLoader();
-//cargadorWood.load("wood.jpg", fnWood);
+var cargadorBlack=new THREE.TextureLoader();
+cargadorBlack.load("black_wood.jpg", fnBlack);
+var cargadorWhite=new THREE.TextureLoader();
+cargadorWhite.load("white_wood.jpg", fnWhite);
+var cargadorWood=new THREE.TextureLoader();
+cargadorWood.load("wood.jpg", fnWood);
 
 var poner=function(){
 //Base de la torre
