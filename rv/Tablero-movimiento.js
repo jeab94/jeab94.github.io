@@ -62,11 +62,12 @@ var material3 = Marco;
 var marco3 = new THREE.Mesh( orilla3, material3);
 marco3.translateZ(82.5+z);
 marco3.translateX(40+x);
-marco3.translateX(40+x);
+marco3.translateY(y);
 
 var orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
 var material4 = Marco;
 var marco4 = new THREE.Mesh( orilla4, material4);
 marco4.translateZ(40+z);
 marco4.translateX(-2.5+x);
+marco4.translateY(y);
 }
