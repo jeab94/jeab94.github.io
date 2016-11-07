@@ -1,14 +1,11 @@
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
-   mat1 = true;
 }
 var fnWhite = function(textura) {
    Blanco = new THREE.MeshBasicMaterial({map: textura});  
-   mat2 = true;
 }
 var fnWood = function(textura) {
    Marco = new THREE.MeshBasicMaterial({map: textura});  
-   mat3 = true;
 }
 
 var cargadorBlack=new THREE.TextureLoader();
