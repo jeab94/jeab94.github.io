@@ -71,3 +71,35 @@ marco4.translateZ(40+z);
 marco4.translateX(-2.5+x);
 marco4.translateY(y);
 }
+
+function setup(){
+   environment = new Environment();
+  
+   environment.setTablero(0,0,0);
+   
+   camera = new THREE.PerspectiveCamera();
+
+   camera.position.y = 100;
+   camera.position.x = 100;
+   camera.position.z = 100;
+   camera.lookAt(new THREE.Vector3(40,5,40));
+   
+   renderer = new THREE.WebGLRenderer();
+   renderer.setSize(window.innerHeight, window.innerHeight);
+   document.body.appendChild(renderer.domElement);
+  
+   environment.add(camera);
+}
+
+function loop(){
+  requestAnimationFrame(loop);
+  
+  environment.sense();
+  environment.plan();
+  environment.act();
+  
+  renderer.render(environment, camera);
+}
+
+setup();
+loop();
