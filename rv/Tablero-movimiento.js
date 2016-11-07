@@ -1,21 +1,30 @@
+var mat1 = false;
+var mat2 = false;
+var mat3 = false;
+
 var fnBlack = function(textura) {
-     
+   Gris = new THREE.MeshBasicMaterial({map: textura});  
+   mat1 = true;
 }
 var fnWhite = function(textura) {
-   }
+   Blanco = new THREE.MeshBasicMaterial({map: textura});  
+   mat2 = true;
+}
 var fnWood = function(textura) {
-   }
-
-
+   Marco = new THREE.MeshBasicMaterial({map: textura});  
+   mat3 = true;
+}
+ 
+   
+var cargadorBlack=new THREE.TextureLoader();
+cargadorBlack.load("black_wood.jpg", fnBlack);
+var cargadorWhite=new THREE.TextureLoader();
+cargadorWhite.load("white_wood.jpg", fnWhite);
+var cargadorWood=new THREE.TextureLoader();
+cargadorWood.load("wood.jpg", fnWood);
 
 Environment.prototype.setTablero = function(x, y, z){
-   var cargadorBlack=new THREE.TextureLoader();
-   Gris = new THREE.MeshBasicMaterial({map: "black_wood.jpg"});
-   var cargadorWhite=new THREE.TextureLoader();
-   Blanco = new THREE.MeshBasicMaterial({map: "white_wood.jpg"});  
-   var cargadorWood=new THREE.TextureLoader();
-   Marco = new THREE.MeshBasicMaterial({map: "wood.jpg"});  
-   
+     
    //Tablero
    var lado = 10;
    var cubos = [];
