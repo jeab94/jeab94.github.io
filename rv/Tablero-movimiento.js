@@ -1,22 +1,21 @@
 var fnBlack = function(textura) {
-   Gris = new THREE.MeshBasicMaterial({map: textura});  
+     
 }
 var fnWhite = function(textura) {
-   Blanco = new THREE.MeshBasicMaterial({map: textura});  
-}
+   }
 var fnWood = function(textura) {
-   Marco = new THREE.MeshBasicMaterial({map: textura});  
-}
+   }
 
 
 
 Environment.prototype.setTablero = function(x, y, z){
    var cargadorBlack=new THREE.TextureLoader();
-   cargadorBlack.load("black_wood.jpg", fnBlack);
+   Gris = new THREE.MeshBasicMaterial({map: "black_wood.jpg"});
    var cargadorWhite=new THREE.TextureLoader();
-   cargadorWhite.load("white_wood.jpg", fnWhite);
+   Blanco = new THREE.MeshBasicMaterial({map: "white_wood.jpg"});  
    var cargadorWood=new THREE.TextureLoader();
-   cargadorWood.load("wood.jpg", fnWood);
+   Marco = new THREE.MeshBasicMaterial({map: "wood.jpg"});  
+   
    //Tablero
    var lado = 10;
    var cubos = [];
