@@ -2,6 +2,10 @@ var mat1 = false;
 var mat2 = false;
 var mat3 = false;
 
+var environment
+var renderer;
+var camera;
+
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
    mat1 = true;
