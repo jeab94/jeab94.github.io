@@ -1,12 +1,3 @@
-var mat1 = false;
-var mat2 = false;
-var mat3 = false;
-
-var escena;
-var renderizador;
-var camara;
-
-
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
    mat1 = true;
@@ -27,80 +18,7 @@ cargadorWhite.load("white_wood.jpg", fnWhite);
 var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("wood.jpg", fnWood);
 
-var poner=function(){
-//Base de la torre
-var base = new THREE.Shape();
-
-base.moveTo( -65, -10 );
-base.lineTo( -65, 10 );
-base.lineTo( 65, 10 );
-base.lineTo( 65, -10 );
-base.lineTo( -65, -10 );
-
-var torre1 = new THREE.ExtrudeGeometry(base, { amount: 130 } );
-torre1.translate(0, -95, -65);
-var material1 = Gris;
-var malla1 = new THREE.Mesh(torre1, material1);
-
-
-//Mitad inferior de la torre
-var puntos = [];
-
-for( var i = 0; i < 100; i++ ){ //Son 50 puntos
-  puntos.push( new THREE.Vector2( Math.sin(i*0.1)*15+40, (i-5)*2) );
-}
-
-var torre2 = new THREE.LatheGeometry(puntos); //Torno
-torre2.translate(0, -75, 0);
-
-var material2 = Gris;
-
-var malla2 = new THREE.Mesh( torre2, material2 );
-//malla2.rotateZ( Math.PI/6 );
-
-//Mitad superior de la torre
-var superior = new THREE.CylinderGeometry( 42, 42, 20, 32);
-
-superior.translate( 0, 125, 0 );
-
-var material3 = Gris;
-
-var malla3 = new THREE.Mesh( superior, material3 );
-
-
-//Terminación de la torre
-var puntos2 = [];
-
-for ( var j = 0; j < 100 ; j++ ){
-  puntos2.push( new THREE.Vector2( 25-j/4, j+135 ) );
-}
-
-var torre4 = new THREE.LatheGeometry(puntos2);
-
-var material4 = Gris;
-
-var malla4 = new THREE.Mesh( torre4, material4 );
-
-
-//Unión
-var torreForma1 = new THREE.Geometry();
-torreForma1.merge(malla1.geometry, malla1.matrix); //La malla calcula la matriz de la cinemática del objeto
-torreForma1.merge(malla2.geometry, malla2.matrix); //La malla calcula la matriz de la cinemática del objeto
-torreForma1.merge(malla3.geometry, malla3.matrix);//
-torreForma1.merge(malla4.geometry, malla4.matrix);
-
-
-var material = Gris;
-var mallaTorre = new THREE.Mesh(torreForma1, material);
-
-
-camara = new THREE.PerspectiveCamera();
-
-camara.position.y = 100;
-camara.position.x = 100;
-camara.position.z = 100;
-camara.lookAt(new THREE.Vector3(40,5,40));
-
+var poner=function(x, y, z){
 //Tablero
 var lado = 10;
 var cubos = [];
