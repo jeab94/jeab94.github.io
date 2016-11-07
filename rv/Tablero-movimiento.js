@@ -21,14 +21,14 @@ var fnWood = function(textura) {
  
    
 var cargadorBlack=new THREE.TextureLoader();
-cargadorBlack.load("black_wood.jpg", fnBlack);
 var cargadorWhite=new THREE.TextureLoader();
-cargadorWhite.load("white_wood.jpg", fnWhite);
 var cargadorWood=new THREE.TextureLoader();
-cargadorWood.load("wood.jpg", fnWood);
 
 Environment.prototype.setTablero = function(x, y, z){
-     
+   cargadorBlack.load("black_wood.jpg", fnBlack);
+   cargadorWhite.load("white_wood.jpg", fnWhite);
+   cargadorWood.load("wood.jpg", fnWood);
+   
    //Tablero
    var lado = 10;
    var cubos = [];
