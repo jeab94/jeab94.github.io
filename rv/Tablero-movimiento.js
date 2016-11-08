@@ -102,9 +102,9 @@ function setup(){
 
 var didSetup = false;
 
-var loop = function(){
-   requestAnimationFrame(loop);
-   if(mat1 && mat2 && mat3){
+function loop(){
+  requestAnimationFrame(loop);
+  if(mat1 && mat2 && mat3){
       if (didSetup == false) {
       poner();
       didSetup = true;
@@ -113,13 +113,7 @@ var loop = function(){
    environment.plan();
    environment.act();
   
-  renderer.render(environment, camera);
-   renderizador.render(escena, camara);
-   }
-}
-function loop(){
-  requestAnimationFrame(loop);
-  
+   renderer.render(environment, camera);
   
 }
 
