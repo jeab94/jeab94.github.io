@@ -114,7 +114,7 @@ function loop(){
 
   
    renderer.render(environment);
-  
+  }
 }
 
 setup();
