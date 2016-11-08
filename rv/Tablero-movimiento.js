@@ -6,16 +6,17 @@ var environment
 var renderer;
 var camera;
 
-var fnBlack = function(textura) {
-   var Gris = new THREE.MeshBasicMaterial({map: textura});  
+Environment.prototype.setTablero = function(x, y, z){
+  var fnBlack = function(textura) {
+   Gris = new THREE.MeshBasicMaterial({map: textura});  
    mat1 = true;
 }
 var fnWhite = function(textura) {
-   var Blanco = new THREE.MeshBasicMaterial({map: textura});  
+   Blanco = new THREE.MeshBasicMaterial({map: textura});  
    mat2 = true;
 }
 var fnWood = function(textura) {
-   var Marco = new THREE.MeshBasicMaterial({map: textura});  
+   Marco = new THREE.MeshBasicMaterial({map: textura});  
    mat3 = true;
 }
 
@@ -25,9 +26,7 @@ var cargadorWhite=new THREE.TextureLoader();
 cargadorWhite.load("white_marmol.jpg", fnWhite);
 var cargadorWood=new THREE.TextureLoader();
 cargadorWood.load("wood.jpg", fnWood);
-
-Environment.prototype.setTablero = function(x, y, z){
-  
+   
    //Tablero
    var lado = 10;
    var cubos = [];
