@@ -18,17 +18,17 @@ var fnWood = function(textura) {
    Marco = new THREE.MeshBasicMaterial({map: textura});  
    mat3 = true;
 }
- 
    
 var cargadorBlack=new THREE.TextureLoader();
 var cargadorWhite=new THREE.TextureLoader();
 var cargadorWood=new THREE.TextureLoader();
 
+cargadorBlack.load("black_wood.jpg", fnBlack);
+cargadorWhite.load("white_wood.jpg", fnWhite);
+cargadorWood.load("wood.jpg", fnWood);
+
 Environment.prototype.setTablero = function(x, y, z){
-   cargadorBlack.load("black_wood.jpg", fnBlack);
-   cargadorWhite.load("white_wood.jpg", fnWhite);
-   cargadorWood.load("wood.jpg", fnWood);
-   
+  
    //Tablero
    var lado = 10;
    var cubos = [];
