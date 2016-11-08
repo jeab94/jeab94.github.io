@@ -7,7 +7,7 @@ var renderer;
 var camera;
 
 var fnBlack = function(textura) {
-   var Gris = new THREE.MeshBasicMaterial({map: textura});  
+   Gris = new THREE.MeshBasicMaterial({map: textura});  
    mat1 = true;
 }
 var fnWhite = function(textura) {
