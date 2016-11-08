@@ -100,14 +100,27 @@ function setup(){
    environment.add(camera);
 }
 
+var didSetup = false;
+
+var loop = function(){
+   requestAnimationFrame(loop);
+   if(mat1 && mat2 && mat3){
+      if (didSetup == false) {
+      poner();
+      didSetup = true;
+      }
+   environment.sense();
+   environment.plan();
+   environment.act();
+  
+  renderer.render(environment, camera);
+   renderizador.render(escena, camara);
+   }
+}
 function loop(){
   requestAnimationFrame(loop);
   
-  environment.sense();
-  environment.plan();
-  environment.act();
   
-  renderer.render(environment, camera);
 }
 
 setup();
