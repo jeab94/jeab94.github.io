@@ -106,14 +106,14 @@ function loop(){
   requestAnimationFrame(loop);
   if(mat1 && mat2 && mat3){
       if (didSetup == false) {
-      poner();
-      didSetup = true;
+         environment.sense();
+         environment.plan();
+         environment.act();
+         didSetup = true;
       }
-   environment.sense();
-   environment.plan();
-   environment.act();
+
   
-   renderer.render(environment, camera);
+   renderer.render(environment);
   
 }
 
