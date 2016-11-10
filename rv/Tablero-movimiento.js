@@ -32,7 +32,7 @@ var mat3 = true;
 
 var Gris = new THREE.MeshBasicMaterial({color:0x696969});
 var Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
-var Marco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
+var Marco = new THREE.MeshBasicMaterial({color:0x7E2E1F});
 
 Environment.prototype.setTablero = function(x, y, z){
     
@@ -42,7 +42,7 @@ Environment.prototype.setTablero = function(x, y, z){
    var material = Gris;
    var tablero = new THREE.Geometry()
 
-   for (i=0;i<=7;i++){
+   for (var i=0;i<=7;i++){
    for (var j=0;j<=7;j++){
        if ((i+j) % 2 == 0){
            material= Gris;
