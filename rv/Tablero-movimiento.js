@@ -99,7 +99,7 @@ function setup(){
    camera.position.y = 100;
    camera.position.x = 100;
    camera.position.z = 100;
-   camera.lookAt(new THREE.Vector3(40,5,40));
+   camera.lookAt(new THREE.Vector3(0,0,0));
    
    renderer = new THREE.WebGLRenderer();
    renderer.setSize(window.innerHeight, window.innerHeight);
