@@ -119,7 +119,7 @@ function loop(){
          environment.act();
          didSetup = true;
       }
-   for (var m=0; m==100; m++)
+   for (var m=0; m=100; m++)
    camera.position.z = m;
    renderer.render(environment, camera);
       if (m==100)
