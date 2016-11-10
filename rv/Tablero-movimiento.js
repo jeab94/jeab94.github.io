@@ -111,17 +111,15 @@ function setup(){
 var didSetup = false;
 
 function loop(){
-  requestAnimationFrame(loop);
-  if(mat1 && mat2 && mat3){
+   if(mat1 && mat2 && mat3){
+     requestAnimationFrame(loop);
       if (didSetup == false) {
          environment.sense();
          environment.plan();
          environment.act();
          didSetup = true;
       }
-
-  
-   renderer.render(environment);
+   renderer.render(environment, camera);
   }
 }
 
