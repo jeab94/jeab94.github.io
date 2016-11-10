@@ -1,30 +1,38 @@
-var mat1 = false;
-var mat2 = false;
-var mat3 = false;
+//var mat1 = false;
+//var mat2 = false;
+//var mat3 = false;
 
 var environment
 var renderer;
 var camera;
 
-var fnBlack = function(textura) {
-   Gris = new THREE.MeshBasicMaterial({map: textura});  
-   mat1 = true;
-}
-var fnWhite = function(textura) {
-   Blanco = new THREE.MeshBasicMaterial({map: textura});  
-   mat2 = true;
-}
-var fnWood = function(textura) {
-   Marco = new THREE.MeshBasicMaterial({map: textura});  
-   mat3 = true;
-}
+//var fnBlack = function(textura) {
+   //Gris = new THREE.MeshBasicMaterial({map: textura});  
+   //mat1 = true;
+//}
+//var fnWhite = function(textura) {
+   //Blanco = new THREE.MeshBasicMaterial({map: textura});  
+   //mat2 = true;
+//}
+//var fnWood = function(textura) {
+   //Marco = new THREE.MeshBasicMaterial({map: textura});  
+   //mat3 = true;
+//}
 
-var cargadorBlack=new THREE.TextureLoader();
-cargadorBlack.load("black_marmol.jpg", fnBlack);
-var cargadorWhite=new THREE.TextureLoader();
-cargadorWhite.load("white_marmol.jpg", fnWhite);
-var cargadorWood=new THREE.TextureLoader();
-cargadorWood.load("wood.jpg", fnWood);
+//var cargadorBlack=new THREE.TextureLoader();
+//cargadorBlack.load("black_marmol.jpg", fnBlack);
+//var cargadorWhite=new THREE.TextureLoader();
+//cargadorWhite.load("white_marmol.jpg", fnWhite);
+//var cargadorWood=new THREE.TextureLoader();
+//cargadorWood.load("wood.jpg", fnWood);
+
+var mat1 = true;
+var mat2 = true;
+var mat3 = true;
+
+var Gris = new THREE.MeshBasicMaterial({color:0x696969});
+var Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
+var Marco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
 
 Environment.prototype.setTablero = function(x, y, z){
     
