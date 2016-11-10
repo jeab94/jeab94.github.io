@@ -30,9 +30,9 @@ var mat1 = true;
 var mat2 = true;
 var mat3 = true;
 
-Gris = new THREE.MeshBasicMaterial({color:0x696969});
-Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
-Marco = new THREE.MeshBasicMaterial({color:0x7E2E1F});
+var Gris = new THREE.MeshBasicMaterial({color:0x696969});
+var Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
+var Marco = new THREE.MeshBasicMaterial({color:0x7E2E1F});
 
 Environment.prototype.setTablero = function(x, y, z){
     
