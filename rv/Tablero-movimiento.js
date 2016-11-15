@@ -96,7 +96,7 @@ Environment.prototype.setTablero = function(x, y, z){
    tablero.merge(marco3.geometry, marco3.matrix);
    tablero.merge(marco4.geometry, marco4.matrix);
    for(var q=0; q<=63; q++){
-      tablero.merge(cubos(q));
+      tablero.merge(cubos[q]);
       
    }
    
