@@ -88,6 +88,19 @@ Environment.prototype.setTablero = function(x, y, z){
    marco4.translateZ(40+z);
    marco4.translateX(-2.5+x);
    marco4.translateY(y);
+   
+   //Unión de tablero
+   var tablero = new THREE.Geometry();
+   tablero.merge(marco1.geometry, marco1.matrix);
+   tablero.merge(marco2.geometry, marco2.matrix);
+   tablero.merge(marco3.geometry, marco3.matrix);
+   tablero.merge(marco4.geometry, marco4.matrix);
+   for(var q=0; q<=63; q++){
+      tablero.merge(cubos(q));
+      
+   }
+   
+   this.add(tablero);
 }
 
 function setup(){
