@@ -1,6 +1,6 @@
-var mat1 = false;
-var mat2 = false;
-var mat3 = false;
+//var mat1 = false;
+//var mat2 = false;
+//var mat3 = false;
 
 var environment
 var renderer;
@@ -30,12 +30,13 @@ var camera;
 //var mat2 = true;
 //var mat3 = true;
 
-var Gris = new THREE.MeshBasicMaterial({color:0x696969});
-var Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
-var Marco = new THREE.MeshBasicMaterial({color:0x7E2E1F});
+
 
 Environment.prototype.setTablero = function(x, y, z){
-    
+   var Gris = new THREE.MeshBasicMaterial({color:0x696969});
+   var Blanco = new THREE.MeshBasicMaterial({color:0xFFFFFF});
+   var Marco = new THREE.MeshBasicMaterial({color:0x7E2E1F});
+   
    //Tablero
    var lado = 10;
    var cubos = [];
@@ -111,7 +112,7 @@ function setup(){
 var didSetup = false;
 
 function loop(){
-   if(mat1 && mat2 && mat3){
+   //if(mat1 && mat2 && mat3){
      requestAnimationFrame(loop);
       if (didSetup == false) {
          environment.sense();
@@ -125,7 +126,7 @@ function loop(){
       if (m==100)
          m=0;
    }
-  }
+  //}
    renderer.render(environment, camera);
 }
 
