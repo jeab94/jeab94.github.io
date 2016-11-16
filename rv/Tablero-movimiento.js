@@ -97,7 +97,6 @@ Environment.prototype.setTablero = function(x, y, z){
    tablero.merge(marco4.geometry, marco4.matrix);
    for(var q=1; q<=64; q++){
       tablero.merge(cubos[q]);
-      
    }
    
    this.add(tablero);
@@ -116,23 +115,18 @@ function setup(){
    camera.lookAt(new THREE.Vector3(0,0,0));
    
    renderer = new THREE.WebGLRenderer();
-   renderer.setSize(window.innerHeight, window.innerHeight);
+   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
    document.body.appendChild(renderer.domElement);
   
    environment.add(camera);
 }
 
-var didSetup = false;
-
 function loop(){
    //if(mat1 && mat2 && mat3){
      requestAnimationFrame(loop);
-      if (didSetup == false) {
          environment.sense();
          environment.plan();
          environment.act();
-         didSetup = true;
-      }
   //}
    renderer.render(environment, camera);
 }
