@@ -6,6 +6,9 @@ var environment
 var renderer;
 var camera;
 
+setup();
+loop();
+
 Environment.prototype.setTablero = function(x, y, z){
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
@@ -121,5 +124,4 @@ function loop(){
    renderer.render(environment, camera);
 }
 
-setup();
-loop();
+
