@@ -75,11 +75,12 @@ setTablero = function(x, y, z){
    tablero.merge(marco2.geometry, marco2.matrix);
    tablero.merge(marco3.geometry, marco3.matrix);
    tablero.merge(marco4.geometry, marco4.matrix);
-   //for(var q=1; q<=64; q++){
-      //tablero.merge(cubos[q]);
-   //}
+   for(var q=1; q<=64; q++){
+      tablero.merge(cubos[q]);
+   }
    
-   this.add(tablero);
+   environment.add(tablero);
+  
 }
 
 setup();
