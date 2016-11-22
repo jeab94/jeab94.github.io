@@ -6,27 +6,17 @@ var environment
 var renderer;
 var camera;
 
-Environment.prototype.setTablero = function(x, y, z){
-var fnBlack = function(textura) {
-   Gris = new THREE.MeshBasicMaterial({map: textura});  
-   mat1 = true;
-}
-var fnWhite = function(textura) {
-   Blanco = new THREE.MeshBasicMaterial({map: textura});  
-   mat2 = true;
-}
-var fnWood = function(textura) {
-   Marco = new THREE.MeshBasicMaterial({map: textura});  
-   mat3 = true;
-}
+var cargadorBlack = new THREE.TextureLoader().load("black_marmol.jpg");
+var Gris = new THREE.MeshBasicMaterial({ map: cargadorBlack });
 
-var cargadorBlack=new THREE.TextureLoader();
-cargadorBlack.load("black_marmol.jpg", fnBlack);
-var cargadorWhite=new THREE.TextureLoader();
-cargadorWhite.load("white_marmol.jpg", fnWhite);
-var cargadorWood=new THREE.TextureLoader();
-cargadorWood.load("wood.jpg", fnWood);
-   
+var cargadorWhite = new THREE.TextureLoader().load("white_marmol.jpg");
+var Blanco = new THREE.MeshBasicMaterial({ map: cargadorWhite });
+
+var cargadorWood = new THREE.TextureLoader().load("wood.jpg");
+var Marco = new THREE.MeshBasicMaterial({ map: cargadorWood });
+
+Environment.setTablero = function(x, y, z){
+
    //Tablero
    var lado = 10;
    var cubos = [];
@@ -110,8 +100,7 @@ function setup(){
    renderer = new THREE.WebGLRenderer();
    renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
    document.body.appendChild(renderer.domElement);
-  
-   environment.add(camera);
+   renderer.render(environment, camera);
 }
 
 function loop(){
