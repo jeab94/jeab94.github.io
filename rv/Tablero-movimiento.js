@@ -6,9 +6,6 @@ var environment
 var renderer;
 var camera;
 
-setup();
-loop();
-
 Environment.prototype.setTablero = function(x, y, z){
 var fnBlack = function(textura) {
    Gris = new THREE.MeshBasicMaterial({map: textura});  
@@ -94,6 +91,9 @@ cargadorWood.load("wood.jpg", fnWood);
    
    this.add(tablero);
 }
+
+setup();
+loop();
 
 function setup(){
    environment = new Environment();
