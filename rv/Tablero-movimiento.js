@@ -87,7 +87,7 @@ setup();
 loop();
 
 function setup(){
-   environment = new Environment();
+   var environment = new Environment();
   
    setTablero(0,0,0);
    
