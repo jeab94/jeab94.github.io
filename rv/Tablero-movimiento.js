@@ -15,7 +15,7 @@ var Blanco = new THREE.MeshBasicMaterial({ map: cargadorWhite });
 var cargadorWood = new THREE.TextureLoader().load("wood.jpg");
 var Marco = new THREE.MeshBasicMaterial({ map: cargadorWood });
 
-Environment.setTablero = function(x, y, z){
+setTablero = function(x, y, z){
 
    //Tablero
    var lado = 10;
@@ -88,7 +88,7 @@ loop();
 function setup(){
    environment = new Environment();
   
-   environment.setTablero(0,0,0);
+   setTablero(0,0,0);
    
    camera = new THREE.PerspectiveCamera();
 
