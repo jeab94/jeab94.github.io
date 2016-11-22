@@ -1,6 +1,6 @@
-var mat1 = false;
-var mat2 = false;
-var mat3 = false;
+var mat1 = true;
+var mat2 = true;
+var mat3 = true;
 
 var environment
 var renderer;
