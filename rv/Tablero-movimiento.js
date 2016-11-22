@@ -117,7 +117,7 @@ function loop(){
          environment.sense();
          environment.plan();
          environment.act();
-  //}
+  }
    renderer.render(environment, camera);
 }
 
