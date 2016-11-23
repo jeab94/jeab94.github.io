@@ -18,6 +18,7 @@ setup();
 loop();
 
 function setup(){
+   
    escena = new Environment();
 
    camara = new THREE.PerspectiveCamera();
