@@ -102,7 +102,6 @@ function setup(){
       escena.add(cubos[q]);
    }
    
-   escena.add( tablero );
 }
 
 
