@@ -1,7 +1,8 @@
-function Agent(x=0, y=0){ //Constructor
+function Agent(x=0, y=0, z=0){ //Constructor
   THREE.Object3D.call(this);
   this.position.x = x;
   this.position.y = y;
+  this.position.z = z;
 }
 
 Agent.prototype = new THREE.Object3D(); //Herencia
