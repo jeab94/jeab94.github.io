@@ -21,7 +21,7 @@ function setup(){
    escena = new Environment();
 
    camara = new THREE.PerspectiveCamera();
-   camara.position.y = 20;
+   camara.position.y = 60;
    camara.position.x = 40;
    camara.position.z = 175;
    camara.lookAt(new THREE.Vector3(40,0,75));
