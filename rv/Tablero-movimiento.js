@@ -1,19 +1,40 @@
-var mat1 = true;
-var mat2 = true;
-var mat3 = true;
-
 var environment
 var renderer;
 var camera;
 
-var cargadorBlack = new THREE.TextureLoader().load("black_marmol.jpg");
-var Gris = new THREE.MeshBasicMaterial({ map: cargadorBlack });
+setup();
+loop();
 
-var cargadorWhite = new THREE.TextureLoader().load("white_marmol.jpg");
-var Blanco = new THREE.MeshBasicMaterial({ map: cargadorWhite });
+function setup(){
+   environment = new Environment();
 
-var cargadorWood = new THREE.TextureLoader().load("wood.jpg");
-var Marco = new THREE.MeshBasicMaterial({ map: cargadorWood });
+   camera = new THREE.PerspectiveCamera();
+
+   camera.position.y = 50;
+   camera.position.x = 40;
+   camera.position.z = 150;
+   camera.lookAt(new THREE.Vector3(0,0,0));
+
+   renderer = new THREE.WebGLRenderer();
+   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
+   document.body.appendChild(renderer.domElement);
+   
+   var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
+   var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
+
+   var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
+   var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
+
+   var texturaWood = new THREE.TextureLoader().load("wood.jpg");
+   var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
+
+   setTablero(0,0,0);
+   
+   escena.add( tablero );
+
+}
+
+
 
 setTablero = function(x, y, z){
 
@@ -76,43 +97,17 @@ setTablero = function(x, y, z){
    tablero.merge(marco3.geometry, marco3.matrix);
    tablero.merge(marco4.geometry, marco4.matrix);
    
-   //for(var q=1; q<=64; q++){
-      //tablero.merge(cubos[q].geometry, cubos[q].matrix);
-   //}
-   
-   environment.add(tablero);
-  
-}
-
-setup();
-loop();
-
-function setup(){
-   var environment = new Environment();
-  
-   setTablero(0,0,0);
-   
-   camera = new THREE.PerspectiveCamera();
-
-   camera.position.y = 100;
-   camera.position.x = 100;
-   camera.position.z = 100;
-   camera.lookAt(new THREE.Vector3(0,0,0));
-   
-   renderer = new THREE.WebGLRenderer();
-   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
-   document.body.appendChild(renderer.domElement);
-   renderer.render(environment, camera);
+   for(var q=1; q<=64; q++){
+      tablero.merge(cubos[q].geometry, cubos[q].matrix);
+   }
 }
 
 function loop(){
-   if(mat1 && mat2 && mat3){
      requestAnimationFrame(loop);
-         environment.sense();
-         environment.plan();
-         environment.act();
-  }
-   renderer.render(environment, camera);
+     environment.sense();
+     environment.plan();
+     environment.act();
+     renderer.render(environment, camera);
 }
 
 
