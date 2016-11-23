@@ -29,6 +29,7 @@ function setup(){
   document.body.appendChild(renderer.domElement);
    
    setTablero(0,0,0);
+   environment.add( tablero );
 }
 
 function setTablero(x, y, z){
@@ -96,7 +97,7 @@ function setTablero(x, y, z){
       tablero.merge(cubos[q].geometry, cubos[q].matrix);
    }
 */   
-   environment.add( tablero );
+  
 }
 
 function loop(){
