@@ -111,7 +111,17 @@ function loop(){
      escena.sense();
      escena.plan();
      escena.act();
-     renderizador.render(escena, camara);
+     window.addEventListener('resize', function() {
+        var WIDTH = window.innerWidth,
+            HEIGHT = window.innerHeight;
+        renderer.setSize(WIDTH, HEIGHT);
+        camera.aspect = WIDTH / HEIGHT;
+        camera.updateProjectionMatrix();
+      });   
+     controls = new THREE.OrbitControls(camera, renderer.domElement);
+     controls.update();
+      renderizador.render(escena, camara);
+      
 }
 
 
