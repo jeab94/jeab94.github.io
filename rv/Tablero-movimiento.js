@@ -2,6 +2,15 @@ var environment
 var renderer;
 var camera;
 
+var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
+var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
+
+var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
+var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
+
+var texturaWood = new THREE.TextureLoader().load("wood.jpg");
+var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
+
 setup();
 loop();
 
@@ -19,15 +28,6 @@ function setup(){
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderer.domElement);
    
-   var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
-   var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
-
-   var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
-   var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
-
-   var texturaWood = new THREE.TextureLoader().load("wood.jpg");
-   var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
-
    setTablero(0,0,0);
 }
 
