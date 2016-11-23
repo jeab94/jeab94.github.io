@@ -98,7 +98,7 @@ function setup(){
    //Agregar tablero a  escena
    escena.add(marco1, marco2, marco3, marco4);
    
-   for(var q=1; q<=64; q++){
+   for(var q=0; q<=63; q++){
       escena.add(cubos[q]);
    }
    
