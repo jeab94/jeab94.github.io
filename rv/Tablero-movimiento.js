@@ -28,12 +28,6 @@ function setup(){
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderer.domElement);
    
-   setTablero(0,0,0);
-   environment.add( tablero );
-}
-
-function setTablero(x, y, z){
-
    //Tablero
    var lado = 10;
    var cubos = [];
@@ -96,8 +90,9 @@ function setTablero(x, y, z){
       tablero.merge(cubos[q].geometry, cubos[q].matrix);
    }
 */   
-  
+   environment.add( tablero );
 }
+
 
 function loop(){
      requestAnimationFrame(loop);
