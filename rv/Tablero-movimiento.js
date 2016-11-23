@@ -38,8 +38,7 @@ function setTablero(x, y, z){
    var lado = 10;
    var cubos = [];
    var material = Gris;
-   var tablero = new THREE.Geometry()
-
+   
    for (var i=0;i<=7;i++){
    for (var j=0;j<=7;j++){
        if ((i+j) % 2 == 0){
