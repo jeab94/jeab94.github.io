@@ -30,7 +30,7 @@ function setup(){
 
    setTablero(0,0,0);
    
-   escena.add( tablero );
+   environment.add( tablero );
 
 }
 
