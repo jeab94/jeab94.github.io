@@ -95,17 +95,13 @@ function setup(){
    marco4.translateX(-2.5+x);
    marco4.translateY(y);
    
-   //Unión de tablero
-   tablero = new THREE.Geometry();
-   tablero.merge(marco1.geometry, marco1.matrix);
-   tablero.merge(marco2.geometry, marco2.matrix);
-   tablero.merge(marco3.geometry, marco3.matrix);
-   tablero.merge(marco4.geometry, marco4.matrix);
+   //Agregar tablero a  escena
+   escena.add(marco1, marco2, marco3, marco4);
    
-/*   for(var q=1; q<=64; q++){
-      tablero.merge(cubos[q].geometry, cubos[q].matrix);
+   for(var q=1; q<=64; q++){
+      escena.add(cubos[q]);
    }
-*/   
+   
    escena.add( tablero );
 }
 
