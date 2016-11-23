@@ -29,12 +29,7 @@ function setup(){
    var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
 
    setTablero(0,0,0);
-   
-   environment.add( tablero );
-
 }
-
-
 
 setTablero = function(x, y, z){
 
@@ -100,6 +95,8 @@ setTablero = function(x, y, z){
    for(var q=1; q<=64; q++){
       tablero.merge(cubos[q].geometry, cubos[q].matrix);
    }
+   
+   environment.add( tablero );
 }
 
 function loop(){
