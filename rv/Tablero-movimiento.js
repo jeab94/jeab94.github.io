@@ -15,9 +15,9 @@ function setup(){
    camera.position.z = 150;
    camera.lookAt(new THREE.Vector3(0,0,0));
 
-   renderer = new THREE.WebGLRenderer();
-   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
-   document.body.appendChild(renderer.domElement);
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  document.body.appendChild(renderer.domElement);
    
    var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
    var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
