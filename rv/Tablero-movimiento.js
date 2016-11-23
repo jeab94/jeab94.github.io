@@ -1,6 +1,6 @@
-var environment
-var renderer;
-var camera;
+var escena;
+var renderizador;
+var camara;
 
 var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
 var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
@@ -15,18 +15,18 @@ setup();
 loop();
 
 function setup(){
-   environment = new Environment();
+   escena = new Environment();
 
-   camera = new THREE.PerspectiveCamera();
+   camara = new THREE.PerspectiveCamera();
 
-   camera.position.y = 50;
-   camera.position.x = 40;
-   camera.position.z = 150;
-   camera.lookAt(new THREE.Vector3(0,0,0));
+   camara.position.y = 50;
+   camara.position.x = 40;
+   camara.position.z = 150;
+   camara.lookAt(new THREE.Vector3(0,0,0));
 
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  document.body.appendChild(renderer.domElement);
+  renderizador = new THREE.WebGLRenderer();
+  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  document.body.appendChild(renderizador.domElement);
    
    //Tablero
    x = 0;
@@ -93,16 +93,16 @@ function setup(){
       tablero.merge(cubos[q].geometry, cubos[q].matrix);
    }
 */   
-   environment.add( tablero );
+   escena.add( tablero );
 }
 
 
 function loop(){
      requestAnimationFrame(loop);
-     environment.sense();
-     environment.plan();
-     environment.act();
-     renderer.render(environment, camera);
+     escena.sense();
+     escena.plan();
+     escena.act();
+     renderizador.render(escena, camara);
 }
 
 
