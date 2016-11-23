@@ -1,6 +1,7 @@
 var escena;
 var renderizador;
 var camara;
+var tablero;
 
 var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
 var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
@@ -83,7 +84,7 @@ function setup(){
    marco4.translateY(y);
    
    //Unión de tablero
-   var tablero = new THREE.Geometry();
+   tablero = new THREE.Geometry();
    tablero.merge(marco1.geometry, marco1.matrix);
    tablero.merge(marco2.geometry, marco2.matrix);
    tablero.merge(marco3.geometry, marco3.matrix);
