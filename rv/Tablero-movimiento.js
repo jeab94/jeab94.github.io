@@ -31,7 +31,7 @@ function setup(){
    setTablero(0,0,0);
 }
 
-setTablero = function(x, y, z){
+function setTablero(x, y, z){
 
    //Tablero
    var lado = 10;
