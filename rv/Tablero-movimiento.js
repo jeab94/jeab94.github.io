@@ -4,18 +4,15 @@ var camara;
 var tablero;
 
 var cubo;
+var cubos;
 var marco1;
 var marco2;
 var marco3;
-
-var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
-var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
-
-var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
-var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
-
-var texturaWood = new THREE.TextureLoader().load("wood.jpg");
-var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
+var marco4;
+var orilla1;
+var orilla2;
+var orilla3;
+var orilla4;
 
 setup();
 loop();
@@ -30,16 +27,27 @@ function setup(){
    camara.position.z = 150;
    camara.lookAt(new THREE.Vector3(0,0,0));
 
-  renderizador = new THREE.WebGLRenderer();
-  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  document.body.appendChild(renderizador.domElement);
+   renderizador = new THREE.WebGLRenderer();
+   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+   document.body.appendChild(renderizador.domElement);
+   
+   //Texturas
+   var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
+   var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
+
+   var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
+   var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
+
+   var texturaWood = new THREE.TextureLoader().load("wood.jpg");
+   var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
    
    //Tablero
    x = 0;
    y = 0;
    z = 0;
    var lado = 10;
-   var cubos = [];
+   var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+   cubos = [];
    var material = Gris;
    
    for (var i=0;i<=7;i++){
@@ -50,7 +58,6 @@ function setup(){
        else{
            material= Blanco;
            }
-       var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
        cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = j*lado+5+x;
        cubo.position.z = i*lado+5+z;
@@ -60,28 +67,28 @@ function setup(){
        }
    }
 
-   var orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
    var material1 = Marco;
    marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-2.5+z);
    marco1.translateX(40+x);
    marco1.translateY(y);
 
-   var orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
    var material2 = Marco;
    marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(40+z);
    marco2.translateX(82.5+x);
    marco2.translateY(y);
 
-   var orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(82.5+z);
    marco3.translateX(40+x);
    marco3.translateY(y);
 
-   var orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
    marco4.translateZ(40+z);
