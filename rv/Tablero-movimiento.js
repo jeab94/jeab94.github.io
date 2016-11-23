@@ -21,10 +21,9 @@ function setup(){
    escena = new Environment();
 
    camara = new THREE.PerspectiveCamera();
-
    camara.position.y = 50;
    camara.position.x = 40;
-   camara.position.z = 150;
+   camara.position.z = 200;
    camara.lookAt(new THREE.Vector3(40,0,0));
 
    renderizador = new THREE.WebGLRenderer();
@@ -41,8 +40,9 @@ function setup(){
    var texturaWood = new THREE.TextureLoader().load("wood.jpg");
    var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
    
-   //Tablero
-   x = 0;
+   //TABLERO
+   //Posicionamiento del tablero en el espacio
+   x = 0; 
    y = 0;
    z = 0;
    var lado = 10;
