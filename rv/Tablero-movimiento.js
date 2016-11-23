@@ -25,7 +25,7 @@ function setup(){
    camara.position.y = 50;
    camara.position.x = 40;
    camara.position.z = 150;
-   camara.lookAt(new THREE.Vector3(0,0,0));
+   camara.lookAt(new THREE.Vector3(40,0,0));
 
    renderizador = new THREE.WebGLRenderer();
    renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
