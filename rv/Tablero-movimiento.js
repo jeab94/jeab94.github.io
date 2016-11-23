@@ -118,7 +118,7 @@ function loop(){
         camara.aspect = WIDTH / HEIGHT;
         camara.updateProjectionMatrix();
       });   
-     controls = new THREE.OrbitControls(camera, renderer.domElement);
+     controls = new THREE.OrbitControls(camara, renderizador.domElement);
      controls.update();
      renderizador.render(escena, camara);
       
