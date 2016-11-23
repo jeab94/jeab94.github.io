@@ -29,6 +29,9 @@ function setup(){
   document.body.appendChild(renderer.domElement);
    
    //Tablero
+   x = 0;
+   y = 0;
+   z = 0;
    var lado = 10;
    var cubos = [];
    var material = Gris;
