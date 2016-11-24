@@ -112,7 +112,7 @@ function setup(){
 	'Chess-Pieces/horse.dae',
 	// Function when resource is loaded
 	function ( collada ) {
-		ecena.add( collada.scene );
+		escena.add( collada.scene );
 	},
 	// Function called when download progresses
 	function ( xhr ) {
