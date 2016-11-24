@@ -105,7 +105,7 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   loader.load('jeab94.github.io/rv/Chess-Pieces/horse.dae', function (result) {
+   loader.load('Chess-Pieces/horse.dae', function (result) {
       escena.add(result.escena);
    });
    
