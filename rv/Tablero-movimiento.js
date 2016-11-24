@@ -104,15 +104,19 @@ function setup(){
    }
    
    //Caballo
-   var loader = new THREE.ColladaLoader();
-       loader.load( 'Chess-Pieces/horse.dae', function ( collada ) {
-       model = collada.scene;
-
-       model.children[3].children[0].material = Gris;
-       model.scale.x = model.scale.y = model.scale.z = 0.10; 
-       model.rotation.y = 0.80;
-       escena.add( model );
-      });
+    loader.load(
+	// resource URL
+	'Chess-Pieces/horse.dae',
+	// Function when resource is loaded
+	function ( collada ) {
+		ecena.add( collada.scene );
+	},
+	// Function called when download progresses
+	function ( xhr ) {
+		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+	}
+);
+   
   
 }
 
