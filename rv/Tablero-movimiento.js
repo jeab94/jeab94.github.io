@@ -114,7 +114,7 @@ function setup(){
         escena.add(caballo);});
 
     // STL file to be loaded
-    loader.load('Chess-Pieces/Horse.stl');
+    loader.load('Chess-Pieces/Horse.STL');
    
   
 }
