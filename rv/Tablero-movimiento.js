@@ -13,6 +13,7 @@ var orilla1;
 var orilla2;
 var orilla3;
 var orilla4;
+var loader;
 
 setup();
 loop();
@@ -20,7 +21,7 @@ loop();
 function setup(){
    
    escena = new Environment();
-
+	
    camara = new THREE.PerspectiveCamera();
    camara.position.y = 70;
    camara.position.x = 40;
@@ -104,6 +105,8 @@ function setup(){
    }
    
    //Caballo
+   loader = new THREE.ColladaLoader();
+	
     loader.load(
 	// resource URL
 	'Chess-Pieces/horse.dae',
