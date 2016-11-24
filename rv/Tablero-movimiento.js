@@ -14,6 +14,8 @@ var orilla2;
 var orilla3;
 var orilla4;
 
+var loader = new THREE.ColladaLoader();
+
 setup();
 loop();
 
@@ -102,6 +104,10 @@ function setup(){
    for(var q=0; q<=63; q++){
       escena.add(cubos[q]);
    }
+
+   loader.load('jeab94.github.io/rv/Chess-Pieces/horse.dae', function (result) {
+      escena.add(result.escena);
+   });
    
 }
 
