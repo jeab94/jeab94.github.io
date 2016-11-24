@@ -112,7 +112,7 @@ function setup(){
     	var caballo = new THREE.Mesh( geometry, material );
     	caballo.position.set( 15, 0, 85 );
     	caballo.rotation.set( 0, - Math.PI / 2, 0 );
-    	caballo.scale.set( 1, 1, 1 );
+    	caballo.scale.set( 0.75, 0.75, 0.75 );
     	//caballo.castShadow = true;
     	//caballo.receiveShadow = true;
     	escena.add( caballo );
