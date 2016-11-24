@@ -105,9 +105,14 @@ function setup(){
    
    //Caballo
    var loader = new THREE.ColladaLoader();
-   loader.load('Chess-Pieces/horse.dae', function (result) {
-   escena.add(result.scene);
-      });
+       loader.load( 'Chess-Pieces/horse.dae', function ( collada ) {
+       model = collada.scene;
+
+       model.children[3].children[0].material = Gris;
+       model.scale.x = model.scale.y = model.scale.z = 0.10; 
+       model.rotation.y = 0.80;
+       escena.add( model );
+      }
   
 }
 
