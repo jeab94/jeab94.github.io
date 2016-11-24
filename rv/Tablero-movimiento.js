@@ -105,20 +105,16 @@ function setup(){
    }
    
    //Caballo
-   loader = new THREE.ColladaLoader();
-	
-    loader.load(
-	// resource URL
-	'Chess-Pieces/horse.dae',
-	// Function when resource is loaded
-	function ( collada ) {
-		escena.add( collada.scene );
-	},
-	// Function called when download progresses
-	function ( xhr ) {
-		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-	}
-);
+     // Object
+    var loader=new THREE.STLLoader();
+    loader.addEventListener('load', function (event){
+        var geometry=event.content;
+        var material=Gris;
+        var caballo=new THREE.Mesh(geometry, material);
+        escena.add(caballo);});
+
+    // STL file to be loaded
+    loader.load('Chess-Pieces/Horse.stl');
    
   
 }
