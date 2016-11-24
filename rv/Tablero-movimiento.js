@@ -102,7 +102,12 @@ function setup(){
    for(var q=0; q<=63; q++){
       escena.add(cubos[q]);
    }
-
+   
+   //Torre1
+   var loader = new THREE.ColladaLoader();
+   loader.load('Chess-Pieces/horse.dae', function (result) {
+   escena.add(result.scene);
+      });
   
 }
 
@@ -112,12 +117,8 @@ function loop(){
      escena.sense();
      escena.plan();
      escena.act();
-     var loader = new THREE.ColladaLoader();
-     loader.load('Chess-Pieces/horse.dae', function (result) {
-     escena.add(result.scene);
-     renderizador.render(escena,camara);
-      });
-     //renderizador.render(escena, camara);
+     
+     renderizador.render(escena, camara);
       
 }
 
