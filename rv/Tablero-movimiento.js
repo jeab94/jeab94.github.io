@@ -114,7 +114,7 @@ function loop(){
      escena.act();
      var loader = new THREE.ColladaLoader();
      loader.load('Chess-Pieces/horse.dae', function (result) {
-     escene.add(result.scene);
+     escena.add(result.scene);
      renderizador.render(escena,camara);
       });
      //renderizador.render(escena, camara);
