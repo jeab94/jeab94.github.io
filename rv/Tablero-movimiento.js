@@ -112,7 +112,7 @@ function setup(){
        model.scale.x = model.scale.y = model.scale.z = 0.10; 
        model.rotation.y = 0.80;
        escena.add( model );
-      }
+      });
   
 }
 
