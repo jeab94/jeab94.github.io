@@ -14,11 +14,6 @@ var orilla2;
 var orilla3;
 var orilla4;
 
-var loader = new THREE.ColladaLoader();
-loader.load('Chess-Pieces/horse.dae', function (result) {
-escena.add(result.escena);
-});
-
 setup();
 loop();
 
@@ -118,7 +113,11 @@ function loop(){
      escena.plan();
      escena.act();
     
-     renderizador.render(escena, camara);
+     loader.load('Chess-Pieces/horse.dae', function (result) {
+     escene.add(result.scene);
+     renderizador.render(escena,camara);
+      });
+     //renderizador.render(escena, camara);
       
 }
 
