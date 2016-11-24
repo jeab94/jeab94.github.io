@@ -108,7 +108,7 @@ function setup(){
      // Object
     var loader=new THREE.STLLoader();
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
-    	var material = new THREE.MeshBasicMaterial({ transparent: false, map: THREE.ImageUtils.loadTexture('wood.jpg') });
+    	var material = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
     	var caballo = new THREE.Mesh( geometry, material );
     	caballo.position.set( 15, 0, 85 );
     	caballo.rotation.set( 0, - Math.PI / 2, 0 );
