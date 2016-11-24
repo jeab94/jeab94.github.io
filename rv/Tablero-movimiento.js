@@ -107,14 +107,17 @@ function setup(){
    //Caballo
      // Object
     var loader=new THREE.STLLoader();
-    loader.addEventListener('load', function (event){
-        var geometry=event.content;
-        var material=Gris;
-        var caballo=new THREE.Mesh(geometry, material);
-        escena.add(caballo);});
-
-    // STL file to be loaded
-    loader.load('Chess-Pieces/Horse.STL');
+    loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+    	var material = Gris;
+    	var caballo = new THREE.Mesh( geometry, material );
+    	caballo.position.set( 0, - 0.25, 0.6 );
+    	caballo.rotation.set( 0, - Math.PI / 2, 0 );
+    	caballo.scale.set( 0.5, 0.5, 0.5 );
+    	//caballo.castShadow = true;
+    	//caballo.receiveShadow = true;
+    	escena.add( caballo );
+    } );
+  
    
   
 }
