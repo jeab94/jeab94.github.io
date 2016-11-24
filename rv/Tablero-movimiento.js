@@ -103,7 +103,7 @@ function setup(){
       escena.add(cubos[q]);
    }
    
-   //Torre1
+   //Caballo
    var loader = new THREE.ColladaLoader();
    loader.load('Chess-Pieces/horse.dae', function (result) {
    escena.add(result.scene);
