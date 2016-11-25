@@ -29,23 +29,23 @@ function setup(){
    camara.position.z = 160;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
-   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,2);
    luzPuntual1.position.x = 10;
    luzPuntual1.position.y = 100;
    luzPuntual1.position.z = 10;
 	
-   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,2);
    luzPuntual2.position.x = 90;
    luzPuntual2.position.y = 100;
    luzPuntual2.position.z = 10;
 
 	
-   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,2);
    luzPuntual3.position.x = 10;
    luzPuntual3.position.y = 100;
    luzPuntual3.position.z = 90;
 	
-   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,2);
    luzPuntual4.position.x = 90;
    luzPuntual4.position.y = 100;
    luzPuntual4.position.z = 90;
