@@ -33,14 +33,18 @@ function setup(){
    document.body.appendChild(renderizador.domElement);
    
    //Texturas
-   var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
-   var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });
+   /*var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
+   var Gris = new THREE.MeshBasicMaterial({ map: texturaBlack });*/
+   var Gris = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
 
-   var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
-   var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });
+   /*var texturaWhite = new THREE.TextureLoader().load("white_marmol.jpg");
+   var Blanco = new THREE.MeshBasicMaterial({ map: texturaWhite });*/
+   var Blanco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
 
-   var texturaWood = new THREE.TextureLoader().load("wood.jpg");
-   var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });
+   /*var texturaWood = new THREE.TextureLoader().load("wood.jpg");
+   var Marco = new THREE.MeshBasicMaterial({ map: texturaWood });*/
+   var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
+
    
    //TABLERO
    //Posicionamiento del tablero en el espacio
