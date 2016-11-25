@@ -1,7 +1,7 @@
 var escena;
 var renderizador;
 var camara;
-var luzPuntual;
+var luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4;
 var tablero;
 
 var cubo;
@@ -29,11 +29,27 @@ function setup(){
    camara.position.z = 160;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
-   var luzPuntual = new THREE.PointLight(0xFFFFFF,10);
-   luzPuntual.position.x = 10;
-   luzPuntual.position.y = 10;
-   luzPuntual.position.z = 10;
+   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,10);
+   luzPuntual1.position.x = 10;
+   luzPuntual1.position.y = 20;
+   luzPuntual1.position.z = 10;
 	
+   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,10);
+   luzPuntual2.position.x = 90;
+   luzPuntual2.position.y = 20;
+   luzPuntual2.position.z = 10;
+
+	
+   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,10);
+   luzPuntual3.position.x = 10;
+   luzPuntual3.position.y = 20;
+   luzPuntual3.position.z = 90;
+	
+   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,10);
+   luzPuntual4.position.x = 90;
+   luzPuntual4.position.y = 20;
+   luzPuntual4.position.z = 90;
+
    renderizador = new THREE.WebGLRenderer();
    renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
    document.body.appendChild(renderizador.domElement);
@@ -130,7 +146,7 @@ function setup(){
     	escena.add( caballo );
     } );
 	
-    escena.add(luzPuntual);
+    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
 
