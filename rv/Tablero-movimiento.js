@@ -101,6 +101,7 @@ function setup(){
    marco1.translateZ(-2.5+z);
    marco1.translateX(40+x);
    marco1.translateY(y);
+   marco1.receiveShadow = true;
 
    orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
    var material2 = Marco;
@@ -108,6 +109,7 @@ function setup(){
    marco2.translateZ(40+z);
    marco2.translateX(82.5+x);
    marco2.translateY(y);
+   marco2.receiveShadow = true;
 
    orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
    var material3 = Marco;
@@ -115,6 +117,7 @@ function setup(){
    marco3.translateZ(82.5+z);
    marco3.translateX(40+x);
    marco3.translateY(y);
+   marco3.receiveShadow = true;
 
    orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
    var material4 = Marco;
@@ -122,11 +125,13 @@ function setup(){
    marco4.translateZ(40+z);
    marco4.translateX(-2.5+x);
    marco4.translateY(y);
+   marco4.receiveShadow = true;
    
    //Agregar tablero a  escena
    escena.add(marco1, marco2, marco3, marco4);
    
    for(var q=0; q<=63; q++){
+      cubos[q].receiveShadow = true;
       escena.add(cubos[q]);
    }
    
