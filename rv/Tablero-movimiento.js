@@ -29,23 +29,23 @@ function setup(){
    camara.position.z = 160;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
-   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,5);
    luzPuntual1.position.x = 10;
    luzPuntual1.position.y = 20;
    luzPuntual1.position.z = 10;
 	
-   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,5);
    luzPuntual2.position.x = 90;
    luzPuntual2.position.y = 20;
    luzPuntual2.position.z = 10;
 
 	
-   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,5);
    luzPuntual3.position.x = 10;
    luzPuntual3.position.y = 20;
    luzPuntual3.position.z = 90;
 	
-   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,10);
+   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,5);
    luzPuntual4.position.x = 90;
    luzPuntual4.position.y = 20;
    luzPuntual4.position.z = 90;
@@ -132,7 +132,7 @@ function setup(){
       escena.add(cubos[q]);
    }
    
-   //Caballo
+   //CABALLO
      // Object
     var loader=new THREE.STLLoader();
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
@@ -141,8 +141,8 @@ function setup(){
     	caballo.position.set( 15, 20, 75 );
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	caballo.scale.set( 0.50, 0.50, 0.50 );
-    	//caballo.castShadow = true;
-    	//caballo.receiveShadow = true;
+    	caballo.castShadow = true;
+    	caballo.receiveShadow = true;
     	escena.add( caballo );
     } );
 	
