@@ -137,10 +137,11 @@ function setup(){
    
    //CABALLO
      // Object
+    var caballo;
     var loader=new THREE.STLLoader();
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
-    	var caballo = new THREE.Mesh( geometry, material );
+    	caballo = new THREE.Mesh( geometry, material );
     	caballo.position.set( 15, 20, 75 );
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	caballo.scale.set( 0.50, 0.50, 0.50 );
