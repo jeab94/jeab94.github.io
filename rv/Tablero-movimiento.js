@@ -1,6 +1,7 @@
 var escena;
 var renderizador;
 var camara;
+var luzPuntual;
 var tablero;
 
 var cubo;
@@ -28,9 +29,16 @@ function setup(){
    camara.position.z = 160;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
+   var luzPuntual = new THREE.PointLight(0x00FF00,10);
+   luzPuntual.position.x = 10;
+   luzPuntual.position.y = 10;
+   luzPuntual.position.z = 10;
+	
    renderizador = new THREE.WebGLRenderer();
    renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
    document.body.appendChild(renderizador.domElement);
+	
+	
    
    //Texturas
    /*var texturaBlack = new THREE.TextureLoader().load("black_marmol.jpg");
@@ -121,6 +129,8 @@ function setup(){
     	//caballo.receiveShadow = true;
     	escena.add( caballo );
     } );
+	
+    escena.add(luzPuntual);
   
 }
 
