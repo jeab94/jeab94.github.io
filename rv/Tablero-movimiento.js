@@ -29,7 +29,7 @@ function setup(){
    camara.position.z = 160;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
-   var luzPuntual = new THREE.PointLight(0x00FF00,10);
+   var luzPuntual = new THREE.PointLight(0xFFFFFF,10);
    luzPuntual.position.x = 10;
    luzPuntual.position.y = 10;
    luzPuntual.position.z = 10;
