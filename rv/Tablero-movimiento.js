@@ -146,8 +146,9 @@ function setup(){
     	caballo.scale.set( 0.50, 0.50, 0.50 );
     	caballo.castShadow = true;
     	caballo.receiveShadow = true;
-    	escena.add( caballo );
+    	
     } );
+	escena.add( caballo );
 	
     escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
