@@ -174,7 +174,7 @@ function setup(){
 
    caballoNegro1 = new CaballoNegro(15, 0, 15);	
    
-   escena.add(CaballoNegro1);
+   escena.add(caballoNegro1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
