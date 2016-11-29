@@ -21,6 +21,51 @@ var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('bl
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
 
+//Caballo Negro
+function CaballoNegro(x=0, y=0, z=0){
+	Agent.call(this, x, y, z);
+	//Caballo
+    	 // Object
+    	var caballo;
+    	var loader=new THREE.STLLoader();
+   	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+    	var material = Gris;
+    	this.add( new THREE.Mesh( geometry, material ));
+    	this.position.set( 15, 20, 75 );
+    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
+    	this.scale.set( 0.50, 0.50, 0.50 );
+    	this.castShadow = true;
+    	this.receiveShadow = true;
+	this.step = 0.1;
+	this.colision = 0;
+	this.radius = 1;
+	this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
+    } );
+	
+}
+
+CaballoNegro.prototype = new Agent();
+
+CaballoNegro.prototype.sense = function(environment){
+  this.sensor.set(this.position, new THREE.Vector3(1,0,0));
+  var obstaculo1= this.sensor.intersectObjects(environment.children,true);
+  
+  this.sensor.set(this.position, new THREE.Vector3(-1,0,0));
+  var obstaculo2= this.sensor.intersectObjects(environment.children,true);
+  
+  if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
+     (obstaculo2.length > 0 && (obstaculo2[0].distance <= this.radius)))
+      this.colision = 1;
+  else
+      this.colision = 0;
+}
+
+CaballoNegro.prototype.act = function(environment){
+  if(this.colision ===1)
+      this.step = -this.step;
+    this.position.x += this.step;
+}
+
 setup();
 loop();
 
@@ -126,23 +171,11 @@ function setup(){
       cubos[q].receiveShadow = true;
       escena.add(cubos[q]);
    }
+
+   caballoNegro1 = new CaballoNegro(15, 0, 15);	
    
-   //CABALLO
-     // Object
-    var caballo;
-    var loader=new THREE.STLLoader();
-    loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
-    	var material = Gris;
-    	caballo = new THREE.Mesh( geometry, material );
-    	caballo.position.set( 15, 20, 75 );
-    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
-    	caballo.scale.set( 0.50, 0.50, 0.50 );
-    	caballo.castShadow = true;
-    	caballo.receiveShadow = true;
-    	escena.add( caballo );
-    } );
-		
-    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
+   escena.add(CaballoNegro1);
+   escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
 
