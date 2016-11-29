@@ -28,7 +28,7 @@ function CaballoNegro(x=0, y=0, z=0){
     	 // Object
     	var caballo;
     	var loader=new THREE.STLLoader();
-   	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+   	this.loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	this.add( new THREE.Mesh( geometry, material ));
     	this.position.set( 15, 20, 75 );
