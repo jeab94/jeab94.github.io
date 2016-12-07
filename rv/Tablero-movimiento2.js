@@ -149,7 +149,7 @@ function setup(){
     loader.load( './Chess-Pieces/Tower.STL', function ( geometry ) {
     	var material = Blanco;
     	torre = new THREE.Mesh( geometry, material );
-        torre.position.set( 12.5, 20, 92.5 ); // Ancho - Altura - Profundidad 
+        torre.position.set( 13.5, 20, 92.5 ); // Ancho - Altura - Profundidad 
     	torre.scale.set( 0.40, 0.40, 0.40 );
     	torre.castShadow = true;
     	torre.receiveShadow = true;
