@@ -34,9 +34,9 @@ Sensor.prototype = new THREE.Raycaster();
 loaderCaballoNegro = new THREE.STLLoader();
 loaderCaballoNegro.addEventListener('load', function (event){
 var geometry = event.content;
-var material = new THREE.MeshLambertMaterial({ ambient: 0xFBB917,color: 0xfdd017 });
+var material = Gris;
 var mesh = new THREE.Mesh(geometry, material);
-escena.add(mesh);});
+});
 
 //Caballo Negro
 function CaballoNegro(x=0, y=0, z=0){
@@ -46,7 +46,7 @@ function CaballoNegro(x=0, y=0, z=0){
     	var caballo;
 	var material = Gris;
     	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
-    	this.actuator = new THREE.Mesh( geometry, material );
+    	this.actuator = mesh;
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
