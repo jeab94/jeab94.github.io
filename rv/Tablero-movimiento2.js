@@ -68,15 +68,15 @@ function setup(){
    var lado = 10;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
-   var material = Gris;
+   var material = Blanco;
    
    for (var i=0;i<=7;i++){
    for (var j=0;j<=7;j++){
        if ((i+j) % 2 == 0){
-           material= Gris;
+           material= Blanco;
            }
        else{
-           material= Blanco;
+           material= Gris;
            }
        cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = j*lado+5+x;
