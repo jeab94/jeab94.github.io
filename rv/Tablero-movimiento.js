@@ -35,21 +35,19 @@ function CaballoNegro(x=0, y=0, z=0){
 	//Caballo
     	 // Object
     	var caballo;
+	var material = Gris;
     	var loader=new THREE.STLLoader();
 	loader.addEventListener( 'load', function ( event ) {
 					var geometry = event.content;
-					var material = new THREE.MeshPhongMaterial( { ambient: 0xff5533, color: 0xff5533, specular: 0x111111, shininess: 200, perPixel: true } );
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.castShadow = true;
 					mesh.receiveShadow = true;
-					scene.add( mesh );
+					escena.add( mesh );
 				} );
 	loader.load( './Chess-Pieces/Horse.STL' );
-    	var material = Gris;
     	this.actuator = new THREE.Mesh( geometry, material );
 	this.actuator.commands = [];
 	this.add(this.actuator);
-	} );
 	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
