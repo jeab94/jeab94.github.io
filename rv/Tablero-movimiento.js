@@ -36,18 +36,17 @@ function CaballoNegro(x=0, y=0, z=0){
     	 // Object
     	var caballo;
     	var loader=new THREE.STLLoader();
-   	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	this.actuator = new THREE.Mesh( geometry, material );
+	} );
 	this.actuator.commands = [];
+	this.add(this.actuator);
     	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
     	this.scale.set( 0.50, 0.50, 0.50 );
- 	this.add(this.actuator);
-	this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
-    } );
-	
+	this.sensor = new Sensor();	
 }
 
 CaballoNegro.prototype = new Agent();
@@ -57,9 +56,7 @@ CaballoNegro.prototype.sense = function(environment){
 }
 
 CaballoNegro.prototype.act = function(environment){
-  if(this.colision ===1)
-      this.step = -this.step;
-    this.position.x += this.step;
+ 
 }
 
 setup();
@@ -185,5 +182,4 @@ function loop(){
      renderizador.render(escena, camara);
       
 }
-
 
