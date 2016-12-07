@@ -168,7 +168,7 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   caballoNegro1 = new CaballoNegro(10, 10, 15);	
+   caballoNegro1 = new CaballoNegro(20, 30, 20);	
    
    escena.add(caballoNegro1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
