@@ -45,7 +45,6 @@ function CaballoNegro(x=0, y=0, z=0){
     	var caballo;
 	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
     	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
-	this.actuator = meshCaballoNegro;
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
