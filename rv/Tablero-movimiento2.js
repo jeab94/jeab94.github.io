@@ -30,7 +30,7 @@ function setup(){
 	
    camara = new THREE.PerspectiveCamera();
    camara.position.y = 150;
-   camara.position.x = 30;
+   camara.position.x = 40;
    camara.position.z = 180;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
