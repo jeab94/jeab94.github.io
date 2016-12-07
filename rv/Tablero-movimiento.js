@@ -21,6 +21,14 @@ var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('bl
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
 
+//Sensor
+function Sensor(position,direction){ 
+  THREE.Raycaster.call(this,position,direction);
+  this.colision = false;
+}
+
+Sensor.prototype = new THREE.Raycaster();
+
 //Caballo Negro
 function CaballoNegro(x=0, y=0, z=0){
 	Agent.call(this, x, y, z);
@@ -28,17 +36,13 @@ function CaballoNegro(x=0, y=0, z=0){
     	 // Object
     	var caballo;
     	var loader=new THREE.STLLoader();
-   	this.loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+   	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
-    	this.add( new THREE.Mesh( geometry, material ));
-    	this.position.set( 15, 20, 75 );
-    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
+    	this.actuator = new THREE.Mesh( geometry, material );
+	this.actuator.commands = [];
+    	this.position.set( x, y, z );
     	this.scale.set( 0.50, 0.50, 0.50 );
-    	this.castShadow = true;
-    	this.receiveShadow = true;
-	this.step = 0.1;
-	this.colision = 0;
-	this.radius = 1;
+ 	this.add(this.actuator);
 	this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
     } );
 	
