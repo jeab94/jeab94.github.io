@@ -14,7 +14,7 @@ var orilla1;
 var orilla2;
 var orilla3;
 var orilla4;
-var loader;
+var loaderCaballoNegro;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -31,8 +31,8 @@ Sensor.prototype = new THREE.Raycaster();
 
 //Cargador
 // object
-loader = new THREE.STLLoader();
-loader.addEventListener('load', function (event){
+loaderCaballoNegro = new THREE.STLLoader();
+loaderCaballoNegro.addEventListener('load', function (event){
 var geometry = event.content;
 var material = new THREE.MeshLambertMaterial({ ambient: 0xFBB917,color: 0xfdd017 });
 var mesh = new THREE.Mesh(geometry, material);
