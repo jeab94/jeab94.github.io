@@ -134,7 +134,7 @@ function setup(){
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	caballo = new THREE.Mesh( geometry, material );
-    	caballo.position.set( 25, 20, 75 ); // Ancho - Altura - Profundidad 
+    	caballo.position.set( 25, 20, 95 ); // Ancho - Altura - Profundidad 
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	caballo.scale.set( 0.40, 0.40, 0.40 );
     	caballo.castShadow = true;
@@ -149,7 +149,7 @@ function setup(){
     loader.load( './Chess-Pieces/Tower.STL', function ( geometry ) {
     	var material = Blanco;
     	torre = new THREE.Mesh( geometry, material );
-        torre.position.set( 45, 20, 75 ); // Ancho - Altura - Profundidad 
+        torre.position.set( 45, 20, 95 ); // Ancho - Altura - Profundidad 
     	torre.scale.set( 0.40, 0.40, 0.40 );
     	torre.castShadow = true;
     	torre.receiveShadow = true;
