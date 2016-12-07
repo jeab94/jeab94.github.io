@@ -140,6 +140,7 @@ function setup(){
     	caballo.castShadow = true;
     	caballo.receiveShadow = true;
     	escena.add( caballo );
+    } );
 	  
    //TORRE
     // Object
