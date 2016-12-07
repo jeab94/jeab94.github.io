@@ -106,16 +106,16 @@ function setup(){
    orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
-   marco3.translateZ(40+z);
-   marco3.translateX(-2.5+x);
+   marco3.translateZ(82.5+z);
+   marco3.translateX(40+x);
    marco3.translateY(y);
    marco3.receiveShadow = true;
 
    orilla4 = new THREE.BoxGeometry( 5, 10, 90 ); //Baja
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
-   marco4.translateZ(82.5+z);
-   marco4.translateX(40+x);
+   marco4.translateZ(40+z);
+   marco4.translateX(-2.5+x);
    marco4.translateY(y);
    marco4.receiveShadow = true;
    
