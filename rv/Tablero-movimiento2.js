@@ -62,9 +62,9 @@ function setup(){
   
    //TABLERO
    //Posicionamiento del tablero en el espacio
-   x = -10; 
+   x = 0; 
    y = 0;
-   z = 10;
+   z = 0;
    var lado = 10;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
@@ -79,15 +79,15 @@ function setup(){
            material= Gris;
            }
        cubo = new THREE.Mesh(forma ,material);
-       cubo.position.x = j*lado+5+x;
-       cubo.position.z = i*lado+5+z;
+       cubo.position.x = j*lado+x;
+       cubo.position.z = i*lado+z;
        cubo.position.y = y;
        cubos.push(cubo)
 
        }
    }
 
-   orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla1 = new THREE.BoxGeometry( 100, 10, -5 );
    var material1 = Marco;
    marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-2.5+z);
@@ -95,7 +95,7 @@ function setup(){
    marco1.translateY(y);
    marco1.receiveShadow = true;
 
-   orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla2 = new THREE.BoxGeometry( 15, 10, 70 );
    var material2 = Marco;
    marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(40+z);
@@ -103,7 +103,7 @@ function setup(){
    marco2.translateY(y);
    marco2.receiveShadow = true;
 
-   orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla3 = new THREE.BoxGeometry( 100, 10, -5 );
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(82.5+z);
@@ -111,11 +111,11 @@ function setup(){
    marco3.translateY(y);
    marco3.receiveShadow = true;
 
-   orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla4 = new THREE.BoxGeometry( 15, 10, 70 );
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
-   marco4.translateZ(40+z);
-   marco4.translateX(-2.5+x);
+   marco4.translateZ(30+z);
+   marco4.translateX(7.5+x);
    marco4.translateY(y);
    marco4.receiveShadow = true;
    
