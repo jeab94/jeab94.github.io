@@ -40,7 +40,9 @@ function CaballoNegro(x=0, y=0, z=0){
     	var material = Gris;
     	this.actuator = new THREE.Mesh( geometry, material );
 	this.actuator.commands = [];
-    	this.position.set( x, y, z );
+    	this.position.x = x;
+	this.position.y = y;
+	this.position.z = z;
     	this.scale.set( 0.50, 0.50, 0.50 );
  	this.add(this.actuator);
 	this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
@@ -51,13 +53,7 @@ function CaballoNegro(x=0, y=0, z=0){
 CaballoNegro.prototype = new Agent();
 
 CaballoNegro.prototype.sense = function(environment){
-  this.sensor.set(this.position, new THREE.Vector3(1,0,0));
-  var obstaculo1= this.sensor.intersectObjects(environment.children,true);
-  
-  this.sensor.set(this.position, new THREE.Vector3(-1,0,0));
-  var obstaculo2= this.sensor.intersectObjects(environment.children,true);
-  
-  if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
+    if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
      (obstaculo2.length > 0 && (obstaculo2[0].distance <= this.radius)))
       this.colision = 1;
   else
