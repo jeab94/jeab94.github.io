@@ -136,7 +136,7 @@ function setup(){
     	caballo = new THREE.Mesh( geometry, material );
     	caballo.position.set( 20, 20, 75 ); // Ancho - Altura - Profundidad 
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
-    	caballo.scale.set( 0.50, 0.50, 0.50 );
+    	caballo.scale.set( 0.40, 0.40, 0.40 );
     	caballo.castShadow = true;
     	caballo.receiveShadow = true;
     	escena.add( caballo );
@@ -150,7 +150,7 @@ function setup(){
     	var material = Blanco;
     	torre = new THREE.Mesh( geometry, material );
         torre.position.set( 40, 20, 75 ); // Ancho - Altura - Profundidad 
-    	torre.scale.set( 0.50, 0.50, 0.50 );
+    	torre.scale.set( 0.40, 0.40, 0.40 );
     	torre.castShadow = true;
     	torre.receiveShadow = true;
     	escena.add( torre );		 
