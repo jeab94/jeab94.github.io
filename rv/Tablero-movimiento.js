@@ -18,7 +18,6 @@ var loaderCaballoNegro;
 var geometryCaballoNegro;
 
 //Texturas
-var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
 var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
 
@@ -43,14 +42,14 @@ function CaballoNegro(x=0, y=0, z=0){
 	//Caballo
     	 // Object
     	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
-    	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
+    	var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
+	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
     	this.sensor = new Sensor();
-	escena.add(this.actuator);
 }
 
 CaballoNegro.prototype = new Agent();
@@ -169,7 +168,7 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   caballoNegro1 = new CaballoNegro(15, 15, 15);	
+   caballoNegro1 = new CaballoNegro(10, 10, 15);	
    
    escena.add(caballoNegro1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
