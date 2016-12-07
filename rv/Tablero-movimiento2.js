@@ -60,7 +60,7 @@ function setup(){
    document.body.appendChild(renderizador.domElement);
 	   
   
-   //TABLERO
+   //TABLERO (Comenzando cuadrícula en x=0, y=0)
    //Posicionamiento del tablero en el espacio
    x = 0; 
    y = 0;
@@ -79,43 +79,43 @@ function setup(){
            material= Gris;
            }
        cubo = new THREE.Mesh(forma ,material);
-       cubo.position.x = j*lado+x;
-       cubo.position.z = i*lado+z;
+       cubo.position.x = j*lado+x+5;
+       cubo.position.z = i*lado+z+5;
        cubo.position.y = y;
        cubos.push(cubo)
 
        }
    }
 
-   orilla1 = new THREE.BoxGeometry( 100, 10, -5 );
+   orilla1 = new THREE.BoxGeometry( 100, 10, 5 ); //Superior
    var material1 = Marco;
    marco1 = new THREE.Mesh( orilla1, material1 );
-   marco1.translateZ(-12.5+z);
-   marco1.translateX(10+x);
+   marco1.translateZ(-2.5+z); 
+   marco1.translateX(40+x);
    marco1.translateY(y);
    marco1.receiveShadow = true;
 
-   orilla2 = new THREE.BoxGeometry( 15, 10, 70 );
+   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
    var material2 = Marco;
    marco2 = new THREE.Mesh( orilla2, material2);
-   marco2.translateZ(30+z);
-   marco2.translateX(92.5+x);
+   marco2.translateZ(40+z);
+   marco2.translateX(82.5+x);
    marco2.translateY(y);
    marco2.receiveShadow = true;
 
-   orilla3 = new THREE.BoxGeometry( 100, 10, -5 );
+   orilla3 = new THREE.BoxGeometry( 100, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
-   marco3.translateZ(72.5+z);
-   marco3.translateX(50+x);
+   marco3.translateZ(40+z);
+   marco3.translateX(-2.5+x);
    marco3.translateY(y);
    marco3.receiveShadow = true;
 
-   orilla4 = new THREE.BoxGeometry( 15, 10, 70 );
+   orilla4 = new THREE.BoxGeometry( 5, 10, 90 ); //Baja
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
-   marco4.translateZ(20+z);
-   marco4.translateX(17.5+x);
+   marco4.translateZ(82.5+z);
+   marco4.translateX(40+x);
    marco4.translateY(y);
    marco4.receiveShadow = true;
    
@@ -134,7 +134,7 @@ function setup(){
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	caballo = new THREE.Mesh( geometry, material );
-    	caballo.position.set( 5, 20, 92.5 ); // Ancho - Altura - Profundidad 
+    	caballo.position.set( 15, 20, 75 ); // Ancho - Altura - Profundidad 
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	caballo.scale.set( 0.40, 0.40, 0.40 );
     	caballo.castShadow = true;
@@ -149,7 +149,7 @@ function setup(){
     loader.load( './Chess-Pieces/Tower.STL', function ( geometry ) {
     	var material = Blanco;
     	torre = new THREE.Mesh( geometry, material );
-        torre.position.set( 13.5, 20, 92.5 ); // Ancho - Altura - Profundidad 
+        torre.position.set( 5, 20, 75 ); // Ancho - Altura - Profundidad 
     	torre.scale.set( 0.40, 0.40, 0.40 );
     	torre.castShadow = true;
     	torre.receiveShadow = true;
