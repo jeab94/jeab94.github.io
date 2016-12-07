@@ -31,29 +31,29 @@ function setup(){
    camara = new THREE.PerspectiveCamera();
    camara.position.y = 70;
    camara.position.x = 40;
-   camara.position.z = 160;
+   camara.position.z = 100;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.5);
-   luzPuntual1.position.x = 10;
+   luzPuntual1.position.x = 0;
    luzPuntual1.position.y = 100;
-   luzPuntual1.position.z = 10;
+   luzPuntual1.position.z = 20;
 	
    var luzPuntual2 = new THREE.PointLight(0xFFFFFF,0.5);
-   luzPuntual2.position.x = 90;
+   luzPuntual2.position.x = 80;
    luzPuntual2.position.y = 100;
-   luzPuntual2.position.z = 10;
+   luzPuntual2.position.z = 20;
 
 	
    var luzPuntual3 = new THREE.PointLight(0xFFFFFF,0.5);
-   luzPuntual3.position.x = 10;
+   luzPuntual3.position.x = 0;
    luzPuntual3.position.y = 100;
-   luzPuntual3.position.z = 90;
+   luzPuntual3.position.z = 100;
 	
    var luzPuntual4 = new THREE.PointLight(0xFFFFFF,0.5);
-   luzPuntual4.position.x = 90;
+   luzPuntual4.position.x = 80;
    luzPuntual4.position.y = 100;
-   luzPuntual4.position.z = 90;
+   luzPuntual4.position.z = 100;
 
    renderizador = new THREE.WebGLRenderer();
    renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
@@ -62,9 +62,9 @@ function setup(){
   
    //TABLERO
    //Posicionamiento del tablero en el espacio
-   x = 0; 
+   x = -10; 
    y = 0;
-   z = 0;
+   z = 10;
    var lado = 10;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
