@@ -140,6 +140,19 @@ function setup(){
     	caballo.castShadow = true;
     	caballo.receiveShadow = true;
     	escena.add( caballo );
+	  
+   //TORRE
+    // Object
+    var torre;
+    var loader=new THREE.STLLoader();
+    loader.load( './Chess-Pieces/Tower.STL', function ( geometry ) {
+    	var material = Blanco;
+    	torre = new THREE.Mesh( geometry, material );
+        torre.position.set( 15, 20, 75 );
+    	torre.scale.set( 0.50, 0.50, 0.50 );
+    	torre.castShadow = true;
+    	torre.receiveShadow = true;
+    	escena.add( torre );		 
     } );
 		
     escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
