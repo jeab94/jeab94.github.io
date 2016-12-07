@@ -30,15 +30,13 @@ function Sensor(position,direction){
 Sensor.prototype = new THREE.Raycaster();
 
 //Cargador
-var loader=new THREE.STLLoader();
-
-loader.addEventListener( 'load', function ( event ) {
-					var geometry = event.content;
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					escena.add( mesh );
-				} );
+// object
+loader = new THREE.STLLoader();
+loader.addEventListener('load', function (event){
+var geometry = event.content;
+var material = new THREE.MeshLambertMaterial({ ambient: 0xFBB917,color: 0xfdd017 });
+var mesh = new THREE.Mesh(geometry, material);
+escena.add(mesh);});
 
 //Caballo Negro
 function CaballoNegro(x=0, y=0, z=0){
