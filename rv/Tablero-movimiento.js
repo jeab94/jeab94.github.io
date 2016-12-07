@@ -15,6 +15,7 @@ var orilla2;
 var orilla3;
 var orilla4;
 var loaderCaballoNegro;
+var meshCaballoNegro;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -35,7 +36,7 @@ loaderCaballoNegro = new THREE.STLLoader();
 loaderCaballoNegro.addEventListener('load', function (event){
 var geometry = event.content;
 var material = Gris;
-var mesh = new THREE.Mesh(geometry, material);
+meshCaballoNegro = new THREE.Mesh(geometry, material);
 });
 
 //Caballo Negro
@@ -46,7 +47,7 @@ function CaballoNegro(x=0, y=0, z=0){
     	var caballo;
 	var material = Gris;
     	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
-    	this.actuator = mesh;
+    	this.actuator = meshCaballoNegro;
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
