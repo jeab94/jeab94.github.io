@@ -15,7 +15,7 @@ var orilla2;
 var orilla3;
 var orilla4;
 var loaderCaballoNegro;
-var meshCaballoNegro;
+var geometryCaballoNegro;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -34,9 +34,7 @@ Sensor.prototype = new THREE.Raycaster();
 // object
 loaderCaballoNegro = new THREE.STLLoader();
 loaderCaballoNegro.addEventListener('load', function (event){
-var geometry = event.content;
-var material = Gris;
-meshCaballoNegro = new THREE.Mesh(geometry, material);
+	geometryCaballoNegro = event.content;
 });
 
 //Caballo Negro
@@ -45,9 +43,9 @@ function CaballoNegro(x=0, y=0, z=0){
 	//Caballo
     	 // Object
     	var caballo;
-	var material = Gris;
-    	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
-    	this.actuator = meshCaballoNegro;
+	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
+    	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
+	this.actuator = meshCaballoNegro;
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
