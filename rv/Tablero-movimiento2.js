@@ -31,7 +31,7 @@ function setup(){
    camara = new THREE.PerspectiveCamera();
    camara.position.y = 150;
    camara.position.x = 40;
-   camara.position.z = 180;
+   camara.position.z = 150;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.5);
@@ -134,7 +134,7 @@ function setup(){
     loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	caballo = new THREE.Mesh( geometry, material );
-    	caballo.position.set( 15, 20, 75 ); // Ancho - Altura - Profundidad 
+    	caballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
     	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	caballo.scale.set( 0.40, 0.40, 0.40 );
     	caballo.castShadow = true;
@@ -149,7 +149,7 @@ function setup(){
     loader.load( './Chess-Pieces/Tower.STL', function ( geometry ) {
     	var material = Blanco;
     	torre = new THREE.Mesh( geometry, material );
-        torre.position.set( 5, 20, 75 ); // Ancho - Altura - Profundidad 
+        torre.position.set( 5, 20, 85 ); // Ancho - Altura - Profundidad 
     	torre.scale.set( 0.40, 0.40, 0.40 );
     	torre.castShadow = true;
     	torre.receiveShadow = true;
