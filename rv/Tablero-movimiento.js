@@ -50,8 +50,7 @@ function CaballoNegro(x=0, y=0, z=0){
 	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
-    	this.scale.set( 0.50, 0.50, 0.50 );
-	this.sensor = new Sensor();	
+    	this.sensor = new Sensor();	
 }
 
 CaballoNegro.prototype = new Agent();
