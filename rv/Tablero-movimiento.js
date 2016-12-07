@@ -42,15 +42,15 @@ function CaballoNegro(x=0, y=0, z=0){
 	Agent.call(this, x, y, z);
 	//Caballo
     	 // Object
-    	var caballo;
-	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
+    	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
     	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
-    	this.sensor = new Sensor();	
+    	this.sensor = new Sensor();
+	escena.add(this.actuator);
 }
 
 CaballoNegro.prototype = new Agent();
