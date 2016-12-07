@@ -87,7 +87,7 @@ function setup(){
        }
    }
 
-   orilla1 = new THREE.BoxGeometry( 100, 10, 5 ); //Superior
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
    var material1 = Marco;
    marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-2.5+z); 
@@ -103,7 +103,7 @@ function setup(){
    marco2.translateY(y);
    marco2.receiveShadow = true;
 
-   orilla3 = new THREE.BoxGeometry( 100, 10, 5 ); //Izquierda
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(40+z);
