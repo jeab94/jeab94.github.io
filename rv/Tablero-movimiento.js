@@ -39,8 +39,9 @@ function CaballoNegro(x=0, y=0, z=0){
 	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
     	var material = Gris;
     	this.actuator = new THREE.Mesh( geometry, material );
-	} );
 	this.actuator.commands = [];
+	} );
+	
 	this.add(this.actuator);
     	this.position.x = x;
 	this.position.y = y;
