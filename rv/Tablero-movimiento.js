@@ -29,6 +29,17 @@ function Sensor(position,direction){
 
 Sensor.prototype = new THREE.Raycaster();
 
+//Cargador
+var loader=new THREE.STLLoader();
+
+loader.addEventListener( 'load', function ( event ) {
+					var geometry = event.content;
+					var mesh = new THREE.Mesh( geometry, material );
+					mesh.castShadow = true;
+					mesh.receiveShadow = true;
+					escena.add( mesh );
+				} );
+
 //Caballo Negro
 function CaballoNegro(x=0, y=0, z=0){
 	Agent.call(this, x, y, z);
@@ -36,15 +47,7 @@ function CaballoNegro(x=0, y=0, z=0){
     	 // Object
     	var caballo;
 	var material = Gris;
-    	var loader=new THREE.STLLoader();
-	loader.addEventListener( 'load', function ( event ) {
-					var geometry = event.content;
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.castShadow = true;
-					mesh.receiveShadow = true;
-					escena.add( mesh );
-				} );
-	loader.load( './Chess-Pieces/Horse.STL' );
+    	loader.load( './Chess-Pieces/Horse.STL' );
     	this.actuator = new THREE.Mesh( geometry, material );
 	this.actuator.commands = [];
 	this.add(this.actuator);
