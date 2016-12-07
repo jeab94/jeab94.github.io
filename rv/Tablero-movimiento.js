@@ -45,7 +45,7 @@ function CaballoNegro(x=0, y=0, z=0){
     	 // Object
     	var caballo;
 	var material = Gris;
-    	loader.load( './Chess-Pieces/Horse.STL' );
+    	loaderCaballoNegro.load( './Chess-Pieces/Horse.STL' );
     	this.actuator = new THREE.Mesh( geometry, material );
 	this.actuator.commands = [];
 	this.add(this.actuator);
