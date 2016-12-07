@@ -40,10 +40,9 @@ function CaballoNegro(x=0, y=0, z=0){
     	var material = Gris;
     	this.actuator = new THREE.Mesh( geometry, material );
 	this.actuator.commands = [];
-	} );
-	
 	this.add(this.actuator);
-    	this.position.x = x;
+	} );
+	this.position.x = x;
 	this.position.y = y;
 	this.position.z = z;
     	this.scale.set( 0.50, 0.50, 0.50 );
