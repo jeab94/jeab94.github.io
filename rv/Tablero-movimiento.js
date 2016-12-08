@@ -15,7 +15,7 @@ var orilla2;
 var orilla3;
 var orilla4;
 var loaderCaballoNegro;
-var geometryCaballoNegro;
+//var geometryCaballoNegro;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -34,11 +34,11 @@ Sensor.prototype = new THREE.Raycaster();
 // object
 loaderCaballoNegro = new THREE.STLLoader();
 loaderCaballoNegro.addEventListener('load', function (event){
-	geometryCaballoNegro = event.content;
+	var geometryCaballoNegro = event.content;
 });
 
 //Caballo Negro
-function CaballoNegro(x=0, y=0, z=0){
+function CaballoNegro(x, y, z){
 	Agent.call(this, x, y, z);
 	//Caballo
     	 // Object
@@ -46,9 +46,10 @@ function CaballoNegro(x=0, y=0, z=0){
     	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
-	this.position.x = x;
-	this.position.y = y;
-	this.position.z = z;
+	this.actuator.position.x = x;
+	this.actuator.position.y = y;
+	this.actuator.position.z = z;
+	this.actuator.scale.set(0.40, 0.40, 0.40); 
     	this.sensor = new Sensor();
 }
 
@@ -70,9 +71,9 @@ function setup(){
    escena = new Environment();
 	
    camara = new THREE.PerspectiveCamera();
-   camara.position.y = 70;
+   camara.position.y = 150;
    camara.position.x = 40;
-   camara.position.z = 160;
+   camara.position.z = 150;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.5);
@@ -101,7 +102,7 @@ function setup(){
    document.body.appendChild(renderizador.domElement);
 	   
   
-   //TABLERO
+   //TABLERO (Comenzando cuadrícula en x=0, y=0)
    //Posicionamiento del tablero en el espacio
    x = 0; 
    y = 0;
@@ -109,15 +110,15 @@ function setup(){
    var lado = 10;
    var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
    cubos = [];
-   var material = Gris;
+   var material = Blanco;
    
    for (var i=0;i<=7;i++){
    for (var j=0;j<=7;j++){
        if ((i+j) % 2 == 0){
-           material= Gris;
+           material= Blanco;
            }
        else{
-           material= Blanco;
+           material= Gris;
            }
        cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = j*lado+5+x;
@@ -128,7 +129,7 @@ function setup(){
        }
    }
 
-   orilla1 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
    var material1 = Marco;
    marco1 = new THREE.Mesh( orilla1, material1 );
    marco1.translateZ(-2.5+z);
@@ -136,7 +137,7 @@ function setup(){
    marco1.translateY(y);
    marco1.receiveShadow = true;
 
-   orilla2 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
    var material2 = Marco;
    marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(40+z);
@@ -144,7 +145,7 @@ function setup(){
    marco2.translateY(y);
    marco2.receiveShadow = true;
 
-   orilla3 = new THREE.BoxGeometry( 90, 10, 5 );
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(82.5+z);
@@ -152,7 +153,7 @@ function setup(){
    marco3.translateY(y);
    marco3.receiveShadow = true;
 
-   orilla4 = new THREE.BoxGeometry( 5, 10, 80 );
+   orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
    marco4.translateZ(40+z);
@@ -168,7 +169,7 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   caballoNegro1 = new CaballoNegro(20, 30, 20);	
+   caballoNegro1 = new CaballoNegro(15, 20, 85);	
    
    escena.add(caballoNegro1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
