@@ -47,9 +47,9 @@ function CaballoNegro(x, y, z){
     	 // Object
     	this.actuator = new THREE.Mesh(geometryCaballoNegro, Blanco);
 	this.actuator.commands = [];
-	this.actuator.position.x = x;
-	this.actuator.position.y = y;
-	this.actuator.position.z = z;
+	this.actuator.position.x = -x;
+	this.actuator.position.y = -y;
+	this.actuator.position.z = -z;
 	this.actuator.scale.set(0.40, 0.40, 0.40); 
     	this.add(this.actuator);
 	this.sensor = new Sensor();
