@@ -29,23 +29,29 @@ function Sensor(position,direction){
 
 Sensor.prototype = new THREE.Raycaster();
 
+var caballo;
+
 //Cargador
 // object
-var bufferGeometry;
-   var loader = new THREE.STLLoader();
-    loader.addEventListener( 'load', function ( event )
-    {
-        geometryCaballoNegro = event.content;
-        geometryCaballoNegro.computeTangents();
-    });
-    loader.load( './Chess-Pieces/Horse.STL' );
+//CABALLO
+    var caballo;
+    var loader=new THREE.STLLoader();
+    loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+    	var material = Gris;
+    	caballo = new THREE.Mesh( geometry, material );
+    	caballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
+    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
+    	caballo.scale.set( 0.40, 0.40, 0.40 );
+    	caballo.castShadow = true;
+    	caballo.receiveShadow = true;
+    } );
 
 //Caballo Negro
 function CaballoNegro(x, y, z){
 	Agent.call(this, x, y, z);
 	//Caballo
     	 // Object
-    	this.actuator = new THREE.Mesh(geometryCaballoNegro, Blanco);
+    	this.actuator = caballo;
 	this.actuator.commands = [];
 	this.actuator.position.x = -x;
 	this.actuator.position.y = -y;
