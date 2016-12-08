@@ -171,6 +171,7 @@ function setup(){
       escena.add(cubos[q]);
    }
 
+   //torreblanca1 = new TorreBlanca(10,4.5,-10);
    caballoNegro1 = new CaballoNegro(15, 20, 85);	
    
    escena.add(caballoNegro1);
