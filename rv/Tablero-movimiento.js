@@ -45,7 +45,7 @@ function CaballoNegro(x, y, z){
 	Agent.call(this, x, y, z);
 	//Caballo
     	 // Object
-    	this.actuator = new THREE.Mesh(geometryCaballoNegro, Gris);
+    	this.actuator = new THREE.Mesh(geometryCaballoNegro, Blanco);
 	this.actuator.commands = [];
 	this.actuator.position.x = x;
 	this.actuator.position.y = y;
