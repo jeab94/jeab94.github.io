@@ -15,6 +15,7 @@ var orilla2;
 var orilla3;
 var orilla4;
 var geometryCaballoNegro;
+var material;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -41,10 +42,9 @@ function CaballoNegro(x, y, z){
 	Agent.call(this, x, y, z);
     	var loader=new THREE.STLLoader();
     	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
-    	var material = Gris;
+    	material = Gris;
     	meshCaballo = new THREE.Mesh( geometry, material );
     	meshCaballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
-    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
     	meshCaballo.scale.set( 0.40, 0.40, 0.40 );
     	meshCaballo.castShadow = true;
     	meshCaballo.receiveShadow = true;
