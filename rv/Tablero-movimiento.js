@@ -172,7 +172,7 @@ function setup(){
    }
 
    //torreblanca1 = new TorreBlanca(10,4.5,-10);
-   caballoNegro1 = new CaballoNegro(15, 20, 85);	
+   caballoNegro1 = new CaballoNegro(15, 30, 85);	
    
    escena.add(caballoNegro1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
