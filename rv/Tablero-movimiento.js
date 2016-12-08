@@ -15,7 +15,7 @@ var orilla2;
 var orilla3;
 var orilla4;
 var loaderCaballoNegro;
-//var geometryCaballoNegro;
+var geometryCaballoNegro;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -34,7 +34,7 @@ Sensor.prototype = new THREE.Raycaster();
 // object
 loaderCaballoNegro = new THREE.STLLoader();
 loaderCaballoNegro.addEventListener('load', function (event){
-	var geometryCaballoNegro = event.content;
+	geometryCaballoNegro = event.content;
 });
 
 //Caballo Negro
