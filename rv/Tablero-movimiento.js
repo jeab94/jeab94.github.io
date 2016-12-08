@@ -35,11 +35,10 @@ var bufferGeometry;
    var loader = new THREE.STLLoader();
     loader.addEventListener( 'load', function ( event )
     {
-        bufferGeometry = event.content;
-        geometry.computeTangents();
+        geometryCaballoNegro = event.content;
+        geometryCaballoNegro.computeTangents();
     });
     loader.load( './Chess-Pieces/Horse.STL' );
-geometryCaballoNegro = new THREE.Geometry().fromBufferGeometry( bufferGeometry );
 
 //Caballo Negro
 function CaballoNegro(x, y, z){
