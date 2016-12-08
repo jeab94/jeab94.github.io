@@ -51,7 +51,7 @@ function CaballoNegro(x, y, z){
 	this.actuator = meshCaballo;
     } );    	
 	
-  this.actuator.commands = [];
+  //this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;//5;
   this.position.z=z;//-10;
