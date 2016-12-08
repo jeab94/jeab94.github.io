@@ -75,7 +75,7 @@ function setup(){
    camara = new THREE.PerspectiveCamera();
    camara.position.y = 0;
    camara.position.x = 40;
-   camara.position.z = 150;
+   camara.position.z = 200;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,0.5);
