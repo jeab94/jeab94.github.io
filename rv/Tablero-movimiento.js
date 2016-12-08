@@ -31,6 +31,7 @@ Sensor.prototype = new THREE.Raycaster();
 
 //Cargador
 // object
+var bufferGeometry;
    var loader = new THREE.STLLoader();
     loader.addEventListener( 'load', function ( event )
     {
@@ -40,11 +41,11 @@ Sensor.prototype = new THREE.Raycaster();
             side: THREE.DoubleSide
         });
 
-        var bufferGeometry = event.content;
+        bufferGeometry = event.content;
         var mesh = new THREE.Mesh(geometry, material);
     });
     loader.load( './Chess-Pieces/Horse.STL' );
-var geometryCaballoNegro = new THREE.Geometry().fromBufferGeometry( bufferGeometry );
+geometryCaballoNegro = new THREE.Geometry().fromBufferGeometry( bufferGeometry );
 
 //Caballo Negro
 function CaballoNegro(x, y, z){
