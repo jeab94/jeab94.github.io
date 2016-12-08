@@ -36,6 +36,7 @@ var bufferGeometry;
     loader.addEventListener( 'load', function ( event )
     {
         bufferGeometry = event.content;
+        geometry.computeTangents();
     });
     loader.load( './Chess-Pieces/Horse.STL' );
 geometryCaballoNegro = new THREE.Geometry().fromBufferGeometry( bufferGeometry );
