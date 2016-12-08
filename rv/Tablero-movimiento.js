@@ -29,36 +29,34 @@ function Sensor(position,direction){
 
 Sensor.prototype = new THREE.Raycaster();
 
-var caballo;
+var meshCaballo;
 
 //Cargador
 // object
 //CABALLO
-    var caballo;
-    var loader=new THREE.STLLoader();
-    loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
-    	var material = Gris;
-    	caballo = new THREE.Mesh( geometry, material );
-    	caballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
-    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
-    	caballo.scale.set( 0.40, 0.40, 0.40 );
-    	caballo.castShadow = true;
-    	caballo.receiveShadow = true;
-    } );
+  
 
 //Caballo Negro
 function CaballoNegro(x, y, z){
 	Agent.call(this, x, y, z);
-	//Caballo
-    	 // Object
-    	this.actuator = caballo;
-	this.actuator.commands = [];
-	this.actuator.position.x = -x;
-	this.actuator.position.y = -y;
-	this.actuator.position.z = -z;
-	this.actuator.scale.set(0.40, 0.40, 0.40); 
-    	this.add(this.actuator);
-	this.sensor = new Sensor();
+    	var loader=new THREE.STLLoader();
+    	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
+    	var material = Gris;
+    	meshCaballo = new THREE.Mesh( geometry, material );
+    	meshCaballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
+    	//caballo.rotation.set( 0, - Math.PI / 2, 0 );
+    	meshCaballo.scale.set( 0.40, 0.40, 0.40 );
+    	meshCaballo.castShadow = true;
+    	meshCaballo.receiveShadow = true;
+	this.actuator = meshCaballo;
+    } );    	
+	
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;//5;
+  this.position.z=z;//-10;
+  this.position.x=x;//10;
+  this.sensor = new Sensor();
 }
 
 CaballoNegro.prototype = new Agent();
