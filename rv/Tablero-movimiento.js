@@ -35,14 +35,11 @@ var bufferGeometry;
    var loader = new THREE.STLLoader();
     loader.addEventListener( 'load', function ( event )
     {
-
         var material = new THREE.MeshLambertMaterial({
             color: 0x888888,
             side: THREE.DoubleSide
         });
-
         bufferGeometry = event.content;
-        var mesh = new THREE.Mesh(geometry, material);
     });
     loader.load( './Chess-Pieces/Horse.STL' );
 geometryCaballoNegro = new THREE.Geometry().fromBufferGeometry( bufferGeometry );
