@@ -30,52 +30,105 @@ function Sensor(position,direction){
 
 Sensor.prototype = new THREE.Raycaster();
 
-var meshCaballo;
-
 var loader = new THREE.ColladaLoader();
-			
-//Cargador
-// object
-//CABALLO
-var caballoNegro = [];
-		loader.load( 'Chess-Pieces/horse.dae', function ( collada ) { 		
-			for (var i = 0; i < 2 ;i++) {			       
-			   horse[i] = collada.scene.clone();
-			       }	
+
+//REY
+var king = [];
+		loader.load( 'Chess-Pieces/king.dae', function ( collada ) { 		
+			   king = collada.scene.clone();
 								
 			});
-
-//Caballo Negro
-function CaballoNegro(x, y, z){
-	Agent.call(this, x, y, z);
-    	var loader=new THREE.STLLoader();
-    	loader.load( './Chess-Pieces/Horse.STL', function ( geometry ) {
-    	material = Gris;
-    	meshCaballo = new THREE.Mesh( geometry, material );
-    	meshCaballo.position.set( 15, 20, 85 ); // Ancho - Altura - Profundidad 
-    	meshCaballo.scale.set( 0.40, 0.40, 0.40 );
-    	meshCaballo.castShadow = true;
-    	meshCaballo.receiveShadow = true;
-	this.actuator = meshCaballo;
-    } );    	
-	
-  //this.actuator.commands = [];
+//REINA
+var queen = [];
+		loader.load( 'Chess-Pieces/queen.dae', function ( collada ) { 		
+			   queen = collada.scene.clone();
+								
+			});
+//CABALLO
+var horse = [];
+		loader.load( 'Chess-Pieces/horse.dae', function ( collada ) { 		
+			   horse = collada.scene.clone();
+								
+			});
+//PEÓN
+var pawn = [];
+		loader.load( 'Chess-Pieces/pawn.dae', function ( collada ) { 		
+			   pawn = collada.scene.clone();
+								
+			});
+//ALFIL
+var runner = [];
+		loader.load( 'Chess-Pieces/runner.dae', function ( collada ) { 		
+			   runner = collada.scene.clone();
+							
+			});
+//TORRE
+var tower = [];
+		loader.load( 'Chess-Pieces/tower.dae', function ( collada ) { 		
+			   tower = collada.scene.clone();
+								
+			});
+//CaballoNegro
+function CaballoNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  this.actuator = new THREE.Mesh(horse, Gris);
+  this.actuator.commands = [];
   this.add(this.actuator);
-  this.position.y=y;//5;
-  this.position.z=z;//-10;
-  this.position.x=x;//10;
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.scale.set(0.40, 0.40, 0.40);
   this.sensor = new Sensor();
+  this.receiveShadow = true;
+  this.castShadow= true;
+}
+//CaballoBlanco
+function CaballoBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  this.actuator = new THREE.Mesh(horse, Blanco);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.scale.set(0.40, 0.40, 0.40);
+  this.sensor = new Sensor();
+  this.receiveShadow = true;
+  this.castShadow= true;
+}
+//TorreNegra
+function TorreNegra(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  this.actuator = new THREE.Mesh(tower, Gris);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.scale.set(0.40, 0.40, 0.40);
+  this.sensor = new Sensor();
+  this.receiveShadow = true;
+  this.castShadow= true;
+}
+//TorreBlanca
+function TorreBlanca(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  this.actuator = new THREE.Mesh(tower, Blanco);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.scale.set(0.40, 0.40, 0.40);
+  this.sensor = new Sensor();
+  this.receiveShadow = true;
+  this.castShadow= true;
 }
 
 CaballoNegro.prototype = new Agent();
-
-CaballoNegro.prototype.sense = function(environment){
-   
-}
-
-CaballoNegro.prototype.act = function(environment){
- 
-}
+CaballoBlanco.prototype = new Agent();
+TorreNegra.prototype = new Agent();
+TorreBlanca.prototype = new Agent();
 
 setup();
 loop();
@@ -185,8 +238,8 @@ function setup(){
 
    //torreblanca1 = new TorreBlanca(10,4.5,-10);
    caballoNegro1 = new CaballoNegro(15, 30, 85);	
-   
-   escena.add(caballoNegro1);
+   caballoBlanco1 = new CaballoBlanco(25, 40, 85); 
+   escena.add(caballoNegro1, caballoBlanco1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
