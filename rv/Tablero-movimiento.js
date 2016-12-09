@@ -32,10 +32,18 @@ Sensor.prototype = new THREE.Raycaster();
 
 var meshCaballo;
 
+var loader = new THREE.ColladaLoader();
+			
 //Cargador
 // object
 //CABALLO
-  
+var caballoNegro = [];
+		loader.load( 'Chess-Pieces/horse.dae', function ( collada ) { 		
+			for (var i = 0; i < 2 ;i++) {			       
+			   horse[i] = collada.scene.clone();
+			       }	
+								
+			});
 
 //Caballo Negro
 function CaballoNegro(x, y, z){
