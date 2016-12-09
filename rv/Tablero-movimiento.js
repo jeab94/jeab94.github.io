@@ -39,7 +39,7 @@ Sensor.prototype = new THREE.Raycaster();
 //ReyNegro
 function ReyNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(king, GrisLiso);
+	this.actuator = new THREE.Mesh(king, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -52,7 +52,7 @@ function ReyNegro(x=0,y=0,z=0){
 //ReyBlanco
 function ReyBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(king, BlancoLiso);
+	this.actuator = new THREE.Mesh(king, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -65,7 +65,7 @@ function ReyBlanco(x=0,y=0,z=0){
 //ReinaNegra
 function ReinaNegra(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(queen, GrisLiso);
+	this.actuator = new THREE.Mesh(queen, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -78,7 +78,7 @@ function ReinaNegra(x=0,y=0,z=0){
 //ReinaBlanca
 function ReinaBlanca(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(queen, BlancoLiso);
+	this.actuator = new THREE.Mesh(queen, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -91,7 +91,7 @@ function ReinaBlanca(x=0,y=0,z=0){
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(knight, GrisLiso);
+	this.actuator = new THREE.Mesh(knight, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -104,7 +104,7 @@ function CaballoNegro(x=0,y=0,z=0){
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(knight, BlancoLiso);
+	this.actuator = new THREE.Mesh(knight, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -117,7 +117,7 @@ function CaballoBlanco(x=0,y=0,z=0){
 //PeonNegro
 function PeonNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(pawn, GrisLiso);
+	this.actuator = new THREE.Mesh(pawn, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -130,7 +130,7 @@ function PeonNegro(x=0,y=0,z=0){
 //PeonBlanco
 function PeonBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(pawn, BlancoLiso);
+	this.actuator = new THREE.Mesh(pawn, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -143,7 +143,7 @@ function PeonBlanco(x=0,y=0,z=0){
 //AlfilNegro
 function AlfilNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(bishop, GrisLiso);
+	this.actuator = new THREE.Mesh(bishop, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -156,7 +156,7 @@ function AlfilNegro(x=0,y=0,z=0){
 //AlfilBlanco
 function AlfilBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(bishop, BlancoLiso);
+	this.actuator = new THREE.Mesh(bishop, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -169,7 +169,7 @@ function AlfilBlanco(x=0,y=0,z=0){
 //TorreNegra
 function TorreNegra(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(rook, GrisLiso);
+	this.actuator = new THREE.Mesh(rook, Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -316,18 +316,18 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   reinaBlanca1 = new ReinaBlanca(40,10,10);
-   reinaNegra1 = new ReinaNegra(30,10,10);
-   reyNegro1 = new ReyNegro(20, 10, 10);
-   reyBlanco1 = new ReyBlanco(10, 10, 10);
-   caballoBlanco1 = new CaballoBlanco(50, 10, 10); 
-   caballoNegro1 = new CaballoNegro(60, 10, 10);
-   peonBlanco1 = new PeonBlanco(70, 10, 80); 
-   peonNegro1 = new PeonNegro(80, 10, 80);
-   alfilBlanco1 = new PeonBlanco(70, 10, 80); 
-   alfilNegro1 = new PeonNegro(60, 10, 80);
-   torreBlanca1 = new TorreBlanca(50,10,80);
-   torreNegra1 = new TorreNegra(40,10,80);
+   reinaBlanca1 = new ReinaBlanca(5,10,5);
+   reinaNegra1 = new ReinaNegra(15,10, 5);
+   reyNegro1 = new ReyNegro(25, 10, 5);
+   reyBlanco1 = new ReyBlanco(35, 10, 5);
+   caballoBlanco1 = new CaballoBlanco(45, 10, 5); 
+   caballoNegro1 = new CaballoNegro(55, 10, 5);
+   peonBlanco1 = new PeonBlanco(5, 10, 75); 
+   peonNegro1 = new PeonNegro(15, 10, 75);
+   alfilBlanco1 = new PeonBlanco(25, 10, 75); 
+   alfilNegro1 = new PeonNegro(35, 10, 75);
+   torreBlanca1 = new TorreBlanca(45,10,75);
+   torreNegra1 = new TorreNegra(55,10,75);
 	
    escena.add(reinaBlanca1, reinaNegra1, reyNegro1, reyBlanco1, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
