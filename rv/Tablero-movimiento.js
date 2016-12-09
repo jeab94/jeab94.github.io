@@ -76,10 +76,11 @@ var tower = [];
 			   tower[i] = collada.scene.clone();
 			}		
 			});
+
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(horse[0], Gris);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -92,7 +93,7 @@ function CaballoNegro(x=0,y=0,z=0){
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(horse[1], Blanco);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -105,7 +106,7 @@ function CaballoBlanco(x=0,y=0,z=0){
 //TorreNegra
 function TorreNegra(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(tower[0], Gris);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -118,7 +119,7 @@ function TorreNegra(x=0,y=0,z=0){
 //TorreBlanca
 function TorreBlanca(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(tower[1], Blanco);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
