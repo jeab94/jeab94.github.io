@@ -18,11 +18,11 @@ var geometryCaballoNegro;
 var material;
 
 //Texturas
-var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
-var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
-var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
-var GrisLiso = new THREE.MeshLambertMaterial({color: 0xD3D3D3});
-var BlancoLiso = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
+var Gris = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
+var Blanco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
+var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
+var GrisLiso = new THREE.MeshBasicMaterial({color: 0xD3D3D3});
+var BlancoLiso = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
 
 //Sensor
 function Sensor(position,direction){ 
