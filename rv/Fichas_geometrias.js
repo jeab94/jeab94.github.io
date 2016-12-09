@@ -123,9 +123,9 @@
 
   var mreyfinal9 = new THREE.Mesh(reyfinal9);
 
-  var reyfinal10 = new THREE.Geometry();
-  reyfinal10.merge(mreyfinal9.geometry,mreyfinal9.matrix);
-  reyfinal10.merge(mcruz.geometry,mcruz.matrix);
+  var king= new THREE.Geometry();
+  king.merge(mreyfinal9.geometry,mreyfinal9.matrix);
+  king.merge(mcruz.geometry,mcruz.matrix);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////   REINA   ////////////////////////////////////////////////////
@@ -231,9 +231,9 @@
 
   var mreinafinal9 = new THREE.Mesh(reinafinal9);
 
-  var reinafinal10 = new THREE.Geometry();
-  reinafinal10.merge(mreinafinal9.geometry,mreinafinal9.matrix);
-  reinafinal10.merge(mbola.geometry,mbola.matrix);
+  var queen = new THREE.Geometry();
+  queen.merge(mreinafinal9.geometry,mreinafinal9.matrix);
+  queen.merge(mbola.geometry,mbola.matrix);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////   CABALLO   ///////////////////////////////////////////////////
@@ -306,8 +306,8 @@
   caballofinal4.merge(mcaballofinal3.geometry,mcaballofinal3.matrix);
   caballofinal4.merge(mcaballo.geometry,mcaballo.matrix);
 
-  var caballofinal5 = caballofinal4.clone();
-  caballofinal5.rotateY(Math.PI);
+  var knight = caballofinal4.clone();
+  knight.rotateY(Math.PI);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////    PEON    ////////////////////////////////////////////////////
@@ -372,9 +372,9 @@
 
   var mpeonfinal5 = new THREE.Mesh(peonfinal5);
 
-  var peonfinal6 = new THREE.Geometry();
-  peonfinal6.merge(mpeonfinal5.geometry,mpeonfinal5.matrix);
-  peonfinal6.merge(mbola.geometry,mbola.matrix);
+  var pawn = new THREE.Geometry();
+  pawn.merge(mpeonfinal5.geometry,mpeonfinal5.matrix);
+  pawn.merge(mbola.geometry,mbola.matrix);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////  ALFIL  /////////////////////////////////////////////////////
@@ -459,9 +459,9 @@
 
   var malfilfinal7 = new THREE.Mesh(alfilfinal7);
 
-  var alfilfinal8 = new THREE.Geometry();
-  alfilfinal8.merge(malfilfinal7.geometry,malfilfinal7.matrix);
-  alfilfinal8.merge(mbola2.geometry,mbola2.matrix);
+  var bishop = new THREE.Geometry();
+  bishop.merge(malfilfinal7.geometry,malfilfinal7.matrix);
+  bishop.merge(mbola2.geometry,mbola2.matrix);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////  TORRE  /////////////////////////////////////////////////////
@@ -605,6 +605,6 @@
 
   var mtorrefinal12 = new THREE.Mesh(torrefinal12);
 
-  var torrefinal13 = new THREE.Geometry();
-  torrefinal13.merge(mtorrefinal12.geometry,mtorrefinal12.matrix);
-  torrefinal13.merge(mpiedra8.geometry,mpiedra8.matrix);
+  var rook = new THREE.Geometry();
+  rook.merge(mtorrefinal12.geometry,mtorrefinal12.matrix);
+  rook.merge(mpiedra8.geometry,mpiedra8.matrix);
