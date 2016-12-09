@@ -34,44 +34,50 @@ var loader = new THREE.ColladaLoader();
 
 //REY
 var king = [];
-		loader.load( 'Chess-Pieces/king.dae', function ( collada ) { 		
-			   king = collada.scene.clone();
-								
+		loader.load( 'Chess-Pieces/king.dae', function ( collada ) {
+			for (var i = 0; i < 2 ;i++) {
+			   king[i] = collada.scene.clone();
+			}	
 			});
 //REINA
 var queen = [];
-		loader.load( 'Chess-Pieces/queen.dae', function ( collada ) { 		
-			   queen = collada.scene.clone();
-								
+		loader.load( 'Chess-Pieces/queen.dae', function ( collada ) {
+			for (var i = 0; i < 2 ;i++) {
+			   queen[i] = collada.scene.clone();
+			}		
 			});
 //CABALLO
 var horse = [];
-		loader.load( 'Chess-Pieces/horse.dae', function ( collada ) { 		
-			   horse = collada.scene.clone();
-								
+		loader.load( 'Chess-Pieces/horse.dae', function ( collada ) {
+			for (var i = 0; i < 2 ;i++) {
+			   horse[i] = collada.scene.clone();
+			}	
 			});
 //PEÓN
 var pawn = [];
 		loader.load( 'Chess-Pieces/pawn.dae', function ( collada ) { 		
-			   pawn = collada.scene.clone();
-								
+			for (var i = 0; i < 2 ;i++) {
+			   pawn[i] = collada.scene.clone();
+			}	
 			});
 //ALFIL
 var runner = [];
 		loader.load( 'Chess-Pieces/runner.dae', function ( collada ) { 		
-			   runner = collada.scene.clone();
-							
+			for (var i = 0; i <2 ;i++) {
+			   runner[i] = collada.scene.clone();
+			}		
 			});
 //TORRE
 var tower = [];
-		loader.load( 'Chess-Pieces/tower.dae', function ( collada ) { 		
-			   tower = collada.scene.clone();
-								
+		loader.load( 'Chess-Pieces/tower.dae', function ( collada ) {
+			for (var i = 0; i < 2 ;i++) {
+			   tower[i] = collada.scene.clone();
+			}		
 			});
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(horse, Gris);
+  this.actuator = new THREE.Mesh(horse[0], Gris);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -79,13 +85,11 @@ function CaballoNegro(x=0,y=0,z=0){
   this.position.x=x;
   this.scale.set(0.40, 0.40, 0.40);
   this.sensor = new Sensor();
-  this.receiveShadow = true;
-  this.castShadow= true;
 }
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(horse, Blanco);
+  this.actuator = new THREE.Mesh(horse[1], Blanco);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -93,13 +97,11 @@ function CaballoBlanco(x=0,y=0,z=0){
   this.position.x=x;
   this.scale.set(0.40, 0.40, 0.40);
   this.sensor = new Sensor();
-  this.receiveShadow = true;
-  this.castShadow= true;
 }
 //TorreNegra
 function TorreNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(tower, Gris);
+  this.actuator = new THREE.Mesh(tower[0], Gris);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -107,13 +109,11 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.x=x;
   this.scale.set(0.40, 0.40, 0.40);
   this.sensor = new Sensor();
-  this.receiveShadow = true;
-  this.castShadow= true;
 }
 //TorreBlanca
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(tower, Blanco);
+  this.actuator = new THREE.Mesh(tower[1], Blanco);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -121,8 +121,6 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.x=x;
   this.scale.set(0.40, 0.40, 0.40);
   this.sensor = new Sensor();
-  this.receiveShadow = true;
-  this.castShadow= true;
 }
 
 CaballoNegro.prototype = new Agent();
