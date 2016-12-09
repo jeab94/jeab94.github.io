@@ -242,7 +242,16 @@ function setup(){
       cubos[q].receiveShadow = true;
       escena.add(cubos[q]);
    }
+ var loader = new THREE.ColladaLoader();
 
+//REY
+var king = [];
+		loader.load( 'Chess-Pieces/king.dae', function ( collada ) {
+			for (var i = 0; i < 2 ;i++) {
+			   king[i] = collada.scene.clone();
+			}	
+			});
+	escena.add(king[0]);
    torreBlanca1 = new TorreBlanca(40,20,40);
    torreNegra1 = new TorreNegra(30,30,30);
    caballoNegro1 = new CaballoNegro(15, 35, 10);
