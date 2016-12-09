@@ -218,9 +218,9 @@ function setup(){
    escena = new Environment();
 	
    camara = new THREE.PerspectiveCamera();
-   camara.position.y = 20;
+   camara.position.y = 200;
    camara.position.x = 40;
-   camara.position.z = 200;
+   camara.position.z = 60;
    camara.lookAt(new THREE.Vector3(40, 0, 60));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
@@ -316,18 +316,18 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   reinaBlanca1 = new ReinaBlanca(40,20,40);
-   reinaNegra1 = new ReinaNegra(30,20,30);
-   reyNegro1 = new ReyNegro(15, 20, 10);
-   reyBlanco1 = new ReyBlanco(15, 20, 10);
-   caballoBlanco1 = new CaballoBlanco(70, 20, 20); 
-   caballoNegro1 = new CaballoNegro(15, 20, 10);
-   peonBlanco1 = new PeonBlanco(70, 20, 20); 
-   peonNegro1 = new PeonNegro(15, 20, 10);
-   alfilBlanco1 = new PeonBlanco(70, 20, 20); 
-   alfilNegro1 = new PeonNegro(15, 20, 10);
-   torreBlanca1 = new TorreBlanca(40,20,40);
-   torreNegra1 = new TorreNegra(30,20,30);
+   reinaBlanca1 = new ReinaBlanca(40,10,40);
+   reinaNegra1 = new ReinaNegra(30,10,30);
+   reyNegro1 = new ReyNegro(15, 10, 10);
+   reyBlanco1 = new ReyBlanco(15, 10, 10);
+   caballoBlanco1 = new CaballoBlanco(70, 10, 20); 
+   caballoNegro1 = new CaballoNegro(15, 10, 10);
+   peonBlanco1 = new PeonBlanco(70, 10, 20); 
+   peonNegro1 = new PeonNegro(15, 10, 10);
+   alfilBlanco1 = new PeonBlanco(70, 10, 20); 
+   alfilNegro1 = new PeonNegro(15, 10, 10);
+   torreBlanca1 = new TorreBlanca(40,10,40);
+   torreNegra1 = new TorreNegra(30,10,30);
 	
    escena.add(reinaBlanca1, reinaNegra1, reyNegro1, reyBlanco1, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
