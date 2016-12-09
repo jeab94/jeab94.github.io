@@ -32,11 +32,14 @@ function Sensor(position,direction){
 
 Sensor.prototype = new THREE.Raycaster();
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////  CONSTRUCTORES FICHAS  /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//CaballoNegro
-function CaballoNegro(x=0,y=0,z=0){
+//ReyNegro
+function ReyNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(horse[0], Gris);
+	this.actuator = new THREE.Mesh(king, GrisLiso);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -45,12 +48,63 @@ function CaballoNegro(x=0,y=0,z=0){
 	this.receiveShadow = true;
 	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
-	escena.add(this);
+}
+//ReyBlanco
+function ReyBlanco(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(king, BlancoLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//ReinaNegra
+function ReinaNegra(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(queen, GrisLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//ReinaBlanca
+function ReinaBlanca(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(queen, BlancoLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//CaballoNegro
+function CaballoNegro(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(knight, GrisLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
 }
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(horse[1], Blanco);
+	this.actuator = new THREE.Mesh(knight, BlancoLiso);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -59,42 +113,105 @@ function CaballoBlanco(x=0,y=0,z=0){
 	this.receiveShadow = true;
 	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
-	escena.add(this.actuator);
 }
-//TorreNegra
-function TorreNegra(x=0,y=0,z=0){
+//PeonNegro
+function PeonNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Gris);
+	this.actuator = new THREE.Mesh(pawn, GrisLiso);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	this.scale.set(0.40, 0.40, 0.40);
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//PeonBlanco
+function PeonBlanco(x=0,y=0,z=0){
+	Agent.call(this,x,y,z); 
+	this.actuator = new THREE.Mesh(pawn, BlancoLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//AlfilNegro
+function AlfilNegro(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(bishop, GrisLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//AlfilBlanco
+function CaballoBlanco(x=0,y=0,z=0){
+	Agent.call(this,x,y,z); 
+	this.actuator = new THREE.Mesh(bishop, BlancoLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
+}
+//TorreNegra
+function TorreNegra(x=0,y=0,z=0){
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(rook, GrisLiso);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
 }
 //TorreBlanca
 function TorreBlanca(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Blanco);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(rook, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	this.scale.set(0.40, 0.40, 0.40);
+	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
 }
 
+ReyNegro.prototype = new Agent();
+ReyBlanco.prototype = new Agent();
+ReinaNegra.prototype = new Agent();
+ReinaBlanca.prototype = new Agent();
 CaballoNegro.prototype = new Agent();
 CaballoBlanco.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 TorreBlanca.prototype = new Agent();
+PeonNegro.prototype = new Agent();
+PeonBlanco.prototype = new Agent();
+AlfilNegro.prototype = new Agent();
+AlfilBlanco.prototype = new Agent();
 
 setup();
 loop();
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////  SETUP  ////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function setup(){
    
@@ -210,6 +327,9 @@ function setup(){
   
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////  LOOP  /////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function loop(){
      requestAnimationFrame(loop);
