@@ -251,7 +251,7 @@ var king = [];
 			   king[i] = collada.scene.clone();
 			}	
 			});
-	escena.add(king[0]);
+	escena.add(new THREE.Mesh(king[0],Gris));
    torreBlanca1 = new TorreBlanca(40,20,40);
    torreNegra1 = new TorreNegra(30,30,30);
    caballoNegro1 = new CaballoNegro(15, 35, 10);
