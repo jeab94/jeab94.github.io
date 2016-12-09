@@ -20,7 +20,7 @@ var material;
 //Texturas
 //var Gris = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
 //var Blanco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
-//var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
+var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
 var Gris = new THREE.MeshBasicMaterial({color: 0xD3D3D3});
 var Blanco = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
 
