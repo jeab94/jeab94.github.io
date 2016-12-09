@@ -154,7 +154,7 @@ function AlfilNegro(x=0,y=0,z=0){
 	this.sensor = new Sensor();
 }
 //AlfilBlanco
-function CaballoBlanco(x=0,y=0,z=0){
+function AlfilBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
 	this.actuator = new THREE.Mesh(bishop, BlancoLiso);
 	this.actuator.commands = [];
