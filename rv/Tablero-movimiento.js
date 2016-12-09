@@ -52,7 +52,7 @@ function ReyNegro(x=0,y=0,z=0){
 //ReyBlanco
 function ReyBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(king, BlancoLiso);
+	this.actuator = new THREE.Mesh(king, BlancoLiso);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -78,7 +78,7 @@ function ReinaNegra(x=0,y=0,z=0){
 //ReinaBlanca
 function ReinaBlanca(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(queen, BlancoLiso);
+	this.actuator = new THREE.Mesh(queen, BlancoLiso);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -182,7 +182,7 @@ function TorreNegra(x=0,y=0,z=0){
 //TorreBlanca
 function TorreBlanca(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(rook, Blanco);
+	this.actuator = new THREE.Mesh(rook, Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
