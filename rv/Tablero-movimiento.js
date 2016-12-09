@@ -329,7 +329,7 @@ function setup(){
    torreBlanca1 = new TorreBlanca(40,20,40);
    torreNegra1 = new TorreNegra(30,20,30);
 	
-   escena.add(reinaBlanca1, reinaNegra1, reyNegro, reyBlanco, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
+   escena.add(reinaBlanca1, reinaNegra1, reyNegro1, reyBlanco1, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
