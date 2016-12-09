@@ -1,39 +1,46 @@
-function Agent(x=0, y=0, z=0){ //Constructor
+//Agente
+function Agent(x=0,y=0,z=0){
   THREE.Object3D.call(this);
-  this.position.x = x;
-  this.position.y = y;
-  this.position.z = z;
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=z;
 }
 
-Agent.prototype = new THREE.Object3D(); //Herencia
+Agent.prototype = new THREE.Object3D();
 
-Agent.prototype.sense = function(environment) {};
-Agent.prototype.plan = function(environment) {};
-Agent.prototype.act = function(environment) {};
+//Tres primitivas esenciales de un agente:
+Agent.prototype.sense = function(environment) {}; //Percibir
+Agent.prototype.plan = function(environment) {}; //Planificar
+Agent.prototype.act = function(environment) {}; //Actuar
 
+//Environment
+//Un Agente opera sobre un entorno
 function Environment(){
-  THREE.Scene.call(this); 
+  THREE.Scene.call(this);
 }
 
 Environment.prototype = new THREE.Scene();
 
-Environment.prototype.sense = function(){
-  for (var i=0; i<this.children.length; i++){
-   if (this.children[i].sense !== undefined) //Children son los objetos agregados a la escena (arreglo)
-     this.children[i].sense(this);
+//Preguntar a todos los agentes si sienten
+Environment.prototype.sense = function(){ 
+  for(var i=0; i<this.children.length; i++){
+    if(this.children[i].sense!==undefined)
+      this.children[i].sense(this);
   }
 }
 
+//Preguntar a todos los agentes si planean
 Environment.prototype.plan = function(){
-  for (var i=0; i<this.children.length; i++){
-   if (this.children[i].plan !== undefined) //Si puede planificar
-     this.children[i].plan(this);           //Que planifique sobre el entorno
+  for(var i=0; i<this.children.length; i++){
+    if(this.children[i].plan !== undefined)
+      this.children[i].plan(this);
   }
 }
 
+//Preguntar a todos los agentes si actuan
 Environment.prototype.act = function(){
-  for (var i=0; i<this.children.length; i++){
-   if (this.children[i].act !== undefined) //Si puede actuar
-     this.children[i].act(this);          //Que actue sobre el entorno
+  for(var i=0; i<this.children.length; i++){
+    if(this.children[i].act !== undefined)
+      this.children[i].act(this);
   }
 }
