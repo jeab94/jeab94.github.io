@@ -89,7 +89,7 @@ function CaballoNegro(x=0,y=0,z=0){
 	this.receiveShadow = true;
 	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
-	escena.add(this.actuator);
+	escena.add(this);
 }
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
