@@ -316,8 +316,8 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   reinaBlanca1 = new ReinaBlanca(40,20,40);
-   reinaNegra1 = new ReinaNegra(30,20,30);
+   //reinaBlanca1 = new ReinaBlanca(40,20,40);
+   //reinaNegra1 = new ReinaNegra(30,20,30);
    reyNegro1 = new ReyNegro(15, 20, 10);
    reyBlanco1 = new ReyBlanco(15, 20, 10);
    caballoBlanco1 = new CaballoBlanco(70, 20, 20); 
