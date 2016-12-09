@@ -80,27 +80,27 @@ var tower = [];
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Gris);
+	this.actuator = new THREE.Mesh(horse[0], Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	this.scale.set(0.40, 0.40, 0.40);
+	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
 }
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Blanco);
+	this.actuator = new THREE.Mesh(horse[1], Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	this.scale.set(0.40, 0.40, 0.40);
+	//this.scale.set(0.40, 0.40, 0.40);
 	this.sensor = new Sensor();
 }
 //TorreNegra
