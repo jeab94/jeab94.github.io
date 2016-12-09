@@ -22,7 +22,7 @@ var material;
 //var Blanco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
 //var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
 var Gris = new THREE.MeshBasicMaterial({color: 0xD3D3D3});
-var White = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
+var Blanco = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
 
 //Sensor
 function Sensor(position,direction){ 
