@@ -18,11 +18,11 @@ var geometryCaballoNegro;
 var material;
 
 //Texturas
-var Gris = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
-var Blanco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
-var Marco = new THREE.MeshBasicMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
-var GrisLiso = new THREE.MeshBasicMaterial({color: 0xD3D3D3});
-var BlancoLiso = new THREE.MeshBasicMaterial({color: 0xFFFFFF});
+var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
+var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
+var Marco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('wood.jpg') });
+var GrisLiso = new THREE.MeshLambertMaterial({color: 0xD3D3D3});
+var BlancoLiso = new THREE.MeshLambertMaterial({color: 0xFFFFFF});
 
 //Sensor
 function Sensor(position,direction){ 
@@ -46,7 +46,7 @@ function ReyNegro(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //ReyBlanco
@@ -59,7 +59,7 @@ function ReyBlanco(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //ReinaNegra
@@ -72,7 +72,7 @@ function ReinaNegra(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //ReinaBlanca
@@ -85,7 +85,7 @@ function ReinaBlanca(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //CaballoNegro
@@ -98,7 +98,7 @@ function CaballoNegro(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //CaballoBlanco
@@ -111,7 +111,7 @@ function CaballoBlanco(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //PeonNegro
@@ -124,7 +124,7 @@ function PeonNegro(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //PeonBlanco
@@ -137,7 +137,7 @@ function PeonBlanco(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //AlfilNegro
@@ -150,7 +150,7 @@ function AlfilNegro(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //AlfilBlanco
@@ -163,7 +163,7 @@ function AlfilBlanco(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //TorreNegra
@@ -176,7 +176,7 @@ function TorreNegra(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 //TorreBlanca
@@ -189,7 +189,7 @@ function TorreBlanca(x=0,y=0,z=0){
 	this.position.z=z;
 	this.position.x=x;
 	this.receiveShadow = true;
-	//this.scale.set(0.40, 0.40, 0.40);
+	this.scale.set(0.70, 0.70, 0.70);
 	this.sensor = new Sensor();
 }
 
