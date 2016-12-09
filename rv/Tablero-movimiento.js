@@ -80,7 +80,7 @@ var tower = [];
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Gris);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -93,7 +93,7 @@ function CaballoNegro(x=0,y=0,z=0){
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
 	Agent.call(this,x,y,z); 
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Blanco);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Blanco);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -106,7 +106,7 @@ function CaballoBlanco(x=0,y=0,z=0){
 //TorreNegra
 function TorreNegra(x=0,y=0,z=0){
 	Agent.call(this,x,y,z);
-	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2), Gris);
+	this.actuator = new THREE.Mesh(new THREE.BoxGeometry(10,70,10), Gris);
 	this.actuator.commands = [];
 	this.add(this.actuator);
 	this.position.y=y;
@@ -241,10 +241,10 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   torreBlanca1 = new TorreBlanca(0,0,0);
-   torreNegra1 = new TorreNegra(0,0,0);
-   caballoNegro1 = new CaballoNegro(0, 0, 0);
-   caballoBlanco1 = new CaballoBlanco(0, 0, 0); 
+   torreBlanca1 = new TorreBlanca(40,20,40);
+   torreNegra1 = new TorreNegra(30,30,30);
+   caballoNegro1 = new CaballoNegro(15, 35, 10);
+   caballoBlanco1 = new CaballoBlanco(70, 40, 20); 
 	
    escena.add(caballoNegro1, caballoBlanco1, torreBlanca1, torreNegra1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
