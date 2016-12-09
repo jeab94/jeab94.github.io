@@ -316,13 +316,20 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-
+   reinaBlanca1 = new ReinaBlanca(40,20,40);
+   reinaNegra1 = new ReinaNegra(30,20,30);
+   reyNegro1 = new ReyNegro(15, 20, 10);
+   reyBlanco1 = new ReyBlanco(15, 20, 10);
+   caballoBlanco1 = new CaballoBlanco(70, 20, 20); 
+   caballoNegro1 = new CaballoNegro(15, 20, 10);
+   peonBlanco1 = new PeonBlanco(70, 20, 20); 
+   peonNegro1 = new PeonNegro(15, 20, 10);
+   alfilBlanco1 = new PeonBlanco(70, 20, 20); 
+   alfilNegro1 = new PeonNegro(15, 20, 10);
    torreBlanca1 = new TorreBlanca(40,20,40);
-   torreNegra1 = new TorreNegra(30,30,30);
-   caballoNegro1 = new CaballoNegro(15, 35, 10);
-   caballoBlanco1 = new CaballoBlanco(70, 40, 20); 
+   torreNegra1 = new TorreNegra(30,20,30);
 	
-   escena.add(caballoNegro1, caballoBlanco1, torreBlanca1, torreNegra1);
+   escena.add(reinaBlanca1, reinaNegra1, reyNegro, reyBlanco, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
   
 }
