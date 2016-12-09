@@ -76,51 +76,55 @@ var tower = [];
 			});
 //CaballoNegro
 function CaballoNegro(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(horse[0], Gris);
-  this.actuator.commands = [];
-  this.add(this.actuator);
-  this.position.y=y;
-  this.position.z=z;
-  this.position.x=x;
-  this.scale.set(0.40, 0.40, 0.40);
-  this.sensor = new Sensor();
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(horse[0], Gris);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
 }
 //CaballoBlanco
 function CaballoBlanco(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(horse[1], Blanco);
-  this.actuator.commands = [];
-  this.add(this.actuator);
-  this.position.y=y;
-  this.position.z=z;
-  this.position.x=x;
-  this.scale.set(0.40, 0.40, 0.40);
-  this.sensor = new Sensor();
+	Agent.call(this,x,y,z); 
+	this.actuator = new THREE.Mesh(horse[1], Blanco);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
 }
 //TorreNegra
 function TorreNegra(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(tower[0], Gris);
-  this.actuator.commands = [];
-  this.add(this.actuator);
-  this.position.y=y;
-  this.position.z=z;
-  this.position.x=x;
-  this.scale.set(0.40, 0.40, 0.40);
-  this.sensor = new Sensor();
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(tower[0], Gris);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
 }
 //TorreBlanca
 function TorreBlanca(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  this.actuator = new THREE.Mesh(tower[1], Blanco);
-  this.actuator.commands = [];
-  this.add(this.actuator);
-  this.position.y=y;
-  this.position.z=z;
-  this.position.x=x;
-  this.scale.set(0.40, 0.40, 0.40);
-  this.sensor = new Sensor();
+	Agent.call(this,x,y,z);
+	this.actuator = new THREE.Mesh(tower[1], Blanco);
+	this.actuator.commands = [];
+	this.add(this.actuator);
+	this.position.y=y;
+	this.position.z=z;
+	this.position.x=x;
+	this.receiveShadow = true;
+	this.scale.set(0.40, 0.40, 0.40);
+	this.sensor = new Sensor();
 }
 
 CaballoNegro.prototype = new Agent();
@@ -235,7 +239,7 @@ function setup(){
    }
 
    //torreblanca1 = new TorreBlanca(10,4.5,-10);
-   caballoNegro1 = new CaballoNegro(15, 30, 85);	
+   caballoNegro1 = new CaballoNegro(15, 30, 85);
    caballoBlanco1 = new CaballoBlanco(25, 40, 85); 
    escena.add(caballoNegro1, caballoBlanco1);
    escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
