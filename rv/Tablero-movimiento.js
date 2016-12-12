@@ -316,22 +316,46 @@ function setup(){
       escena.add(cubos[q]);
    }
 
-   reinaBlanca1 = new ReinaBlanca(5,10,5);
-   reinaNegra1 = new ReinaNegra(15,10, 5);
-   reyNegro1 = new ReyNegro(25, 10, 5);
-   reyBlanco1 = new ReyBlanco(35, 10, 5);
-   caballoBlanco1 = new CaballoBlanco(45, 10, 5); 
-   caballoNegro1 = new CaballoNegro(55, 10, 5);
-   peonBlanco1 = new PeonBlanco(5, 10, 75); 
-   peonNegro1 = new PeonNegro(15, 10, 75);
-   alfilBlanco1 = new PeonBlanco(25, 10, 75); 
-   alfilNegro1 = new PeonNegro(35, 10, 75);
-   torreBlanca1 = new TorreBlanca(45,10,75);
-   torreNegra1 = new TorreNegra(55,10,75);
+	reyNegro = new ReyNegro(45, 10, 5);
+  	reyBlanco = new ReyBlanco(45, 10, 75);
+   	reinaNegra = new ReinaNegra(35, 10, 5);
+   	reinaBlanca = new ReinaBlanca(35, 10, 75);
+   	caballoNegro1 = new CaballoNegro(15, 10, 5);
+   	caballoBlanco1 = new CaballoBlanco(15, 10, 75); 
+   	caballoNegro2 = new CaballoNegro(65, 10, 5);
+   	caballoBlanco2 = new CaballoBlanco(65, 10, 75); 
+   	peonNegro1 = new PeonNegro(5, 10, 15);
+   	peonBlanco1 = new PeonBlanco(5, 10, 65); 
+   	peonNegro2 = new PeonNegro(15, 10, 15);
+   	peonBlanco2 = new PeonBlanco(15, 10, 65); 
+   	peonNegro3 = new PeonNegro(25, 10, 15);
+   	peonBlanco3 = new PeonBlanco(25, 10, 65); 
+   	peonNegro4 = new PeonNegro(35, 10, 15);
+   	peonBlanco4 = new PeonBlanco(35, 10, 65); 
+   	peonNegro5 = new PeonNegro(45, 10, 15);
+   	peonBlanco5 = new PeonBlanco(45, 10, 65); 
+   	peonNegro6 = new PeonNegro(55, 10, 15);
+   	peonBlanco6 = new PeonBlanco(55, 10, 65); 
+   	peonNegro7 = new PeonNegro(65, 10, 15);
+   	peonBlanco7 = new PeonBlanco(65, 10, 65); 
+   	peonNegro8 = new PeonNegro(75, 10, 15);
+   	peonBlanco8 = new PeonBlanco(75, 10, 65); 
+   	alfilNegro1 = new PeonNegro(25, 10, 5);
+   	alfilBlanco1 = new PeonBlanco(25, 10, 75); 
+   	alfilNegro2 = new PeonNegro(55, 10, 5);
+   	alfilBlanco2 = new PeonBlanco(55, 10, 75); 
+   	torreNegra1 = new TorreNegra(5, 10, 5);
+	torreBlanca1 = new TorreBlanca(5, 10, 75);
+   	torreNegra2 = new TorreNegra(75, 10, 5);
+	torreBlanca2 = new TorreBlanca(75, 10, 75);
+   	
+	grupoNegro= new THREE.Group();
+	grupoBlanco= new THREE.Group();
 	
-   escena.add(reinaBlanca1, reinaNegra1, reyNegro1, reyBlanco1, caballoBlanco1, caballoNegro1, peonBlanco1, peonNegro1, alfilBlanco1, alfilNegro1, torreBlanca1, torreNegra1);
-   escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
-  
+	grupoNegro.add(reyNegro, reinaNegra, caballoNegro1, caballoNegro2,  alfilNegro1, alfilNegro2, torreNegra1, torreNegra2, peonNegro1, peonNegro2, peonNegro3, peonNegro4, peonNegro5, peonNegro6, peonNegro7, peonNegro8);
+   	grupoBlanco.add(reyBlanco, reinaBlanca, caballoBlanco1, caballoBlanco2,  alfilBlanco1, alfilBlanco2, torreBlanca1, torreBlanca2, peonBlanco1, peonBlanco2, peonBlanco3, peonBlanco4, peonBlanco5, peonBlanco6, peonBlanco7, peonBlanco8);
+	
+	escena.add (grupoBlanco, grupoNegro);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
