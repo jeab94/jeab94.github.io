@@ -220,62 +220,26 @@ Referencia.prototype.act = function(environment){
 	var key = pieza.which;
         switch (key){	
 		case 37: //Left
-			if(indicador===1){
 				if(referencia.position.x>=15){
 					referencia.translateX(-10);
 				}
-			}
-			else{
-				escena.remove(referencia);
-				escena.remove(
-				);
-				if(referencia.position.x>=15){
-					referencia.translateX(-10);
-				}
-			}
 			break;
 		case 38 :  //Up
-			if(indicador===1){
 				if(referencia.position.z>=15){
 					referencia.translateZ(-10);
 				}
-			}
-			else{
-				escena.remove(referencia);
-				//escena.remove(negativo);				
-				if(referencia.position.z>=15){
-					referencia.translateZ(-10);
-				}
-			}			
 			break;
 		case 39 :  //Right 
-			if(indicador===1){
 				if(referencia.position.x<=65){
 					referencia.translateX(10);
 				}
-			}
-			else{
-				escena.remove(referencia);
-				//escena.remove(negativo);				
-				if(referencia.position.x<=65){
-					referencia.translateX(10);
-				}
-			}		
 			break;
 		case 40 :  //Down
-			if(indicador===1){
 				if(referencia.position.z<=65){
 					referencia.translateZ(10);
 				}
-			}
-			else{
-				if(referencia.position.z<=65){
-					referencia.translateZ(10);
-				}
-			}				
 			break;
 		case 13 :  //Enter
-			if(indicador===1){
 				if (reyBlanco.position.x===referencia.position.x && reyBlanco.position.z===referencia.position.z){
 					ReyBlanco.prototype.sense = function(environment){
 						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -3472,15 +3436,6 @@ Referencia.prototype.act = function(environment){
 					} //Termino Prototype act
 				}//Termino if ficha y referencia
 				
-				 indicador=0;
-		
-			}//Termino if indicador
-			
-			else{ //No se seleccionó pieza 
-				//escena.remove(negativo);
-				//negativo = new BloqueRojo(referencia.position.x,0,referencia.position.z);
-				//escena.add(negativo)
-			}
 			break;
 		     } //Termino de switch
 	} //Termino de función
