@@ -272,7 +272,7 @@
   forma.lineTo(-7,-3);
   forma.lineTo(-10,0);
 
-  var caballo= new THREE.ExtrudeGeometry(forma,{amount:2},{bevelSegments:4});
+  var caballo= new THREE.ExtrudeGeometry(forma,{amount:1.5},{bevelSegments:4});
   caballo.scale(.4,.4,.4);
   caballo.translate(0,9,0);
 
