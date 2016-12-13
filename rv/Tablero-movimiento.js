@@ -558,13 +558,13 @@ Referencia.prototype.act = function(environment){
 						   (reinaBlanca.position.x==peonBlanco6.position.x && reinaBlanca.position.z==peonBlanco6.position.z))||
 						   (reinaBlanca.position.x==peonBlanco7.position.x && reinaBlanca.position.z==peonBlanco7.position.z))||
 						   (reinaBlanca.position.x==peonBlanco8.position.x && reinaBlanca.position.z==peonBlanco8.position.z))||
-						   (reinaBlanca.position.x==torreBlanca2.position.x && reinaBlanca.position.z==torreBlanca2.position.z))||
+						   (reinaBlanca.position.x==torreBlanca1.position.x && reinaBlanca.position.z==torreBlanca1.position.z))||
+						   (reinaBlanca.position.x==torreBlanca2.position.x && reinaBlanca.position.z==torreBlanca2.position.z))||	 
 						   (reinaBlanca.position.x==alfilBlanco1.position.x && reinaBlanca.position.z==alfilBlanco1.position.z))||
 						   (reinaBlanca.position.x==alfilBlanco2.position.x && reinaBlanca.position.z==alfilBlanco2.position.z))||
 						   (reinaBlanca.position.x==caballoBlanco1.position.x && reinaBlanca.position.z==caballoBlanco1.position.z))||
 						   (reinaBlanca.position.x==caballoBlanco2.position.x && reinaBlanca.position.z==caballoBlanco2.position.z))||
-						   (reinaBlanca.position.x==reyBlanco.position.x && reinaBlanca.position.z==reyBlanco.position.z))||
-						   (reinaBlanca.position.x==reinaBlanca.position.x && reinaBlanca.position.z==reinaBlanca.position.z)){
+						   (reinaBlanca.position.x==reyBlanco.position.x && reinaBlanca.position.z==reyBlanco.position.z))){
 							alert("No puedes comer piezas del mismo color");
 							reinaBlanca.position.x=referencia.position.x;reinaBlanca.position.z=referencia.position.z;
 						}
@@ -659,13 +659,13 @@ Referencia.prototype.act = function(environment){
 						   (reinaNegra.position.x==peonNegro6.position.x && reinaNegra.position.z==peonNegro6.position.z))||
 						   (reinaNegra.position.x==peonNegro7.position.x && reinaNegra.position.z==peonNegro7.position.z))||
 						   (reinaNegra.position.x==peonNegro8.position.x && reinaNegra.position.z==peonNegro8.position.z))||
+						   (reinaNegra.position.x==torreNegra1.position.x && reinaNegra.position.z==torreNegra1.position.z))||
 						   (reinaNegra.position.x==torreNegra2.position.x && reinaNegra.position.z==torreNegra2.position.z))||
 						   (reinaNegra.position.x==alfilNegro1.position.x && reinaNegra.position.z==alfilNegro1.position.z))||
 						   (reinaNegra.position.x==alfilNegro2.position.x && reinaNegra.position.z==alfilNegro2.position.z))||
 						   (reinaNegra.position.x==caballoNegro1.position.x && reinaNegra.position.z==caballoNegro1.position.z))||
 						   (reinaNegra.position.x==caballoNegro2.position.x && reinaNegra.position.z==caballoNegro2.position.z))||
-						   (reinaNegra.position.x==reyNegro.position.x && reinaNegra.position.z==reyNegro.position.z))||
-						   (reinaNegra.position.x==reinaNegra.position.x && reinaNegra.position.z==reinaNegra.position.z)){
+						   (reinaNegra.position.x==reyNegro.position.x && reinaNegra.position.z==reyNegro.position.z))){
 							alert("No puedes comer piezas del mismo color");
 							reinaNegra.position.x=referencia.position.x;reinaNegra.position.z=referencia.position.z;
 						}
@@ -957,7 +957,7 @@ Referencia.prototype.act = function(environment){
 						   (torreBlanca2.position.x==peonBlanco6.position.x && torreBlanca2.position.z==peonBlanco6.position.z))||
 						   (torreBlanca2.position.x==peonBlanco7.position.x && torreBlanca2.position.z==peonBlanco7.position.z))||
 						   (torreBlanca2.position.x==peonBlanco8.position.x && torreBlanca2.position.z==peonBlanco8.position.z))||
-						   (torreBlanca2.position.x==torreBlanca2.position.x && torreBlanca2.position.z==torreBlanca2.position.z))||
+						   (torreBlanca2.position.x==torreBlanca1.position.x && torreBlanca2.position.z==torreBlanca1.position.z))||
 						   (torreBlanca2.position.x==alfilBlanco1.position.x && torreBlanca2.position.z==alfilBlanco1.position.z))||
 						   (torreBlanca2.position.x==alfilBlanco2.position.x && torreBlanca2.position.z==alfilBlanco2.position.z))||
 						   (torreBlanca2.position.x==caballoBlanco1.position.x && torreBlanca2.position.z==caballoBlanco1.position.z))||
@@ -1057,7 +1057,7 @@ Referencia.prototype.act = function(environment){
 						   (torreNegra2.position.x==peonNegro6.position.x && torreNegra2.position.z==peonNegro6.position.z))||
 						   (torreNegra2.position.x==peonNegro7.position.x && torreNegra2.position.z==peonNegro7.position.z))||
 						   (torreNegra2.position.x==peonNegro8.position.x && torreNegra2.position.z==peonNegro8.position.z))||
-						   (torreNegra2.position.x==torreNegra2.position.x && torreNegra2.position.z==torreNegra2.position.z))||
+						   (torreNegra2.position.x==torreNegra1.position.x && torreNegra2.position.z==torreNegra1.position.z))||
 						   (torreNegra2.position.x==alfilNegro1.position.x && torreNegra2.position.z==alfilNegro1.position.z))||
 						   (torreNegra2.position.x==alfilNegro2.position.x && torreNegra2.position.z==alfilNegro2.position.z))||
 						   (torreNegra2.position.x==caballoNegro1.position.x && torreNegra2.position.z==caballoNegro1.position.z))||
