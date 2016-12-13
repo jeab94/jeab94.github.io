@@ -2770,6 +2770,207 @@ Referencia.prototype.act = function(environment){
 					} //Termino Prototype act
 				}//Termino if ficha y referencia
 				
+				if (alfilBlanco2.position.x===referencia.position.x && alfilBlanco2.position.z===referencia.position.z){
+					AlfilBlanco.prototype.sense = function(environment){
+						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+						var obstaculo = this.sensor.intersectObjects(referencia,true);
+						if(obstaculo.length >0){
+							this.colision = 1;
+							this.step=0;
+						}
+						else{
+							this.colision = 0;
+							this.step=0.25;
+						}
+					} //Termino Prototype sense
+					
+					AlfilBlanco.prototype.act = function(environment){
+						if (this.colision!=1){ //Si no está chocando
+							if(alfilBlanco2.position.x<=referencia.position.x) //Checa el sentido del avance de la pieza según la referencia en x
+							alfilBlanco2.position.x += this.step;
+							else
+							alfilBlanco2.position.x -= this.step;
+						}
+						if (this.colision!=1){ //Si no está chocando
+							if(alfilBlanco2.position.z<=referencia.position.z) //Checa el sentido del avance de la pieza según la referencia en z
+							alfilBlanco2.position.z += this.step;
+							else
+							alfilBlanco2.position.z -= this.step;
+						}
+						//////////////////////////////  Revisar si existen piezas enemigas y las destruye  //////////////////////
+						if((alfilBlanco2.position.x==reyNegro.position.x && alfilBlanco2.position.z==reyNegro.position.z)&&(alfilBlanco2.position.y==reyNegro.position.y)){
+							escena.remove(reyNegro);
+							alert("Fin del juego, equipo blanco ha ganado");
+						}
+						if((alfilBlanco2.position.x==reinaNegra.position.x && alfilBlanco2.position.z==reinaNegra.position.z)&&(alfilBlanco2.position.y==reinaNegra.position.y)){
+							escena.remove(reinaNegra);
+						}
+						if((alfilBlanco2.position.x==caballoNegro1.position.x && alfilBlanco2.position.z==caballoNegro1.position.z)&&(alfilBlanco2.position.y==caballoNegro1.position.y)){
+							escena.remove(caballoNegro1);
+						}
+						if((alfilBlanco2.position.x==caballoNegro2.position.x && alfilBlanco2.position.z==caballoNegro2.position.z)&&(alfilBlanco2.position.y==caballoNegro2.position.y)){
+							escena.remove(caballoNegro2);
+						}
+						if((alfilBlanco2.position.x==alfilNegro1.position.x && alfilBlanco2.position.z==alfilNegro1.position.z)&&(alfilBlanco2.position.y==alfilNegro1.position.y)){
+							escena.remove(alfilNegro1);
+						}
+						if((alfilBlanco2.position.x==alfilNegro2.position.x && alfilBlanco2.position.z==alfilNegro2.position.z)&&(alfilBlanco2.position.y==alfilNegro2.position.y)){
+							escena.remove(alfilNegro2);
+						}
+						if((alfilBlanco2.position.x==torreNegra1.position.x && alfilBlanco2.position.z==torreNegra1.position.z)&&(alfilBlanco2.position.y==torreNegra1.position.y)){
+							escena.remove(torreNegra1);
+						}
+						if((alfilBlanco2.position.x==torreNegra2.position.x && alfilBlanco2.position.z==torreNegra2.position.z)&&(alfilBlanco2.position.y==torreNegra2.position.y)){
+							escena.remove(torreNegra2);
+						}
+						if((alfilBlanco2.position.x==peonNegro1.position.x && alfilBlanco2.position.z==peonNegro1.position.z)&&(alfilBlanco2.position.y==peonNegro1.position.y)){
+							escena.remove(peonNegro1);
+						}
+						if((alfilBlanco2.position.x==peonNegro2.position.x && alfilBlanco2.position.z==peonNegro2.position.z)&&(alfilBlanco2.position.y==peonNegro2.position.y)){
+							escena.remove(peonNegro2);
+						}
+						if((alfilBlanco2.position.x==peonNegro3.position.x && alfilBlanco2.position.z==peonNegro3.position.z)&&(alfilBlanco2.position.y==peonNegro3.position.y)){
+							escena.remove(peonNegro3);
+						}
+						if((alfilBlanco2.position.x==peonNegro4.position.x && alfilBlanco2.position.z==peonNegro4.position.z)&&(alfilBlanco2.position.y==peonNegro4.position.y)){
+							escena.remove(peonNegro4);
+						}
+						if((alfilBlanco2.position.x==peonNegro5.position.x && alfilBlanco2.position.z==peonNegro5.position.z)&&(alfilBlanco2.position.y==peonNegro5.position.y)){
+							escena.remove(peonNegro5);
+						}
+						if((alfilBlanco2.position.x==peonNegro6.position.x && alfilBlanco2.position.z==peonNegro6.position.z)&&(alfilBlanco2.position.y==peonNegro6.position.y)){
+							escena.remove(peonNegro6);
+						}
+						if((alfilBlanco2.position.x==peonNegro7.position.x && alfilBlanco2.position.z==peonNegro7.position.z)&&(alfilBlanco2.position.y==peonNegro7.position.y)){
+							escena.remove(peonNegro7);
+						}
+						if((alfilBlanco2.position.x==peonNegro8.position.x && alfilBlanco2.position.z==peonNegro8.position.z)&&(alfilBlanco2.position.y==peonNegro8.position.y)){
+							escena.remove(peonNegro8);
+						}
+						
+						//////////////////////////////  Revisar si existen piezas amigas y manda alerta ////////////////////////
+						if (((((((((((((((alfilBlanco2.position.x==peonBlanco1.position.x && alfilBlanco2.position.z==peonBlanco1.position.z)||
+						(alfilBlanco2.position.x==peonBlanco2.position.x && alfilBlanco2.position.z==peonBlanco2.position.z))||
+						(alfilBlanco2.position.x==peonBlanco3.position.x && alfilBlanco2.position.z==peonBlanco3.position.z))||
+						(alfilBlanco2.position.x==peonBlanco4.position.x && alfilBlanco2.position.z==peonBlanco4.position.z))||
+						(alfilBlanco2.position.x==peonBlanco5.position.x && alfilBlanco2.position.z==peonBlanco5.position.z))||
+						(alfilBlanco2.position.x==peonBlanco6.position.x && alfilBlanco2.position.z==peonBlanco6.position.z))||
+						(alfilBlanco2.position.x==peonBlanco7.position.x && alfilBlanco2.position.z==peonBlanco7.position.z))||
+						(alfilBlanco2.position.x==peonBlanco8.position.x && alfilBlanco2.position.z==peonBlanco8.position.z))||
+						(alfilBlanco2.position.x==torreBlanca1.position.x && alfilBlanco2.position.z==torreBlanca1.position.z))||
+						(alfilBlanco2.position.x==torreBlanca2.position.x && alfilBlanco2.position.z==torreBlanca2.position.z))||
+						(alfilBlanco2.position.x==alfilBlanco1.position.x && alfilBlanco2.position.z==alfilBlanco1.position.z))||
+						(alfilBlanco2.position.x==caballoBlanco1.position.x && alfilBlanco2.position.z==caballoBlanco1.position.z))||
+						(alfilBlanco2.position.x==caballoBlanco2.position.x && alfilBlanco2.position.z==caballoBlanco2.position.z))||
+						(alfilBlanco2.position.x==reinaBlanca.position.x && alfilBlanco2.position.z==reinaBlanca.position.z))||
+						(alfilBlanco2.position.x==reyBlanco.position.x && alfilBlanco2.position.z==reyBlanco.position.z)){
+							alert("No puedes comer piezas del mismo color");
+							alfilBlanco2.position.x=referencia.position.x;alfilBlanco2.position.z=referencia.position.z;
+						}
+					} //Termino Prototype act
+				}//Termino if ficha y referencia
+
+				if (alfilNegro1.position.x===referencia.position.x && alfilNegro1.position.z===referencia.position.z){
+					AlfilBlanco.prototype.sense = function(environment){
+						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+						var obstaculo = this.sensor.intersectObjects(referencia,true);
+						if(obstaculo.length >0){
+							this.colision = 1;
+							this.step=0;
+						}
+						else{
+							this.colision = 0;
+							this.step=0.25;
+						}
+					} //Termino Prototype sense
+					AlfilBlanco.prototype.act = function(environment){
+						if (this.colision!=1){ //Si no está chocando
+							if(alfilNegro1.position.x<=referencia.position.x) //Checa el sentido del avance de la pieza según la referencia en x
+							alfilNegro1.position.x += this.step;
+							else
+							alfilNegro1.position.x -= this.step;
+						}
+						if (this.colision!=1){ //Si no está chocando
+							if(alfilNegro1.position.z<=referencia.position.z) //Checa el sentido del avance de la pieza según la referencia en z
+							alfilNegro1.position.z += this.step;
+							else
+							alfilNegro1.position.z -= this.step;
+						}
+						
+						//////////////////////////////  Revisar si existen piezas enemigas y las destruye  //////////////////////
+						if((alfilNegro1.position.x==reyBlanco.position.x && alfilNegro1.position.z==reyBlanco.position.z)&&(alfilNegro1.position.y==reyBlanco.position.y)){
+							escena.remove(reyBlanco);
+							alert("Fin del juego, equipo negro ha ganado");
+						}
+						if((alfilNegro1.position.x==reinaBlanca.position.x && alfilNegro1.position.z==reinaBlanca.position.z)&&(alfilNegro1.position.y==reinaBlanca.position.y)){
+							escena.remove(reinaBlanca);
+						}
+						if((alfilNegro1.position.x==caballoBlanco1.position.x && alfilNegro1.position.z==caballoBlanco1.position.z)&&(alfilNegro1.position.y==caballoBlanco1.position.y)){
+							escena.remove(caballoBlanco1);
+						}
+						if((alfilNegro1.position.x==caballoBlanco2.position.x && alfilNegro1.position.z==caballoBlanco2.position.z)&&(alfilNegro1.position.y==caballoBlanco2.position.y)){
+							escena.remove(caballoBlanco2);
+						}
+						if((alfilNegro1.position.x==alfilBlanco1.position.x && alfilNegro1.position.z==alfilBlanco1.position.z)&&(alfilNegro1.position.y==alfilBlanco1.position.y)){
+							escena.remove(alfilNegro1);
+						}
+						if((alfilNegro1.position.x==alfilBlanco2.position.x && alfilNegro1.position.z==alfilBlanco2.position.z)&&(alfilNegro1.position.y==alfilBlanco2.position.y)){
+							escena.remove(alfilBlanco2);
+						}
+						if((alfilNegro1.position.x==torreBlanca1.position.x && alfilNegro1.position.z==torreBlanca1.position.z)&&(alfilNegro1.position.y==torreBlanca1.position.y)){
+							escena.remove(torreBlanca1);
+						}
+						if((alfilNegro1.position.x==torreBlanca2.position.x && alfilNegro1.position.z==torreBlanca2.position.z)&&(alfilNegro1.position.y==torreBlanca2.position.y)){
+							escena.remove(torreBlanca2);
+						}
+						if((alfilNegro1.position.x==peonBlanco1.position.x && alfilNegro1.position.z==peonBlanco1.position.z)&&(alfilNegro1.position.y==peonBlanco1.position.y)){
+							escena.remove(peonBlanco1);
+						}
+						if((alfilNegro1.position.x==peonBlanco2.position.x && alfilNegro1.position.z==peonBlanco2.position.z)&&(alfilNegro1.position.y==peonBlanco2.position.y)){
+							escena.remove(peonBlanco2);
+						}
+						if((alfilNegro1.position.x==peonBlanco3.position.x && alfilNegro1.position.z==peonBlanco3.position.z)&&(alfilNegro1.position.y==peonBlanco3.position.y)){
+							escena.remove(peonBlanco3);
+						}
+						if((alfilNegro1.position.x==peonBlanco4.position.x && alfilNegro1.position.z==peonBlanco4.position.z)&&(alfilNegro1.position.y==peonBlanco4.position.y)){
+							escena.remove(peonBlanco4);
+						}
+						if((alfilNegro1.position.x==peonBlanco5.position.x && alfilNegro1.position.z==peonBlanco5.position.z)&&(alfilNegro1.position.y==peonBlanco5.position.y)){
+							escena.remove(peonBlanco5);
+						}
+						if((alfilNegro1.position.x==peonBlanco6.position.x && alfilNegro1.position.z==peonBlanco6.position.z)&&(alfilNegro1.position.y==peonBlanco6.position.y)){
+							escena.remove(peonBlanco6);
+						}
+						if((alfilNegro1.position.x==peonBlanco7.position.x && alfilNegro1.position.z==peonBlanco7.position.z)&&(alfilNegro1.position.y==peonBlanco7.position.y)){
+							escena.remove(peonBlanco7);
+						}
+						if((alfilNegro1.position.x==peonBlanco8.position.x && alfilNegro1.position.z==peonBlanco8.position.z)&&(alfilNegro1.position.y==peonBlanco8.position.y)){
+							escena.remove(peonBlanco8);
+						}
+						
+						//////////////////////////////  Revisar si existen piezas amigas y manda alerta ////////////////////////
+						if (((((((((((((((alfilNegro1.position.x==peonNegro1.position.x && alfilNegro1.position.z==peonNegro1.position.z)||
+						(alfilNegro1.position.x==peonNegro2.position.x && alfilNegro1.position.z==peonNegro2.position.z))||
+						(alfilNegro1.position.x==peonNegro3.position.x && alfilNegro1.position.z==peonNegro3.position.z))||
+						(alfilNegro1.position.x==peonNegro4.position.x && alfilNegro1.position.z==peonNegro4.position.z))||
+						(alfilNegro1.position.x==peonNegro5.position.x && alfilNegro1.position.z==peonNegro5.position.z))||
+						(alfilNegro1.position.x==peonNegro6.position.x && alfilNegro1.position.z==peonNegro6.position.z))||
+						(alfilNegro1.position.x==peonNegro7.position.x && alfilNegro1.position.z==peonNegro7.position.z))||
+						(alfilNegro1.position.x==peonNegro8.position.x && alfilNegro1.position.z==peonNegro8.position.z))||
+						(alfilNegro1.position.x==torreNegra1.position.x && alfilNegro1.position.z==torreNegra1.position.z))||
+						(alfilNegro1.position.x==torreNegra2.position.x && alfilNegro1.position.z==torreNegra2.position.z))||
+						(alfilNegro1.position.x==alfilNegro2.position.x && alfilNegro1.position.z==alfilNegro2.position.z))||
+						(alfilNegro1.position.x==caballoNegro1.position.x && alfilNegro1.position.z==caballoNegro1.position.z))||
+						(alfilNegro1.position.x==caballoNegro2.position.x && alfilNegro1.position.z==caballoNegro2.position.z))||
+						(alfilNegro1.position.x==reinaNegra.position.x && alfilNegro1.position.z==reinaNegra.position.z))||
+						(alfilNegro1.position.x==reyNegro.position.x && alfilNegro1.position.z==reyNegro.position.z)){
+							alert("No puedes comer piezas del mismo color");
+							alfilNegro1.position.x=referencia.position.x;alfilNegro1.position.z=referencia.position.z;
+						}
+					} //Termino Prototype act
+				}//Termino if ficha y referencia
+						
+				
 				if (caballoBlanco1.position.x===referencia.position.x && caballoBlanco1.position.z===referencia.position.z){
 					CaballoBlanco.prototype.sense = function(environment){
 						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
