@@ -486,33 +486,33 @@
   var btecho2 = new THREE.CylinderGeometry(2,3.5,1,50);
   btecho2.translate(0,16,0);
 
-  var piedra = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra1 = new THREE.BoxGeometry(2,2.5,1);
   piedra.translate(0,16.5,3.25);
 
-  var piedra2 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra2 = new THREE.BoxGeometry(2,2.5,1);
   piedra2.translate(0,16.5,-3.25); 
 
-  var piedra3 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra3 = new THREE.BoxGeometry(2,2.5,1);
   piedra3.rotateY(Math.PI/2);
   piedra3.translate(3.25,16.5,0); 
 
-  var piedra4 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra4 = new THREE.BoxGeometry(2,2.5,1);
   piedra4.rotateY(Math.PI/2);
   piedra4.translate(-3.25,16.5,0);
 
-  var piedra5 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra5 = new THREE.BoxGeometry(2,2.5,1);
   piedra5.rotateY(Math.PI/4);
   piedra5.translate(2.28,16.5,2.28);
 
-  var piedra6 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra6 = new THREE.BoxGeometry(2,2.5,1);
   piedra6.rotateY(Math.PI/-4);
   piedra6.translate(-2.28,16.5,2.28);
 
-  var piedra7 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra7 = new THREE.BoxGeometry(2,2.5,1);
   piedra7.rotateY(Math.PI/4);
   piedra7.translate(-2.28,16.5,-2.28);
 
-  var piedra8 = new THREE.BoxGeometry(2,2.5,.1);
+  var piedra8 = new THREE.BoxGeometry(2,2.5,1);
   piedra8.rotateY(Math.PI/-4);
   piedra8.translate(2.28,16.5,-2.28);
 
@@ -523,7 +523,7 @@
   var mcolumna2 = new THREE.Mesh(columna2);//3
   var mbtecho = new THREE.Mesh(btecho);
   var mbtecho2 = new THREE.Mesh(btecho2);
-  var mpiedra = new THREE.Mesh(piedra);
+  var mpiedra = new THREE.Mesh(piedra1);
   var mpiedra2 = new THREE.Mesh(piedra2);
   var mpiedra3 = new THREE.Mesh(piedra3);
   var mpiedra4 = new THREE.Mesh(piedra4);
