@@ -235,7 +235,17 @@ Referencia.prototype.act = function(environment){
 			
 			break;
 		case 39 :  //Right 
-		
+			if(indicador===1){
+				if(referencia.position.x<=75){
+					referencia.translateX(10);
+				}
+			}
+			else{
+				escena.remove(referencia);	
+				if(referencia.position.x<=75){
+					referencia.translateX(10);
+				}
+			}		
 			break;
 		case 40 :  //Down
 		
