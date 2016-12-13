@@ -487,7 +487,7 @@
   btecho2.translate(0,16,0);
 
   var piedra1 = new THREE.BoxGeometry(2,2.5,1);
-  piedra.translate(0,16.5,3.25);
+  piedra1.translate(0,16.5,3.25);
 
   var piedra2 = new THREE.BoxGeometry(2,2.5,1);
   piedra2.translate(0,16.5,-3.25); 
