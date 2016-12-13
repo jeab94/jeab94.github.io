@@ -3470,11 +3470,16 @@ Referencia.prototype.act = function(environment){
 						}
 					} //Termino Prototype act
 				}//Termino if ficha y referencia
-
-
-
+				
+				 indicador=0;
 		
 			}//Termino if indicador
+			
+			else{ //No se seleccionó pieza 
+				escena.remove(negativo);
+				negativo = new BloqueRojo(referencia.position.x,0,referencia.position.z);
+				escena.add(negativo)
+			}
 			break;
 		     } //Termino de switch
 	} //Termino de función
@@ -3503,10 +3508,10 @@ function setup(){
    escena = new Environment();
 	
    camara = new THREE.PerspectiveCamera();
-   camara.position.y = 100;
+   camara.position.y = 150;
    camara.position.x = 40;
-   camara.position.z = 75;
-   camara.lookAt(new THREE.Vector3(40, 0, 60));
+   camara.position.z = 100;
+   camara.lookAt(new THREE.Vector3(40, 0, 40));
 
    var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
    luzPuntual1.position.x = 10;
