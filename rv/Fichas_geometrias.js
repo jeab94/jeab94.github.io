@@ -493,28 +493,20 @@
   piedra2.translate(0,16.5,-3.25); 
 
   var piedra3 = new THREE.BoxGeometry(2,2.5,1);
-  piedra3.rotateY(Math.PI/2);
+  piedra3.rotateY(Math.PI/6);
   piedra3.translate(3.25,16.5,0); 
 
   var piedra4 = new THREE.BoxGeometry(2,2.5,1);
-  piedra4.rotateY(Math.PI/2);
+  piedra4.rotateY(Math.PI/6);
   piedra4.translate(-3.25,16.5,0);
 
   var piedra5 = new THREE.BoxGeometry(2,2.5,1);
-  piedra5.rotateY(Math.PI/4);
-  piedra5.translate(2.28,16.5,2.28);
+  piedra5.rotateY(Math.PI/-6);
+  piedra5.translate(3.25,16.5,2.28);
 
   var piedra6 = new THREE.BoxGeometry(2,2.5,1);
-  piedra6.rotateY(Math.PI/-4);
-  piedra6.translate(-2.28,16.5,2.28);
-
-  var piedra7 = new THREE.BoxGeometry(2,2.5,1);
-  piedra7.rotateY(Math.PI/4);
-  piedra7.translate(-2.28,16.5,-2.28);
-
-  var piedra8 = new THREE.BoxGeometry(2,2.5,1);
-  piedra8.rotateY(Math.PI/-4);
-  piedra8.translate(2.28,16.5,-2.28);
+  piedra6.rotateY(Math.PI/-6);
+  piedra6.translate(-3.25,16.5,2.28);
 
   //Mallas
   var mbase = new THREE.Mesh(base);
@@ -529,9 +521,7 @@
   var mpiedra4 = new THREE.Mesh(piedra4);
   var mpiedra5 = new THREE.Mesh(piedra5);
   var mpiedra6 = new THREE.Mesh(piedra6);
-  var mpiedra7 = new THREE.Mesh(piedra7);
-  var mpiedra8 = new THREE.Mesh(piedra8);
-
+ 
   //Cuerpo completo
   var torrefinal = new THREE.Geometry();
   torrefinal.merge(mcolumna1.geometry,mcolumna1.matrix);
@@ -593,18 +583,6 @@
 
   var mtorrefinal10 = new THREE.Mesh(torrefinal10);
 
-  var torrefinal11 = new THREE.Geometry();
-  torrefinal11.merge(mtorrefinal10.geometry,mtorrefinal10.matrix);
-  torrefinal11.merge(mpiedra6.geometry,mpiedra6.matrix);
-
-  var mtorrefinal11 = new THREE.Mesh(torrefinal11);
-
-  var torrefinal12 = new THREE.Geometry();
-  torrefinal12.merge(mtorrefinal11.geometry,mtorrefinal11.matrix);
-  torrefinal12.merge(mpiedra7.geometry,mpiedra7.matrix);
-
-  var mtorrefinal12 = new THREE.Mesh(torrefinal12);
-
   var rook = new THREE.Geometry();
-  rook.merge(mtorrefinal12.geometry,mtorrefinal12.matrix);
-  rook.merge(mpiedra8.geometry,mpiedra8.matrix);
+  rook.merge(mtorrefinal10.geometry,mtorrefinal10.matrix);
+  rook.merge(mpiedra6.geometry,mpiedra6.matrix);
