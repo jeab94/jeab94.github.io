@@ -253,10 +253,7 @@ Referencia.prototype.act = function(environment){
 				}
 			break;
 		case 13 :  //Enter
-				indicador=indicador+1;
-				if(indicador==2){
-					indicador=0;
-				}
+				indicador=1;
 				if(indicador==1){ 
 				objetivo = new Objetivo(referencia.position.x, 0, referencia.position.z);
 				escena.add(objetivo);
