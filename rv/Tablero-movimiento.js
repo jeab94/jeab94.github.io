@@ -234,6 +234,7 @@ Referencia.prototype.act = function(environment){
         switch (key){	
 		case 37: //Left
 				if(referencia.position.x>=15){
+					referencia.translateX(-10);
 				}
 			break;
 		case 38 :  //Up
@@ -3449,7 +3450,7 @@ Referencia.prototype.act = function(environment){
 						}
 					} //Termino Prototype act
 				}//Termino if ficha y referencia
-				
+			escena.remove(objetivo);	
 			break;
 		     } //Termino de switch
 	} //Termino de función
