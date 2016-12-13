@@ -8,8 +8,7 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
-var indicador=1; //indicador=0 corresponde a "no hay pieza seleccionada/libre para elegir pieza"
-		//indicador=1 corresponde a "hay pieza seleccionada"
+var objetivo, referencia;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -253,8 +252,8 @@ Referencia.prototype.act = function(environment){
 				}
 			break;
 		case 13 :  //Enter
-				objetivo.position.x=referencia.position.x;
-				objetivo.position.z=referencia.position.z;
+				objetivo = new Objetivo(referencia.position.x, 0, referencia.position.z);
+				escena.add(objetivo);
 				if (reyBlanco.position.x===referencia.position.x && reyBlanco.position.z===referencia.position.z){
 					ReyBlanco.prototype.sense = function(environment){
 						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -546,7 +545,7 @@ Referencia.prototype.act = function(environment){
 						   (reinaBlanca.position.x==caballoBlanco2.position.x && reinaBlanca.position.z==caballoBlanco2.position.z))||
 						   (reinaBlanca.position.x==reyBlanco.position.x && reinaBlanca.position.z==reyBlanco.position.z)){
 							alert("Movimiento inválido");
-							reinaBlanca.position.x=referencia.position.x;reinaBlanca.position.z=referencia.position.z;
+							reinaBlanca.position.x=objetivo.position.x;reinaBlanca.position.z=objetivo.position.z;
 						}
 					} //Termino Prototype act				
 				}//Termino if ficha y referencia
@@ -554,7 +553,7 @@ Referencia.prototype.act = function(environment){
 				if (reinaNegra.position.x===referencia.position.x && reinaNegra.position.z===referencia.position.z){
 					ReinaNegra.prototype.sense = function(environment){
 						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
-						var obstaculo = this.sensor.intersectObjects(referencia,true);
+						var obstaculo = this.sensor.intersectObjects(objetivo,true);
 						if(obstaculo.length >0){
 							this.colision = 1;
 							this.step=0;							
@@ -567,13 +566,13 @@ Referencia.prototype.act = function(environment){
 					
 					ReinaNegra.prototype.act = function(environment){ 	
 					if (this.colision!=1){ //Si no está chocando
-						if(reinaNegra.position.x<=referencia.position.x) //Checa el sentido del avance de la pieza según la referencia en x
+						if(reinaNegra.position.x<=objetivo.position.x) //Checa el sentido del avance de la pieza según la referencia en x
 						  reinaNegra.position.x += this.step;
 						else
 						  reinaNegra.position.x -= this.step;
 					      }
 					if (this.colision!=1){ //Si no está chocando
-						if(reinaNegra.position.z<=referencia.position.z) //Checa el sentido del avance de la pieza según la referencia en z
+						if(reinaNegra.position.z<=objetivo.position.z) //Checa el sentido del avance de la pieza según la referencia en z
 						  reinaNegra.position.z += this.step;
 						else
 						  reinaNegra.position.z -= this.step;
@@ -647,7 +646,7 @@ Referencia.prototype.act = function(environment){
 						   (reinaNegra.position.x==caballoNegro2.position.x && reinaNegra.position.z==caballoNegro2.position.z))||
 						   (reinaNegra.position.x==reyNegro.position.x && reinaNegra.position.z==reyNegro.position.z)){
 							alert("Movimiento inválido");
-							reinaNegra.position.x=referencia.position.x;reinaNegra.position.z=referencia.position.z;
+							reinaNegra.position.x=objetivo.position.x;reinaNegra.position.z=objetivo.position.z;
 						}
 					} //Termino Prototype act				
 				}//Termino if ficha y referencia
