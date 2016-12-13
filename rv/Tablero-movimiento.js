@@ -8,7 +8,7 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
-var indicador=0; //indicador=0 corresponde a "no hay pieza seleccionada/libre para elegir pieza"
+var indicador=1; //indicador=0 corresponde a "no hay pieza seleccionada/libre para elegir pieza"
 		//indicador=1 corresponde a "hay pieza seleccionada"
 
 //Texturas
@@ -227,7 +227,8 @@ Referencia.prototype.act = function(environment){
 			}
 			else{
 				escena.remove(referencia);
-				escena.remove(negativo);
+				escena.remove(
+				);
 				if(referencia.position.x>=15){
 					referencia.translateX(-10);
 				}
@@ -241,7 +242,7 @@ Referencia.prototype.act = function(environment){
 			}
 			else{
 				escena.remove(referencia);
-				escena.remove(negativo);				
+				//escena.remove(negativo);				
 				if(referencia.position.z>=15){
 					referencia.translateZ(-10);
 				}
