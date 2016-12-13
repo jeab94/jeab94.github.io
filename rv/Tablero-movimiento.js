@@ -8,7 +8,7 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
-var objetivo, referencia;
+var objetivo, referencia, indicador=0;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -253,6 +253,11 @@ Referencia.prototype.act = function(environment){
 				}
 			break;
 		case 13 :  //Enter
+				indicador=indicador+1;
+				if(indicador==2){
+					indicador=0;
+				}
+				if(indicador==1){ 
 				objetivo = new Objetivo(referencia.position.x, 0, referencia.position.z);
 				escena.add(objetivo);
 				if (reyBlanco.position.x===referencia.position.x && reyBlanco.position.z===referencia.position.z){
