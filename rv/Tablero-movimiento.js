@@ -1,20 +1,11 @@
-var escena;
-var renderizador;
-var camara;
+var escena, renderizador, camara;
 var luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4;
 var tablero;
 
 var cubo;
 var cubos;
-var marco1;
-var marco2;
-var marco3;
-var marco4;
-var orilla1;
-var orilla2;
-var orilla3;
-var orilla4;
-var geometryCaballoNegro;
+var marco1, marco2, marco3, marco4;
+var orilla1, orilla2, orilla3, orilla4;
 var material;
 
 //Texturas
@@ -380,6 +371,5 @@ function loop(){
      escena.act();
      
      renderizador.render(escena, camara);
-      
 }
 
