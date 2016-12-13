@@ -319,7 +319,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilNegro1);
 						}
 						if((reyBlanco.position.x==alfilNegro2.position.x && reyBlanco.position.z==alfilNegro2.position.z)&&(reyBlanco.position.y==alfilNegro2.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilNegro2);
 						}				
 						if((reyBlanco.position.x==torreNegra1.position.x && reyBlanco.position.z==torreNegra1.position.z)&&(reyBlanco.position.y==torreNegra1.position.y)){
 							escena.remove(torreNegra1);
@@ -417,7 +417,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilBlanco1);
 						}
 						if((reyNegro.position.x==alfilBlanco2.position.x && reyNegro.position.z==alfilBlanco2.position.z)&&(reyNegro.position.y==alfilBlanco2.position.y)){
-							escena.remove(caballoBlanco2);
+							escena.remove(alfilBlanco2);
 						}				
 						if((reyNegro.position.x==torreBlanca1.position.x && reyNegro.position.z==torreBlanca1.position.z)&&(reyNegro.position.y==torreBlanca1.position.y)){
 							escena.remove(torreBlanca1);
@@ -516,7 +516,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilNegro1);
 						}
 						if((reinaBlanca.position.x==alfilNegro2.position.x && reinaBlanca.position.z==alfilNegro2.position.z)&&(reinaBlanca.position.y==alfilNegro2.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilNegro2);
 						}				
 						if((reinaBlanca.position.x==torreNegra1.position.x && reinaBlanca.position.z==torreNegra1.position.z)&&(reinaBlanca.position.y==torreNegra1.position.y)){
 							escena.remove(torreNegra1);
@@ -617,7 +617,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilBlanco1);
 						}
 						if((reinaNegra.position.x==alfilBlanco2.position.x && reinaNegra.position.z==alfilBlanco2.position.z)&&(reinaNegra.position.y==alfilBlanco2.position.y)){
-							escena.remove(caballoBlanco2);
+							escena.remove(alfilBlanco2);
 						}				
 						if((reinaNegra.position.x==torreBlanca1.position.x && reinaNegra.position.z==torreBlanca1.position.z)&&(reinaNegra.position.y==torreBlanca1.position.y)){
 							escena.remove(torreBlanca1);
@@ -717,7 +717,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilNegro1);
 						}
 						if((torreBlanca1.position.x==alfilNegro2.position.x && torreBlanca1.position.z==alfilNegro2.position.z)&&(torreBlanca1.position.y==alfilNegro2.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilNegro2);
 						}				
 						if((torreBlanca1.position.x==torreNegra1.position.x && torreBlanca1.position.z==torreNegra1.position.z)&&(torreBlanca1.position.y==torreNegra1.position.y)){
 							escena.remove(torreNegra1);
@@ -816,7 +816,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilBlanco1);
 						}
 						if((torreNegra1.position.x==alfilBlanco2.position.x && torreNegra1.position.z==alfilBlanco2.position.z)&&(torreNegra1.position.y==alfilBlanco2.position.y)){
-							escena.remove(caballoBlanco2);
+							escena.remove(alfilBlanco2);
 						}				
 						if((torreNegra1.position.x==torreBlanca1.position.x && torreNegra1.position.z==torreNegra1.position.z)&&(torreNegra1.position.y==torreBlanca1.position.y)){
 							escena.remove(torreBlanca1);
@@ -915,7 +915,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilNegro1);
 						}
 						if((torreBlanca2.position.x==alfilNegro2.position.x && torreBlanca2.position.z==alfilNegro2.position.z)&&(torreBlanca2.position.y==alfil.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilNegro2);
 						}				
 						if((torreBlanca2.position.x==torreNegra1.position.x && torreBlanca2.position.z==torreNegra1.position.z)&&(torreBlanca2.position.y==torreNegra1.position.y)){
 							escena.remove(torreNegra1);
@@ -1014,7 +1014,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilBlanco1);
 						}
 						if((torreNegra2.position.x==alfilBlanco2.position.x && torreNegra2.position.z==alfilBlanco2.position.z)&&(torreNegra2.position.y==alfil.position.y)){
-							escena.remove(caballoBlanco2);
+							escena.remove(alfilBlanco2);
 						}				
 						if((torreNegra2.position.x==torreBlanca1.position.x && torreNegra2.position.z==torreBlanca1.position.z)&&(torreNegra2.position.y==torreBlanca1.position.y)){
 							escena.remove(torreBlanca1);
@@ -1114,7 +1114,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilNegro1);
 						}
 						if((caballoBlanco1.position.x==alfilNegro2.position.x && caballoBlanco1.position.z==alfilNegro2.position.z)&&(caballoBlanco1.position.y==alfilNegro2.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilNegro2);
 						}				
 						if((caballoBlanco1.position.x==torreNegra1.position.x && caballoBlanco1.position.z==torreNegra1.position.z)&&(caballoBlanco1.position.y==torreNegra1.position.y)){
 							escena.remove(torreNegra1);
@@ -1214,7 +1214,7 @@ Referencia.prototype.act = function(environment){
 							escena.remove(alfilBlanco1);
 						}
 						if((caballoNegro1.position.x==alfilBlanco2.position.x && caballoNegro1.position.z==alfilBlanco2.position.z)&&(caballoNegro1.position.y==alfilBlanco2.position.y)){
-							escena.remove(caballoNegro2);
+							escena.remove(alfilBlanco2);
 						}				
 						if((caballoNegro1.position.x==torreBlanca1.position.x && caballoNegro1.position.z==torreBlanca1.position.z)&&(caballoNegro1.position.y==torreBlanca1.position.y)){
 							escena.remove(torreBlanca1);
@@ -1269,7 +1269,83 @@ Referencia.prototype.act = function(environment){
 					} //Termino Prototype act				
 				}//Termino if ficha y referencia
 				
+				if (caballoBlanco2.position.x===referencia.position.x && caballoBlanco2.position.z===referencia.position.z){
+					CaballoBlanco2.prototype.sense = function(environment){
+						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+						var obstaculo = this.sensor.intersectObjects(referencia,true);
+						if(obstaculo.length >0){
+							this.colision = 1;
+							this.step=0;							
+						}	
+						else{
+							this.colision = 0;
+							this.step=0.25;							
+						}
+					} //Termino Prototype sense						
+					CaballoBlanco2.prototype.act = function(environment){ 	
+					if (this.colision!=1){ //Si no está chocando
+						if(caballoBlanco2.position.x<=referencia.position.x) //Checa el sentido del avance de la pieza según la referencia en x
+						  caballoBlanco2.position.x += this.step;
+						else
+						  caballoBlanco2.position.x -= this.step;
+					      }
+					if (this.colision!=1){ //Si no está chocando
+						if(caballoBlanco2.position.z<=referencia.position.z) //Checa el sentido del avance de la pieza según la referencia en z
+						  caballoBlanco2.position.z += this.step;
+						else
+						  caballoBlanco2.position.z -= this.step;
+					      }
 						
+						//////////////////////////////  Revisar si existen piezas enemigas y las destruye  //////////////////////
+						if((caballoBlanco2.position.x==reyNegro.position.x && caballoBlanco2.position.z==reyNegro.position.z)&&(caballoBlanco2.position.y==reyNegro.position.y)){
+							escena.remove(reyNegro);
+							alert("Fin del juego, equipo blanco ha ganado");
+						}
+						if((caballoBlanco2.position.x==reinaNegra.position.x && caballoBlanco2.position.z==reinaNegra.position.z)&&(caballoBlanco2.position.y==reinaNegra.position.y)){
+							escena.remove(reinaNegra);
+						}
+						if((caballoBlanco2.position.x==caballoNegro1.position.x && caballoBlanco2.position.z==caballoNegro1.position.z)&&(caballoBlanco2.position.y==caballoNegro1.position.y)){
+							escena.remove(caballoNegro1);
+						}
+						if((caballoBlanco2.position.x==caballoNegro2.position.x && caballoBlanco2.position.z==caballoNegro2.position.z)&&(caballoBlanco2.position.y==caballoNegro2.position.y)){
+							escena.remove(caballoNegro2);
+						}				
+						if((caballoBlanco2.position.x==alfilNegro1.position.x && caballoBlanco2.position.z==alfilNegro1.position.z)&&(caballoBlanco2.position.y==alfilNegro1.position.y)){
+							escena.remove(alfilNegro1);
+						}
+						if((caballoBlanco2.position.x==alfilNegro2.position.x && caballoBlanco2.position.z==alfilNegro2.position.z)&&(caballoBlanco2.position.y==alfilNegro2.position.y)){
+							escena.remove(alfilNegro2);
+						}				
+						if((caballoBlanco2.position.x==torreNegra1.position.x && caballoBlanco2.position.z==torreNegra1.position.z)&&(caballoBlanco2.position.y==torreNegra1.position.y)){
+							escena.remove(torreNegra1);
+						}
+						if((caballoBlanco2.position.x==torreNegra2.position.x && caballoBlanco2.position.z==torreNegra2.position.z)&&(caballoBlanco2.position.y==torreNegra2.position.y)){
+							escena.remove(torreNegra2);
+						}				
+						if((caballoBlanco2.position.x==peonNegro1.position.x && caballoBlanco2.position.z==peonNegro1.position.z)&&(caballoBlanco2.position.y==peonNegro1.position.y)){
+							escena.remove(peonNegro1);
+						}
+						if((caballoBlanco2.position.x==peonNegro2.position.x && caballoBlanco2.position.z==peonNegro2.position.z)&&(caballoBlanco2.position.y==peonNegro2.position.y)){
+							escena.remove(peonNegro2);
+						}				
+						if((caballoBlanco2.position.x==peonNegro3.position.x && caballoBlanco2.position.z==peonNegro3.position.z)&&(caballoBlanco2.position.y==peonNegro3.position.y)){
+							escena.remove(peonNegro3);
+						}								
+						if((caballoBlanco2.position.x==peonNegro4.position.x && caballoBlanco2.position.z==peonNegro4.position.z)&&(caballoBlanco2.position.y==peonNegro4.position.y)){
+							escena.remove(peonNegro4);
+						}							
+						if((caballoBlanco2.position.x==peonNegro5.position.x && caballoBlanco2.position.z==peonNegro5.position.z)&&(caballoBlanco2.position.y==peonNegro5.position.y)){
+							escena.remove(peonNegro5);
+						}								
+						if((caballoBlanco2.position.x==peonNegro6.position.x && caballoBlanco2.position.z==peonNegro6.position.z)&&(caballoBlanco2.position.y==peonNegro6.position.y)){
+							escena.remove(peonNegro6);
+						}	
+						if((caballoBlanco2.position.x==peonNegro7.position.x && caballoBlanco2.position.z==peonNegro7.position.z)&&(caballoBlanco2.position.y==peonNegro7.position.y)){
+							escena.remove(peonNegro7);
+						}	
+						if((caballoBlanco2.position.x==peonNegro8.position.x && caballoBlanco2.position.z==peonNegro8.position.z)&&(caballoBlanco2.position.y==peonNegro8.position.y)){
+							escena.remove(peonNegro8);
+						}	
 				
 			}//Termino if indicador
 			break;
