@@ -493,20 +493,20 @@
   piedra2.translate(0,16.5,-3.25); 
 
   var piedra3 = new THREE.BoxGeometry(2,2.5,1);
-  piedra3.rotateY(Math.PI/6);
-  piedra3.translate(3.25,16.5,0); 
+  piedra3.rotateY(Math.PI/4);
+  piedra3.translate(2.81,16.5,1.625); 
 
   var piedra4 = new THREE.BoxGeometry(2,2.5,1);
-  piedra4.rotateY(Math.PI/6);
-  piedra4.translate(-3.25,16.5,0);
+  piedra4.rotateY(Math.PI/4);
+  piedra4.translate(-2.81,16.5,1.625);
 
   var piedra5 = new THREE.BoxGeometry(2,2.5,1);
-  piedra5.rotateY(Math.PI/-6);
-  piedra5.translate(3.25,16.5,2.28);
+  piedra5.rotateY(Math.PI/-4);
+  piedra5.translate(3.25,16.5,-1.625);
 
   var piedra6 = new THREE.BoxGeometry(2,2.5,1);
-  piedra6.rotateY(Math.PI/-6);
-  piedra6.translate(-3.25,16.5,2.28);
+  piedra6.rotateY(Math.PI/-4);
+  piedra6.translate(-3.25,16.5,-1.625);
 
   //Mallas
   var mbase = new THREE.Mesh(base);
