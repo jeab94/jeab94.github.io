@@ -399,6 +399,9 @@ function setup(){
 	torreBlanca2 = new TorreBlanca(75, 10, 75);
    	escena.add(torreNegra2, torreBlanca2);
 	
+	referencia = new Referencia(5, 0, 75); 
+	
+	escena.add(referencia);
 	escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
    	
 }
