@@ -1346,6 +1346,29 @@ Referencia.prototype.act = function(environment){
 						if((caballoBlanco2.position.x==peonNegro8.position.x && caballoBlanco2.position.z==peonNegro8.position.z)&&(caballoBlanco2.position.y==peonNegro8.position.y)){
 							escena.remove(peonNegro8);
 						}	
+						
+						//////////////////////////////  Revisar si existen piezas amigas y manda alerta ////////////////////////
+						if (((((((((((((((caballoBlanco2.position.x==peonBlanco1.position.x && caballoBlanco2.position.z==peonBlanco1.position.z)||
+						   (caballoBlanco2.position.x==peonBlanco2.position.x && caballoBlanco2.position.z==peonBlanco2.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco3.position.x && caballoBlanco2.position.z==peonBlanco3.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco4.position.x && caballoBlanco2.position.z==peonBlanco4.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco5.position.x && caballoBlanco2.position.z==peonBlanco5.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco6.position.x && caballoBlanco2.position.z==peonBlanco6.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco7.position.x && caballoBlanco2.position.z==peonBlanco7.position.z))||
+						   (caballoBlanco2.position.x==peonBlanco8.position.x && caballoBlanco2.position.z==peonBlanco8.position.z))||
+						   (caballoBlanco2.position.x==torreBlanca1.position.x && caballoBlanco2.position.z==torreBlanca1.position.z))||
+						   (caballoBlanco2.position.x==torreBlanca2.position.x && caballoBlanco2.position.z==torreBlanca2.position.z))||	 
+						   (caballoBlanco2.position.x==alfilBlanco1.position.x && caballoBlanco2.position.z==alfilBlanco1.position.z))||
+						   (caballoBlanco2.position.x==alfilBlanco2.position.x && caballoBlanco2.position.z==alfilBlanco2.position.z))||
+						   (caballoBlanco2.position.x==caballoBlanco1.position.x && caballoBlanco2.position.z==caballoBlanco1.position.z))||
+						   (caballoBlanco2.position.x==reinaBlanca.position.x && caballoBlanco2.position.z==reinaBlanca.position.z))||  
+						   (caballoBlanco2.position.x==reyBlanco.position.x && caballoBlanco2.position.z==reyBlanco.position.z)){
+							alert("No puedes comer piezas del mismo color");
+							caballoBlanco2.position.x=referencia.position.x;caballoBlanco2.position.z=referencia.position.z;
+						}
+					} //Termino Prototype act				
+				}//Termino if ficha y referencia
+						
 				
 			}//Termino if indicador
 			break;
