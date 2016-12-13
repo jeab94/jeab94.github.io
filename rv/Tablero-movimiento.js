@@ -3455,7 +3455,8 @@ Referencia.prototype.act = function(environment){
 						}
 					} //Termino Prototype act
 				}//Termino if ficha y referencia
-			escena.remove(objetivo);	
+			escena.remove(objetivo);
+				} //Termino if indicador
 			break;
 		     } //Termino de switch
 	} //Termino de función
