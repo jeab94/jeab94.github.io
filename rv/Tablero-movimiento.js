@@ -8,7 +8,7 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
-var indicador;
+var indicador=1;
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
