@@ -486,26 +486,26 @@
   var btecho2 = new THREE.CylinderGeometry(2,3.5,1,50);
   btecho2.translate(0,16,0);
 
-  var piedra1 = new THREE.BoxGeometry(2,2.5,1);
+  var piedra1 = new THREE.BoxGeometry(2,2.5,1.5);
   piedra1.translate(0,16.5,3.25);
 
-  var piedra2 = new THREE.BoxGeometry(2,2.5,1);
+  var piedra2 = new THREE.BoxGeometry(2,2.5,1.5);
   piedra2.translate(0,16.5,-3.25); 
 
-  var piedra3 = new THREE.BoxGeometry(2,2.5,1);
+  var piedra3 = new THREE.BoxGeometry(2,2.5,1.5);
   piedra3.rotateY(Math.PI/4);
   piedra3.translate(2.81,16.5,1.625); 
 
-  var piedra4 = new THREE.BoxGeometry(2,2.5,1);
-  piedra4.rotateY(Math.PI/4);
+  var piedra4 = new THREE.BoxGeometry(2,2.5,1.5);
+  piedra4.rotateY(Math.PI/-4);
   piedra4.translate(-2.81,16.5,1.625);
 
-  var piedra5 = new THREE.BoxGeometry(2,2.5,1);
+  var piedra5 = new THREE.BoxGeometry(2,2.5,1.5);
   piedra5.rotateY(Math.PI/-4);
   piedra5.translate(3.25,16.5,-1.625);
 
-  var piedra6 = new THREE.BoxGeometry(2,2.5,1);
-  piedra6.rotateY(Math.PI/-4);
+  var piedra6 = new THREE.BoxGeometry(2,2.5,1.5);
+  piedra6.rotateY(Math.PI/4);
   piedra6.translate(-3.25,16.5,-1.625);
 
   //Mallas
