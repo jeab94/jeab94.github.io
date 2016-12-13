@@ -296,7 +296,7 @@ Referencia.prototype.act = function(environment){
 						else
 						  torreBlanca1.position.z -= this.step;
 					      }
-						/////////////////////////////////  Revisar si existen piezas enemigas y las destruye  ///////////////////
+						//////////////////////////////  Revisar si existen piezas enemigas y las destruye  //////////////////////
 						if((torreBlanca1.position.x==reyNegro.position.x && torreBlanca1.position.z==reyNegro.position.z)&&(torreBlanca1.position.y==reyNegro.position.y)){
 							escena.remove(reyNegro);
 							alert("Fin del juego, equipo blanco ha ganado");
@@ -345,7 +345,28 @@ Referencia.prototype.act = function(environment){
 						}	
 						if((torreBlanca1.position.x==peonNegro8.position.x && torreBlanca1.position.z==peonNegro8.position.z)&&(torreBlanca1.position.y==peonNegro8.position.y)){
 							escena.remove(peonNegro8);
-						}							
+						}	
+						
+						//////////////////////////////  Revisar si existen piezas amigas y manda alerta ////////////////////////
+						if (((((((((((((((torreBlanca1.position.x==peonBlanco1.position.x && torreBlanca1.position.z==peonBlanco1.position.z)||
+						   (torreBlanca1.position.x==peonBlanco2.position.x && torreBlanca1.position.z==peonBlanco2.position.z))||
+						   (torreBlanca1.position.x==peonBlanco3.position.x && torreBlanca1.position.z==peonBlanco3.position.z))||
+						   (torreBlanca1.position.x==peonBlanco4.position.x && torreBlanca1.position.z==peonBlanco4.position.z))||
+						   (torreBlanca1.position.x==peonBlanco5.position.x && torreBlanca1.position.z==peonBlanco5.position.z))||
+						   (torreBlanca1.position.x==peonBlanco6.position.x && torreBlanca1.position.z==peonBlanco6.position.z))||
+						   (torreBlanca1.position.x==peonBlanco7.position.x && torreBlanca1.position.z==peonBlanco7.position.z))||
+						   (torreBlanca1.position.x==peonBlanco8.position.x && torreBlanca1.position.z==peonBlanco8.position.z))||
+						   (torreBlanca1.position.x==torreblanca2.position.x && torreBlanca1.position.z==torreblanca2.position.z))||
+						   (torreBlanca1.position.x==alfilBlanco1.position.x && torreBlanca1.position.z==alfilBlanco1.position.z))||
+						   (torreBlanca1.position.x==alfilBlanco2.position.x && torreBlanca1.position.z==alfilBlanco2.position.z))||
+						   (torreBlanca1.position.x==caballoBlanco1.position.x && torreBlanca1.position.z==caballoBlanco1.position.z))||
+						   (torreBlanca1.position.x==caballoBlanco2.position.x && torreBlanca1.position.z==caballoBlanco2.position.z))||
+						   (torreBlanca1.position.x==reyBlanco.position.x && torreBlanca1.position.z==reyBlanco.position.z))||
+						   (torreBlanca1.position.x==reinaBlanca.position.x && torreBlanca1.position.z==reinaBlanca.position.z)){
+							alert("No puedes comer piezas del mismo color");
+							torreBlanca1.position.x=referencia.position.x;torreBlanca1.position.z=referencia.position.z;
+						}
+						
 					} //Termino Prototype act
 									
 				}//Termino if ficha y referencia
