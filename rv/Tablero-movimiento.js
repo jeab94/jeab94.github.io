@@ -8,7 +8,8 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
-var indicador=1;
+var indicador=0; //indicador=0 corresponde a "no hay pieza seleccionada/libre para elegir pieza"
+		//indicador=1 corresponde a "hay pieza seleccionada"
 
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
@@ -268,7 +269,16 @@ Referencia.prototype.act = function(environment){
 			}				
 			break;
 		case 13 :  //Enter
-			
+			if(indicador===1){
+				if (torreBlanca1.position.x===referencia.position.x && torreBlanca1.position.z===referencia.position.z){
+					TorreBlanca.prototype.sense = function(environment){
+						this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+						
+					}
+					
+				
+				}
+			}
 			break;
 		     }
 	}
@@ -327,7 +337,6 @@ function setup(){
    renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
    document.body.appendChild(renderizador.domElement);
 	   
-  
    //TABLERO (Comenzando cuadrícula en x=0, y=0)
    //Posicionamiento del tablero en el espacio
    x = 0; 
