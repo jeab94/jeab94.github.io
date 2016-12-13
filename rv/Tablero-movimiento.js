@@ -367,7 +367,7 @@ Referencia.prototype.act = function(environment){
 						   (reyBlanco.position.x==caballoBlanco1.position.x && reyBlanco.position.z==caballoBlanco1.position.z))||
 						   (reyBlanco.position.x==caballoBlanco2.position.x && reyBlanco.position.z==caballoBlanco2.position.z))||
 						   (reyBlanco.position.x==reinaBlanca.position.x && reyBlanco.position.z==reinaBlanca.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							reyBlanco.position.x=referencia.position.x;reyBlanco.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -465,7 +465,7 @@ Referencia.prototype.act = function(environment){
 						   (reyNegro.position.x==caballoNegro1.position.x && reyNegro.position.z==caballoNegro1.position.z))||
 						   (reyNegro.position.x==caballoNegro2.position.x && reyNegro.position.z==caballoNegro2.position.z))||
 						   (reyNegro.position.x==reinaNegra.position.x && reyNegro.position.z==reinaNegra.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							reyNegro.position.x=referencia.position.x;reyNegro.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -565,7 +565,7 @@ Referencia.prototype.act = function(environment){
 						   (reinaBlanca.position.x==caballoBlanco1.position.x && reinaBlanca.position.z==caballoBlanco1.position.z))||
 						   (reinaBlanca.position.x==caballoBlanco2.position.x && reinaBlanca.position.z==caballoBlanco2.position.z))||
 						   (reinaBlanca.position.x==reyBlanco.position.x && reinaBlanca.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							reinaBlanca.position.x=referencia.position.x;reinaBlanca.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -666,7 +666,7 @@ Referencia.prototype.act = function(environment){
 						   (reinaNegra.position.x==caballoNegro1.position.x && reinaNegra.position.z==caballoNegro1.position.z))||
 						   (reinaNegra.position.x==caballoNegro2.position.x && reinaNegra.position.z==caballoNegro2.position.z))||
 						   (reinaNegra.position.x==reyNegro.position.x && reinaNegra.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							reinaNegra.position.x=referencia.position.x;reinaNegra.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -766,7 +766,7 @@ Referencia.prototype.act = function(environment){
 						   (torreBlanca1.position.x==caballoBlanco2.position.x && torreBlanca1.position.z==caballoBlanco2.position.z))||
 						   (torreBlanca1.position.x==reyBlanco.position.x && torreBlanca1.position.z==reyBlanco.position.z))||
 						   (torreBlanca1.position.x==reinaBlanca.position.x && torreBlanca1.position.z==reinaBlanca.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							torreBlanca1.position.x=referencia.position.x;torreBlanca1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -865,7 +865,7 @@ Referencia.prototype.act = function(environment){
 						   (torreNegra1.position.x==caballoNegro2.position.x && torreNegra1.position.z==caballoNegro2.position.z))||
 						   (torreNegra1.position.x==reyNegro.position.x && torreNegra1.position.z==reyNegro.position.z))||
 						   (torreNegra1.position.x==reinaNegro.position.x && torreNegra1.position.z==reinaNegra.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							torreNegra1.position.x=referencia.position.x;torreNegra1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -964,7 +964,7 @@ Referencia.prototype.act = function(environment){
 						   (torreBlanca2.position.x==caballoBlanco2.position.x && torreBlanca2.position.z==caballoBlanco2.position.z))||
 						   (torreBlanca2.position.x==reyBlanco.position.x && torreBlanca2.position.z==reyBlanco.position.z))||
 						   (torreBlanca2.position.x==reinaBlanca.position.x && torreBlanca2.position.z==reinaBlanca.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							torreBlanca2.position.x=referencia.position.x;torreBlanca2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -1064,7 +1064,7 @@ Referencia.prototype.act = function(environment){
 						   (torreNegra2.position.x==caballoNegro2.position.x && torreNegra2.position.z==caballoNegro2.position.z))||
 						   (torreNegra2.position.x==reyNegro.position.x && torreNegra2.position.z==reyNegro.position.z))||
 						   (torreNegra2.position.x==reinaNegra.position.x && torreNegra2.position.z==reinaNegra.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							torreNegra2.position.x=referencia.position.x;torreNegra2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act				
@@ -1164,7 +1164,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco1.position.x==caballoBlanco2.position.x && peonBlanco1.position.z==caballoBlanco2.position.z))||
 						(peonBlanco1.position.x==reinaBlanca.position.x && peonBlanco1.position.z==reinaBlanca.position.z))||
 						(peonBlanco1.position.x==reyBlanco.position.x && peonBlanco1.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco1.position.x=referencia.position.x;peonBlanco1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1265,7 +1265,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco2.position.x==caballoBlanco2.position.x && peonBlanco2.position.z==caballoBlanco2.position.z))||
 						(peonBlanco2.position.x==reinaBlanca.position.x && peonBlanco2.position.z==reinaBlanca.position.z))||
 						(peonBlanco2.position.x==reyBlanco.position.x && peonBlanco2.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco2.position.x=referencia.position.x;peonBlanco2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1365,7 +1365,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco3.position.x==caballoBlanco2.position.x && peonBlanco3.position.z==caballoBlanco2.position.z))||
 						(peonBlanco3.position.x==reinaBlanca.position.x && peonBlanco3.position.z==reinaBlanca.position.z))||
 						(peonBlanco3.position.x==reyBlanco.position.x && peonBlanco3.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco3.position.x=referencia.position.x;peonBlanco3.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1465,7 +1465,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco4.position.x==caballoBlanco2.position.x && peonBlanco4.position.z==caballoBlanco2.position.z))||
 						(peonBlanco4.position.x==reinaBlanca.position.x && peonBlanco4.position.z==reinaBlanca.position.z))||
 						(peonBlanco4.position.x==reyBlanco.position.x && peonBlanco4.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco4.position.x=referencia.position.x;peonBlanco4.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1565,7 +1565,7 @@ Referencia.prototype.act = function(environment){
 				(peonBlanco5.position.x==caballoBlanco2.position.x && peonBlanco5.position.z==caballoBlanco2.position.z))||
 				(peonBlanco5.position.x==reinaBlanca.position.x && peonBlanco5.position.z==reinaBlanca.position.z))||
 				(peonBlanco5.position.x==reyBlanco.position.x && peonBlanco5.position.z==reyBlanco.position.z)){
-					alert("No puedes comer piezas del mismo color");
+					alert("Movimiento inválido");
 					peonBlanco5.position.x=referencia.position.x;peonBlanco5.position.z=referencia.position.z;
 				}
 			} //Termino Prototype act
@@ -1665,7 +1665,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco6.position.x==caballoBlanco2.position.x && peonBlanco6.position.z==caballoBlanco2.position.z))||
 						(peonBlanco6.position.x==reinaBlanca.position.x && peonBlanco6.position.z==reinaBlanca.position.z))||
 						(peonBlanco6.position.x==reyBlanco.position.x && peonBlanco6.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco6.position.x=referencia.position.x;peonBlanco6.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1765,7 +1765,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco7.position.x==caballoBlanco2.position.x && peonBlanco7.position.z==caballoBlanco2.position.z))||
 						(peonBlanco7.position.x==reinaBlanca.position.x && peonBlanco7.position.z==reinaBlanca.position.z))||
 						(peonBlanco7.position.x==reyBlanco.position.x && peonBlanco7.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco7.position.x=referencia.position.x;peonBlanco7.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1865,7 +1865,7 @@ Referencia.prototype.act = function(environment){
 						(peonBlanco8.position.x==caballoBlanco2.position.x && peonBlanco8.position.z==caballoBlanco2.position.z))||
 						(peonBlanco8.position.x==reinaBlanca.position.x && peonBlanco8.position.z==reinaBlanca.position.z))||
 						(peonBlanco8.position.x==reyBlanco.position.x && peonBlanco8.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonBlanco8.position.x=referencia.position.x;peonBlanco8.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -1965,7 +1965,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro1.position.x==caballoNegro2.position.x && peonNegro1.position.z==caballoNegro2.position.z))||
 						(peonNegro1.position.x==reinaNegra.position.x && peonNegro1.position.z==reinaNegra.position.z))||
 						(peonNegro1.position.x==reyNegro.position.x && peonNegro1.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro1.position.x=referencia.position.x;peonNegro1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2065,7 +2065,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro2.position.x==caballoNegro2.position.x && peonNegro2.position.z==caballoNegro2.position.z))||
 						(peonNegro2.position.x==reinaNegra.position.x && peonNegro2.position.z==reinaNegra.position.z))||
 						(peonNegro2.position.x==reyNegro.position.x && peonNegro2.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro2.position.x=referencia.position.x;peonNegro2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2165,7 +2165,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro3.position.x==caballoNegro2.position.x && peonNegro3.position.z==caballoNegro2.position.z))||
 						(peonNegro3.position.x==reinaNegra.position.x && peonNegro3.position.z==reinaNegra.position.z))||
 						(peonNegro3.position.x==reyNegro.position.x && peonNegro3.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro3.position.x=referencia.position.x;peonNegro3.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2265,7 +2265,7 @@ Referencia.prototype.act = function(environment){
 					(peonNegro4.position.x==caballoNegro2.position.x && peonNegro4.position.z==caballoNegro2.position.z))||
 					(peonNegro4.position.x==reinaNegra.position.x && peonNegro4.position.z==reinaNegra.position.z))||
 					(peonNegro4.position.x==reyNegro.position.x && peonNegro4.position.z==reyNegro.position.z)){
-						alert("No puedes comer piezas del mismo color");
+						alert("Movimiento inválido");
 						peonNegro4.position.x=referencia.position.x;peonNegro4.position.z=referencia.position.z;
 					}
 				} //Termino Prototype act
@@ -2365,7 +2365,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro5.position.x==caballoNegro2.position.x && peonNegro5.position.z==caballoNegro2.position.z))||
 						(peonNegro5.position.x==reinaNegra.position.x && peonNegro5.position.z==reinaNegra.position.z))||
 						(peonNegro5.position.x==reyNegro.position.x && peonNegro5.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro5.position.x=referencia.position.x;peonNegro5.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2465,7 +2465,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro6.position.x==caballoNegro2.position.x && peonNegro6.position.z==caballoNegro2.position.z))||
 						(peonNegro6.position.x==reinaNegra.position.x && peonNegro6.position.z==reinaNegra.position.z))||
 						(peonNegro6.position.x==reyNegro.position.x && peonNegro6.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro6.position.x=referencia.position.x;peonNegro6.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2565,7 +2565,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro7.position.x==caballoNegro2.position.x && peonNegro7.position.z==caballoNegro2.position.z))||
 						(peonNegro7.position.x==reinaNegra.position.x && peonNegro7.position.z==reinaNegra.position.z))||
 						(peonNegro7.position.x==reyNegro.position.x && peonNegro7.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro7.position.x=referencia.position.x;peonNegro7.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2665,7 +2665,7 @@ Referencia.prototype.act = function(environment){
 						(peonNegro8.position.x==caballoNegro2.position.x && peonNegro8.position.z==caballoNegro2.position.z))||
 						(peonNegro8.position.x==reinaNegra.position.x && peonNegro8.position.z==reinaNegra.position.z))||
 						(peonNegro8.position.x==reyNegro.position.x && peonNegro8.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							peonNegro8.position.x=referencia.position.x;peonNegro8.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2764,7 +2764,7 @@ Referencia.prototype.act = function(environment){
 						(alfilBlanco1.position.x==caballoBlanco2.position.x && alfilBlanco1.position.z==caballoBlanco2.position.z))||
 						(alfilBlanco1.position.x==reinaBlanca.position.x && alfilBlanco1.position.z==reinaBlanca.position.z))||
 						(alfilBlanco1.position.x==reyBlanco.position.x && alfilBlanco1.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							alfilBlanco1.position.x=referencia.position.x;alfilBlanco1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2864,7 +2864,7 @@ Referencia.prototype.act = function(environment){
 						(alfilBlanco2.position.x==caballoBlanco2.position.x && alfilBlanco2.position.z==caballoBlanco2.position.z))||
 						(alfilBlanco2.position.x==reinaBlanca.position.x && alfilBlanco2.position.z==reinaBlanca.position.z))||
 						(alfilBlanco2.position.x==reyBlanco.position.x && alfilBlanco2.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							alfilBlanco2.position.x=referencia.position.x;alfilBlanco2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -2964,7 +2964,7 @@ Referencia.prototype.act = function(environment){
 						(alfilNegro1.position.x==caballoNegro2.position.x && alfilNegro1.position.z==caballoNegro2.position.z))||
 						(alfilNegro1.position.x==reinaNegra.position.x && alfilNegro1.position.z==reinaNegra.position.z))||
 						(alfilNegro1.position.x==reyNegro.position.x && alfilNegro1.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							alfilNegro1.position.x=referencia.position.x;alfilNegro1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -3064,7 +3064,7 @@ Referencia.prototype.act = function(environment){
 						(alfilNegro2.position.x==caballoNegro2.position.x && alfilNegro2.position.z==caballoNegro2.position.z))||
 						(alfilNegro2.position.x==reinaNegra.position.x && alfilNegro2.position.z==reinaNegra.position.z))||
 						(alfilNegro2.position.x==reyNegro.position.x && alfilNegro2.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							alfilNegro2.position.x=referencia.position.x;alfilNegro2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -3165,7 +3165,7 @@ Referencia.prototype.act = function(environment){
 						(caballoBlanco1.position.x==caballoBlanco2.position.x && caballoBlanco1.position.z==caballoBlanco2.position.z))||
 						(caballoBlanco1.position.x==reinaBlanca.position.x && caballoBlanco1.position.z==reinaBlanca.position.z))||
 						(caballoBlanco1.position.x==reyBlanco.position.x && caballoBlanco1.position.z==reyBlanco.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							caballoBlanco1.position.x=referencia.position.x;caballoBlanco1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -3265,7 +3265,7 @@ Referencia.prototype.act = function(environment){
 						(caballoNegro1.position.x==caballoNegro2.position.x && caballoNegro1.position.z==caballoNegro2.position.z))||
 						(caballoNegro1.position.x==reinaNegra.position.x && caballoNegro1.position.z==reinaNegra.position.z))||
 						(caballoNegro1.position.x==reyNegro.position.x && caballoNegro1.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							caballoNegro1.position.x=referencia.position.x;caballoNegro1.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
@@ -3365,7 +3365,7 @@ Referencia.prototype.act = function(environment){
 					(caballoBlanco2.position.x==caballoBlanco1.position.x && caballoBlanco2.position.z==caballoBlanco1.position.z))||
 					(caballoBlanco2.position.x==reinaBlanca.position.x && caballoBlanco2.position.z==reinaBlanca.position.z))||
 					(caballoBlanco2.position.x==reyBlanco.position.x && caballoBlanco2.position.z==reyBlanco.position.z)){
-						alert("No puedes comer piezas del mismo color");
+						alert("Movimiento inválido");
 						caballoBlanco2.position.x=referencia.position.x;caballoBlanco2.position.z=referencia.position.z;
 					}
 				} //Termino Prototype act
@@ -3465,7 +3465,7 @@ Referencia.prototype.act = function(environment){
 						(caballoNegro2.position.x==caballoNegro1.position.x && caballoNegro2.position.z==caballoNegro1.position.z))||
 						(caballoNegro2.position.x==reinaNegra.position.x && caballoNegro2.position.z==reinaNegra.position.z))||
 						(caballoNegro2.position.x==reyNegro.position.x && caballoNegro2.position.z==reyNegro.position.z)){
-							alert("No puedes comer piezas del mismo color");
+							alert("Movimiento inválido");
 							caballoNegro2.position.x=referencia.position.x;caballoNegro2.position.z=referencia.position.z;
 						}
 					} //Termino Prototype act
