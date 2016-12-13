@@ -197,8 +197,51 @@ PeonBlanco.prototype = new Agent();
 AlfilNegro.prototype = new Agent();
 AlfilBlanco.prototype = new Agent();
 
-setup();
-loop();
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////  CONSTRUCTOR REFERENCIA  ///////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function Referencia(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaReferencia = new THREE.MeshLambertMaterial({color: 0x00ff00});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), texturaReferencia));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
+
+Referencia.prototype = new Agent();
+
+Referencia.prototype.act = function(environment){
+	window.onload=function(){document.onkeydown=desplazar};
+	function desplazar(pieza){
+	var tecla = pieza.which;
+        switch (tecla){	
+			case 37 : //Left
+			
+			case 38 :  //Up
+			
+			case 39 :  //Right 
+			
+			case 40 :  //Down
+			
+			case 13 :  //Enter
+		     }
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////  CONSTRUCTOR MOVIMIENTO INVALIDO  ///////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function Negativo(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaNegativo = new THREE.MeshLambertMaterial({color: 0xff0000});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), texturaNegativo));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
+
+Negativo.prototype = new Agent();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////  SETUP  ////////////////////////////////////////////////////
@@ -373,3 +416,5 @@ function loop(){
      renderizador.render(escena, camara);
 }
 
+setup();
+loop();
