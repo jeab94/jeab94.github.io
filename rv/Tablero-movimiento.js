@@ -232,23 +232,40 @@ Referencia.prototype.act = function(environment){
 			}
 			break;
 		case 38 :  //Up
-			
+			if(indicador===1){
+				if(referencia.position.z>=15){
+					referencia.translateZ(-10);
+				}
+			}
+			else{
+				if(referencia.position.z>=15){
+					referencia.translateZ(-10);
+				}
+			}			
 			break;
 		case 39 :  //Right 
 			if(indicador===1){
-				if(referencia.position.x<=75){
+				if(referencia.position.x<=65){
 					referencia.translateX(10);
 				}
 			}
 			else{
-				escena.remove(referencia);	
-				if(referencia.position.x<=75){
+				if(referencia.position.x<=65){
 					referencia.translateX(10);
 				}
 			}		
 			break;
 		case 40 :  //Down
-		
+			if(indicador===1){
+				if(referencia.position.z<=65){
+					referencia.translateZ(10);
+				}
+			}
+			else{
+				if(referencia.position.z<=65){
+					referencia.translateZ(10);
+				}
+			}				
 			break;
 		case 13 :  //Enter
 			
