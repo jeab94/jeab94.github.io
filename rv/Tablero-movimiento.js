@@ -256,7 +256,7 @@ Referencia.prototype.act = function(environment){
 			}
 			else{
 				escena.remove(referencia);
-				escena.remove(negativo);				
+				//escena.remove(negativo);				
 				if(referencia.position.x<=65){
 					referencia.translateX(10);
 				}
