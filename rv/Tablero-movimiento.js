@@ -3477,9 +3477,9 @@ Referencia.prototype.act = function(environment){
 			}//Termino if indicador
 			
 			else{ //No se seleccionó pieza 
-				escena.remove(negativo);
-				negativo = new BloqueRojo(referencia.position.x,0,referencia.position.z);
-				escena.add(negativo)
+				//escena.remove(negativo);
+				//negativo = new BloqueRojo(referencia.position.x,0,referencia.position.z);
+				//escena.add(negativo)
 			}
 			break;
 		     } //Termino de switch
