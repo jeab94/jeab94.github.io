@@ -215,9 +215,9 @@ Referencia.prototype = new Agent();
 
 Referencia.prototype.act = function(environment){
 	window.onload=function(){document.onkeydown=desplazar};
-	function desplazar(pieza){
+	function desplazar(key){
 	var key = key.which;
-        switch (tecla){	
+        switch (key){	
 		case 37: //Left
 			if(indicador===1){
 				if(referencia.position.x>=15){
