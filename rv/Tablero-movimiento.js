@@ -8,6 +8,8 @@ var marco1, marco2, marco3, marco4;
 var orilla1, orilla2, orilla3, orilla4;
 var material;
 
+var indicador;
+
 //Texturas
 var Gris = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('black_marmol.jpg') });
 var Blanco = new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture('white_marmol.jpg') });
@@ -214,17 +216,33 @@ Referencia.prototype = new Agent();
 Referencia.prototype.act = function(environment){
 	window.onload=function(){document.onkeydown=desplazar};
 	function desplazar(pieza){
-	var tecla = pieza.which;
+	var key = key.which;
         switch (tecla){	
-			case 37 : //Left
+		case 37: //Left
+			if(indicador===1){
+				if(referencia.position.x>=15){
+					referencia.translateX(-10);
+				}
+			}
+			else{
+				escena.remove(referencia);	
+				if(referencia.position.x>=15){
+					referencia.translateX(-10);
+				}
+			}
+			break;
+		case 38 :  //Up
 			
-			case 38 :  //Up
+			break;
+		case 39 :  //Right 
+		
+			break;
+		case 40 :  //Down
+		
+			break;
+		case 13 :  //Enter
 			
-			case 39 :  //Right 
-			
-			case 40 :  //Down
-			
-			case 13 :  //Enter
+			break;
 		     }
 	}
 }
