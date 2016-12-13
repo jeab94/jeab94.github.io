@@ -34,21 +34,21 @@
   var corona2 = new THREE.CylinderGeometry(1,2,.5,50);
   corona2.translate(0,20.75,0);
 
-  //Decoración
+  //Cruz
   var forma=new THREE.Shape();
 
   forma.moveTo(-1,1);
-  forma.lineTo(-7,3);
-  forma.lineTo(-7,-3);
+  forma.lineTo(-10,3);
+  forma.lineTo(-10,-3);
   forma.lineTo(-1,-1);
-  forma.lineTo(-3,-7);
-  forma.lineTo(3,-7);
+  forma.lineTo(-3,-10);
+  forma.lineTo(3,-10);
   forma.lineTo(1,-1);
-  forma.lineTo(7,-3);
-  forma.lineTo(7,3);
+  forma.lineTo(10,-3);
+  forma.lineTo(10,3);
   forma.lineTo(1,1);
-  forma.lineTo(3,7);
-  forma.lineTo(-3,7);
+  forma.lineTo(3,10);
+  forma.lineTo(-3,10);
   forma.lineTo(-1,1);
 
   var cruz= new THREE.ExtrudeGeometry(forma,{amount:2});
@@ -272,7 +272,7 @@
   forma.lineTo(-7,-3);
   forma.lineTo(-10,0);
 
-  var caballo= new THREE.ExtrudeGeometry(forma,{amount:2},{bevelSegments:2});
+  var caballo= new THREE.ExtrudeGeometry(forma,{amount:2},{bevelSegments:4});
   caballo.scale(.4,.4,.4);
   caballo.translate(0,9,0);
 
