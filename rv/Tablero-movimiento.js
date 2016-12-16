@@ -3815,15 +3815,21 @@ function init() {
   document.body.appendChild(renderizador.domElement);
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
-  var luzblan= new THREE.PointLight(0xFFFFFF);
-  var luzblan2=new THREE.PointLight(0xFFFFFF);
-  var luzblan3= new THREE.PointLight(0xFFFFFF);
-  luzblan.castShadow=true;
-  luzblan2.castShadow=true;
-  luzblan3.castShadow=true;
-  luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
-  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  luzblan3.position.y=-300;  luzblan3.position.z=-50;  luzblan3.position.x=50;
+   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual1.position.x = -50;
+   luzPuntual1.position.y = 300;
+   luzPuntual1.position.z = 50;
+	
+   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual2.position.x = 50;
+   luzPuntual2.position.y = 300;
+   luzPuntual2.position.z = -150;
+
+   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual3.position.x = 50;
+   luzPuntual3.position.y = -300;
+   luzPuntual3.position.z = -50;
+	
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
 
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
@@ -3939,7 +3945,7 @@ function init() {
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   //Luces
-  escena.add(luzblan,luzblan2,luzblan3);
+  escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
   escena.rotateX(Math.PI/4);
 }
 
