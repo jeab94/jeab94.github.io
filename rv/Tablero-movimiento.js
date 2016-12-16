@@ -3869,15 +3869,15 @@ function init() {
    orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
-   marco3.translateZ(-45);
-   marco3.translateX(2.5);
+   marco3.translateZ(2.5);
+   marco3.translateX(-45);
    marco3.receiveShadow = true;
 
    orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
    var material4 = Marco;
    marco4 = new THREE.Mesh( orilla4, material4);
-   marco4.translateZ(-2.5);
-   marco4.translateX(45);
+   marco4.translateZ(-45);
+   marco4.translateX(2.5);
    marco4.receiveShadow = true;
    
    //Agregar tablero a  escena
