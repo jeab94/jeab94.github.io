@@ -1,7 +1,7 @@
 ///////////////////////////////////////////Variables////////////////////////////////////////////////////////////////////////////////////
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
-var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
+var ayuda,cursor,posicioninicial,seleccion;
 var bandera=0,banderacaballo=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
@@ -216,7 +216,7 @@ BloqueRojo.prototype = new Agent();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////  CONSTRUCTOR BLOQUEMORADO  ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function BloqueMorado(x=0,y=0,z=0){
+function Ayuda(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzmorada = new THREE.MeshLambertMaterial({color: 0xff0000});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
@@ -225,12 +225,12 @@ function BloqueMorado(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-BloqueMorado.prototype = new Agent();
+Ayuda.prototype = new Agent();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////  CONSTRUCTOR BLOQUEVERDE /////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function BloqueVerde(x=0,y=0,z=0){
+function Seleccion(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzverde = new THREE.MeshLambertMaterial({color: 0xffff00});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
@@ -239,12 +239,12 @@ function BloqueVerde(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-BloqueVerde.prototype = new Agent();
+Seleccion.prototype = new Agent();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////  CONSTRUCTOR BLOQUEAZUL  ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function BloqueAzul(x=0,y=0,z=0){
+function Cursor(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzazul =  new THREE.MeshLambertMaterial({color: 0x0000ff});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzazul));
@@ -253,70 +253,70 @@ function BloqueAzul(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-BloqueAzul.prototype = new Agent();
+Cursor.prototype = new Agent();
 
-BloqueAzul.prototype.act = function(environment){
+Cursor.prototype.act = function(environment){
   window.onload=function(){document.onkeydown=desplazar};
     function desplazar(pieza){
       var tecla = pieza.which;
         switch (tecla){
           case 37 : //Izquierda
 		if (bandera===1){
-		  if (bloqueverde.position.x>=20){
-		    bloqueverde.translateX(-10);
+		  if (seleccion.position.x>=20){
+		    seleccion.translateX(-10);
 		  }
 		}
 		else{
 	  	   escena.remove(grupomorado);
-	           escena.remove(bloquerojo);
-	           escena.remove(bloqueverde);
-		   if (bloqueazul.position.x>=20){
-		     bloqueazul.translateX(-10);
+	           escena.remove(posicioninicial);
+	           escena.remove(seleccion);
+		   if (cursor.position.x>=20){
+		     cursor.translateX(-10);
 		   }
 		}
                 break;
           case 38 :  //Arriba
 		if (bandera===1){
-		  if (bloqueverde.position.z>=-70){
-		    bloqueverde.translateZ(-10);
+		  if (seleccion.position.z>=-70){
+		    seleccion.translateZ(-10);
 		  }
 		}
 		else{
 	  	   escena.remove(grupomorado);
-	           escena.remove(bloquerojo);
-	           escena.remove(bloqueverde);
-		   if (bloqueazul.position.z>=-70){
-	             bloqueazul.translateZ(-10);
+	           escena.remove(posicioninicial);
+	           escena.remove(seleccion);
+		   if (cursor.position.z>=-70){
+	             cursor.translateZ(-10);
 		   }
 		}
                 break;
           case 39 :  //Derecha 
 		if (bandera===1){
-		  if (bloqueverde.position.x<=70){
-		    bloqueverde.translateX(10);
+		  if (seleccion.position.x<=70){
+		    seleccion.translateX(10);
 		  }
 		}
 		else{
 	  	   escena.remove(grupomorado);
-	           escena.remove(bloquerojo);
-	           escena.remove(bloqueverde);
-		   if (bloqueazul.position.x<=70){
-		     bloqueazul.translateX(10);
+	           escena.remove(posicioninicial);
+	           escena.remove(seleccion);
+		   if (cursor.position.x<=70){
+		     cursor.translateX(10);
 		   }
 		}
                 break;
           case 40 :  //Abajo
 		if (bandera===1){
-		  if (bloqueverde.position.z<=-20){
-		    bloqueverde.translateZ(10);
+		  if (seleccion.position.z<=-20){
+		    seleccion.translateZ(10);
 		  }
 		}
 		else{
 	  	   escena.remove(grupomorado);
-	           escena.remove(bloquerojo);
-	           escena.remove(bloqueverde);
-		   if (bloqueazul.position.z<=-20){
-		     bloqueazul.translateZ(10);
+	           escena.remove(posicioninicial);
+	           escena.remove(seleccion);
+		   if (cursor.position.z<=-20){
+		     cursor.translateZ(10);
 		   }
 		}
                 break;
@@ -328,8 +328,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Torre Blanca 1     //////////////////////////////////////////////////////////
-		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
-		    var bvtb1=bloqueverde;//Bloqueverdetorreblanca1
+		  if (torreblanca1.position.x===posicioninicial.position.x && torreblanca1.position.z===posicioninicial.position.z){
+		    var bvtb1=seleccion;//Selecciontorreblanca1
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvtb1,true);
@@ -418,15 +418,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (torreblanca1.position.x==reyblanco.position.x && torreblanca1.position.z==reyblanco.position.z))||
 			   (torreblanca1.position.x==reinablanca.position.x && torreblanca1.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				torreblanca1.position.x=posicioninicial.position.x;torreblanca1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca1
 
 //////////////////////////////////    Torre Blanca 2     //////////////////////////////////////////////////////////
-		  if (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z){
-		    var bvtb2=bloqueverde;//Bloqueverdetorreblanca2
+		  if (torreblanca2.position.x===posicioninicial.position.x && torreblanca2.position.z===posicioninicial.position.z){
+		    var bvtb2=seleccion;//Selecciontorreblanca2
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvtb2,true);
@@ -514,15 +514,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (torreblanca2.position.x==reyblanco.position.x && torreblanca2.position.z==reyblanco.position.z))||
 			   (torreblanca2.position.x==reinablanca.position.x && torreblanca2.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				torreblanca2.position.x=bloquerojo.position.x;torreblanca2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				torreblanca2.position.x=posicioninicial.position.x;torreblanca2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca2
 			
 //////////////////////////////////    Torre Negra 1     //////////////////////////////////////////////////////////
-		  if (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z){
-		    var bvtn1 = bloqueverde;
+		  if (torrenegra1.position.x===posicioninicial.position.x && torrenegra1.position.z===posicioninicial.position.z){
+		    var bvtn1 = seleccion;
 		    TorreNegra.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvtn1,true);
@@ -610,15 +610,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (torrenegra1.position.x==reynegro.position.x && torrenegra1.position.z==reynegro.position.z))||
 			   (torrenegra1.position.x==reinanegra.position.x && torrenegra1.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				torrenegra1.position.x=bloquerojo.position.x;torrenegra1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				torrenegra1.position.x=posicioninicial.position.x;torrenegra1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca2
 			
 //////////////////////////////////    Torre Negra 2     //////////////////////////////////////////////////////////
-		  if (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z){
-		    var bvtn2 = bloqueverde;
+		  if (torrenegra2.position.x===posicioninicial.position.x && torrenegra2.position.z===posicioninicial.position.z){
+		    var bvtn2 = seleccion;
 		    TorreNegra.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvtn2,true);
@@ -706,8 +706,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (torrenegra2.position.x==reynegro.position.x && torrenegra2.position.z==reynegro.position.z))||
 			   (torrenegra2.position.x==reinanegra.position.x && torrenegra2.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				torrenegra2.position.x=bloquerojo.position.x;torrenegra2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				torrenegra2.position.x=posicioninicial.position.x;torrenegra2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca2
@@ -717,8 +717,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Peón Blanco 1     //////////////////////////////////////////////////////////
-		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
-		    var bvpb1=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco1.position.x===posicioninicial.position.x && peonblanco1.position.z===posicioninicial.position.z){
+		    var bvpb1=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -807,15 +807,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco1.position.x==reyblanco.position.x && peonblanco1.position.z==reyblanco.position.z))||
 			   (peonblanco1.position.x==reinablanca.position.x && peonblanco1.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco1.position.x=bloquerojo.position.x;peonblanco1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco1.position.x=posicioninicial.position.x;peonblanco1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco1
 			
 //////////////////////////////////    Peón Blanco 2     //////////////////////////////////////////////////////////
-		  if (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z){
-		    var bvpb2=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco2.position.x===posicioninicial.position.x && peonblanco2.position.z===posicioninicial.position.z){
+		    var bvpb2=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -904,15 +904,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco2.position.x==reyblanco.position.x && peonblanco2.position.z==reyblanco.position.z))||
 			   (peonblanco2.position.x==reinablanca.position.x && peonblanco2.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco2.position.x=bloquerojo.position.x;peonblanco2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco2.position.x=posicioninicial.position.x;peonblanco2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco2	
 			
 //////////////////////////////////    Peón Blanco 3     //////////////////////////////////////////////////////////
-		  if (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z){
-		    var bvpb3=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco3.position.x===posicioninicial.position.x && peonblanco3.position.z===posicioninicial.position.z){
+		    var bvpb3=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1001,15 +1001,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco3.position.x==reyblanco.position.x && peonblanco3.position.z==reyblanco.position.z))||
 			   (peonblanco3.position.x==reinablanca.position.x && peonblanco3.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco3.position.x=bloquerojo.position.x;peonblanco3.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco3.position.x=posicioninicial.position.x;peonblanco3.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco3
 			
 //////////////////////////////////    Peón Blanco 4     //////////////////////////////////////////////////////////
-		  if (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z){
-		    var bvpb4=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco4.position.x===posicioninicial.position.x && peonblanco4.position.z===posicioninicial.position.z){
+		    var bvpb4=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1098,15 +1098,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco4.position.x==reyblanco.position.x && peonblanco4.position.z==reyblanco.position.z))||
 			   (peonblanco4.position.x==reinablanca.position.x && peonblanco4.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco4.position.x=bloquerojo.position.x;peonblanco4.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco4.position.x=posicioninicial.position.x;peonblanco4.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco4
 			
 //////////////////////////////////    Peón Blanco 5     //////////////////////////////////////////////////////////
-		  if (peonblanco5.position.x===bloquerojo.position.x && peonblanco5.position.z===bloquerojo.position.z){
-		    var bvpb5=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco5.position.x===posicioninicial.position.x && peonblanco5.position.z===posicioninicial.position.z){
+		    var bvpb5=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1195,15 +1195,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco5.position.x==reyblanco.position.x && peonblanco5.position.z==reyblanco.position.z))||
 			   (peonblanco5.position.x==reinablanca.position.x && peonblanco5.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco5.position.x=bloquerojo.position.x;peonblanco5.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco5.position.x=posicioninicial.position.x;peonblanco5.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco5
 			
 //////////////////////////////////    Peón Blanco 6     //////////////////////////////////////////////////////////
-		  if (peonblanco6.position.x===bloquerojo.position.x && peonblanco6.position.z===bloquerojo.position.z){
-		    var bvpb6=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco6.position.x===posicioninicial.position.x && peonblanco6.position.z===posicioninicial.position.z){
+		    var bvpb6=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1292,15 +1292,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco6.position.x==reyblanco.position.x && peonblanco6.position.z==reyblanco.position.z))||
 			   (peonblanco6.position.x==reinablanca.position.x && peonblanco6.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco6.position.x=bloquerojo.position.x;peonblanco6.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco6.position.x=posicioninicial.position.x;peonblanco6.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco6
 			
 //////////////////////////////////    Peón Blanco 7     //////////////////////////////////////////////////////////
-		  if (peonblanco7.position.x===bloquerojo.position.x && peonblanco7.position.z===bloquerojo.position.z){
-		    var bvpb7=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco7.position.x===posicioninicial.position.x && peonblanco7.position.z===posicioninicial.position.z){
+		    var bvpb7=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1389,15 +1389,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco7.position.x==reyblanco.position.x && peonblanco7.position.z==reyblanco.position.z))||
 			   (peonblanco7.position.x==reinablanca.position.x && peonblanco7.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco7.position.x=bloquerojo.position.x;peonblanco7.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco7.position.x=posicioninicial.position.x;peonblanco7.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco7
 			
 //////////////////////////////////     Peón Blanco 8    //////////////////////////////////////////////////////////
-		  if (peonblanco8.position.x===bloquerojo.position.x && peonblanco8.position.z===bloquerojo.position.z){
-		    var bvpb8=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonblanco8.position.x===posicioninicial.position.x && peonblanco8.position.z===posicioninicial.position.z){
+		    var bvpb8=seleccion;//Selecciontorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1486,15 +1486,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco8.position.x==reyblanco.position.x && peonblanco8.position.z==reyblanco.position.z))||
 			   (peonblanco8.position.x==reinablanca.position.x && peonblanco8.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonblanco8.position.x=bloquerojo.position.x;peonblanco8.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonblanco8.position.x=posicioninicial.position.x;peonblanco8.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonblanco8
 			
 //////////////////////////////////    Peón Negro 1     ////////////////////////////////////////////////////////////
-		  if (peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z){
-		    var bvpn1=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro1.position.x===posicioninicial.position.x && peonnegro1.position.z===posicioninicial.position.z){
+		    var bvpn1=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1583,15 +1583,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro1.position.x==reynegro.position.x && peonnegro1.position.z==reynegro.position.z))||
 			   (peonnegro1.position.x==reinanegra.position.x && peonnegro1.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro1.position.x=bloquerojo.position.x;peonnegro1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro1.position.x=posicioninicial.position.x;peonnegro1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro1
 			
 //////////////////////////////////    Peón Negro 2     ////////////////////////////////////////////////////////////
-		  if (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z){
-		    var bvpn2=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro2.position.x===posicioninicial.position.x && peonnegro2.position.z===posicioninicial.position.z){
+		    var bvpn2=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1680,15 +1680,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro2.position.x==reynegro.position.x && peonnegro2.position.z==reynegro.position.z))||
 			   (peonnegro2.position.x==reinanegra.position.x && peonnegro2.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro2.position.x=bloquerojo.position.x;peonnegro2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro2.position.x=posicioninicial.position.x;peonnegro2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro2
 			
 //////////////////////////////////    Peón Negro 3     ////////////////////////////////////////////////////////////
-		  if (peonnegro3.position.x===bloquerojo.position.x && peonnegro3.position.z===bloquerojo.position.z){
-		    var bvpn3=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro3.position.x===posicioninicial.position.x && peonnegro3.position.z===posicioninicial.position.z){
+		    var bvpn3=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1777,15 +1777,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro3.position.x==reynegro.position.x && peonnegro3.position.z==reynegro.position.z))||
 			   (peonnegro3.position.x==reinanegra.position.x && peonnegro3.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro3.position.x=bloquerojo.position.x;peonnegro3.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro3.position.x=posicioninicial.position.x;peonnegro3.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro3
 			
 //////////////////////////////////    Peón Negro 4     ////////////////////////////////////////////////////////////
-		  if (peonnegro4.position.x===bloquerojo.position.x && peonnegro4.position.z===bloquerojo.position.z){
-		    var bvpn4=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro4.position.x===posicioninicial.position.x && peonnegro4.position.z===posicioninicial.position.z){
+		    var bvpn4=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1874,15 +1874,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro4.position.x==reynegro.position.x && peonnegro4.position.z==reynegro.position.z))||
 			   (peonnegro4.position.x==reinanegra.position.x && peonnegro4.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro4.position.x=bloquerojo.position.x;peonnegro4.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro4.position.x=posicioninicial.position.x;peonnegro4.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro4
 			
 //////////////////////////////////    Peón Negro 5     ////////////////////////////////////////////////////////////
-		  if (peonnegro5.position.x===bloquerojo.position.x && peonnegro5.position.z===bloquerojo.position.z){
-		    var bvpn5=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro5.position.x===posicioninicial.position.x && peonnegro5.position.z===posicioninicial.position.z){
+		    var bvpn5=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -1971,15 +1971,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro5.position.x==reynegro.position.x && peonnegro5.position.z==reynegro.position.z))||
 			   (peonnegro5.position.x==reinanegra.position.x && peonnegro5.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro5.position.x=bloquerojo.position.x;peonnegro5.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro5.position.x=posicioninicial.position.x;peonnegro5.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro5
 			
 //////////////////////////////////    Peón Negro 6     ////////////////////////////////////////////////////////////
-		  if (peonnegro6.position.x===bloquerojo.position.x && peonnegro6.position.z===bloquerojo.position.z){
-		    var bvpn6=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro6.position.x===posicioninicial.position.x && peonnegro6.position.z===posicioninicial.position.z){
+		    var bvpn6=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -2068,15 +2068,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro6.position.x==reynegro.position.x && peonnegro6.position.z==reynegro.position.z))||
 			   (peonnegro6.position.x==reinanegra.position.x && peonnegro6.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro6.position.x=bloquerojo.position.x;peonnegro6.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro6.position.x=posicioninicial.position.x;peonnegro6.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro6
 			
 //////////////////////////////////    Peón Negro 7     ////////////////////////////////////////////////////////////
-		  if (peonnegro7.position.x===bloquerojo.position.x && peonnegro7.position.z===bloquerojo.position.z){
-		    var bvpn7=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro7.position.x===posicioninicial.position.x && peonnegro7.position.z===posicioninicial.position.z){
+		    var bvpn7=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -2165,15 +2165,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro7.position.x==reynegro.position.x && peonnegro7.position.z==reynegro.position.z))||
 			   (peonnegro7.position.x==reinanegra.position.x && peonnegro7.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro7.position.x=bloquerojo.position.x;peonnegro7.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro7.position.x=posicioninicial.position.x;peonnegro7.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro7
 			
 //////////////////////////////////    Peón Negro 8     ////////////////////////////////////////////////////////////
-		  if (peonnegro8.position.x===bloquerojo.position.x && peonnegro8.position.z===bloquerojo.position.z){
-		    var bvpn8=bloqueverde;//Bloqueverdetorreblanca1
+		  if (peonnegro8.position.x===posicioninicial.position.x && peonnegro8.position.z===posicioninicial.position.z){
+		    var bvpn8=seleccion;//Selecciontorreblanca1
 			  
 		    PeonNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
@@ -2262,8 +2262,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro8.position.x==reynegro.position.x && peonnegro8.position.z==reynegro.position.z))||
 			   (peonnegro8.position.x==reinanegra.position.x && peonnegro8.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				peonnegro8.position.x=bloquerojo.position.x;peonnegro8.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				peonnegro8.position.x=posicioninicial.position.x;peonnegro8.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if peonnegro8
@@ -2273,8 +2273,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Alfil Blanco 1    ///////////////////////////////////////////////////////////
-		  if (alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z){
-		    var bvab1=bloqueverde;//Bloqueverdealfilblanco1
+		  if (alfilblanco1.position.x===posicioninicial.position.x && alfilblanco1.position.z===posicioninicial.position.z){
+		    var bvab1=seleccion;//Seleccionalfilblanco1
 		    AlfilBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvab1,true);
@@ -2362,15 +2362,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilblanco1.position.x==reyblanco.position.x && alfilblanco1.position.z==reyblanco.position.z))||
 			   (alfilblanco1.position.x==reinablanca.position.x && alfilblanco1.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				alfilblanco1.position.x=bloquerojo.position.x;alfilblanco1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				alfilblanco1.position.x=posicioninicial.position.x;alfilblanco1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if alfilblanco1
 
 //////////////////////////////////    Alfil Blanco 2    ///////////////////////////////////////////////////////////
-		  if (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z){
-		    var bvab2=bloqueverde;//Bloqueverdealfilblanco2
+		  if (alfilblanco2.position.x===posicioninicial.position.x && alfilblanco2.position.z===posicioninicial.position.z){
+		    var bvab2=seleccion;//Seleccionalfilblanco2
 		    AlfilBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvab2,true);
@@ -2458,15 +2458,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilblanco2.position.x==reyblanco.position.x && alfilblanco2.position.z==reyblanco.position.z))||
 			   (alfilblanco2.position.x==reinablanca.position.x && alfilblanco2.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				alfilblanco2.position.x=bloquerojo.position.x;alfilblanco2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				alfilblanco2.position.x=posicioninicial.position.x;alfilblanco2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if alfilblanco2
 
 //////////////////////////////////    Alfil Negro 1    ////////////////////////////////////////////////////////////
-		  if (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z){
-		    var bvan1 = bloqueverde;
+		  if (alfilnegro1.position.x===posicioninicial.position.x && alfilnegro1.position.z===posicioninicial.position.z){
+		    var bvan1 = seleccion;
 		    AlfilNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvan1,true);
@@ -2554,15 +2554,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilnegro1.position.x==reynegro.position.x && alfilnegro1.position.z==reynegro.position.z))||
 			   (alfilnegro1.position.x==reinanegra.position.x && alfilnegro1.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				alfilnegro1.position.x=bloquerojo.position.x;alfilnegro1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				alfilnegro1.position.x=posicioninicial.position.x;alfilnegro1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if alfilnegro1
 
 //////////////////////////////////    Alfil Negro 2    ////////////////////////////////////////////////////////////
-		  if (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z){
-		    var bvan2 = bloqueverde;
+		  if (alfilnegro2.position.x===posicioninicial.position.x && alfilnegro2.position.z===posicioninicial.position.z){
+		    var bvan2 = seleccion;
 		    AlfilNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvan2,true);
@@ -2650,8 +2650,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilnegro2.position.x==reynegro.position.x && alfilnegro2.position.z==reynegro.position.z))||
 			   (alfilnegro2.position.x==reinanegra.position.x && alfilnegro2.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				alfilnegro2.position.x=bloquerojo.position.x;alfilnegro2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				alfilnegro2.position.x=posicioninicial.position.x;alfilnegro2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if alfilnegro2
@@ -2661,8 +2661,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Reina Blanca    ///////////////////////////////////////////////////////////////
-		  if (reinablanca.position.x===bloquerojo.position.x && reinablanca.position.z===bloquerojo.position.z){
-		    var bvrab=bloqueverde;
+		  if (reinablanca.position.x===posicioninicial.position.x && reinablanca.position.z===posicioninicial.position.z){
+		    var bvrab=seleccion;
 		    ReinaBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvrab,true);
@@ -2750,15 +2750,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (reinablanca.position.x==reyblanco.position.x && reinablanca.position.z==reyblanco.position.z))||
 			   (reinablanca.position.x==alfilblanco1.position.x && reinablanca.position.z==alfilblanco1.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				reinablanca.position.x=bloquerojo.position.x;reinablanca.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				reinablanca.position.x=posicioninicial.position.x;reinablanca.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if reinablanca
 
 //////////////////////////////////    Reina Negra    ////////////////////////////////////////////////////////////
-		  if (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z){
-		    var bvran=bloqueverde;
+		  if (reinanegra.position.x===posicioninicial.position.x && reinanegra.position.z===posicioninicial.position.z){
+		    var bvran=seleccion;
 		    ReinaNegra.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvran,true);
@@ -2846,8 +2846,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (reinanegra.position.x==reynegro.position.x && reinanegra.position.z==reynegro.position.z))||
 			   (reinanegra.position.x==torrenegra1.position.x && reinanegra.position.z==torrenegra1.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				reinanegra.position.x=bloquerojo.position.x;reinanegra.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				reinanegra.position.x=posicioninicial.position.x;reinanegra.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if reinanegra
@@ -2858,8 +2858,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Rey Blanco    ///////////////////////////////////////////////////////////////
-		  if (reyblanco.position.x===bloquerojo.position.x && reyblanco.position.z===bloquerojo.position.z){
-		    var bvryb=bloqueverde;
+		  if (reyblanco.position.x===posicioninicial.position.x && reyblanco.position.z===posicioninicial.position.z){
+		    var bvryb=seleccion;
 		    ReyBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvryb,true);
@@ -2947,15 +2947,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (reyblanco.position.x==alfilblanco1.position.x && reyblanco.position.z==alfilblanco1.position.z))||
 			   (reyblanco.position.x==reinablanca.position.x && reyblanco.position.z==reinablanca.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				reyblanco.position.x=bloquerojo.position.x;reyblanco.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				reyblanco.position.x=posicioninicial.position.x;reyblanco.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if reyblanco
 			
 //////////////////////////////////    Rey Negro    ///////////////////////////////////////////////////////////////
-		  if (reynegro.position.x===bloquerojo.position.x && reynegro.position.z===bloquerojo.position.z){
-		    var bvryn=bloqueverde;
+		  if (reynegro.position.x===posicioninicial.position.x && reynegro.position.z===posicioninicial.position.z){
+		    var bvryn=seleccion;
 		    ReyNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvryn,true);
@@ -3043,8 +3043,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (reynegro.position.x==torrenegra1.position.x && reynegro.position.z==torrenegra1.position.z))||
 			   (reynegro.position.x==reinanegra.position.x && reynegro.position.z==reinanegra.position.z)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				reynegro.position.x=bloquerojo.position.x;reynegro.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				reynegro.position.x=posicioninicial.position.x;reynegro.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if reynegro
@@ -3054,8 +3054,8 @@ BloqueAzul.prototype.act = function(environment){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 //////////////////////////////////    Caballo Blanco 1   //////////////////////////////////////////////////////////			
-		  if (caballoblanco1.position.x===bloquerojo.position.x && caballoblanco1.position.z===bloquerojo.position.z){
-		    var bvcb1=bloqueverde;
+		  if (caballoblanco1.position.x===posicioninicial.position.x && caballoblanco1.position.z===posicioninicial.position.z){
+		    var bvcb1=seleccion;
 		    CaballoBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvcb1,true);
@@ -3150,15 +3150,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballoblanco1.position.x==reinablanca.position.x && caballoblanco1.position.z==reinablanca.position.z))&&
 			   (caballoblanco1.position.y==4.5)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				caballoblanco1.position.x=bloquerojo.position.x;caballoblanco1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				caballoblanco1.position.x=posicioninicial.position.x;caballoblanco1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if caballoblanco1
 			
 //////////////////////////////////    Caballo Blanco 2   //////////////////////////////////////////////////////////			
-		  if (caballoblanco2.position.x===bloquerojo.position.x && caballoblanco2.position.z===bloquerojo.position.z){
-		    var bvcb2=bloqueverde;//Bloqueverdealfilblanco2
+		  if (caballoblanco2.position.x===posicioninicial.position.x && caballoblanco2.position.z===posicioninicial.position.z){
+		    var bvcb2=seleccion;//Seleccionalfilblanco2
 		    CaballoBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvcb2,true);
@@ -3253,15 +3253,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballoblanco2.position.x==reinablanca.position.x && caballoblanco2.position.z==reinablanca.position.z))&&
 				(caballoblanco2.position.y==4.5)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)");
-				caballoblanco2.position.x=bloquerojo.position.x;caballoblanco2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				caballoblanco2.position.x=posicioninicial.position.x;caballoblanco2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if caballoblanco2
 			
 //////////////////////////////////    Caballo Negro 1   ////////////////////////////////////////////////////////////
-		  if (caballonegro1.position.x===bloquerojo.position.x && caballonegro1.position.z===bloquerojo.position.z){
-		    var bvcn1 = bloqueverde;
+		  if (caballonegro1.position.x===posicioninicial.position.x && caballonegro1.position.z===posicioninicial.position.z){
+		    var bvcn1 = seleccion;
 		    CaballoNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvcn1,true);
@@ -3356,15 +3356,15 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballonegro1.position.x==reinanegra.position.x && caballonegro1.position.z==reinanegra.position.z))&&
 				(caballonegro1.position.y==4.5)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)”);
-				caballonegro1.position.x=bloquerojo.position.x;caballonegro1.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				caballonegro1.position.x=posicioninicial.position.x;caballonegro1.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if caballonegro1
 
 //////////////////////////////////    Caballo Negro 2   ////////////////////////////////////////////////////////////
-		  if (caballonegro2.position.x===bloquerojo.position.x && caballonegro2.position.z===bloquerojo.position.z){
-		    var bvcn2 = bloqueverde;
+		  if (caballonegro2.position.x===posicioninicial.position.x && caballonegro2.position.z===posicioninicial.position.z){
+		    var bvcn2 = seleccion;
 		    CaballoNegro.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bvcn2,true);
@@ -3459,8 +3459,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballonegro2.position.x==reinanegra.position.x && caballonegro2.position.z==reinanegra.position.z))&&
 				(caballonegro2.position.y==4.5)){
 				alert("Movimiento inválido (No se puede atacar piezas amigas)”);
-				caballonegro2.position.x=bloquerojo.position.x;caballonegro2.position.z=bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
+				caballonegro2.position.x=posicioninicial.position.x;caballonegro2.position.z=posicioninicial.position.z;
+				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if caballonegro2
@@ -3471,289 +3471,289 @@ BloqueAzul.prototype.act = function(environment){
 ////////////////////////////////////////////      MOVIMIENTOS FICHAS    ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		else{
-		   escena.remove(bloquerojo);
-		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
-		   escena.add(bloquerojo);
+		   escena.remove(posicioninicial);
+		   posicioninicial = new BloqueRojo(cursor.position.x,0,cursor.position.z);
+		   escena.add(posicioninicial);
 		   //////////////////////////////////////Torres////////////////////////////////////////////////////////////////////
-		   if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
-		         (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
-		         (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
-		         (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
+		   if ((((torreblanca1.position.x===posicioninicial.position.x && torreblanca1.position.z===posicioninicial.position.z)||
+		         (torreblanca2.position.x===posicioninicial.position.x && torreblanca2.position.z===posicioninicial.position.z))||
+		         (torrenegra1.position.x===posicioninicial.position.x && torrenegra1.position.z===posicioninicial.position.z))||
+		         (torrenegra2.position.x===posicioninicial.position.x && torrenegra2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x,0,-i*10);
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(i*10,0,posicioninicial.position.z);
+		       grupomorado.add(ayuda);
 		     }	
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
-		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
-			     (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z))||
-			     (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z))||
-			     (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z))||
-			     (peonblanco5.position.x===bloquerojo.position.x && peonblanco5.position.z===bloquerojo.position.z))||
-			     (peonblanco6.position.x===bloquerojo.position.x && peonblanco6.position.z===bloquerojo.position.z))||
-			     (peonblanco7.position.x===bloquerojo.position.x && peonblanco7.position.z===bloquerojo.position.z))||
-		             (peonblanco8.position.x===bloquerojo.position.x && peonblanco8.position.z===bloquerojo.position.z)){
+		   if ((((((((peonblanco1.position.x===posicioninicial.position.x && peonblanco1.position.z===posicioninicial.position.z)||
+			     (peonblanco2.position.x===posicioninicial.position.x && peonblanco2.position.z===posicioninicial.position.z))||
+			     (peonblanco3.position.x===posicioninicial.position.x && peonblanco3.position.z===posicioninicial.position.z))||
+			     (peonblanco4.position.x===posicioninicial.position.x && peonblanco4.position.z===posicioninicial.position.z))||
+			     (peonblanco5.position.x===posicioninicial.position.x && peonblanco5.position.z===posicioninicial.position.z))||
+			     (peonblanco6.position.x===posicioninicial.position.x && peonblanco6.position.z===posicioninicial.position.z))||
+			     (peonblanco7.position.x===posicioninicial.position.x && peonblanco7.position.z===posicioninicial.position.z))||
+		             (peonblanco8.position.x===posicioninicial.position.x && peonblanco8.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
-		     if (bloquemorado.position.x>80){
-			bloquemorado.visible=false;
+		     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z);
+		     if (ayuda.position.x>80){
+			ayuda.visible=false;
 		     }
-		     grupomorado.add(bloquemorado);
-		     if ((((((((((((((((peonnegro1.position.x===bloquerojo.position.x+10 && peonnegro1.position.z===bloquerojo.position.z-10)||
-			     (peonnegro2.position.x===bloquerojo.position.x+10 && peonnegro2.position.z===bloquerojo.position.z-10))||
-			     (peonnegro3.position.x===bloquerojo.position.x+10 && peonnegro3.position.z===bloquerojo.position.z-10))||
-			     (peonnegro4.position.x===bloquerojo.position.x+10 && peonnegro4.position.z===bloquerojo.position.z-10))||
-			     (peonnegro5.position.x===bloquerojo.position.x+10 && peonnegro5.position.z===bloquerojo.position.z-10))||
-			     (peonnegro6.position.x===bloquerojo.position.x+10 && peonnegro6.position.z===bloquerojo.position.z-10))||
-			     (peonnegro7.position.x===bloquerojo.position.x+10 && peonnegro7.position.z===bloquerojo.position.z-10))||
-		             (peonnegro8.position.x===bloquerojo.position.x+10 && peonnegro8.position.z===bloquerojo.position.z-10))||
-			     (torrenegra1.position.x===bloquerojo.position.x+10 && torrenegra1.position.z===bloquerojo.position.z-10))||
-		             (torrenegra2.position.x===bloquerojo.position.x+10 && torrenegra2.position.z===bloquerojo.position.z-10))||
-		             (caballonegro1.position.x===bloquerojo.position.x+10 && caballonegro1.position.z===bloquerojo.position.z-10))||
-		             (caballonegro2.position.x===bloquerojo.position.x+10 && caballonegro2.position.z===bloquerojo.position.z-10))||
-		             (alfilnegro1.position.x===bloquerojo.position.x+10 && alfilnegro1.position.z===bloquerojo.position.z-10))||
-		             (alfilnegro2.position.x===bloquerojo.position.x+10 && alfilnegro2.position.z===bloquerojo.position.z-10))||
-		             (reinanegra.position.x===bloquerojo.position.x+10 && reinanegra.position.z===bloquerojo.position.z-10))||
-		             (reynegro.position.x===bloquerojo.position.x+10 && reynegro.position.z===bloquerojo.position.z-10)){
-			     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-10);
-		     	     if (bloquemorado.position.x>80){
-				bloquemorado.visible=false;
+		     grupomorado.add(ayuda);
+		     if ((((((((((((((((peonnegro1.position.x===posicioninicial.position.x+10 && peonnegro1.position.z===posicioninicial.position.z-10)||
+			     (peonnegro2.position.x===posicioninicial.position.x+10 && peonnegro2.position.z===posicioninicial.position.z-10))||
+			     (peonnegro3.position.x===posicioninicial.position.x+10 && peonnegro3.position.z===posicioninicial.position.z-10))||
+			     (peonnegro4.position.x===posicioninicial.position.x+10 && peonnegro4.position.z===posicioninicial.position.z-10))||
+			     (peonnegro5.position.x===posicioninicial.position.x+10 && peonnegro5.position.z===posicioninicial.position.z-10))||
+			     (peonnegro6.position.x===posicioninicial.position.x+10 && peonnegro6.position.z===posicioninicial.position.z-10))||
+			     (peonnegro7.position.x===posicioninicial.position.x+10 && peonnegro7.position.z===posicioninicial.position.z-10))||
+		             (peonnegro8.position.x===posicioninicial.position.x+10 && peonnegro8.position.z===posicioninicial.position.z-10))||
+			     (torrenegra1.position.x===posicioninicial.position.x+10 && torrenegra1.position.z===posicioninicial.position.z-10))||
+		             (torrenegra2.position.x===posicioninicial.position.x+10 && torrenegra2.position.z===posicioninicial.position.z-10))||
+		             (caballonegro1.position.x===posicioninicial.position.x+10 && caballonegro1.position.z===posicioninicial.position.z-10))||
+		             (caballonegro2.position.x===posicioninicial.position.x+10 && caballonegro2.position.z===posicioninicial.position.z-10))||
+		             (alfilnegro1.position.x===posicioninicial.position.x+10 && alfilnegro1.position.z===posicioninicial.position.z-10))||
+		             (alfilnegro2.position.x===posicioninicial.position.x+10 && alfilnegro2.position.z===posicioninicial.position.z-10))||
+		             (reinanegra.position.x===posicioninicial.position.x+10 && reinanegra.position.z===posicioninicial.position.z-10))||
+		             (reynegro.position.x===posicioninicial.position.x+10 && reynegro.position.z===posicioninicial.position.z-10)){
+			     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-10);
+		     	     if (ayuda.position.x>80){
+				ayuda.visible=false;
 		     	     }
-		     	     grupomorado.add(bloquemorado);
+		     	     grupomorado.add(ayuda);
 		     }
-		     if ((((((((((((((((peonnegro1.position.x===bloquerojo.position.x+10 && peonnegro1.position.z===bloquerojo.position.z+10)||
-			     (peonnegro2.position.x===bloquerojo.position.x+10 && peonnegro2.position.z===bloquerojo.position.z+10))||
-			     (peonnegro3.position.x===bloquerojo.position.x+10 && peonnegro3.position.z===bloquerojo.position.z+10))||
-			     (peonnegro4.position.x===bloquerojo.position.x+10 && peonnegro4.position.z===bloquerojo.position.z+10))||
-			     (peonnegro5.position.x===bloquerojo.position.x+10 && peonnegro5.position.z===bloquerojo.position.z+10))||
-			     (peonnegro6.position.x===bloquerojo.position.x+10 && peonnegro6.position.z===bloquerojo.position.z+10))||
-			     (peonnegro7.position.x===bloquerojo.position.x+10 && peonnegro7.position.z===bloquerojo.position.z+10))||
-		             (peonnegro8.position.x===bloquerojo.position.x+10 && peonnegro8.position.z===bloquerojo.position.z+10))||
-			     (torrenegra1.position.x===bloquerojo.position.x+10 && torrenegra1.position.z===bloquerojo.position.z+10))||
-		             (torrenegra2.position.x===bloquerojo.position.x+10 && torrenegra2.position.z===bloquerojo.position.z+10))||
-		             (caballonegro1.position.x===bloquerojo.position.x+10 && caballonegro1.position.z===bloquerojo.position.z+10))||
-		             (caballonegro2.position.x===bloquerojo.position.x+10 && caballonegro2.position.z===bloquerojo.position.z+10))||
-		             (alfilnegro1.position.x===bloquerojo.position.x+10 && alfilnegro1.position.z===bloquerojo.position.z+10))||
-		             (alfilnegro2.position.x===bloquerojo.position.x+10 && alfilnegro2.position.z===bloquerojo.position.z+10))||
-		             (reinanegra.position.x===bloquerojo.position.x+10 && reinanegra.position.z===bloquerojo.position.z+10))||
-		             (reynegro.position.x===bloquerojo.position.x+10 && reynegro.position.z===bloquerojo.position.z+10)){
-			     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+10);
-		     	     if (bloquemorado.position.x>80){
-				bloquemorado.visible=false;
+		     if ((((((((((((((((peonnegro1.position.x===posicioninicial.position.x+10 && peonnegro1.position.z===posicioninicial.position.z+10)||
+			     (peonnegro2.position.x===posicioninicial.position.x+10 && peonnegro2.position.z===posicioninicial.position.z+10))||
+			     (peonnegro3.position.x===posicioninicial.position.x+10 && peonnegro3.position.z===posicioninicial.position.z+10))||
+			     (peonnegro4.position.x===posicioninicial.position.x+10 && peonnegro4.position.z===posicioninicial.position.z+10))||
+			     (peonnegro5.position.x===posicioninicial.position.x+10 && peonnegro5.position.z===posicioninicial.position.z+10))||
+			     (peonnegro6.position.x===posicioninicial.position.x+10 && peonnegro6.position.z===posicioninicial.position.z+10))||
+			     (peonnegro7.position.x===posicioninicial.position.x+10 && peonnegro7.position.z===posicioninicial.position.z+10))||
+		             (peonnegro8.position.x===posicioninicial.position.x+10 && peonnegro8.position.z===posicioninicial.position.z+10))||
+			     (torrenegra1.position.x===posicioninicial.position.x+10 && torrenegra1.position.z===posicioninicial.position.z+10))||
+		             (torrenegra2.position.x===posicioninicial.position.x+10 && torrenegra2.position.z===posicioninicial.position.z+10))||
+		             (caballonegro1.position.x===posicioninicial.position.x+10 && caballonegro1.position.z===posicioninicial.position.z+10))||
+		             (caballonegro2.position.x===posicioninicial.position.x+10 && caballonegro2.position.z===posicioninicial.position.z+10))||
+		             (alfilnegro1.position.x===posicioninicial.position.x+10 && alfilnegro1.position.z===posicioninicial.position.z+10))||
+		             (alfilnegro2.position.x===posicioninicial.position.x+10 && alfilnegro2.position.z===posicioninicial.position.z+10))||
+		             (reinanegra.position.x===posicioninicial.position.x+10 && reinanegra.position.z===posicioninicial.position.z+10))||
+		             (reynegro.position.x===posicioninicial.position.x+10 && reynegro.position.z===posicioninicial.position.z+10)){
+			     ayuda = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+10);
+		     	     if (ayuda.position.x>80){
+				ayuda.visible=false;
 		     	     }
-		     	     grupomorado.add(bloquemorado);
+		     	     grupomorado.add(ayuda);
 		     }
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Peones blancos
-		   if ((((((((peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z)||
-			     (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z))||
-			     (peonnegro3.position.x===bloquerojo.position.x && peonnegro3.position.z===bloquerojo.position.z))||
-			     (peonnegro4.position.x===bloquerojo.position.x && peonnegro4.position.z===bloquerojo.position.z))||
-			     (peonnegro5.position.x===bloquerojo.position.x && peonnegro5.position.z===bloquerojo.position.z))||
-			     (peonnegro6.position.x===bloquerojo.position.x && peonnegro6.position.z===bloquerojo.position.z))||
-			     (peonnegro7.position.x===bloquerojo.position.x && peonnegro7.position.z===bloquerojo.position.z))||
-		             (peonnegro8.position.x===bloquerojo.position.x && peonnegro8.position.z===bloquerojo.position.z)){
+		   if ((((((((peonnegro1.position.x===posicioninicial.position.x && peonnegro1.position.z===posicioninicial.position.z)||
+			     (peonnegro2.position.x===posicioninicial.position.x && peonnegro2.position.z===posicioninicial.position.z))||
+			     (peonnegro3.position.x===posicioninicial.position.x && peonnegro3.position.z===posicioninicial.position.z))||
+			     (peonnegro4.position.x===posicioninicial.position.x && peonnegro4.position.z===posicioninicial.position.z))||
+			     (peonnegro5.position.x===posicioninicial.position.x && peonnegro5.position.z===posicioninicial.position.z))||
+			     (peonnegro6.position.x===posicioninicial.position.x && peonnegro6.position.z===posicioninicial.position.z))||
+			     (peonnegro7.position.x===posicioninicial.position.x && peonnegro7.position.z===posicioninicial.position.z))||
+		             (peonnegro8.position.x===posicioninicial.position.x && peonnegro8.position.z===posicioninicial.position.z)){
 		         grupomorado = new THREE.Group();
-		         bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);
-		     if (bloquemorado.position.x<10){
-			bloquemorado.visible=false;
+		         ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z);
+		     if (ayuda.position.x<10){
+			ayuda.visible=false;
 		     }
-		     grupomorado.add(bloquemorado);
-		     if (((((((((((((((peonblanco1.position.x===bloquerojo.position.x-10 && peonblanco1.position.z===bloquerojo.position.z-10)||
-			     (peonblanco2.position.x===bloquerojo.position.x-10 && peonblanco2.position.z===bloquerojo.position.z-10))||
-			     (peonblanco3.position.x===bloquerojo.position.x-10 && peonblanco3.position.z===bloquerojo.position.z-10))||
-			     (peonblanco4.position.x===bloquerojo.position.x-10 && peonblanco4.position.z===bloquerojo.position.z-10))||
-			     (peonblanco5.position.x===bloquerojo.position.x-10 && peonblanco5.position.z===bloquerojo.position.z-10))||
-			     (peonblanco6.position.x===bloquerojo.position.x-10 && peonblanco6.position.z===bloquerojo.position.z-10))||
-			     (peonblanco7.position.x===bloquerojo.position.x-10 && peonblanco7.position.z===bloquerojo.position.z-10))||
-		             (peonblanco8.position.x===bloquerojo.position.x-10 && peonblanco8.position.z===bloquerojo.position.z-10))||
- 			     (torreblanca1.position.x===bloquerojo.position.x-10 && torreblanca1.position.z===bloquerojo.position.z-10)||
-			     (torreblanca2.position.x===bloquerojo.position.x-10 && torreblanca2.position.z===bloquerojo.position.z-10))||
-			     (caballoblanco1.position.x===bloquerojo.position.x-10 && caballoblanco1.position.z===bloquerojo.position.z-10))||
-			     (caballoblanco2.position.x===bloquerojo.position.x-10 && caballoblanco2.position.z===bloquerojo.position.z-10))||
-			     (alfilblanco1.position.x===bloquerojo.position.x-10 && alfilblanco1.position.z===bloquerojo.position.z-10))||
-			     (alfilblanco2.position.x===bloquerojo.position.x-10 && alfilblanco2.position.z===bloquerojo.position.z-10))||
-			     (reinablanca.position.x===bloquerojo.position.x-10 && reinablanca.position.z===bloquerojo.position.z-10))||
-		             (reyblanco.position.x===bloquerojo.position.x-10 && reyblanco.position.z===bloquerojo.position.z-10)){
-			     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-10);
-		     	     if (bloquemorado.position.x<10){
-				bloquemorado.visible=false;
+		     grupomorado.add(ayuda);
+		     if (((((((((((((((peonblanco1.position.x===posicioninicial.position.x-10 && peonblanco1.position.z===posicioninicial.position.z-10)||
+			     (peonblanco2.position.x===posicioninicial.position.x-10 && peonblanco2.position.z===posicioninicial.position.z-10))||
+			     (peonblanco3.position.x===posicioninicial.position.x-10 && peonblanco3.position.z===posicioninicial.position.z-10))||
+			     (peonblanco4.position.x===posicioninicial.position.x-10 && peonblanco4.position.z===posicioninicial.position.z-10))||
+			     (peonblanco5.position.x===posicioninicial.position.x-10 && peonblanco5.position.z===posicioninicial.position.z-10))||
+			     (peonblanco6.position.x===posicioninicial.position.x-10 && peonblanco6.position.z===posicioninicial.position.z-10))||
+			     (peonblanco7.position.x===posicioninicial.position.x-10 && peonblanco7.position.z===posicioninicial.position.z-10))||
+		             (peonblanco8.position.x===posicioninicial.position.x-10 && peonblanco8.position.z===posicioninicial.position.z-10))||
+ 			     (torreblanca1.position.x===posicioninicial.position.x-10 && torreblanca1.position.z===posicioninicial.position.z-10)||
+			     (torreblanca2.position.x===posicioninicial.position.x-10 && torreblanca2.position.z===posicioninicial.position.z-10))||
+			     (caballoblanco1.position.x===posicioninicial.position.x-10 && caballoblanco1.position.z===posicioninicial.position.z-10))||
+			     (caballoblanco2.position.x===posicioninicial.position.x-10 && caballoblanco2.position.z===posicioninicial.position.z-10))||
+			     (alfilblanco1.position.x===posicioninicial.position.x-10 && alfilblanco1.position.z===posicioninicial.position.z-10))||
+			     (alfilblanco2.position.x===posicioninicial.position.x-10 && alfilblanco2.position.z===posicioninicial.position.z-10))||
+			     (reinablanca.position.x===posicioninicial.position.x-10 && reinablanca.position.z===posicioninicial.position.z-10))||
+		             (reyblanco.position.x===posicioninicial.position.x-10 && reyblanco.position.z===posicioninicial.position.z-10)){
+			     ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-10);
+		     	     if (ayuda.position.x<10){
+				ayuda.visible=false;
 		     	     }
-		     	     grupomorado.add(bloquemorado);
+		     	     grupomorado.add(ayuda);
 		     }
-		     if (((((((((((((((peonblanco1.position.x===bloquerojo.position.x-10 && peonblanco1.position.z===bloquerojo.position.z+10)||
-			     (peonblanco2.position.x===bloquerojo.position.x-10 && peonblanco2.position.z===bloquerojo.position.z+10))||
-			     (peonblanco3.position.x===bloquerojo.position.x-10 && peonblanco3.position.z===bloquerojo.position.z+10))||
-			     (peonblanco4.position.x===bloquerojo.position.x-10 && peonblanco4.position.z===bloquerojo.position.z+10))||
-			     (peonblanco5.position.x===bloquerojo.position.x-10 && peonblanco5.position.z===bloquerojo.position.z+10))||
-			     (peonblanco6.position.x===bloquerojo.position.x-10 && peonblanco6.position.z===bloquerojo.position.z+10))||
-			     (peonblanco7.position.x===bloquerojo.position.x-10 && peonblanco7.position.z===bloquerojo.position.z+10))||
-		             (peonblanco8.position.x===bloquerojo.position.x-10 && peonblanco8.position.z===bloquerojo.position.z+10))||
- 			     (torreblanca1.position.x===bloquerojo.position.x-10 && torreblanca1.position.z===bloquerojo.position.z+10)||
-			     (torreblanca2.position.x===bloquerojo.position.x-10 && torreblanca2.position.z===bloquerojo.position.z+10))||
-			     (caballoblanco1.position.x===bloquerojo.position.x-10 && caballoblanco1.position.z===bloquerojo.position.z+10))||
-			     (caballoblanco2.position.x===bloquerojo.position.x-10 && caballoblanco2.position.z===bloquerojo.position.z+10))||
-			     (alfilblanco1.position.x===bloquerojo.position.x-10 && alfilblanco1.position.z===bloquerojo.position.z+10))||
-			     (alfilblanco2.position.x===bloquerojo.position.x-10 && alfilblanco2.position.z===bloquerojo.position.z+10))||
-			     (reinablanca.position.x===bloquerojo.position.x-10 && reinablanca.position.z===bloquerojo.position.z+10))||
-		             (reyblanco.position.x===bloquerojo.position.x-10 && reyblanco.position.z===bloquerojo.position.z+10)){
-			     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+10);
-		     	     if (bloquemorado.position.x<10){
-				bloquemorado.visible=false;
+		     if (((((((((((((((peonblanco1.position.x===posicioninicial.position.x-10 && peonblanco1.position.z===posicioninicial.position.z+10)||
+			     (peonblanco2.position.x===posicioninicial.position.x-10 && peonblanco2.position.z===posicioninicial.position.z+10))||
+			     (peonblanco3.position.x===posicioninicial.position.x-10 && peonblanco3.position.z===posicioninicial.position.z+10))||
+			     (peonblanco4.position.x===posicioninicial.position.x-10 && peonblanco4.position.z===posicioninicial.position.z+10))||
+			     (peonblanco5.position.x===posicioninicial.position.x-10 && peonblanco5.position.z===posicioninicial.position.z+10))||
+			     (peonblanco6.position.x===posicioninicial.position.x-10 && peonblanco6.position.z===posicioninicial.position.z+10))||
+			     (peonblanco7.position.x===posicioninicial.position.x-10 && peonblanco7.position.z===posicioninicial.position.z+10))||
+		             (peonblanco8.position.x===posicioninicial.position.x-10 && peonblanco8.position.z===posicioninicial.position.z+10))||
+ 			     (torreblanca1.position.x===posicioninicial.position.x-10 && torreblanca1.position.z===posicioninicial.position.z+10)||
+			     (torreblanca2.position.x===posicioninicial.position.x-10 && torreblanca2.position.z===posicioninicial.position.z+10))||
+			     (caballoblanco1.position.x===posicioninicial.position.x-10 && caballoblanco1.position.z===posicioninicial.position.z+10))||
+			     (caballoblanco2.position.x===posicioninicial.position.x-10 && caballoblanco2.position.z===posicioninicial.position.z+10))||
+			     (alfilblanco1.position.x===posicioninicial.position.x-10 && alfilblanco1.position.z===posicioninicial.position.z+10))||
+			     (alfilblanco2.position.x===posicioninicial.position.x-10 && alfilblanco2.position.z===posicioninicial.position.z+10))||
+			     (reinablanca.position.x===posicioninicial.position.x-10 && reinablanca.position.z===posicioninicial.position.z+10))||
+		             (reyblanco.position.x===posicioninicial.position.x-10 && reyblanco.position.z===posicioninicial.position.z+10)){
+			     ayuda = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+10);
+		     	     if (ayuda.position.x<10){
+				ayuda.visible=false;
 		     	     }
-		     	     grupomorado.add(bloquemorado);
+		     	     grupomorado.add(ayuda);
 		     }  
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Peones negros
 		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////
-		   if ((((alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z)||
-		         (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z))||
-		         (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z))||
-		         (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z)){
+		   if ((((alfilblanco1.position.x===posicioninicial.position.x && alfilblanco1.position.z===posicioninicial.position.z)||
+		         (alfilblanco2.position.x===posicioninicial.position.x && alfilblanco2.position.z===posicioninicial.position.z))||
+		         (alfilnegro1.position.x===posicioninicial.position.x && alfilnegro1.position.z===posicioninicial.position.z))||
+		         (alfilnegro2.position.x===posicioninicial.position.x && alfilnegro2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z-(i*10));
+		       if (ayuda.position.x>80 || ayuda.position.z<-80){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x<10 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z-(i*10));
+		       if (ayuda.position.x<10 || ayuda.position.z<-80){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }	
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z+(i*10));
-		       if (bloquemorado.position.x>80 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z+(i*10));
+		       if (ayuda.position.x>80 || ayuda.position.z>-10){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z+(i*10));
-		       if (bloquemorado.position.x<10 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z+(i*10));
+		       if (ayuda.position.x<10 || ayuda.position.z>-10){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }	
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Alfiles
 		//////////////////////////////////////////////Reinas////////////////////////////////////////////////////////////
-		   if ((reinablanca.position.x===bloquerojo.position.x && reinablanca.position.z===bloquerojo.position.z)||
-		       (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z)){
+		   if ((reinablanca.position.x===posicioninicial.position.x && reinablanca.position.z===posicioninicial.position.z)||
+		       (reinanegra.position.x===posicioninicial.position.x && reinanegra.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x,0,-i*10);
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(i*10,0,posicioninicial.position.z);
+		       grupomorado.add(ayuda);
 		     }	
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z-(i*10));
+		       if (ayuda.position.x>80 || ayuda.position.z<-80){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x<10 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z-(i*10));
+		       if (ayuda.position.x<10 || ayuda.position.z<-80){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }	
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z+(i*10));
-		       if (bloquemorado.position.x>80 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x+(i*10),0,posicioninicial.position.z+(i*10));
+		       if (ayuda.position.x>80 || ayuda.position.z>-10){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }
 		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z+(i*10));
-		       if (bloquemorado.position.x<10 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
+		       ayuda = new Ayuda(posicioninicial.position.x-(i*10),0,posicioninicial.position.z+(i*10));
+		       if (ayuda.position.x<10 || ayuda.position.z>-10){ayuda.visible=false;}
+		       grupomorado.add(ayuda);
 		     }	
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Reinas
 		//////////////////////////////////////////////Reyes////////////////////////////////////////////////////////////
-		   if ((reyblanco.position.x===bloquerojo.position.x && reyblanco.position.z===bloquerojo.position.z)||
-		       (reynegro.position.x===bloquerojo.position.x && reynegro.position.z===bloquerojo.position.z)){
+		   if ((reyblanco.position.x===posicioninicial.position.x && reyblanco.position.z===posicioninicial.position.z)||
+		       (reynegro.position.x===posicioninicial.position.x && reynegro.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-		     bloquemorado1 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-10);//Noreste
-		     if (bloquemorado1.position.x>80 || bloquemorado1.position.z<-80){bloquemorado1.visible=false;}
-		     grupomorado.add(bloquemorado1);
-	             bloquemorado2 = new BloqueMorado(bloquerojo.position.x,0,bloquerojo.position.z-10);//Norte
-		     if (bloquemorado2.position.z<-80){bloquemorado2.visible=false;}
-		     grupomorado.add(bloquemorado2);
-		     bloquemorado3 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-10);//Noroeste
-		     if (bloquemorado3.position.x<10 || bloquemorado3.position.z<-80){bloquemorado3.visible=false;}
-		     grupomorado.add(bloquemorado3);
-	             bloquemorado4 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);//Este
-		     if (bloquemorado4.position.x<10){bloquemorado4.visible=false;}
-		     grupomorado.add(bloquemorado4);
-		     bloquemorado5 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+10);//Sureste
-		     if (bloquemorado5.position.x<10 || bloquemorado5.position.z>-10){bloquemorado5.visible=false;}
-		     grupomorado.add(bloquemorado5);
-	             bloquemorado6 = new BloqueMorado(bloquerojo.position.x,0,bloquerojo.position.z+10);//Sur
-		     if (bloquemorado6.position.z>-10){bloquemorado6.visible=false;}
-		     grupomorado.add(bloquemorado6);   
-		     bloquemorado7 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+10);//Suroeste
-		     if (bloquemorado7.position.x>80 || bloquemorado7.position.z>-10){bloquemorado7.visible=false;}
-		     grupomorado.add(bloquemorado7);
-	             bloquemorado8 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);//Oeste
-		     if (bloquemorado8.position.x>80){bloquemorado8.visible=false;}
-		     grupomorado.add(bloquemorado8); 
+		     ayuda1 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-10);//Noreste
+		     if (ayuda1.position.x>80 || ayuda1.position.z<-80){ayuda1.visible=false;}
+		     grupomorado.add(ayuda1);
+	             ayuda2 = new Ayuda(posicioninicial.position.x,0,posicioninicial.position.z-10);//Norte
+		     if (ayuda2.position.z<-80){ayuda2.visible=false;}
+		     grupomorado.add(ayuda2);
+		     ayuda3 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-10);//Noroeste
+		     if (ayuda3.position.x<10 || ayuda3.position.z<-80){ayuda3.visible=false;}
+		     grupomorado.add(ayuda3);
+	             ayuda4 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z);//Este
+		     if (ayuda4.position.x<10){ayuda4.visible=false;}
+		     grupomorado.add(ayuda4);
+		     ayuda5 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+10);//Sureste
+		     if (ayuda5.position.x<10 || ayuda5.position.z>-10){ayuda5.visible=false;}
+		     grupomorado.add(ayuda5);
+	             ayuda6 = new Ayuda(posicioninicial.position.x,0,posicioninicial.position.z+10);//Sur
+		     if (ayuda6.position.z>-10){ayuda6.visible=false;}
+		     grupomorado.add(ayuda6);   
+		     ayuda7 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+10);//Suroeste
+		     if (ayuda7.position.x>80 || ayuda7.position.z>-10){ayuda7.visible=false;}
+		     grupomorado.add(ayuda7);
+	             ayuda8 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z);//Oeste
+		     if (ayuda8.position.x>80){ayuda8.visible=false;}
+		     grupomorado.add(ayuda8); 
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Reyes
 		//////////////////////////////////////////////Caballos////////////////////////////////////////////////////////////
-		   if ((((caballoblanco1.position.x===bloquerojo.position.x && caballoblanco1.position.z===bloquerojo.position.z)||
-		         (caballoblanco2.position.x===bloquerojo.position.x && caballoblanco2.position.z===bloquerojo.position.z))||
-		         (caballonegro1.position.x===bloquerojo.position.x && caballonegro1.position.z===bloquerojo.position.z))||
-		         (caballonegro2.position.x===bloquerojo.position.x && caballonegro2.position.z===bloquerojo.position.z)){
+		   if ((((caballoblanco1.position.x===posicioninicial.position.x && caballoblanco1.position.z===posicioninicial.position.z)||
+		         (caballoblanco2.position.x===posicioninicial.position.x && caballoblanco2.position.z===posicioninicial.position.z))||
+		         (caballonegro1.position.x===posicioninicial.position.x && caballonegro1.position.z===posicioninicial.position.z))||
+		         (caballonegro2.position.x===posicioninicial.position.x && caballonegro2.position.z===posicioninicial.position.z)){
 		     grupomorado = new THREE.Group();
-                     bloquemorado1 = new BloqueMorado(bloquerojo.position.x+20,0,bloquerojo.position.z-10);//Noreste
-		     if (bloquemorado1.position.x>80 || bloquemorado1.position.z<-80){bloquemorado1.visible=false;}
-		     grupomorado.add(bloquemorado1);
-	             bloquemorado2 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-20);//Noreste
-		     if (bloquemorado2.position.x>80 || bloquemorado2.position.z<-80){bloquemorado2.visible=false;}
-		     grupomorado.add(bloquemorado2);
-		     bloquemorado3 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-20);//Noroeste
-		     if (bloquemorado3.position.x<10 || bloquemorado3.position.z<-80){bloquemorado3.visible=false;}
-		     grupomorado.add(bloquemorado3);
-	             bloquemorado4 = new BloqueMorado(bloquerojo.position.x-20,0,bloquerojo.position.z-10);//Noroeste
-		     if (bloquemorado4.position.x<10 || bloquemorado4.position.z<-80){bloquemorado4.visible=false;}
-		     grupomorado.add(bloquemorado4);
-		     bloquemorado5 = new BloqueMorado(bloquerojo.position.x-20,0,bloquerojo.position.z+10);//Sureste
-		     if (bloquemorado5.position.x<10 || bloquemorado5.position.z>-10){bloquemorado5.visible=false;}
-		     grupomorado.add(bloquemorado5);
-	             bloquemorado6 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+20);//Sureste
-		     if (bloquemorado6.position.x<10 || bloquemorado6.position.z>-10){bloquemorado6.visible=false;}
-		     grupomorado.add(bloquemorado6);   
-		     bloquemorado7 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+20);//Suroeste
-		     if (bloquemorado7.position.x>80 || bloquemorado7.position.z>-10){bloquemorado7.visible=false;}
-		     grupomorado.add(bloquemorado7);
-	             bloquemorado8 = new BloqueMorado(bloquerojo.position.x+20,0,bloquerojo.position.z+10);//Suroeste
-		     if (bloquemorado8.position.x>80 || bloquemorado8.position.z>-10){bloquemorado8.visible=false;}
-		     grupomorado.add(bloquemorado8);  
+                     ayuda1 = new Ayuda(posicioninicial.position.x+20,0,posicioninicial.position.z-10);//Noreste
+		     if (ayuda1.position.x>80 || ayuda1.position.z<-80){ayuda1.visible=false;}
+		     grupomorado.add(ayuda1);
+	             ayuda2 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z-20);//Noreste
+		     if (ayuda2.position.x>80 || ayuda2.position.z<-80){ayuda2.visible=false;}
+		     grupomorado.add(ayuda2);
+		     ayuda3 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z-20);//Noroeste
+		     if (ayuda3.position.x<10 || ayuda3.position.z<-80){ayuda3.visible=false;}
+		     grupomorado.add(ayuda3);
+	             ayuda4 = new Ayuda(posicioninicial.position.x-20,0,posicioninicial.position.z-10);//Noroeste
+		     if (ayuda4.position.x<10 || ayuda4.position.z<-80){ayuda4.visible=false;}
+		     grupomorado.add(ayuda4);
+		     ayuda5 = new Ayuda(posicioninicial.position.x-20,0,posicioninicial.position.z+10);//Sureste
+		     if (ayuda5.position.x<10 || ayuda5.position.z>-10){ayuda5.visible=false;}
+		     grupomorado.add(ayuda5);
+	             ayuda6 = new Ayuda(posicioninicial.position.x-10,0,posicioninicial.position.z+20);//Sureste
+		     if (ayuda6.position.x<10 || ayuda6.position.z>-10){ayuda6.visible=false;}
+		     grupomorado.add(ayuda6);   
+		     ayuda7 = new Ayuda(posicioninicial.position.x+10,0,posicioninicial.position.z+20);//Suroeste
+		     if (ayuda7.position.x>80 || ayuda7.position.z>-10){ayuda7.visible=false;}
+		     grupomorado.add(ayuda7);
+	             ayuda8 = new Ayuda(posicioninicial.position.x+20,0,posicioninicial.position.z+10);//Suroeste
+		     if (ayuda8.position.x>80 || ayuda8.position.z>-10){ayuda8.visible=false;}
+		     grupomorado.add(ayuda8);  
 		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+	             seleccion = new Seleccion(posicioninicial.position.x,0,posicioninicial.position.z);
+		     escena.add(seleccion);
 		     bandera=1;
 		   }//fin if Caballos
 		}//fin else
@@ -3762,7 +3762,7 @@ BloqueAzul.prototype.act = function(environment){
     }//fin function desplazar
 }//fin Prototype 
 
-////////////////////////////////////Bloque Rojo///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////Posición Inicial///////////////////////////////////////////////////////////////////////////////////////
 function BloqueRojo(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzroja =  new THREE.MeshLambertMaterial({color: 0xff0000});
@@ -3773,8 +3773,8 @@ function BloqueRojo(x=0,y=0,z=0){
 }
 	    
 BloqueRojo.prototype = new Agent();
-///////////////////////////////////Bloque Morado//////////////////////////////////////////////////////////////////////////////////////	    
-function BloqueMorado(x=0,y=0,z=0){
+///////////////////////////////////Ayuda//////////////////////////////////////////////////////////////////////////////////////	    
+function Ayuda(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzmorada = new THREE.MeshLambertMaterial({color: 0xff0000});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
@@ -3783,9 +3783,9 @@ function BloqueMorado(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-BloqueMorado.prototype = new Agent();
-///////////////////////////////////////Bloque verde//////////////////////////////////////////////////////////////////////////////
-function BloqueVerde(x=0,y=0,z=0){
+Ayuda.prototype = new Agent();
+///////////////////////////////////////Seleccion//////////////////////////////////////////////////////////////////////////////
+function Seleccion(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var luzverde = new THREE.MeshLambertMaterial({color: 0xffff00});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
@@ -3794,7 +3794,7 @@ function BloqueVerde(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-BloqueVerde.prototype = new Agent();
+Seleccion.prototype = new Agent();
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
 
 init();
@@ -3947,8 +3947,8 @@ function init() {
   escena.add(reyblanco,reynegro);	
 	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
-  bloqueazul = new BloqueAzul(10,0,-10);
-  escena.add(grupo,grupo2,grupo3,bloqueazul);
+  cursor = new Cursor(10,0,-10);
+  escena.add(grupo,grupo2,grupo3,cursor);
   //Luces
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
   escena.rotateX(Math.PI/4);
