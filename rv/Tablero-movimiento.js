@@ -3797,10 +3797,10 @@ function Seleccion(x=0,y=0,z=0){
 Seleccion.prototype = new Agent();
 //////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
 
-init();
+setup();
 loop();
 
-function init() {
+function setup() {
 
   escena = new Environment();	
 	
