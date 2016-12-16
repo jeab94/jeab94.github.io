@@ -204,8 +204,7 @@ AlfilBlanco.prototype = new Agent();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
-  var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
+  var luzazul =  new THREE.MeshLambertMaterial({color: 0x0000ff});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzazul));
   this.position.y=y;
   this.position.z=z;
@@ -3724,8 +3723,7 @@ BloqueAzul.prototype.act = function(environment){
 ////////////////////////////////////Bloque Rojo///////////////////////////////////////////////////////////////////////////////////////
 function BloqueRojo(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
-  var luzroja = new THREE.MeshLambertMaterial({map:texturaluz});
+  var luzroja =  new THREE.MeshLambertMaterial({color: 0xff0000});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzroja));
   this.position.y=y;
   this.position.z=z;
@@ -3736,8 +3734,7 @@ BloqueRojo.prototype = new Agent();
 ///////////////////////////////////Bloque Morado//////////////////////////////////////////////////////////////////////////////////////	    
 function BloqueMorado(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
-  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
+  var luzmorada = new THREE.MeshLambertMaterial({color: 0xff0000});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
   this.position.y=y;
   this.position.z=z;
@@ -3748,8 +3745,7 @@ BloqueMorado.prototype = new Agent();
 ///////////////////////////////////////Bloque verde//////////////////////////////////////////////////////////////////////////////
 function BloqueVerde(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzverde.jpg');
-  var luzverde = new THREE.MeshLambertMaterial({map:texturaluz});
+  var luzverde = new THREE.MeshLambertMaterial({color: 0xffff00});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
   this.position.y=y;
   this.position.z=z;
