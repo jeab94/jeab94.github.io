@@ -3870,7 +3870,7 @@ function setup() {
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
    marco3.translateZ(2.5);
-   marco3.translateX(-45);
+   marco3.translateX(45);
    marco3.receiveShadow = true;
 
    orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
