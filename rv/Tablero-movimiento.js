@@ -3829,66 +3829,66 @@ function init() {
    luzPuntual3.position.x = 50;
    luzPuntual3.position.y = -300;
    luzPuntual3.position.z = -50;
+
+  ///////////////////////////////////////////Tablero////////////////////////////////////////////////////////////////
+   var lado = 10;
+   var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+   cubos = [];
+   var material = Blanco;
+   
+   for (var i=0;i<=7;i++){
+   for (var j=0;j<=7;j++){
+       if ((i+j) % 2 == 0){
+           material= Blanco;
+           }
+       else{
+           material= Gris;
+           }
+       cubo = new THREE.Mesh(forma ,material);
+       cubo.position.x = (j+1)*lado;
+       cubo.position.z = (-i-1)*lado;
+       cubo.position.y = y;
+       cubos.push(cubo)
+
+       }
+   }
+
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
+   var material1 = Marco;
+   marco1 = new THREE.Mesh( orilla1, material1 );
+   marco1.translateZ(-87.5);
+   marco1.translateX(45);
+   marco1.receiveShadow = true;
+
+   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
+   var material2 = Marco;
+   marco2 = new THREE.Mesh( orilla2, material2);
+   marco2.translateZ(-45);
+   marco2.translateX(92.5);
+   marco2.receiveShadow = true;
+
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
+   var material3 = Marco;
+   marco3 = new THREE.Mesh( orilla3, material3);
+   marco3.translateZ(-45);
+   marco3.translateX(2.5);
+   marco3.receiveShadow = true;
+
+   orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
+   var material4 = Marco;
+   marco4 = new THREE.Mesh( orilla4, material4);
+   marco4.translateZ(-2.5);
+   marco4.translateX(45);
+   marco4.receiveShadow = true;
+   
+   //Agregar tablero a  escena
+   escena.add(marco1, marco2, marco3, marco4);
+   
+   for(var q=0; q<=63; q++){
+      cubos[q].receiveShadow = true;
+      escena.add(cubos[q]);
+   }
 	
-  ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
-
-  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
-  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
-  var textura5 = new THREE.TextureLoader().load('madera.jpg');
-  var cerablanco = new THREE.MeshLambertMaterial({map:textura3});
-  var ceranegro = new THREE.MeshLambertMaterial({map:textura4});
-  var madera = new THREE.MeshLambertMaterial({map:textura5});
-  
-  ////////////////////////////////////////////////////Tablero/////////////////////////////////////////////////////////////////////
-  var cubo=new THREE.BoxGeometry(10,10,10);
-  grupo= new THREE.Group();
-  var k=0;
-
-  for (var i=0;i<8;i++){
-    for(var j=0;j<8;j++){
-
-    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
-    else{malla= new THREE.Mesh(cubo,cerablanco);}
-
-    malla.position.x=(j+1)*10;
-    malla.position.z=(-i-1)*10;
-    malla.receiveShadow=true; //Sombras
-    malla.matrixAutoUpdate = false;
-    malla.updateMatrix();
-
-    grupo.add(malla);
-    k++;
-  }
-    k++;
-  }
-
-  //grupo2
-  grupo2= new THREE.Group();
-
-  for(var l=0;l<10;l++){
-    for(var m=0;m<2;m++){
-    malla2= new THREE.Mesh(cubo,madera);
-    if(m==1){malla2.position.z=(-90);}
-    malla2.position.x=(l*10);
-    malla2.receiveShadow=true; //Sombras
-    malla2.matrixAutoUpdate = false;
-    malla2.updateMatrix();
-    grupo2.add(malla2);
-  }}
-
-  //grupo3
-  grupo3= new THREE.Group();
-
-  for(var l=1;l<9;l++){
-    for(var m=0;m<2;m++){
-    malla3= new THREE.Mesh(cubo,madera);
-    if(m==1){malla3.position.x=(90);}
-    malla3.position.z=(-l*10);
-    malla3.matrixAutoUpdate = false;
-    malla3.receiveShadow=true;
-    malla3.updateMatrix();
-    grupo3.add(malla3);
-  }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
   torreblanca1 = new TorreBlanca(10,4.5,-10);
   torreblanca2 = new TorreBlanca(10,4.5,-80);
@@ -3896,6 +3896,7 @@ function init() {
   torrenegra2 = new TorreNegra(80,4.5,-80);
 	
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
+	
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
   peonblanco1 = new PeonBlanco(20,4.5,-10);
   peonblanco2 = new PeonBlanco(20,4.5,-20);
@@ -3917,6 +3918,7 @@ function init() {
 	
   escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
   escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
+	
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
   alfilblanco1 = new AlfilBlanco(10,4.5,-30);
   alfilblanco2 = new AlfilBlanco(10,4.5,-60);
@@ -3924,6 +3926,7 @@ function init() {
   alfilnegro2 = new AlfilNegro(80,4.5,-60);
 	
   escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
+	
   ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
   caballoblanco1 = new CaballoBlanco(10,4.5,-20);
   caballoblanco2 = new CaballoBlanco(10,4.5,-70);
@@ -3931,16 +3934,19 @@ function init() {
   caballonegro2 = new CaballoNegro(80,4.5,-70);
 	
   escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
+	
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
   reinablanca = new ReinaBlanca(10,4.5,-40);
   reinanegra = new ReinaNegra(80,4.5,-40);
 	
   escena.add(reinablanca,reinanegra);
+	
   ///////////////////////////////////////////Reyes////////////////////////////////////////////////////////////////////
   reyblanco = new ReyBlanco(10,4.5,-50);
   reynegro = new ReyNegro(80,4.5,-50);
 	
   escena.add(reyblanco,reynegro);	
+	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
