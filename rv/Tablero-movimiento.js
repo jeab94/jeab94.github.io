@@ -3808,6 +3808,7 @@ function setup() {
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
   camara.position.x=50; 
+  camara.rotateY(Math.PI/2);
 
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
@@ -3953,7 +3954,7 @@ function setup() {
   
   //Luces
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
-  escena.rotateX(Math.PI/2);
+  escena.rotateX(Math.PI/4);
 }
 
 function loop() {
