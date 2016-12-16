@@ -417,7 +417,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (torreblanca1.position.x==caballoblanco2.position.x && torreblanca1.position.z==caballoblanco2.position.z))||
 			   (torreblanca1.position.x==reyblanco.position.x && torreblanca1.position.z==reyblanco.position.z))||
 			   (torreblanca1.position.x==reinablanca.position.x && torreblanca1.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -513,7 +513,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (torreblanca2.position.x==caballoblanco2.position.x && torreblanca2.position.z==caballoblanco2.position.z))||
 			   (torreblanca2.position.x==reyblanco.position.x && torreblanca2.position.z==reyblanco.position.z))||
 			   (torreblanca2.position.x==reinablanca.position.x && torreblanca2.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				torreblanca2.position.x=bloquerojo.position.x;torreblanca2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -609,7 +609,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (torrenegra1.position.x==caballonegro2.position.x && torrenegra1.position.z==caballonegro2.position.z))||
 			   (torrenegra1.position.x==reynegro.position.x && torrenegra1.position.z==reynegro.position.z))||
 			   (torrenegra1.position.x==reinanegra.position.x && torrenegra1.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				torrenegra1.position.x=bloquerojo.position.x;torrenegra1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -705,7 +705,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (torrenegra2.position.x==caballonegro2.position.x && torrenegra2.position.z==caballonegro2.position.z))||
 			   (torrenegra2.position.x==reynegro.position.x && torrenegra2.position.z==reynegro.position.z))||
 			   (torrenegra2.position.x==reinanegra.position.x && torrenegra2.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				torrenegra2.position.x=bloquerojo.position.x;torrenegra2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -806,7 +806,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco1.position.x==caballoblanco2.position.x && peonblanco1.position.z==caballoblanco2.position.z))||
 			   (peonblanco1.position.x==reyblanco.position.x && peonblanco1.position.z==reyblanco.position.z))||
 			   (peonblanco1.position.x==reinablanca.position.x && peonblanco1.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco1.position.x=bloquerojo.position.x;peonblanco1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -903,7 +903,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco2.position.x==caballoblanco2.position.x && peonblanco2.position.z==caballoblanco2.position.z))||
 			   (peonblanco2.position.x==reyblanco.position.x && peonblanco2.position.z==reyblanco.position.z))||
 			   (peonblanco2.position.x==reinablanca.position.x && peonblanco2.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco2.position.x=bloquerojo.position.x;peonblanco2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1000,7 +1000,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco3.position.x==caballoblanco2.position.x && peonblanco3.position.z==caballoblanco2.position.z))||
 			   (peonblanco3.position.x==reyblanco.position.x && peonblanco3.position.z==reyblanco.position.z))||
 			   (peonblanco3.position.x==reinablanca.position.x && peonblanco3.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco3.position.x=bloquerojo.position.x;peonblanco3.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1097,7 +1097,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco4.position.x==caballoblanco2.position.x && peonblanco4.position.z==caballoblanco2.position.z))||
 			   (peonblanco4.position.x==reyblanco.position.x && peonblanco4.position.z==reyblanco.position.z))||
 			   (peonblanco4.position.x==reinablanca.position.x && peonblanco4.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco4.position.x=bloquerojo.position.x;peonblanco4.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1194,7 +1194,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco5.position.x==caballoblanco2.position.x && peonblanco5.position.z==caballoblanco2.position.z))||
 			   (peonblanco5.position.x==reyblanco.position.x && peonblanco5.position.z==reyblanco.position.z))||
 			   (peonblanco5.position.x==reinablanca.position.x && peonblanco5.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco5.position.x=bloquerojo.position.x;peonblanco5.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1291,7 +1291,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco6.position.x==caballoblanco2.position.x && peonblanco6.position.z==caballoblanco2.position.z))||
 			   (peonblanco6.position.x==reyblanco.position.x && peonblanco6.position.z==reyblanco.position.z))||
 			   (peonblanco6.position.x==reinablanca.position.x && peonblanco6.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco6.position.x=bloquerojo.position.x;peonblanco6.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1388,7 +1388,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco7.position.x==caballoblanco2.position.x && peonblanco7.position.z==caballoblanco2.position.z))||
 			   (peonblanco7.position.x==reyblanco.position.x && peonblanco7.position.z==reyblanco.position.z))||
 			   (peonblanco7.position.x==reinablanca.position.x && peonblanco7.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco7.position.x=bloquerojo.position.x;peonblanco7.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1485,7 +1485,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco8.position.x==caballoblanco2.position.x && peonblanco8.position.z==caballoblanco2.position.z))||
 			   (peonblanco8.position.x==reyblanco.position.x && peonblanco8.position.z==reyblanco.position.z))||
 			   (peonblanco8.position.x==reinablanca.position.x && peonblanco8.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonblanco8.position.x=bloquerojo.position.x;peonblanco8.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1582,7 +1582,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro1.position.x==caballonegro2.position.x && peonnegro1.position.z==caballonegro2.position.z))||
 			   (peonnegro1.position.x==reynegro.position.x && peonnegro1.position.z==reynegro.position.z))||
 			   (peonnegro1.position.x==reinanegra.position.x && peonnegro1.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro1.position.x=bloquerojo.position.x;peonnegro1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1679,7 +1679,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro2.position.x==caballonegro2.position.x && peonnegro2.position.z==caballonegro2.position.z))||
 			   (peonnegro2.position.x==reynegro.position.x && peonnegro2.position.z==reynegro.position.z))||
 			   (peonnegro2.position.x==reinanegra.position.x && peonnegro2.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro2.position.x=bloquerojo.position.x;peonnegro2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1776,7 +1776,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro3.position.x==caballonegro2.position.x && peonnegro3.position.z==caballonegro2.position.z))||
 			   (peonnegro3.position.x==reynegro.position.x && peonnegro3.position.z==reynegro.position.z))||
 			   (peonnegro3.position.x==reinanegra.position.x && peonnegro3.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro3.position.x=bloquerojo.position.x;peonnegro3.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1873,7 +1873,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro4.position.x==caballonegro2.position.x && peonnegro4.position.z==caballonegro2.position.z))||
 			   (peonnegro4.position.x==reynegro.position.x && peonnegro4.position.z==reynegro.position.z))||
 			   (peonnegro4.position.x==reinanegra.position.x && peonnegro4.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro4.position.x=bloquerojo.position.x;peonnegro4.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -1970,7 +1970,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro5.position.x==caballonegro2.position.x && peonnegro5.position.z==caballonegro2.position.z))||
 			   (peonnegro5.position.x==reynegro.position.x && peonnegro5.position.z==reynegro.position.z))||
 			   (peonnegro5.position.x==reinanegra.position.x && peonnegro5.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro5.position.x=bloquerojo.position.x;peonnegro5.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2067,7 +2067,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro6.position.x==caballonegro2.position.x && peonnegro6.position.z==caballonegro2.position.z))||
 			   (peonnegro6.position.x==reynegro.position.x && peonnegro6.position.z==reynegro.position.z))||
 			   (peonnegro6.position.x==reinanegra.position.x && peonnegro6.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro6.position.x=bloquerojo.position.x;peonnegro6.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2164,7 +2164,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro7.position.x==caballonegro2.position.x && peonnegro7.position.z==caballonegro2.position.z))||
 			   (peonnegro7.position.x==reynegro.position.x && peonnegro7.position.z==reynegro.position.z))||
 			   (peonnegro7.position.x==reinanegra.position.x && peonnegro7.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro7.position.x=bloquerojo.position.x;peonnegro7.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2261,7 +2261,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonnegro8.position.x==caballonegro2.position.x && peonnegro8.position.z==caballonegro2.position.z))||
 			   (peonnegro8.position.x==reynegro.position.x && peonnegro8.position.z==reynegro.position.z))||
 			   (peonnegro8.position.x==reinanegra.position.x && peonnegro8.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				peonnegro8.position.x=bloquerojo.position.x;peonnegro8.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2361,7 +2361,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilblanco1.position.x==caballoblanco2.position.x && alfilblanco1.position.z==caballoblanco2.position.z))||
 			   (alfilblanco1.position.x==reyblanco.position.x && alfilblanco1.position.z==reyblanco.position.z))||
 			   (alfilblanco1.position.x==reinablanca.position.x && alfilblanco1.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				alfilblanco1.position.x=bloquerojo.position.x;alfilblanco1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2457,7 +2457,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilblanco2.position.x==caballoblanco2.position.x && alfilblanco2.position.z==caballoblanco2.position.z))||
 			   (alfilblanco2.position.x==reyblanco.position.x && alfilblanco2.position.z==reyblanco.position.z))||
 			   (alfilblanco2.position.x==reinablanca.position.x && alfilblanco2.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				alfilblanco2.position.x=bloquerojo.position.x;alfilblanco2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2553,7 +2553,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilnegro1.position.x==caballonegro2.position.x && alfilnegro1.position.z==caballonegro2.position.z))||
 			   (alfilnegro1.position.x==reynegro.position.x && alfilnegro1.position.z==reynegro.position.z))||
 			   (alfilnegro1.position.x==reinanegra.position.x && alfilnegro1.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				alfilnegro1.position.x=bloquerojo.position.x;alfilnegro1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2649,7 +2649,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (alfilnegro2.position.x==caballonegro2.position.x && alfilnegro2.position.z==caballonegro2.position.z))||
 			   (alfilnegro2.position.x==reynegro.position.x && alfilnegro2.position.z==reynegro.position.z))||
 			   (alfilnegro2.position.x==reinanegra.position.x && alfilnegro2.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				alfilnegro2.position.x=bloquerojo.position.x;alfilnegro2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2749,7 +2749,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (reinablanca.position.x==caballoblanco2.position.x && reinablanca.position.z==caballoblanco2.position.z))||
 			   (reinablanca.position.x==reyblanco.position.x && reinablanca.position.z==reyblanco.position.z))||
 			   (reinablanca.position.x==alfilblanco1.position.x && reinablanca.position.z==alfilblanco1.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				reinablanca.position.x=bloquerojo.position.x;reinablanca.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2845,7 +2845,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (reinanegra.position.x==caballonegro2.position.x && reinanegra.position.z==caballonegro2.position.z))||
 			   (reinanegra.position.x==reynegro.position.x && reinanegra.position.z==reynegro.position.z))||
 			   (reinanegra.position.x==torrenegra1.position.x && reinanegra.position.z==torrenegra1.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				reinanegra.position.x=bloquerojo.position.x;reinanegra.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -2946,7 +2946,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (reyblanco.position.x==caballoblanco2.position.x && reyblanco.position.z==caballoblanco2.position.z))||
 			   (reyblanco.position.x==alfilblanco1.position.x && reyblanco.position.z==alfilblanco1.position.z))||
 			   (reyblanco.position.x==reinablanca.position.x && reyblanco.position.z==reinablanca.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				reyblanco.position.x=bloquerojo.position.x;reyblanco.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3042,7 +3042,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (reynegro.position.x==caballonegro2.position.x && reynegro.position.z==caballonegro2.position.z))||
 			   (reynegro.position.x==torrenegra1.position.x && reynegro.position.z==torrenegra1.position.z))||
 			   (reynegro.position.x==reinanegra.position.x && reynegro.position.z==reinanegra.position.z)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				reynegro.position.x=bloquerojo.position.x;reynegro.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3149,7 +3149,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballoblanco1.position.x==reyblanco.position.x && caballoblanco1.position.z==reyblanco.position.z))||
 			   (caballoblanco1.position.x==reinablanca.position.x && caballoblanco1.position.z==reinablanca.position.z))&&
 			   (caballoblanco1.position.y==4.5)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				caballoblanco1.position.x=bloquerojo.position.x;caballoblanco1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3252,7 +3252,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballoblanco2.position.x==reyblanco.position.x && caballoblanco2.position.z==reyblanco.position.z))||
 			   (caballoblanco2.position.x==reinablanca.position.x && caballoblanco2.position.z==reinablanca.position.z))&&
 				(caballoblanco2.position.y==4.5)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				caballoblanco2.position.x=bloquerojo.position.x;caballoblanco2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3355,7 +3355,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballonegro1.position.x==reynegro.position.x && caballonegro1.position.z==reynegro.position.z))||
 			   (caballonegro1.position.x==reinanegra.position.x && caballonegro1.position.z==reinanegra.position.z))&&
 				(caballonegro1.position.y==4.5)){
-				alert("Movimiento inválido");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)”);
 				caballonegro1.position.x=bloquerojo.position.x;caballonegro1.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3458,7 +3458,7 @@ BloqueAzul.prototype.act = function(environment){
 			   (caballonegro2.position.x==reynegro.position.x && caballonegro2.position.z==reynegro.position.z))||
 			   (caballonegro2.position.x==reinanegra.position.x && caballonegro2.position.z==reinanegra.position.z))&&
 				(caballonegro2.position.y==4.5)){
-				alert("Movimiento inválido");
+				alert("Movimiento inválido (No se puede atacar piezas amigas)”);
 				caballonegro2.position.x=bloquerojo.position.x;caballonegro2.position.z=bloquerojo.position.z;
 				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
@@ -3960,4 +3960,4 @@ function loop() {
   escena.plan();
   escena.act();
   renderizador.render(escena,camara);
-} 
+}
