@@ -196,10 +196,10 @@ AlfilNegro.prototype = new Agent();
 AlfilBlanco.prototype = new Agent();
 	
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////  CONSTRUCTOR OBJETIVO  ///////////////////////////////////////////
+//////////////////////////////////////////////  CONSTRUCTOR BLOQUEAZUL  ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function Objetivo(x=0,y=0,z=0){
+function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
   var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
@@ -209,9 +209,9 @@ function Objetivo(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-Objetivo.prototype = new Agent();
+BloqueAzul.prototype = new Agent();
 
-Objetivo.prototype.act = function(environment){
+BloqueAzul.prototype.act = function(environment){
   window.onload=function(){document.onkeydown=desplazar};
     function desplazar(pieza){
       var tecla = pieza.which;
