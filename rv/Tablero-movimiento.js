@@ -3806,10 +3806,10 @@ function setup() {
 	
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   camara = new THREE.PerspectiveCamera();
-  camara.position.z=130;
-  camara.position.x=50; 
-  camara.rotateY(Math.PI/2);
-
+  camara.position.z=-50;
+  camara.position.x=130;
+  camara.lookAt(45, 20, -45);
+  
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer({antialias:true});
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
