@@ -3497,7 +3497,6 @@ function setup(){
    luzPuntual2.position.y = 300;
    luzPuntual2.position.z = 10;
 
-	
    var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
    luzPuntual3.position.x = 10;
    luzPuntual3.position.y = 300;
