@@ -3458,7 +3458,7 @@ Cursor.prototype.act = function(environment){
 			   (caballonegro2.position.x==reynegro.position.x && caballonegro2.position.z==reynegro.position.z))||
 			   (caballonegro2.position.x==reinanegra.position.x && caballonegro2.position.z==reinanegra.position.z))&&
 				(caballonegro2.position.y==4.5)){
-				alert("No puedes comer piezas del mismo color");
+				alert("Movimiento invalido");
 				caballonegro2.position.x=posicioninicial.position.x;caballonegro2.position.z=posicioninicial.position.z;
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
@@ -3948,7 +3948,8 @@ function setup() {
 	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   cursor = new Cursor(10,0,-10);
-  escena.add(grupo,grupo2,grupo3,cursor);
+  escena.add(cursor);
+  
   //Luces
   escena.add(luzPuntual1, luzPuntual2, luzPuntual3);
   escena.rotateX(Math.PI/4);
