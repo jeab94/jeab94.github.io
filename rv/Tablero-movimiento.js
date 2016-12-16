@@ -202,6 +202,15 @@ AlfilBlanco.prototype = new Agent();
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////  CONSTRUCTOR BLOQUEAZUL  ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function BloqueAzul(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
+  var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzazul));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
 
 BloqueAzul.prototype = new Agent();
 
