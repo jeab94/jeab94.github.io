@@ -199,7 +199,6 @@ AlfilBlanco.prototype = new Agent();
 //////////////////////////////////////////////  CONSTRUCTOR OBJETIVO  ///////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 function Objetivo(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
@@ -210,8 +209,8 @@ function Objetivo(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-
 Objetivo.prototype = new Agent();
+
 Objetivo.prototype.act = function(environment){
   window.onload=function(){document.onkeydown=desplazar};
     function desplazar(pieza){
@@ -3665,211 +3664,212 @@ Objetivo.prototype.act = function(environment){
     }//fin function desplazar
 }
 	
+//////////////////////////////////  CONSTRUCTOR POSICIÓN INICIAL  ///////////////////////////////////////////////////////
 
-	////////////////////////////////////Bloque Rojo///////////////////////////////////////////////////////////////////////////////////////
-	function BloqueRojo(x=0,y=0,z=0){
-	  Agent.call(this,x,y,z);
-	  var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
-	  var luzroja = new THREE.MeshLambertMaterial({map:texturaluz});
-	  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzroja));
-	  this.position.y=y;
-	  this.position.z=z;
-	  this.position.x=x;
-	}
-		    
-	BloqueRojo.prototype = new Agent();
-	///////////////////////////////////Bloque Morado//////////////////////////////////////////////////////////////////////////////////////	    
-	function BloqueMorado(x=0,y=0,z=0){
-	  Agent.call(this,x,y,z);
-	  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
-	  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
-	  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
-	  this.position.y=y;
-	  this.position.z=z;
-	  this.position.x=x;
-	}
-	
+function BloqueRojo(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
+  var luzroja = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzroja));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
 
-	BloqueMorado.prototype = new Agent();
-	///////////////////////////////////////Bloque verde//////////////////////////////////////////////////////////////////////////////
-	function BloqueVerde(x=0,y=0,z=0){
-	  Agent.call(this,x,y,z);
-	  var texturaluz = new THREE.TextureLoader().load('luzverde.jpg');
-	  var luzverde = new THREE.MeshLambertMaterial({map:texturaluz});
-	  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
-	  this.position.y=y;
-	  this.position.z=z;
-	  this.position.x=x;
-	}
-	
+BloqueRojo.prototype = new Agent();
 
-	BloqueVerde.prototype = new Agent();
-	//////////////////////////////////////Setup y loop/////////////////////////////////////////////////////////////////////////////////////
-	
+///////////////////////////////////////  CONSTRUCTOR AYUDA  ////////////////////////////////////////////////////////////
 
-	setup();
-	loop();
-	
+function BloqueMorado(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
+  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
 
-	function setup() {
-	  ////////////////////////////////////////////Escena//////////////////////////////////////////////////////////////////////////////
-	  var texturaescena = new THREE.TextureLoader().load('wallpaper.jpg');
-	  escena = new Environment();
-	  escena.background=texturaescena;
-	  //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
-	  camara = new THREE.PerspectiveCamera();
-	  camara.position.z=130;
-	  camara.position.x=50; 
-	  ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
-	  renderizador = new THREE.WebGLRenderer({antialias:true});
-	  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-	  renderizador.shadowMap.enabled=true;
-	  document.body.appendChild(renderizador.domElement);
-	  
-	  /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
-	  var luzblan= new THREE.PointLight(0xFFFFFF);
-	  var luzblan2=new THREE.PointLight(0xFFFFFF);
-	  var luzblan3= new THREE.PointLight(0xFFFFFF);
-	  luzblan.castShadow=true;
-	  luzblan2.castShadow=true;
-	  luzblan3.castShadow=true;
-	  luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
-	  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
-	  luzblan3.position.y=-300;  luzblan3.position.z=-50;  luzblan3.position.x=50;
-	  ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
-	
+BloqueMorado.prototype = new Agent();
 
-	  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
-	  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
-	  var textura5 = new THREE.TextureLoader().load('madera.jpg');
-	  var cerablanco = new THREE.MeshLambertMaterial({map:textura3});
-	  var ceranegro = new THREE.MeshLambertMaterial({map:textura4});
-	  var madera = new THREE.MeshLambertMaterial({map:textura5});
-	  
-	  ////////////////////////////////////////////////////Tablero/////////////////////////////////////////////////////////////////////
-	  var cubo=new THREE.BoxGeometry(10,10,10);
-	  grupo= new THREE.Group();
-	  var k=0;
-	
+///////////////////////////////////////  CONSTRUCTOR SELECCIÓN  ////////////////////////////////////////////////////////////
 
-	  for (var i=0;i<8;i++){
-	    for(var j=0;j<8;j++){
-	
+function BloqueVerde(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzverde.jpg');
+  var luzverde = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
 
-	    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
-	    else{malla= new THREE.Mesh(cubo,cerablanco);}
-	
+BloqueVerde.prototype = new Agent();
 
-	    malla.position.x=(j+1)*10;
-	    malla.position.z=(-i-1)*10;
-	    malla.receiveShadow=true; //Sombras
-	    malla.matrixAutoUpdate = false;
-	    malla.updateMatrix();
-	
+setup();
+loop();
+//////////////////////////////////////////   SETUP Y LOOP   /////////////////////////////////////////////////////////////////	
+function setup() {
+   escena = new Environment();
+   
+   camara = new THREE.PerspectiveCamera();
+   camara.position.y = 150;
+   camara.position.x = 40;
+   camara.position.z = 100;
+   camara.lookAt(new THREE.Vector3(40, 0, 40));
 
-	    grupo.add(malla);
-	    k++;
-	  }
-	    k++;
-	  }
-	
+   var luzPuntual1 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual1.position.x = 10;
+   luzPuntual1.position.y = 300;
+   luzPuntual1.position.z = 10;
+   
+   var luzPuntual2 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual2.position.x = 90;
+   luzPuntual2.position.y = 300;
+   luzPuntual2.position.z = 10;
 
-	  //grupo2
-	  grupo2= new THREE.Group();
-	
+   var luzPuntual3 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual3.position.x = 10;
+   luzPuntual3.position.y = 300;
+   luzPuntual3.position.z = 90;
+   
+   var luzPuntual4 = new THREE.PointLight(0xFFFFFF,1);
+   luzPuntual4.position.x = 90;
+   luzPuntual4.position.y = 300;
+   luzPuntual4.position.z = 90;
 
-	  for(var l=0;l<10;l++){
-	    for(var m=0;m<2;m++){
-	    malla2= new THREE.Mesh(cubo,madera);
-	    if(m==1){malla2.position.z=(-90);}
-	    malla2.position.x=(l*10);
-	    malla2.receiveShadow=true; //Sombras
-	    malla2.matrixAutoUpdate = false;
-	    malla2.updateMatrix();
-	    grupo2.add(malla2);
-	  }}
-	
+   renderizador = new THREE.WebGLRenderer();
+   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+   document.body.appendChild(renderizador.domElement);
+   
+   //TABLERO (Comenzando cuadrícula en x=0, y=0)
+   //Posicionamiento del tablero en el espacio
+   x = 0;
+   y = 0;
+   z = 0;
+   var lado = 10;
+   var forma = new THREE.BoxBufferGeometry(lado,lado,lado);
+   cubos = [];
+   var material = Blanco;
+   
+   for (var i=0;i<=7;i++){
+	   for (var j=0;j<=7;j++){
+		   if ((i+j) % 2 == 0){
+			   material= Blanco;
+		   }
+		   else{
+			   material= Gris;
+		   }
+		   cubo = new THREE.Mesh(forma ,material);
+		   cubo.position.x = j*lado+5+x;
+		   cubo.position.z = i*lado+5+z;
+		   cubo.position.y = y;
+		   cubos.push(cubo)
+	   }
+   }
 
-	  //grupo3
-	  grupo3= new THREE.Group();
-	
+   orilla1 = new THREE.BoxGeometry( 90, 10, 5 ); //Superior
+   var material1 = Marco;
+   marco1 = new THREE.Mesh( orilla1, material1 );
+   marco1.translateZ(-2.5+z);
+   marco1.translateX(40+x);
+   marco1.translateY(y);
+   marco1.receiveShadow = true;
 
-	  for(var l=1;l<9;l++){
-	    for(var m=0;m<2;m++){
-	    malla3= new THREE.Mesh(cubo,madera);
-	    if(m==1){malla3.position.x=(90);}
-	    malla3.position.z=(-l*10);
-	    malla3.matrixAutoUpdate = false;
-	    malla3.receiveShadow=true;
-	    malla3.updateMatrix();
-	    grupo3.add(malla3);
-	  }}
-	  ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-	  torreblanca1 = new TorreBlanca(10,4.5,-10);
-	  torreblanca2 = new TorreBlanca(10,4.5,-80);
-	  torrenegra1 = new TorreNegra(80,4.5,-10);
-	  torrenegra2 = new TorreNegra(80,4.5,-80);
-		
-	  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
-	  /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
-	  peonblanco1 = new PeonBlanco(20,4.5,-10);
-	  peonblanco2 = new PeonBlanco(20,4.5,-20);
-	  peonblanco3 = new PeonBlanco(20,4.5,-30);
-	  peonblanco4 = new PeonBlanco(20,4.5,-40);
-	  peonblanco5 = new PeonBlanco(20,4.5,-50);
-	  peonblanco6 = new PeonBlanco(20,4.5,-60);
-	  peonblanco7 = new PeonBlanco(20,4.5,-70);
-	  peonblanco8 = new PeonBlanco(20,4.5,-80);
-		
-	  peonnegro1 = new PeonNegro(70,4.5,-10);
-	  peonnegro2 = new PeonNegro(70,4.5,-20);
-	  peonnegro3 = new PeonNegro(70,4.5,-30);
-	  peonnegro4 = new PeonNegro(70,4.5,-40);
-	  peonnegro5 = new PeonNegro(70,4.5,-50);
-	  peonnegro6 = new PeonNegro(70,4.5,-60);
-	  peonnegro7 = new PeonNegro(70,4.5,-70);
-	  peonnegro8 = new PeonNegro(70,4.5,-80);
-		
-	  escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
-	  escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
-	  /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
-	  alfilblanco1 = new AlfilBlanco(10,4.5,-30);
-	  alfilblanco2 = new AlfilBlanco(10,4.5,-60);
-	  alfilnegro1 = new AlfilNegro(80,4.5,-30);
-	  alfilnegro2 = new AlfilNegro(80,4.5,-60);
-		
-	  escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
-	  ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
-	  caballoblanco1 = new CaballoBlanco(10,4.5,-20);
-	  caballoblanco2 = new CaballoBlanco(10,4.5,-70);
-	  caballonegro1 = new CaballoNegro(80,4.5,-20);
-	  caballonegro2 = new CaballoNegro(80,4.5,-70);
-		
-	  escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
-	  ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
-	  reinablanca = new ReinaBlanca(10,4.5,-40);
-	  reinanegra = new ReinaNegra(80,4.5,-40);
-		
-	  escena.add(reinablanca,reinanegra);
-	  ///////////////////////////////////////////Reyes////////////////////////////////////////////////////////////////////
-	  reyblanco = new ReyBlanco(10,4.5,-50);
-	  reynegro = new ReyNegro(80,4.5,-50);
-		
-	  escena.add(reyblanco,reynegro);	
-	  /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
-	  bloqueazul = new BloqueAzul(10,0,-10);
-	  escena.add(grupo,grupo2,grupo3,bloqueazul);
-	  //Luces
-	  escena.add(luzblan,luzblan2,luzblan3);
-	  escena.rotateX(Math.PI/4);
-	}
-	
+   orilla2 = new THREE.BoxGeometry( 5, 10, 90 ); //Derecha
+   var material2 = Marco;
+   marco2 = new THREE.Mesh( orilla2, material2);
+   marco2.translateZ(40+z);
+   marco2.translateX(82.5+x);
+   marco2.translateY(y);
+   marco2.receiveShadow = true;
 
-	function loop() {
-	  requestAnimationFrame(loop);
-	  escena.sense();
-	  escena.plan();
-	  escena.act();
-	  renderizador.render(escena, camara);
-	}
+   orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
+   var material3 = Marco;
+   marco3 = new THREE.Mesh( orilla3, material3);
+   marco3.translateZ(82.5+z);
+   marco3.translateX(40+x);
+   marco3.translateY(y);
+   marco3.receiveShadow = true;
+
+   orilla4 = new THREE.BoxGeometry( 5, 10, 80 ); //Baja
+   var material4 = Marco;
+   marco4 = new THREE.Mesh( orilla4, material4);
+   marco4.translateZ(40+z);
+   marco4.translateX(-2.5+x);
+   marco4.translateY(y);
+   marco4.receiveShadow = true;
+   
+   //Agregar tablero a  escena
+   escena.add(marco1, marco2, marco3, marco4);
+   
+   for(var q=0; q<=63; q++){
+	   cubos[q].receiveShadow = true;
+	   escena.add(cubos[q]);
+   }
+
+   reynegro = new ReyNegro(45, 10, 5);
+   reyblanco = new ReyBlanco(45, 10, 75);
+   escena.add(reynegro, reyblanco);
+   reinanegra = new ReinaNegra(35, 10, 5);
+   reinablanca = new ReinaBlanca(35, 10, 75);
+   escena.add(reinanegra, reinablanca);
+   caballonegro1 = new CaballoNegro(15, 10, 5);
+   caballoblanco1 = new CaballoBlanco(15, 10, 75);
+   caballonegro2 = new CaballoNegro(65, 10, 5);
+   caballoblanco2 = new CaballoBlanco(65, 10, 75);
+   escena.add(caballonegro1, caballoblanco1);
+   escena.add(caballonegro2, caballoblanco2);
+   peonnegro1 = new PeonNegro(5, 10, 15);
+   peonblanco1 = new PeonBlanco(5, 10, 65);
+   escena.add(peonnegro1, peonblanco1);
+   peonnegro2 = new PeonNegro(15, 10, 15);
+   peonblanco2 = new PeonBlanco(15, 10, 65);
+   escena.add(peonnegro2, peonblanco2);
+   peonnegro3 = new PeonNegro(25, 10, 15);
+   peonblanco3 = new PeonBlanco(25, 10, 65);
+   escena.add(peonnegro3, peonblanco3);
+   peonnegro4 = new PeonNegro(35, 10, 15);
+   peonblanco4 = new PeonBlanco(35, 10, 65);
+   escena.add(peonnegro4, peonblanco4);
+   peonnegro5 = new PeonNegro(45, 10, 15);
+   peonblanco5 = new PeonBlanco(45, 10, 65);
+   escena.add(peonnegro5, peonblanco5);
+   peonnegro6 = new PeonNegro(55, 10, 15);
+   peonblanco6 = new PeonBlanco(55, 10, 65);
+   escena.add(peonnegro6, peonblanco6);
+   peonnegro7 = new PeonNegro(65, 10, 15);
+   peonblanco7 = new PeonBlanco(65, 10, 65);
+   escena.add(peonnegro7, peonblanco7);
+   peonnegro8 = new PeonNegro(75, 10, 15);
+   peonblanco8 = new PeonBlanco(75, 10, 65);
+   escena.add(peonnegro8, peonblanco8);
+   alfilnegro1 = new PeonNegro(25, 10, 5);
+   alfilblanco1 = new PeonBlanco(25, 10, 75);
+   escena.add(alfilnegro1, alfilblanco1);
+   alfilnegro2 = new PeonNegro(55, 10, 5);
+   alfilblanco2 = new PeonBlanco(55, 10, 75);
+   escena.add(alfilnegro2, alfilblanco2);
+   torrenegra1 = new TorreNegra(5, 10, 5);
+   torreblanca1 = new TorreBlanca(5, 10, 75);
+   escena.add(torrenegra1, torreblanca1);
+   torrenegra2 = new TorreNegra(75, 10, 5);
+   torreblanca2 = new TorreBlanca(75, 10, 75);
+   escena.add(torrenegra2, torreblanca2);
+
+	/////////////////////////////////////    Cursor Inicial    ////////////////////////////////////////////////////////////////
+	bloqueazul = new BloqueAzul(10,0,-10);
+	escena.add(bloqueazul);
+	//Luces
+	escena.add(luzPuntual1, luzPuntual2, luzPuntual3, luzPuntual4);
+	escena.rotateX(Math.PI/4);
+}
+
+function loop() {
+  requestAnimationFrame(loop);
+  escena.sense();
+  escena.plan();
+  escena.act();
+  renderizador.render(escena, camara);
+}
 
