@@ -3458,7 +3458,7 @@ Cursor.prototype.act = function(environment){
 			   (caballonegro2.position.x==reynegro.position.x && caballonegro2.position.z==reynegro.position.z))||
 			   (caballonegro2.position.x==reinanegra.position.x && caballonegro2.position.z==reinanegra.position.z))&&
 				(caballonegro2.position.y==4.5)){
-				alert("Movimiento invalido”);
+				alert("No puedes comer piezas del mismo color");
 				caballonegro2.position.x=posicioninicial.position.x;caballonegro2.position.z=posicioninicial.position.z;
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
