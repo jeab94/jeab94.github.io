@@ -3847,7 +3847,6 @@ function init() {
        cubo = new THREE.Mesh(forma ,material);
        cubo.position.x = (j+1)*lado;
        cubo.position.z = (-i-1)*lado;
-       cubo.position.y = y;
        cubos.push(cubo)
 
        }
