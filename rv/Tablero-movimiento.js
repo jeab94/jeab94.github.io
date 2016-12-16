@@ -3355,7 +3355,7 @@ Cursor.prototype.act = function(environment){
 			   (caballonegro1.position.x==reynegro.position.x && caballonegro1.position.z==reynegro.position.z))||
 			   (caballonegro1.position.x==reinanegra.position.x && caballonegro1.position.z==reinanegra.position.z))&&
 				(caballonegro1.position.y==4.5)){
-				alert("Movimiento inválido (No se puede atacar piezas amigas)”);
+				alert("Movimiento inválido (No se puede atacar piezas amigas)");
 				caballonegro1.position.x=posicioninicial.position.x;caballonegro1.position.z=posicioninicial.position.z;
 				seleccion.position.x=posicioninicial.position.x;seleccion.position.z=posicioninicial.position.z;
 			}
