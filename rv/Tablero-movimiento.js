@@ -3863,13 +3863,13 @@ function setup() {
    var material2 = Marco;
    marco2 = new THREE.Mesh( orilla2, material2);
    marco2.translateZ(-45);
-   marco2.translateX(92.5);
+   marco2.translateX(87.5);
    marco2.receiveShadow = true;
 
    orilla3 = new THREE.BoxGeometry( 90, 10, 5 ); //Izquierda
    var material3 = Marco;
    marco3 = new THREE.Mesh( orilla3, material3);
-   marco3.translateZ(2.5);
+   marco3.translateZ(-2.5);
    marco3.translateX(45);
    marco3.receiveShadow = true;
 
